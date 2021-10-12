@@ -1,0 +1,238 @@
+/* flex parent */
+.landing_fitness_centers {
+    display: flex;
+    /* background-color: blue; */
+}
+
+/* flex-child */
+.landing_fitness_centers_branch {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex:60%;
+    padding-bottom: 20px;
+    /* align-items: center; */
+    /* justify-content: center; */
+    background-color:#C7EBFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 93px 0px 0px;
+    
+}
+.landing_fitness_centers_branch_header {
+    font-size:36px;
+    color:black;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.landing_fitness_centers_branch_header span {
+    color:#7CD0FF;
+    text-shadow: 2px 2px #0E2C4B;
+}
+.landing_fitness_centers_branch_flex1 {
+    justify-content: space-evenly;
+    /* background-color: azure; */
+    display:flex;
+}
+
+
+.landing_fitness_centers_branch_flex2{
+    justify-content: space-evenly;
+    /* background-color: red; */
+    display:flex;
+}
+
+
+.landing_fitness_centers_branch_btn {
+    /* background-color: brown; */
+    display:flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.landing_fitness_centers_branch_btn a {
+    margin-top: 20px;
+    text-decoration: none;
+    color: #0E2C4B;
+    display:block;
+    padding: 5px;
+    /* background-color: white; */
+    border-radius: 5px;
+    text-align: center;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.landing_fitness_centers_branch_flex1, .landing_fitness_centers_branch_flex2 {
+    margin-top: 25px;
+}
+
+
+/* flex-child */
+.landing_fitness_centers_text{
+    flex: 40%;
+    width:100%;
+    /* align-items: center; */
+    /* margin-top: 20%; */
+    /* text-align: center; */
+    /* justify-content: center; */
+    /* background-color: orangered; */
+}
+.landing_fitness_centers_text h1 {
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.fitness_center_btn_header {
+    margin: 40px 70px 10px;
+    display: block;
+    padding: 30px;
+    background-color: white;
+    color: #0E2C4B;
+    font-size: 20px;
+    /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 10px; */
+}
+.fitness_center_btn_sub_header {
+    margin: 0px 70px 0px;
+    display: block;
+    padding: 30px;
+    background-color: white;
+    color: #0E2C4B;
+    font-size: 16px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 10px;
+}
+.fitness_center_btn_qua1 img, .fitness_center_btn_qua2 img{
+    /* position: absolute; */
+    padding: 0;
+    max-width: 64px;
+    max-height: 64px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+}
+.fitness_center_btn_qua1 img{
+    margin: -10px -30px -10px -80px;
+    float: left;
+}
+.fitness_center_btn_qua2 img {
+    margin: -55px -45px -50px -50px;
+    float:right;
+}
+/* .Fitness_center_name1{
+    position: relative;
+
+} */
+/* .Fitness_center_name1 p {
+    padding:10px;
+    color: #0E2C4B;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: -45px;
+    margin-right: 50px;
+    font-size:16px;
+} */
+.Fitness_center_name {
+    /* float:right; */
+    position: relative;
+    /* display: block; */
+    padding:10px;
+    color: #0E2C4B;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: -45px;
+    margin-right: 50px;
+    font-size:16px;
+    opacity: 0.8;
+    font-weight:bold;
+    /* z-index: 3; */
+}
+.Fitness_center_image img {
+    max-width:250px;
+    max-height:170px;
+    border-radius: 5px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.54));
+}
+/* .Fitness_center_image{
+    display: block;
+} */
+/* .branch_image {
+    height: 100px;
+} */
+
+@media only screen and (max-width: 1000px){
+    .landing_fitness_centers {
+        flex-direction: column;
+    }
+    .landing_fitness_centers_branch{
+        padding-bottom: 20px;
+        margin-bottom: 0px;
+        order: 0;
+    }
+    .landing_fitness_centers_text {
+        margin-top: 0px;
+        order: 1;
+        /* background-color: #0E2C4B; */
+    }
+    .fitness_center_btn_header {
+        margin-top: 20px;
+    }
+    .fitness_center_btn_qua2 img {
+        margin: -55px -30px -50px -50px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .landing_fitness_centers_branch_header{
+        font-size:32px;
+    }
+    .landing_fitness_centers_branch_flex1 {
+        align-items: center;
+        flex-direction: column;
+    }
+    .landing_fitness_centers_branch_flex2 {
+        align-items: center;
+        flex-direction: column;
+    }
+    .landing_fitness_centers_branch_header {
+        order: 0;
+    }
+    .branch_image1 {
+        order: 1;
+    }
+    .branch_image2 {
+        order: 2;
+    }
+    .branch_image3 {
+        order: 3;
+    }
+    .branch_image4 {
+        order: 4;
+    }
+
+
+
+    .fitness_center_btn_header {
+        /* margin: 90px 70px 10px; */
+        padding: 20px;
+        font-size: 16px;
+        /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        border-radius: 10px; */
+    }
+    .fitness_center_btn_sub_header {
+        /* margin: 0px 70px 70px; */
+        /* display: block; */
+        padding: 20px;
+        /* background-color: white; */
+        /* color: #0E2C4B; */
+        font-size: 14px;
+    }
+    .fitness_center_btn_qua1 img, .fitness_center_btn_qua2 img{
+        /* position: absolute; */
+        padding: 0;
+        max-width: 48px;
+        max-height: 48px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+    .fitness_center_btn_qua1 img{
+        margin: -10px -30px -10px -80px;
+        float: left;
+    }
+    .fitness_center_btn_qua2 img {
+        margin: -50px -40px -50px -50px;
+    }
+}

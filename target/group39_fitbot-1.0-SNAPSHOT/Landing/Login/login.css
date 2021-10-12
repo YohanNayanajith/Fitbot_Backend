@@ -1,0 +1,267 @@
+* {
+    box-sizing: border-box;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.model {
+    margin: 100px 0px;
+    display: inline-block;
+    padding: 20px;
+    background-color: white;
+    filter: drop-shadow(0px 4px 4px rgba(83, 59, 59, 0.5));
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    
+    
+}
+.login_animation {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+.login_close_btn_x {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+  }
+  
+.login_close_btn_x:hover, .login_close_btn_x:focus {
+    color: red;
+    cursor: pointer;
+}
+
+.login_module {
+    margin-top: 30px;
+    display: block;
+    padding:30px;
+    max-width: 600px;
+    max-height: auto;
+    /* text-align: center; */
+    /* align-items: center;
+    justify-content: center; */
+    border: 1px solid black;
+    /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
+}
+
+.login_header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding:10px; */
+    border-bottom: 2px solid black;
+}
+.login_hader_name {
+    flex: 50%;
+    width: 100%;
+    /* background-color:red; */
+    font-size: 40px;
+    font-weight: bold;
+}
+.login_header_image {
+    flex:50%;
+    width: 100%;
+    /* background-color:blueviolet; */
+}
+.login_header_image img {
+    float: right;
+    height: 80px;
+    width: 200px; 
+}
+
+.login_header_detail {
+    padding: 20px 0;
+    font-size: 16px;
+}
+
+.login_username_input , .login_password_input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.login_username_input:hover , .login_password_input:hover {
+    background-color:white;
+    /* color:#0E2C4B; */
+    border:1px solid greenyellow;
+}
+/* .login_username_label, .login_password_label {
+    padding: 100px 0;
+} */
+.login_forgot_password {
+    float: right;
+}
+.login_forgot_password a {
+    text-decoration: none;
+    color: #0E2C4B;
+    font-weight: bold;
+}
+.login_detail_container {
+    padding: 20px 0;
+}
+.login_button_div {
+    position: relative;
+    text-align: center;
+}
+.login_button {
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #0E2C4B;
+    color: white;
+    padding:12px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+}
+.login_button:hover {
+    color: #0E2C4B;
+    border: 1px solid #0E2C4B;
+    background-color:white;
+}
+
+.login_bottom_detail {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 2px solid black;
+}
+.login_bottom_detail a {
+    text-decoration: none;
+    color: #0E2C4B;
+    font-weight: bold;
+}
+
+.login_social_media {
+    display: flex;
+    padding: 20px 0px;
+    justify-content:space-evenly;
+    text-align: center;
+}
+.login_social_media_google, .login_social_media_facebook {
+    /* width: 100%; */
+    width: 150px;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    /* align-items: center; */
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 10px;
+}
+.login_social_media_google img, .login_social_media_facebook img {
+    /* vertical-align:middle; */
+    height: 48px;
+    width: 48px;
+    /* padding: 5px; */
+    float: left;
+    /* border-right: 1px solid black; */
+}
+.login_social_media_google:hover, .login_social_media_facebook:hover {
+    background-color: #0E2C4B;
+    color:white;
+    border: 1px solid white;
+}
+/* .login_social_media_google p, .login_social_media_facebook p{
+    float: right;
+} */
+
+/* .login_social_media_facebook {
+    width: 100%;
+    display: inline-block;
+} */
+
+@media screen and (max-width: 768px) {
+    .login_header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .login_hader_name {
+        order: 0;
+    }
+    .login_header_image {
+        order: 1;
+    }
+
+    .login_social_media {
+        flex-direction: column;
+        text-align: center;
+        
+        align-items: center;
+        padding: 15px 0px;
+    }
+    .login_social_media_facebook {
+        margin-top: 20px;
+    }
+    .login_social_media_google, .login_social_media_facebook {
+        /* width: 100%; */
+        width: 150px;
+        padding: 10px
+        
+    }
+    .login_social_media_google p, .login_social_media_facebook p {
+        padding:10px;
+        margin: 0;
+    }
+    .login_social_media_google img, .login_social_media_facebook img {
+        height: 32px;
+        width: 32px;
+    }
+
+    .login_button_div {
+        text-align: center;
+        align-items: center;
+    }
+    /* .login_button {
+        font-size: 14px;
+        font-weight: bold;
+        background-color: #0E2C4B;
+        color: white;
+        padding:12px 20px;
+        border-radius: 5px;
+        display: inline-block;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    
+    } */
+
+    .login_detail_container {
+        display:flex;
+        flex-direction: column;
+        padding:10px;
+        float: none;
+        text-align: center;
+    }
+    .login_remember_me {
+        width: 100%;
+    }
+    .login_forgot_password {
+        width: 100%;
+
+    }
+
+    .login_bottom_detail {
+        position: relative;
+    }
+
+}

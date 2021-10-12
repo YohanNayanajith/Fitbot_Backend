@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="Landing/Navbar/NavBar.css">
+    <link rel="stylesheet" href="Landing/Carousel/carousel.css">
+    <link rel="stylesheet" href="Landing/First_Content/first_content.css">
+    <link rel="stylesheet" href="Landing/FitnessExperience/fitness_experience.css">
+    <link rel="stylesheet" href="Landing/GymValues/gym_values.css">
+    <link rel="stylesheet" href="Landing/InstructorCarousel/instructor_carousel.css">
+    <link rel="stylesheet" href="Landing/LandingFitnessCenters/landing_fitness_centers.css">
+    <link rel="stylesheet" href="Landing/Footer/footer.css">
+    <title>Fitbot Group 39</title>
+</head>
+<body>
+
+<div class="topbar">
+    <div class="brand_logo">
+        <img class="logo_image" src="Landing/Images/Fitbot_logo.png" alt="logo">
+    </div>
+    <div class="time_image">
+        <img class="time" src="Landing/Icons/clock.svg" alt="clock">
+    </div>
+    <div class="open_time">
+        
+        <p class="open_time_para">Opening time</p>
+        <p class="open_time_para" style="margin-top:0; color:black">5.00am to 10.00pm</p>
+    </div>
+    <div class="email_image">
+        <img class="email" src="Landing/Icons/email.svg" alt="email">
+    </div>
+    <div class="email_us">
+        
+        <p class="email_us_para">Email us now</p>
+        <a class="email_us_para" href="mailto:yohannayanajith40@gmail.com" style="margin-top:0;">Fitbot@gmail.com</a>
+    </div>
+    
+    <div class="contact_image">
+        <img class="contact" src="Landing/Icons/call.svg" alt="call">
+    </div>
+    <div class="contact_us">
+        <p class="contact_us_para">Call us anytime</p>
+        <a class="contact_us_para" href="#" style="margin-top:0;">+94 77 878 478</a>
+    </div>
+</div>
+
+<div class="topnav" id="nav_mobile">
+  <a href="#" class="nav_item" id="active_item">Home</a>
+  <a href="#" class="nav_item">Packages</a>
+  <a href="#" class="nav_item">Trainers</a>
+  <a href="#" class="nav_item">Branches</a>
+  <a href="#" class="nav_item">About Us</a>
+  <a href="#" class="nav_item">Contact Us</a>
+
+<!--  <button class="dropbtn" id="login">Login</button>-->
+<!--  <button class="dropbtn" id="registration">Sign Up</button>-->
+    <a href="login" class="dropbtn" id="dropbtn">Login</a>
+    <a href="register" class="dropbtn">Sign Up</a>
+  <a href="javascript:void(0);" style="font-size:17px;" class="icon" onclick="toggle_navbar()">&#9776;</a>
+</div>
+
+<div class="container" id="container">
+    <div class="image_slideshow">
+
+        <div class="image_sider fade">
+            <div class="number_text">1/3</div>
+            <img class="images" src="Landing/Images/image_slider.png" alt="image1">
+            <div class="caption">Caption of this text</div>
+        </div>
+        <div class="image_sider fade">
+            <div class="number_text">1/3</div>
+            <img class="images" src="Landing/Images/image_slider.png" alt="image2">
+            <div class="caption">Caption of this text</div>
+        </div>
+        <div class="image_sider fade">
+            <div class="number_text">1/3</div>
+            <img class="images" src="Landing/Images/image_slider.png" alt="image3">
+            <div class="caption">Caption of this text</div>
+        </div>
+        <br>
+        <div class="below_images">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+
+    </div>
+
+    <div class="text_area">
+        <div class="line"></div>
+        <div class="first_content">
+            <p>Home workout through <span><b>FITBOT</b></span> as well as online <br class="br_tag">membership</p>
+            <p class="first_sub_content">Are you ready to experience continue online exercise?</p>
+        </div>
+        <!-- <div class="first_sub_content">
+            <p>Are you ready to experience continue online exercise?</p>
+        </div> -->
+    </div>
+
+    <div class="fitness_experience">
+       <div class="virtual_experience">
+            <img src="Landing/Images/virtual_example.jpg" alt="virtual_image">
+            <!-- <h1>Yohan Nayanajith</h1> -->
+       </div>
+       <div class="physical_experience">
+            <img src="Landing/Images/physical_example.jpg" alt="physical_image">
+            <!-- <h1>Yohan Nayanajith</h1> -->
+       </div>
+    </div>
+
+    <div class="gym_values">
+        <div class="images_values">
+            <img class="side_image_value" src="Landing/Images/side_image.png" alt="side_image">
+        </div>
+        <div class="col2_values">
+            <div class="header_values">
+                <h1><span>FITBOT</span> "something more than fitness"</h1>
+            </div>
+            <div class="inner_col1_value">
+                <div class="values first_value">
+                    <div class="first_value_image">
+                        <img src="Landing/Icons/100percent.svg" alt="100Percent">
+                    </div>
+                    <p>Get Access to over + 100 workout and equipments</p>
+                </div>
+                <div class="values second_value">
+                    <div class="second_value_image">
+                        <img src="Landing/Icons/shcedule.svg" alt="Schedule">
+                    </div>
+                    <p>Time managing for virtual members from home workout</p>
+                </div>
+                <div class="values third_value">
+                    <div class="third_value_image">
+                        <img src="Landing/Icons/savemoney.svg" alt="SaveMoney">
+                    </div>
+                    <p>Save money by getting the Best Price only on Fitbot</p>
+                </div>
+            </div>
+
+            <div class="inner_col2_value">
+                <div class="values fourth_value">
+                    <div class="fourth_value_image">
+                        <img src="Landing/Icons/tap.svg" alt="Tap">
+                    </div>
+                    <p>Ability to select an instructor of your choice</p>
+                </div>
+                <div class="values fifth_value">
+                    <div class="fifth_value_image">
+                        <img src="Landing/Icons/tap.svg" alt="Tap">
+                    </div>
+                    <p>Knowledge of supplements and more focus on health</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="instructor_carousel">
+        <div class="instructor_carousel_header">
+            <h1>Get Your Perfect Workout With<br>the Perfect <span class="instructor_header_code">Trainers</span></h1>
+        </div>
+        <div class="instructor_carousel_round">
+
+            <div class="instructor_image_sider instructor_fade">
+                <img class="instructor_images" src="Landing/Images/instructor1.jpg" alt="instructor1">
+            </div>
+            <div class="instructor_image_sider instructor_fade">
+                <img class="instructor_images" src="Landing/Images/instructor2.jpg" alt="instructor2">
+            </div>
+            <div class="instructor_image_sider instructor_fade">
+                <img class="instructor_images" src="Landing/Images/instructor3.jpg" alt="instructor3">
+            </div>
+        </div>
+        <div class="instructor_carousel_btn">
+            <!-- <button class="btn_more_trainers">More Trainers</button> -->
+            <a href="#">More Trainers</a>
+        </div>
+    </div>
+
+    <div class="landing_fitness_centers">
+        <div class="landing_fitness_centers_branch">
+            <h1 class="landing_fitness_centers_branch_header">Fitness centers run by <span>Fitbot</span></h1>
+
+            <div class="landing_fitness_centers_branch_flex1">
+                <div class="branch_image1">
+                    <div class="Fitness_center_image">
+                        <img src="Landing/Images/branch1.jpg" alt="Branch1">
+                    </div>
+                    <p class="Fitness_center_name">Maharagama Branch</p>
+                </div>
+                <div class="branch_image2">
+                    <div class="Fitness_center_image">
+                        <img src="Landing/Images/branch1.jpg" alt="Branch2">
+                    </div>
+                    <p class="Fitness_center_name">Matara Branch</p>
+                </div>
+            </div>
+
+            <div class="landing_fitness_centers_branch_flex2">
+                <div class="branch_image3">
+                    <div class="Fitness_center_image">
+                        <img src="Landing/Images/branch1.jpg" alt="Branch3">
+                    </div>
+                    <p class="Fitness_center_name">Nugegoda Branch</p>
+                </div>
+                <div class="branch_image4">
+                    <div class="Fitness_center_image">
+                        <img src="Landing/Images/branch1.jpg" alt="Branch4">
+                    </div>
+                    <p class="Fitness_center_name">Malabe Branch</p>
+                </div>
+            </div>
+            
+            <div class="landing_fitness_centers_branch_btn">
+                <a href="#">View More -></a>
+            </div>
+        </div>
+        <div class="landing_fitness_centers_text">
+            <div class="fitness_center_btn_header">
+                <div class="fitness_center_btn_qua1">
+                    <img src="Landing/Images/left-quotes.svg" alt="left-quotes">
+                </div>
+                <h1>Want to have<br>the best experience? </h1>
+                <div class="fitness_center_btn_qua2">
+                    <img src="Landing/Images/right-quotes.svg" alt="right-quotes">
+                </div>
+            </div>
+            <div class="fitness_center_btn_sub_header">
+                <p>Which Are The Best Gyms Near Me? Cult.fit has gyms in various locations around the nation. One of the best gyms in Sri Lanka; managed by Fitbot.lk </p>
+            </div>
+            
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer_all_details">
+            <div class="footer_contact">
+                <div class="footer_contact_details">
+                    <p>Call us anytime (+94)77 869 832<br>Email us Fitbot@gmail.com</p>
+                </div>
+                <div class="footer_contact_btn">
+                    <a href="#">CONTACT US</a>
+                </div>
+            </div>
+
+            <div class="footer_all_details_des">
+                <div class="footer_all_details_address">
+                    <img src="Landing/Images/logo_background.png" alt="logo">
+                    <p>Physical and virtual gym experience call FITBOT</p>
+                    <p>Contact Us</p>
+                    <p>FitBot<br>No 135/04 , main street , kiribathgoda<br>+94 77 869 83219 / +94 11 869 34578</p>
+                </div>
+                <div class="footer_all_details_services">
+                    SERVICES
+                    <div class="footer_line"></div>
+                    <ul class="gym_services_list">
+                        <li>Gyms</li>
+                        <li>Fitness Classes</li>
+                        <li>Group Classes</li>
+                        <li>One-to-one Classes</li>
+                        <li>Online Coaching</li>
+                    </ul>
+                </div>
+                <div class="footer_all_details_find_location">
+                    FIND LOCATION
+                    <div class="footer_line"></div>
+                    <ul class="branch_list">
+                        <li>Maharagama</li>
+                        <li>Nugegoda</li>
+                        <li>Matara</li>
+                        <li>Malabe</li>
+                        <li>Galle</li>
+                    </ul>
+                </div>
+                <div class="footer_all_details_map">
+                    <img src="Landing/Images/map.png" alt="worldMap">
+                </div>
+            </div>
+            <div class="social_media">
+                <div class="social_media_copyright">
+                    <a href="#">Copyright © 2021 FITBOT GYM CENTER (PVT) LTD</a>
+                </div>
+                <div class="social_media_links">
+                    <a href="#"><img src="Landing/Icons/footer_facebook.svg" alt="facebook"></a>
+                    <a href="#"><img src="Landing/Icons/footer_twitter.svg" alt="twitter"></a>
+                    <a href="#"><img src="Landing/Icons/footer_instagram.svg" alt="instagram"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<script src="Landing/Navbar/NavBar.js"></script>
+<script src="Landing/Carousel/carousel.js"></script>
+<script src="Landing/InstructorCarousel/instructor_carousel.js"></script>
+
+</body>
+
+<!-- <script src="./Login/login.js"></script> -->
+
+<!-- jquery-CDN -->
+
+</html>

@@ -1,0 +1,195 @@
+.footer {
+    color: white;
+    font-size:16px;
+}
+
+.footer_all_details {
+    display: flex;
+    flex-direction: column;
+    margin-top:70px;
+
+}
+.footer_contact {
+    background:url(../Images/footer_contact.png) no-repeat center/cover;
+    /* background-color: blue; */
+    margin-left: 180px;
+    margin-right:180px;
+    height: 250px;
+    font-size:28px;
+    font-weight:700;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom:-25px;
+    z-index:1;
+}
+.footer_contact_details, .footer_contact_btn {
+    margin-left: 580px;
+}
+.footer_contact_details {
+    margin-top: 40px;
+    /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
+}
+.footer_contact_btn a {
+    /* margin-right: 375px; */
+    text-decoration:none;
+    display:inline-block;
+    padding:8px;
+    border:2px solid white;
+    /* border-radius: 5px; */
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    background-color: #7CD0FF;
+    color:white;
+    font-size:24px;
+}
+.footer_contact_btn a:hover {
+    background-color: white;
+    color:#0E2C4B;
+    border:2px solid #0E2C4B;
+    color:#0E2C4B;
+}
+
+.footer_all_details_des {
+    display: flex;
+    /* background-color: tomato; */
+    background-color:#0E2C4B;
+    padding: 40px;
+}
+.footer_all_details_address {
+    flex: 30%;
+    /* background-color: blue; */
+}
+.footer_all_details_services {
+    flex:20%;
+    /* background-color:pink; */
+}
+.footer_all_details_find_location {
+    flex: 20%;
+    /* background-color:purple; */
+}
+.branch_list li, .gym_services_list li {
+    padding-bottom:10px;
+}
+
+.footer_all_details_map {
+    flex:30%;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+    padding-left: 60px;
+    /* background-color:brown; */
+}
+
+
+.social_media {
+    display: flex;
+    background-color: #0E2C4B;
+    padding: 20px;
+    border-top: 2px solid white;
+    /* transform: rotate(-90deg); */
+}
+.social_media_copyright {
+    flex: 50%;
+
+    /* float: left; */
+}
+.social_media_copyright a{
+    text-decoration: none;
+    color: white;
+}
+.social_media_links {
+    flex: 50%;
+    /* float: right; */
+}
+.social_media_links img {
+    float: right;
+    margin-left: 10px;
+    max-height: 32px;
+    max-width: 32px;
+}
+
+
+.footer_all_details_address {
+    /* padding: 40px; */
+    /* color: white; */
+    font-weight: 500;
+    /* text-transform: uppercase; */
+}
+.footer_all_details_address img {
+    max-height: 45px;
+    max-width: 120px;
+}
+.footer_all_details_services ul, .footer_all_details_find_location ul {
+    list-style-type: none;
+    /* color: white; */
+    /* padding: 40px; */
+}
+.footer_line{
+    position: relative;
+    width: 150px;
+    height: 0px;
+    /* left: 124.05px;
+    top: 115px; */
+    right: 50px;
+    top:90px;
+
+    border: 1px solid white;
+    transform: rotate(90deg);
+    background-color:white;
+}
+.footer_all_details_map img {
+    padding:20px;
+    max-width: 300px;
+    max-height: 200px;
+}
+@media only screen and (max-width: 1500px){
+    .footer_contact_details, .footer_contact_btn {
+        margin-left: 480px;
+        font-size: 28px;
+    }
+}
+
+@media only screen and (max-width: 1300px){
+    .footer_contact_details, .footer_contact_btn {
+        margin-left: 380px;
+        font-size: 24px;
+    }
+}
+
+
+@media only screen and (max-width:1000px){
+    .footer_contact {
+        display:none;
+    }
+
+    .footer_all_details_des {
+        flex-direction: column;
+    }
+    .footer_all_details_address {
+        order: 0;
+    }
+    .footer_all_details_services {
+        order: 1;
+    }
+    .footer_all_details_find_location {
+        order: 2;
+    }
+    .footer_all_details_map {
+        order: 3;
+        margin:auto;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .social_media {
+        flex-direction: column;
+        float: none;
+        align-items: center;
+        justify-content: center;
+    }
+    .social_media_copyright {
+        order: 0;
+    }
+    .social_media_links {
+        margin-top: 20px;
+        order: 1;
+    }
+}

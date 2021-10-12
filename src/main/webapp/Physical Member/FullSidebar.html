@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Boxicons icons -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- <link href="./RightSidebar/RightSidebar.html" rel="import" /> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script>
+    <!-- css-file -->
+    <link rel="stylesheet" href="Physical Member/LeftSidebar/LeftSidebar.css">
+    <link rel="stylesheet" href="Physical Member/RightSidebar/RightSidebar.css">
+    <link rel="stylesheet" href="Physical Member/Dashboard/Dashboard.css">
+    <link rel="stylesheet" href="Physical Member/Payments/Payments.css">
+    <link rel="stylesheet" href="Physical Member/Appoinments/Appoinments.css">
+    <link rel="stylesheet" href="Physical Member/Workout_Plans/Workout_Plan.css">
+    <link rel="stylesheet" href="Physical Member/Diet_Plans/Diet_Plans.css">
+
+    <link rel="stylesheet" href="Physical Member/Conditions/Conditions.css">
+    <link rel="stylesheet" href="Physical Member/Instructors/Instructors.css">
+    <link rel="stylesheet" href="Physical Member/Payments/Payments.css">
+    <link rel="stylesheet" href="Physical Member/Messages/Messages.css">
+    <link rel="stylesheet" href="Physical Member/Profile/Profile.css">
+    <link rel="stylesheet" href="Physical Member/Reports/Reports.css">
+    <link rel="stylesheet" href="Physical Member/Settings/Settings.css">
+
+    <title>Physical Member</title>
+</head>
+<body>
+  <div class="full_nav_bars" id="full_nav_bars">
+    <div class="sidebar" id="sidebar">
+        <div class="logo-details">
+            <!-- <i class='bx bxl-c-plus-plus icon'></i> -->
+            <!-- <img class="icon" src="../Physical Member/Images/Fitbot_white_logo.png" alt="Logo"> -->
+            <img class="icon" src="Physical Member/Images/Fitbot_white_logo.png" alt="Logo">
+            <!-- <div class="logo_name">FitBot</div> -->
+            <i class='bx bx-menu side_icon' id="btn" onclick="visibleSocialMedia()"></i>
+        </div>
+        <ul class="nav-list">
+          <li>
+            <i class='bx bx-search side_icon'></i>
+            <input type="text" placeholder="Search...">
+            <span class="tooltip">Search</span>
+          </li>
+          <li>
+            <a href="#" class="side_bar_anchor_tag" onclick="physical_member_dashboard()" id="phy_mem_dashboard">
+              <i class='bx bx-grid-alt side_icon' id="phy_mem_dashboard_i"></i>
+              <span class="links_name" id="physical_member_dashboard_text">Dashboard</span>
+            </a>
+            <span class="tooltip">Dashboard</span>
+          </li>
+          <li>
+          <a href="#" class="side_bar_anchor_tag" onclick="physical_member_profile()" id="phy_mem_profile">
+            <i class='bx bx-user side_icon' id="phy_mem_profile_i"></i>
+            <span class="links_name" id="physical_member_profile_text">Profile</span>
+          </a>
+          <span class="tooltip">Profile</span>
+        </li>
+        <li>
+          <a href="#" class="side_bar_anchor_tag" onclick="physical_member_instructors()" id="phy_mem_instructors">
+              <i class='bx bx-male side_icon' id="phy_mem_instructors_i"></i>
+            <span class="links_name" id="physical_member_instructors_text">Instructors</span>
+          </a>
+          <span class="tooltip">Instructors</span>
+        </li>
+        <li>
+          <a href="#" class="side_bar_anchor_tag" onclick="physical_member_messages()" id="phy_mem_messages">
+            <i class='bx bx-chat side_icon' id="phy_mem_messages_i"></i>
+            <span class="links_name" id="physical_member_messages_text">Messages</span>
+          </a>
+          <span class="tooltip">Messages</span>
+          </li>
+
+          <li>
+          <a href="#" class="side_bar_anchor_tag" onclick="Workout_plan_dashboard()" id="phy_mem_workout">
+              <i class='bx bx-notepad side_icon' id="phy_mem_workout_i"></i>
+            <span class="links_name" id="physical_member_workout_text">Workout Plans</span>
+          </a>
+          <span class="tooltip">Workout Plans</span>
+        </li>
+        <li>
+          <a href="#" class="side_bar_anchor_tag" onclick="Diet_plan_dashboard()" id="phy_mem_diet_plan">
+              <i class='bx bx-receipt side_icon' id="phy_mem_diet_plan_i"></i>
+              <span class="links_name" id="physical_member_diet_plan_text">Diet Plans</span>
+          </a>
+          <span class="tooltip">Diet Plans</span>
+          </li>
+          <li>
+          <a href="#" class="side_bar_anchor_tag" onclick="physical_member_payments()" id="phy_mem_payments">
+            <i class='bx bx-credit-card side_icon' id="phy_mem_payment_i"></i>
+            <span class="links_name" id="physical_member_payment_text">Payments</span>
+          </a>
+          <span class="tooltip">Payments</span>
+        </li>
+        <li>
+          <a href="#" class="side_bar_anchor_tag" onclick="physical_member_reports()" id="phy_mem_reports">
+            <i class='bx bx-pie-chart-alt-2 side_icon' id="phy_mem_reports_i"></i>
+            <span class="links_name" id="physical_member_reports_text">Reports</span>
+          </a>
+          <span class="tooltip">Reports</span>
+        </li>
+        <li>
+          <a href="#" class="side_bar_anchor_tag" onclick="physical_member_branch_messages()" id="phy_mem_branch_messages">
+          <i class='bx bx-podcast side_icon' id="phy_mem_branch_messages_i"></i>
+            <span class="links_name" id="physical_member_branch_messages_text">Branch Messages</span>
+          </a>
+          <span class="tooltip">Branch Messages</span>
+        </li>
+        <li>
+          <a href="#" class="side_bar_anchor_tag" onclick="physical_member_appointments()" id="phy_mem_appointments">
+              <i class='bx bxs-book-open side_icon' id="phy_mem_appointments_i"></i>
+              <span class="links_name" id="physical_member_appointments_text">Appointments</span>
+          </a>
+          <span class="tooltip">Appointments</span>
+        </li>
+        <li>
+          <div class="social_media_icons_width_menu">
+            <a href="#" class="side_bar_anchor_tag">
+              <i class='bx bxs-user-account side_icon'></i>
+              <span class="links_name">Social Media</span>
+            </a>
+            <span class="tooltip">Social Media</span>
+          </div>
+          
+          <div class="social_media_icons_side_bar">
+            <a href="#"><i class='bx bxl-linkedin-square'></i></a>
+            <a href="#"><i class='bx bxl-facebook-square' ></i></a>
+            <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+          </div>
+        </li>
+
+
+        <li>
+          <a href="#" class="side_bar_anchor_tag" onclick="physical_member_settings()" id="phy_mem_settings">
+            <i class='bx bx-cog side_icon' id="phy_mem_settings_i"></i>
+            <span class="links_name" id="physical_member_settings_text">Setting</span>
+          </a>
+          <span class="tooltip">Setting</span>
+        </li>
+        <li>
+          <a href="#" class="side_bar_anchor_tag" onclick="physical_member_conditions()" id="phy_mem_conditions">
+            <i class='bx bxs-food-menu side_icon' id="phy_mem_conditions_i"></i>
+            <span class="links_name" id="physical_member_conditions_text">Conditions</span>
+          </a>
+          <span class="tooltip">Conditions</span>
+        </li>
+
+<!-- 
+        <li class="profile">
+            <div class="profile-details">
+              <img src="#" alt="profileImg">
+              <div class="name_job">
+                <div class="name">Yohan Nayanajith</div>
+                <div class="job">Physical Member</div>
+              </div>
+            </div>
+            <i class='bx bx-log-out' id="log_out" ></i>
+        </li> -->
+
+      </ul>
+    </div>
+
+    <section class="home-section">
+        <!-- <div class="text">Dashboard</div> -->
+        <div class="top_bar">
+          <div class="top_bar_navigation">
+
+            <div class="top_bar_navigation_link">
+              <a href="#" class="bx bx-log-out side_icon top_nav_icons"></a>
+              <a href="#" class="bx bxs-bell-ring side_icon top_nav_icons"></a>
+              <a href="#" class="bx bx-cog side_icon top_nav_icons" ></a>
+            </div>
+            <div class="top_bar_navigation_profile">
+              <div class="profile_my_money">
+                <div class='bx bx-money' id="money"> 
+                  <span>Rs. 5000</span>
+                </div>
+                <!-- <h6 class='bx bx-money side_icon'> Rs. 5000</h6> -->
+              </div>
+              <div class="profile_picture_top_bar">
+                <!-- <img src="./Images/profile_image.jpg" alt="profile_image"> -->
+                <img src="Physical Member/Images/profile_image.jpg" alt="profile_image">
+              </div>
+              <div class="right_side_bar_open_btn">
+                <!-- <a href="#" class="bx bx-chevrons-left side_icon" onclick="right_side_bar_open_event()"></a> -->
+                <!-- <button onclick="right_side_bar_open_event()"><i class='bx bx-chevrons-left'></i></button> -->
+                <!-- <p id="click_me">click me</p> -->
+                <!-- <div id="click_me" class='bx bx-chevrons-left'></div> -->
+              </div>
+              
+            </div>
+            <span class="open_btn_right_sidebar" id="click_me"><i class='bx bx-left-arrow side_icon top_nav_icons'></i></span>
+          </div>
+        </div>
+
+        <!-- dashboard -->
+        <div class="dashboard_implementation" id="dashboard_implementation">
+          <!-- <h2>Yohan Nayanajith</h2> -->
+        </div>
+        <!-- profile -->
+        <div class="physical_member_profile" id="physical_member_profile">
+
+        </div>
+        <!-- instructors -->
+        <div class="physical_member_instructors" id="physical_member_instructors">
+
+        </div>
+        <!-- messages -->
+        <div class="physical_member_messages" id="physical_member_messages">
+
+        </div>
+        <!-- workout plans -->
+        <div class="physical_member_workout_plans" id="physical_member_workout_plans">
+
+        </div>
+        <!-- diet plans -->
+        <div class="physical_member_diet_plans" id="physical_member_diet_plans">
+
+        </div>
+        <!-- payments -->
+        <div class="physical_member_payments" id="physical_member_payments">
+          
+        </div>
+        <!-- reports -->
+        <div class="physical_member_reports" id="physical_member_reports">
+
+        </div>
+        <!-- branch_messages -->
+        <div class="physical_member_branch_messages" id="physical_member_branch_messages">
+
+        </div>
+        <!-- appointments -->
+        <div class="physical_member_appoinments" id="physical_member_appoinments">
+
+        </div>
+
+        <!-- settings -->
+        <div class="physical_member_settings" id="physical_member_settings">
+
+        </div>
+        <!-- conditions -->
+        <div class="physical_member_conditions" id="physical_member_conditions">
+
+        </div>
+        
+    </section>
+    <section>
+      <div class="right_side_bar_view" id="right_side_bar_view">
+
+      </div>
+    </section>
+  </div>
+  </body>
+  <script src="Physical Member/LeftSidebar/LeftSidebar.js"></script>
+  <script src="Physical Member/Dashboard/Dashboard.js"></script>
+  <script src="Physical Member/Payments/Payments.js"></script>
+  <script src="Physical Member/Appoinments/Appoinments.js"></script>
+  <script src="Physical Member/Workout_Plans/Workout_Plan.js"></script>
+  <script src="Physical Member/Diet_Plans/Diet_Plans.js"></script>
+
+  <script src="Physical Member/Conditions/Conditions.js"></script>
+  <script src="Physical Member/Instructors/Instructors.js"></script>
+  <script src="Physical Member/Payments/Payments.js"></script>
+  <script src="Physical Member/Messages/Messages.js"></script>
+  <script src="Physical Member/Profile/Profile.js"></script>
+  <script src="Physical Member/Reports/Reports.js"></script>
+  <script src="Physical Member/Settings/Settings.js"></script>
+  
+  <script src="Physical Member/RightSidebar/RightSidebar.js"></script>
+  <!-- <script src="http://127.0.0.1:5500/Physical%20Member/RightSidebar/RightSidebar.js"></script> -->
+</html>

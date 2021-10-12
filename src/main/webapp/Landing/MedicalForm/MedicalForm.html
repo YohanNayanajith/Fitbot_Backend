@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Landing/MedicalForm/MedicalForm.css">
+
+    <!-- <script src="./Registration.js"></script> -->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="Landing/MedicalForm/MedicalForm.js"></script>
+    <title>Registration</title>
+</head>
+<body>
+    <div class="rigister_form">
+        <div class="reg_form_container">
+            <div class="reg_form_side_image">
+<!--                background image-->
+            </div>
+            <div class="reg_form_side">
+                <noscript>
+                    <span class="javascript_enable_error_message">JavaScript is blocked, Please enable the javaScript</span><br>
+                    <span class="javascript_enable">In Google chrome browser software => Go to Settings => In “Privacy and security” Section => Site Settings => JavaScript</span><br>
+                    <span class="javascript_enable">In Firefox, type “about:config” in browser address bar => Click on “Accept the risk and continue” => Type “JavaScript” in the “Search” box => Double-click the “JavaScript.enabled”</span>
+                </noscript>
+                <h1>Medical Questionaire</h1>
+
+                <a href="/register" class="link_to_anither_page" id="link_to_anither_page"></a>
+                <!-- form -->
+                <form action="medical" class="form_container" id="form_container" method="post">
+                
+                    <label for="medical_first_question">1. Have you ever or do you have any of the following<span class="require_star">*</span></label><br>
+                    <div class="medi_first_question_grid_container">
+                        <div class="medical_first_question"><input type="checkbox" id="first_question_1" name="medical_first_question" class="form_label" value="Heart Disease"> Heart Disease</div>
+                        <div class="medical_first_question"><input type="checkbox" id="first_question_2" name="medical_first_question" class="form_label" value="Cardiovascular Condition"> Cardiovascular Condition</div>
+                        <div class="medical_first_question"><input type="checkbox" id="first_question_3" name="medical_first_question" class="form_label" value="Arthritis"> Arthritis</div>
+                        
+                        <div class="medical_first_question"><input type="checkbox" id="first_question_4" name="medical_first_question" class="form_label" value="Asthma"> Asthma</div>
+                        <div class="medical_first_question"><input type="checkbox" id="first_question_5" name="medical_first_question" class="form_label" value="High Low Blood Pressure"> High/Low Blood Pressure</div>
+                        <div class="medical_first_question"><input type="checkbox" id="first_question_6" name="medical_first_question" class="form_label" value="Blackouts"> Blackouts</div>
+                        
+                        <div class="medical_first_question"><input type="checkbox" id="first_question_7" name="medical_first_question" class="form_label" value="Gout"> Gout</div>
+                        <div class="medical_first_question"><input type="checkbox" id="first_question_8" name="medical_first_question" class="form_label" value="Family Hx of Heart Disease"> Family Hx of Heart Disease</div>
+                        <div class="medical_first_question"><input type="checkbox" id="first_question_9" name="medical_first_question" class="form_label" value="Diabetes"> Diabetes</div>
+                        
+                        <div class="medical_first_question"><input type="checkbox" id="first_question_10" name="medical_first_question" class="form_label" value="Dizziness"> Dizziness</div>
+                        <div class="medical_first_question"><input type="checkbox" id="first_question_11" name="medical_first_question" class="form_label" value="Infectious Diseases"> Infectious Diseases</div>
+                        <div class="medical_first_question"><input type="checkbox" id="first_question_12" name="medical_first_question" class="form_label" value="Fainting"> Fainting</div>
+                        
+                        <div class="medical_first_question"><input type="checkbox" id="first_question_13" name="medical_first_question" class="form_label" value="Epilepsy fits"> Epilepsy fits</div>
+                        <div class="medical_first_question"><input type="text" id="first_question_14" name="medical_first_question" class="form_label_first_q" value="Other" placehoder="Other"></div>
+                    </div>
+                    <br>
+                    <!-- <h5 class="dob_check hidden_validate_text" id="dob_check">**Date of birth is missing</h5>                     -->
+                    
+                    <label for="medical_first_question">2. Do you have any problems/injuries in the follow areas?<span class="require_star">*</span></label><br>
+                    <div class="medi_first_question_grid_container">
+                        <div class="medical_first_question"><input type="checkbox" id="second_question_1" name="medical_first_question" class="form_label" value="Knees"> Knees</div>
+                        <div class="medical_first_question"><input type="checkbox" id="second_question_2" name="medical_first_question" class="form_label" value="Lower Back"> Lower Back</div>
+                        <div class="medical_first_question"><input type="checkbox" id="second_question_3" name="medical_first_question" class="form_label" value="Neck Shoulders"> Neck/Shoulders</div>
+                        
+                        <div class="medical_first_question"><input type="checkbox" id="second_question_4" name="medical_first_question" class="form_label" value="Hips Pelvis"> Hips/Pelvis</div>
+                        <div class="medical_first_question"><input type="checkbox" id="second_question_5" name="medical_first_question" class="form_label" value="Flexibility"> Flexibility</div>
+                        <div class="medical_first_question"><input type="text" id="second_question_6" name="medical_first_question" class="form_label_first_q" value="Others" placeholder="Others"></div>
+                    </div>
+                    <br>
+                    <!-- <h5 class="dob_check hidden_validate_text" id="dob_check">**Date of birth is missing</h5> -->
+
+                    <label for="phone_number">3. Are you currently doing any regular physical activity, what and how many times per week?</label><br>
+                    <input type="text" id="phone_number" name="phone_number" class="form_label phone_number" placeholder="Enter your answer"><br>
+
+                    <label for="phone_number">4. Have you had surgery in the last 5 years, if yes, when & what?</label><br>
+                    <input type="text" id="phone_number" name="phone_number" class="form_label phone_number" placeholder="Enter your answer"><br>
+
+                    <label for="phone_number">5. Do you smoke, if yes how many per day, and for how long have you smoked?</label><br>
+                    <input type="text" id="phone_number" name="phone_number" class="form_label phone_number" placeholder="Enter your answer"><br>
+
+                    <label for="phone_number">6. Are you on any medications, if yes what and when do you take</label><br>
+                    <input type="text" id="phone_number" name="phone_number" class="form_label phone_number" placeholder="Enter your answer"><br>
+
+                    <div class="medi_form_accept_terms"><input type="checkbox"> Accept terms & conditions</div>
+                    <br>
+                    <div class="medi_form_btn_group">
+                        <div>
+                            <button type="button" class="btn_next reg_btn_class" id="reg_back_btn">Back</button><br>
+                        </div>
+                        <div>
+                            <button type="submit" class="btn_next reg_btn_class" id="reg_submit_btn">Go to subscription</button><br>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

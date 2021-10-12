@@ -1,0 +1,213 @@
+/* robot-google-fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    box-sizing:border-box;
+    padding: 0;
+    margin: 0;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+}
+.rigister_form{
+    background-color: white;
+    /* margin-top: 50px; */
+    position: relative;
+}
+
+.reg_form_container {
+    display: flex;
+}
+.reg_form_side_image{
+    
+    flex: 40%;
+    width: 100%;
+    overflow: hidden;
+    background-image: url(../Images/register_image2.jpg);
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+}
+.reg_form_side_image img {
+    position:fixed;
+    height: 100vh;
+    max-width:min-content;
+}
+.reg_form_side {
+    flex: 60%; 
+    width: 100%;
+    z-index:1;
+}
+
+.require_star{
+    color: red;
+}
+.reg_form_side h1 {
+    /* padding: 10px; */
+    padding-bottom: 20px;
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+.reg_form_side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: auto;
+    padding: 25px;
+    align-items:center;
+    justify-content: center;
+    font-size: 18px;
+} 
+
+.form_container .form_label{
+    margin:15px 0;
+    display:inline-block;
+    padding:6px;
+    font-size: 16px;
+    border-radius: 5px;
+    border-color: transparent;
+    border-bottom: 2px solid #0E2C4B;
+    background-color:white;
+    /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
+
+}
+
+
+.form_container .form_label:active{
+    border-color: transparent;
+    border-bottom: 2px solid #78c91c;
+}
+.form_container .form_label:focus {
+    border-color: transparent;
+    border-bottom: 2px solid #78c91c;
+}
+
+.medi_first_question_grid_container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    /* align-items: center; */
+    justify-content: space-evenly;
+    /* vertical-align: middle; */
+    
+    /* background-color: #78c91c; */
+}
+.medical_first_question {
+    /* background-color: aqua; */
+    display: block;
+    font-size: 16px;
+    width: 100%;
+    /* border: 2px solid black; */
+    align-content: center;
+
+    /* text-align:center; */
+    /* justify-content: center; */
+}
+.medical_first_question input[type='checkbox'] {
+    width: 20px;
+    height: 20px;
+    /* margin-top: 15px; */
+}
+.form_label_first_q {
+    display:inline-block;
+    padding:6px;
+    font-size: 16px;
+    border-radius: 5px;
+    border-color: transparent;
+    border-bottom: 2px solid #0E2C4B;
+}
+.medi_form_btn_group{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.medi_form_btn_group div {
+    width: 50%;
+    text-align: center;
+}
+.medi_form_accept_terms {
+    margin-top:20px;
+    text-align: center;
+}
+
+.btn_next {
+    margin:20px 0;
+    display:inline-block;
+    padding:10px 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    border-color: transparent;
+    background-color: #0E2C4B;
+    color: white;
+    
+    /* border-bottom: 2px solid #0E2C4B;  */
+}
+/* .btn_previous {
+    padding:10px;
+} */
+
+
+.btn_previous:hover, .btn_next:hover {
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+    background-color: white;
+    color: #0E2C4B;
+    border-color: #0E2C4B;
+    font-weight: bold;
+}
+
+.reg_btn_class {
+    text-align: center;
+}
+
+/* validate */
+.hidden_validate_text {
+    color: red;
+    font-size:12px;
+}
+
+@media screen and (max-width: 768px){
+    .reg_form_container {
+        display: flex;
+        flex-direction: column;
+    }
+    .reg_form_side_image {
+        display:none;
+    }
+    .reg_form_side {
+        flex: 100%;
+    }
+    .medi_first_question_grid_container {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+}
+@media screen and (max-width: 420px){
+    .reg_form_side h1 {
+        font-size: 26px;
+    }
+    .form_container .form_label {
+        font-size: 14px;
+    }
+    .medi_first_question_grid_container {
+        display: grid;
+        grid-template-columns: auto;
+    }
+    .form_container label {
+        font-size: 16px;
+    }
+    .medical_first_question {
+        font-size:14px;
+    }
+    .medical_first_question input[type='checkbox'] {
+        width: 15px;
+        height: 15px;
+    }
+    .medi_form_accept_terms{
+        font-size: 14px;
+        /* text-align: center; */
+    }
+    .btn_next {
+        margin:0 0;
+        padding: 10px;
+        align-items: center;
+        justify-content: center;
+    }
+}

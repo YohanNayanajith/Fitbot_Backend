@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="Landing/Login/login.css">
+    <script src="Landing/Login/login.js"></script>
+    <title>Login</title>
+</head>
+<body>
+    <div class="model" id="fitbot_login_modal">
+        <div class="login_module login_animation">
+            <div class="login_close_btn_x">
+                <span onclick="close_model()" class="login_close_btn" title="Close Modal">&times;</span>
+            </div>
+            <div class="login_header">
+                <div class="login_hader_name">
+                    Log In
+                </div>
+                <div class="login_header_image">
+                    <img src="Landing/Images/Fitbot_logo.png" alt="firbot_logo">
+                </div>
+            </div>
+            <div class="login_header_detail">
+                Welcome back! Log In with your Email or User Name Log in to your account
+            </div>
+
+
+            <form method="post" action="login" class="login_form_submit" id="login_form_submit">
+                <label for="login_username" class="login_username_label"><b>Email address or User name</b></label>
+                <input type="text" id="login_username" class="login_username_input" placeholder="Enter Username or Email" name="login_username"><br>
+    
+                <label for="login_password" class="login_password_label"><b>Password</b></label>
+                <input type="password" id="login_password" class="login_password_input" placeholder="Enter Password" name="login_password">
+            
+                
+                <div class="login_detail_container">
+                    <label><input type="checkbox" checked="checked" name="remember" class="login_remember_me"> Remember me</label>
+                    <!-- <button type="button" onclick="login_cancel()" class="login_cancel_btn">Cancel</button> -->
+                    <span class="login_forgot_password"><a href="#">Forgot password?</a></span>
+                </div>
+                <div class="login_button_div">
+                    <input type="submit" class="login_button" id="login_button" value="Login">
+                </div>
+            </form>
+
+
+            <div class="login_bottom_detail">
+                Why Create an Account?  Create new accout and <a href="#">Register Now</a>
+            </div>
+            <div class="login_social_media">
+                <div class="login_social_media_google">
+                    <img src="Landing/Icons/login_search.svg" alt="Google">
+                    <p>Google</p>
+                </div>
+                <div class="login_social_media_facebook">
+                    <img src="Landing/Icons/login_facebook.svg" alt="Facebook">
+                    <p>Facebook</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

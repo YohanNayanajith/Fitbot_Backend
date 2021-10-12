@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script>
+
+    <link rel="stylesheet" href="./Payments.css">
+    <title>Physical Member Payments</title>
+</head>
+<body>
+    <div class="payments_physical" id="payments_physical">
+        <div class="payment_details_container">
+            <div class="payment_details_container_header">
+                <span>Payment Details</span>
+            </div>
+            <div class="payments_details">
+                <div class="payment_total_payble">
+                    <div class="payment_text">
+                        <span class="total_payble">Total Payble</span><br>
+                        <span class="payble_balance">Rs. 5000.00</span><br>
+                        <span class="payble_date">Pay before {date}</span>
+                    </div>
+                    <div class="payment_button">
+                        <a href="#" class="payment_button_div">PAY BILL</a>
+                    </div>
+                </div>
+                <div class="payment_cal_date">
+                    <div class="payment_date_icon">
+                        <img src="http://localhost:8080/group39_fitbot_war_exploded/Physical%20Member/Icons/calendar.svg" alt="calendar">
+                    </div>
+                    <div class="payment_date_details">
+                        <span class="previous_payment_date">Date</span><br>
+                        <span class="previous_payment_date_format">{date}</span><br>
+                        <span class="previous_payment_date_details">Last payment {date}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="payment_history">
+            <div class="payment_history_container">
+                <div class="payment_history_container_header">
+                    <span>Payment History</span>
+                </div>
+                
+                <div class="payment_history_container_details">
+                    <table class="payment_history_container_table">
+                        <tr class="payment_history_container_table_header">
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Payment Method</th>
+                            <th>Payment</th>
+                            <th></th>
+                        </tr>
+                    
+                        <tr class="payment_history_container_row">
+                            <td>21/10/2021</td>
+                            <td>15:00</td>
+                            <td>DEBIT CARD</td>
+                            <td>Rs 5000</td>
+                            <td><a href="#" class="view_bill_button">PAY BILL</a></td>
+                        </tr>
+        
+                        <tr class="payment_history_container_row">
+                            <td>21/10/2021</td>
+                            <td>15:00</td>
+                            <td>DEBIT CARD</td>
+                            <td>Rs 5000</td>
+                            <td><a href="#" class="view_bill_button">PAY BILL</a></td>
+                        </tr>   
+        
+                        <tr class="payment_history_container_row">
+                            <td>21/10/2021</td>
+                            <td>15:00</td>
+                            <td>DEBIT CARD</td>
+                            <td>Rs 5000</td>
+                            <td><a href="#" class="view_bill_button">PAY BILL</a></td>
+                        </tr>
+        
+                        <tr class="payment_history_container_row">
+                            <td>21/10/2021</td>
+                            <td>15:00</td>
+                            <td>DEBIT CARD</td>
+                            <td>Rs 5000</td>
+                            <td><a href="#" class="view_bill_button">PAY BILL</a></td>
+                        </tr>
+        
+                        <tr class="payment_history_container_row">
+                            <td>21/10/2021</td>
+                            <td>15:00</td>
+                            <td>DEBIT CARD</td>
+                            <td>Rs 5000</td>
+                            <td><a href="#" class="view_bill_button">PAY BILL</a></td>>
+                        </tr>
+        
+                        <tr class="payment_history_container_row">
+                            <td>21/10/2021</td>
+                            <td>15:00</td>
+                            <td>DEBIT CARD</td>
+                            <td>Rs 5000</td>
+                            <td><a href="#" class="view_bill_button">PAY BILL</a></td>
+                        </tr>
+        
+                        <tr class="payment_history_container_row">
+                            <td>21/10/2021</td>
+                            <td>15:00</td>
+                            <td>DEBIT CARD</td>
+                            <td>Rs 5000</td>
+                            <td><a href="#" class="view_bill_button">PAY BILL</a></td>
+                        </tr>
+        
+                        <tr class="payment_history_container_row">
+                            <td>21/10/2021</td>
+                            <td>15:00</td>
+                            <td>DEBIT CARD</td>
+                            <td>Rs 5000</td>
+                            <td><a href="#" class="view_bill_button">PAY BILL</a></td>
+                        </tr>
+                           
+                    </table>
+                      
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./Payments.js"></script>
+</html>

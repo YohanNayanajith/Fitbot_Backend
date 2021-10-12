@@ -1,0 +1,99 @@
+.instructor_carousel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom:30px;
+}
+.instructor_header_code {
+    color:#7CD0FF;
+}
+
+.instructor_image_sider {
+    display:none;
+}
+.instructor_image_sider img {
+    width: 250px;
+    height:250px;
+    /* display:block; */
+    vertical-align: middle;
+    border-radius: 50%;
+
+}
+.instructor_carousel_round {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+}
+/* .image_slideshow {
+    width: 100%;
+    position: relative;
+    margin-left: 0;
+} */
+/* .caption {
+    color: white;
+    font-size: 17px;
+    padding: 100px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+} */
+/* .number_text {
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    top: 0;
+} */
+.below_images {
+    text-align:center;
+}
+/* .dot {
+    height: 15px;
+    width: 15px;
+    background-color:#0E2C4B;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+} */
+.instructor_active {
+    background-color: #717171;
+}
+  
+.instructor_fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+/* .instructor_images {
+    height:80vh;
+} */
+  
+@-webkit-keyframes instructor_fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+  
+@keyframes instructor_fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+/* @media only screen and (max-width: 300px) {
+    .caption {font-size: 11px}
+} */
+
+.instructor_carousel_btn {
+    margin-top: 20px;
+    display: block;
+    padding: 10px;
+    background-color: #0E2C4B;
+    border-radius: 5px;
+}
+.instructor_carousel_btn a {
+    text-decoration: none;
+    color:white;
+}
+
