@@ -48,7 +48,7 @@ $(document).ready(function (){
             // contentType:"application/json",
             success: function (result){
                 if(result == "1"){
-                    alert(result);
+                    // alert(result);
                     window.location.href = 'http://localhost:8080/group39_fitbot_war_exploded/physicalMember';
                 }else if(result == "2"){
                     //virtual member

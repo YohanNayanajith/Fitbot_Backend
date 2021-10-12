@@ -7,3 +7,4 @@ function Workout_plan_dashboard(){
     workout_text.style.color = "black";
 }
 // alert("workout");
+

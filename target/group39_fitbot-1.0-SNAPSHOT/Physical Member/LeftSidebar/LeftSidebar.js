@@ -218,12 +218,45 @@ $(document).ready(function(){
     if(load[4] == 0){
       page_select(sideBar_links_variable);
       sideBar_links_variable = "#physical_member_workout_plans";
+
       $(sideBar_links_variable).load('http://localhost:8080/group39_fitbot_war_exploded/Physical%20Member/Workout_Plans/Workout_Plan.html #workout_plan_physical',function(responseTxt, statusTxt, xhr){
-      
-      if(statusTxt == "error")
+        if(statusTxt == "error")
           alert("Error: " + xhr.status + ": " + xhr.statusText);
+        alert(responseTxt);
+        alert(statusTxt);
+        alert(xhr.workout_id);
+
+        $.ajax({
+          method:'POST',
+          url:"workout",
+          dataType:'json',
+          // contentType:"application/json",
+        }).done(function(result){
+          // const data_object = JSON.parse(result);
+          // $.map(result,function(post,i){
+          let total_reps_phy = result.total_reps;
+          alert(total_reps_phy);
+          $.map(result, function(post,i){
+            $('#payment_history_container_row').append(
+
+                '<tr class="payment_history_container_row">'+
+                  '<td>'+result.exercise+'</td>'+
+                  '<td>'+result.duration+'</td>'+
+                  '<td>'+result.total_reps+'</td>'+
+                  '<td>'+result.equipment_type+'</td>'+
+                '</tr>'
+            );
+          });
+
+          alert(result);
+          alert("Data is comming babe");
+        }).fail(function(a,b,err){
+          alert("Error");
+          console.log(a,b,err);
+        });
       });
       load[4] += 1;
+
     }else if(sideBar_links_variable == "#physical_member_workout_plans"){
       return;
     }else{
@@ -244,6 +277,7 @@ $(document).ready(function(){
           alert("Error: " + xhr.status + ": " + xhr.statusText);
       });
       load[5] += 1;
+      $('#after_the_table').show();
     }else if(sideBar_links_variable == "#physical_member_diet_plans"){
       return;
     }else{
@@ -418,25 +452,7 @@ $(document).ready(function(){
   });
 
   // $('#phy_mem_diet_plan').click(function(){
-    $.ajax({
-      method:'POST',
-      url:"workout",
-      dataType:'json',
 
-    }).done(function(result){
-      // const data_object = JSON.parse(result);
-      // $.map(result,function(post,i){
-        $('#physical_member_workout_plans').append(
-            '<h1>'+'Hello '+result.total_reps+'!'+'</h1>'
-        );
-      // });
-
-      alert(result);
-      alert("Data is comming babe");
-    }).fail(function(a,b,err){
-      alert("Error");
-      console.log(a,b,err)
-    });
   // });
 
 });

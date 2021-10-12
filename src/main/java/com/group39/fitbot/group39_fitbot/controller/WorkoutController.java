@@ -6,6 +6,7 @@ import com.group39.fitbot.group39_fitbot.dao.WorkoutDAO;
 import com.group39.fitbot.group39_fitbot.model.Member;
 import com.group39.fitbot.group39_fitbot.model.Workout;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,6 +19,8 @@ public class WorkoutController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("Workout get method called");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("Physical Member/Workout_Plans/Workout_Plan.html");
+        requestDispatcher.forward(req,resp);
     }
 
     @Override

@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 
 public class PhysicalMemberController extends HttpServlet {
@@ -28,6 +29,7 @@ public class PhysicalMemberController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        RequestDispatcher requestDispatcher = req.getRequestDispatcher("Physical Member/FullSidebar.html");
 //        requestDispatcher.forward(req, resp);
+        PrintWriter out = resp.getWriter();
         System.out.println("Physical Member post method called");
         HttpSession session = req.getSession();
         String userName = (String) session.getAttribute("userName");
