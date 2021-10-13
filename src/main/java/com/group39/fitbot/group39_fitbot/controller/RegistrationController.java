@@ -10,18 +10,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
 
+import static com.group39.fitbot.group39_fitbot.controller.PasswordHashingController.obtainSHA;
+import static com.group39.fitbot.group39_fitbot.controller.PasswordHashingController.toHexStr;
+
 public class RegistrationController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("Registartion contoller called");
-//        RequestDispatcher requestDispatcher = req.getRequestDispatcher("employee.html");
-//        requestDispatcher.forward(req,resp);
+        System.out.println("Registartion get contoller called");
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("Landing/RegistrationForm/Registration.html");
         requestDispatcher.forward(req,resp);
     }
@@ -29,20 +31,11 @@ public class RegistrationController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("Registartion post contoller called");
-//        String name = req.getParameter("name"); //Integer.parseInt
-//        String email = req.getParameter("email");
-//        String password = req.getParameter("password");
-//        password = String.valueOf(password.hashCode());
-//        System.out.println("My name is "+name+" And my password is "+email +" My password is "+password);
 
         String first_name = req.getParameter("first_name");
         String last_name = req.getParameter("last_name");
         LocalDate dob = LocalDate.parse(req.getParameter("date_of_birth"));
-//        try {
-//            dob = new SimpleDateFormat("yyyy-MM-dd").parse(req.getParameter("date_of_birth"));
-//        } catch (ParseException e) {
-//            e.printStackTrace();
-//        }
+
         int phone_number = Integer.parseInt(req.getParameter("phone_number"));
         String address = req.getParameter("address");
         String selected_country = req.getParameter("selected_country");
@@ -53,6 +46,22 @@ public class RegistrationController extends HttpServlet {
         String membership_category = req.getParameter("membership_category");
         int height = Integer.parseInt(req.getParameter("height"));
         int weight = Integer.parseInt(req.getParameter("weight"));
+
+        //password hashed - SHA256
+        try {
+            reg_password = toHexStr(obtainSHA(reg_password));
+            System.out.println("Hashed Password is "+reg_password);
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            System.out.println("Reg password is not hashing");
+        }
+        try {
+            confirm_password = toHexStr(obtainSHA(confirm_password));
+            System.out.println("Hashed Confirm Password is "+confirm_password);
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            System.out.println("Confirm password is not hashing");
+        }
 
         boolean added = false;
 

@@ -222,9 +222,9 @@ $(document).ready(function(){
       $(sideBar_links_variable).load('http://localhost:8080/group39_fitbot_war_exploded/Physical%20Member/Workout_Plans/Workout_Plan.html #workout_plan_physical',function(responseTxt, statusTxt, xhr){
         if(statusTxt == "error")
           alert("Error: " + xhr.status + ": " + xhr.statusText);
-        alert(responseTxt);
-        alert(statusTxt);
-        alert(xhr.workout_id);
+        // alert(responseTxt);
+        // alert(statusTxt);
+        // alert(xhr.workout_id);
 
         $.ajax({
           method:'POST',
@@ -236,14 +236,17 @@ $(document).ready(function(){
           // $.map(result,function(post,i){
           let total_reps_phy = result.total_reps;
           alert(total_reps_phy);
-          $.map(result, function(post,i){
-            $('#payment_history_container_row').append(
+
+          console.log(result);
+          $.map(result,function(x){
+            $('#workout_container_table').append(
 
                 '<tr class="payment_history_container_row">'+
-                  '<td>'+result.exercise+'</td>'+
-                  '<td>'+result.duration+'</td>'+
-                  '<td>'+result.total_reps+'</td>'+
-                  '<td>'+result.equipment_type+'</td>'+
+                  '<td>'+x.exercise+'</td>'+
+                  '<td>'+x.duration+'</td>'+
+                  '<td>'+x.total_reps+'</td>'+
+                  '<td>'+x.equipment_type+'</td>'+
+                  '<td>'+'<input type="checkbox">'+'</td>'+
                 '</tr>'
             );
           });

@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class WorkoutController extends HttpServlet {
     @Override
@@ -30,10 +32,11 @@ public class WorkoutController extends HttpServlet {
 
         Workout workout = new Workout();
         try {
-            workout = WorkoutDAO.getWorkout();
-            System.out.println(workout);
+            List<Workout> all_workouts = new ArrayList<>();
+            all_workouts = WorkoutDAO.getWorkout();
+            System.out.println(all_workouts);
             Gson gson = new Gson();
-            String workoutJSON = gson.toJson(workout);
+            String workoutJSON = gson.toJson(all_workouts);
             resp.setContentType("application/json");
             resp.setCharacterEncoding("UTF-8");
             resp.getWriter().write(workoutJSON);

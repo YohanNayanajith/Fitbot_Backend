@@ -7,9 +7,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class WorkoutDAO {
-    public static Workout getWorkout() throws SQLException, ClassNotFoundException {
+    public static List<Workout> getWorkout() throws SQLException, ClassNotFoundException {
+        List<Workout> workouts = new ArrayList<>();
         Workout workout = new Workout();
         Connection connection = DBConnection.getInstance().getConnection();
         String query = "SELECT * FROM workout";
@@ -18,20 +21,21 @@ public class WorkoutDAO {
 
         ResultSet resultSet = pst.executeQuery();
 
-        if (resultSet.next()) {
-            workout.setWorkout_id(resultSet.getInt(1));
-            workout.setWorkout_description(resultSet.getString(2));
-            workout.setTotal_reps(resultSet.getString(3));
-            workout.setWorkout_gender(resultSet.getString(4));
-            workout.setRest_time(resultSet.getString(5));
-            workout.setWorkout_type(resultSet.getString(6));
-            workout.setDuration(resultSet.getString(7));
-            workout.setExercise(resultSet.getString(8));
-            workout.setEquipment_type(resultSet.getString(9));
-
-            return workout;
-        } else {
-            return null;
+        while (resultSet.next()) {
+            if(resultSet != null) {
+                workouts.add(new Workout(
+                        resultSet.getInt(1),
+                        resultSet.getString(2),
+                        resultSet.getString(3),
+                        resultSet.getString(4),
+                        resultSet.getString(5),
+                        resultSet.getString(6),
+                        resultSet.getString(7),
+                        resultSet.getString(8),
+                        resultSet.getString(9)
+                ));
+            }
         }
+        return workouts;
     }
 }
