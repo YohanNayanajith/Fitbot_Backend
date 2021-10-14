@@ -3,19 +3,16 @@ package com.group39.fitbot.group39_fitbot.controller;
 import com.group39.fitbot.group39_fitbot.dao.RegistartionDAO;
 import com.group39.fitbot.group39_fitbot.model.Registartion;
 
-import javax.servlet.Registration;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.Date;
 
 import static com.group39.fitbot.group39_fitbot.controller.PasswordHashingController.obtainSHA;
 import static com.group39.fitbot.group39_fitbot.controller.PasswordHashingController.toHexStr;
@@ -31,6 +28,9 @@ public class RegistrationController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("Registartion post contoller called");
+        PrintWriter out = resp.getWriter();
+//        resp.setContentType("text/plain");
+
 
         String first_name = req.getParameter("first_name");
         String last_name = req.getParameter("last_name");
@@ -47,25 +47,15 @@ public class RegistrationController extends HttpServlet {
         int height = Integer.parseInt(req.getParameter("height"));
         int weight = Integer.parseInt(req.getParameter("weight"));
 
+
         //password hashed - SHA256
-        try {
-            reg_password = toHexStr(obtainSHA(reg_password));
-            System.out.println("Hashed Password is "+reg_password);
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-            System.out.println("Reg password is not hashing");
-        }
-        try {
-            confirm_password = toHexStr(obtainSHA(confirm_password));
-            System.out.println("Hashed Confirm Password is "+confirm_password);
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-            System.out.println("Confirm password is not hashing");
-        }
+
 
         boolean added = false;
 
         try {
+            reg_password = toHexStr(obtainSHA(reg_password));
+            confirm_password = toHexStr(obtainSHA(confirm_password));
             added = RegistartionDAO.addRegistration(new Registartion(
                             first_name,
                             last_name,
@@ -82,21 +72,22 @@ public class RegistrationController extends HttpServlet {
                             weight
                     )
             );
+            if(added){
+                System.out.println("Added");
+//            req.setAttribute("message","Successfully added");
+                out.write("1");
 
-        } catch (SQLException throwables) {
+            }else{
+                System.out.println("Not added");
+//            req.setAttribute("message","Not Added");
+                out.write("0");
+            }
+
+        } catch (SQLException | NoSuchAlgorithmException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         }
-        if(added){
-            System.out.println("Added");
-            req.setAttribute("message","Successfully added");
 
-        }else{
-            System.out.println("Not added");
-            req.setAttribute("message","Not Added");
-        }
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("medical");
-        requestDispatcher.forward(req, resp);
+//        RequestDispatcher requestDispatcher = req.getRequestDispatcher("medical");
+//        requestDispatcher.forward(req, resp);
     }
 }

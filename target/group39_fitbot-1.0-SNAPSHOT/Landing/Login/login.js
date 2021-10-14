@@ -1,28 +1,63 @@
-// var modal = document.getElementById('fitbot_login_modal');
-// location.href = "../NavBar/NavBar.html";
+$('.reset_password_text_input_warning').hide();
+$('#reset_password_container').hide();
+$('#reset_new_password_container').hide();
 
-// When the user clicks anywhere outside of the modal, close it
-// window.onclick = function(event) {
-//     if (event.target == modal) {
-//         modal.style.display = "none";
-//
-//     }
-// }
-//
-// function close_model(){
-//     modal.style.display='none';
-// }
-//
-// function login_cancel(){
-//     modal.style.display='none';
-// }
+function close_model(){
+    window.location.href = "http://localhost:8080/group39_fitbot_war_exploded";
+}
 console.log("login js form");
+
+function togglePopup() {
+    alert("onclick event");
+    $('.model').hide();
+    $('#reset_password_container').show();
+    $('.reset_password_text_input_warning').hide();
+}
+
+function close_reset_password_Popup(){
+    $('#reset_password_container').hide();
+    window.location.href = 'http://localhost:8080/group39_fitbot_war_exploded/login';
+}
+
+function open_new_password_Popup(){
+
+    $.ajax({
+        method:"POST",
+        url:"https://meghaduta.dhahas.com/sms/sendSMS",
+        // accept: 'application/json',
+        ContentType: 'application/json',
+        data: {
+            "senders": [
+                "+94758657450"
+            ],
+            "message": "Hi, Your OTP is 1111",
+            "apiKey": "61687c1b3fdf47002ef1c91d"
+        },
+        // dataType:"json",
+        // contentType:"application/json",
+        success: function (result){
+            alert(result);
+            $('#reset_password_container').hide();
+            $('#reset_new_password_container').show();
+
+        }
+    }).fail(function(a,b,err){
+        console.log(err);
+        alert("SMS fail");
+    });
+}
+
+function close_new_password_Popup(){
+    $('#reset_new_password_container').hide();
+    window.location.href = 'http://localhost:8080/group39_fitbot_war_exploded/login';
+}
 
 
 $(document).ready(function (){
     // $('#login_form_submit').submit(function(e){
     //     e.preventDefault();
     // });
+
 
     $('#login_form_submit').submit(function(e){
         e.preventDefault();
@@ -73,6 +108,10 @@ $(document).ready(function (){
         });
     });
 });
+
+
+
+
 // $.ajax({
 //     type:"POST",
 //     url:"login",

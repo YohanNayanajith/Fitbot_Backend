@@ -171,11 +171,11 @@ $(document).ready(function () {
             $('#weight_check').css("color", "red");
             weightError = false;
             return false;
-        }else if(weightValue <= 25 || weightValue >= 150){
+        }else if(weightValue <= 25 || weightValue >= 170){
             $('#weight_check').show();
-            $('#weight_check').html("**Your weight should be 25kg to 150kg");
+            $('#weight_check').html("**Your weight should be 25kg to 170kg");
             $('#weight_check').css("color", "red");
-            heightError = false;
+            weightError = false;
             return false;
         }
         else {
@@ -185,7 +185,7 @@ $(document).ready(function () {
     }
 
     // Validate Email
-    const email = document.getElementById('email');
+    // const email = document.getElementById('email');
     let emailError =false;
 
     function email_regex_Validate(emailValue){
@@ -264,10 +264,27 @@ $(document).ready(function () {
 
     }
 
+    let first_name = $('#first_name').val();
+    let last_name = $('#last_name').val();
+    let date_of_birth = $('#date_of_birth').val();
+    let phone_number = $('#phone_number').val();
+    let selected_country = $('#selected_country').val();
+    let height = $('#height').val();
+    let weight = $('#weight').val();
+    let email = $('#email').val();
+    let reg_password = $('#reg_password').val();
+    let confirm_password = $('#confirm_password').val();
+
     // Submitt button
 
     $('#form_container').submit(function(e){
+        // let form_data = $('#form_container').serializeArray();
+        // let json_data_form = JSON.stringify(form_data);
+        // console.log(json_data_form);
+        // alert(json_data_form);
 
+
+        // alert(form_data);
         validateUsername();
         validateDOB();
         validatePhoneNumber();
@@ -285,31 +302,60 @@ $(document).ready(function () {
         console.log(heightError);
         console.log(weightError);
 
+
         if ((usernameError == true) && (passwordError == true) && (confirmPasswordError == true) && (emailError == true) && (dobError == true) && (phoneNumberError == true) && (heightError == true) && (weightError == true)) {
             console.log("Form submit success");
+
+            $.ajax({
+                method:'POST',
+                url:"register",
+                data:{'first_name':first_name,'last_name':last_name,'date_of_birth':date_of_birth,'phone_number':phone_number,'selected_country':selected_country,'height':height,'weight':weight,'email':email,'reg_password':reg_password,'confirm_password':confirm_password},
+                dataType:"json",
+                // contentType:"application/json; charset=utf-8",
+                success:function(result) {
+                    alert(result);
+                    if (result == '1') {
+                        window.location.href ="http://localhost:8080/group39_fitbot_war_exploded/medical";
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: "Can't register...",
+                            text: 'Something went wrong!',
+                            confirmButtonText: '<i class="fa fa-thumbs-up"></i> Try Again!',
+                            confirmButtonColor: '#0E2C4B',
+                            footer: '<a href="register">Register again</a>'
+                        })
+                    }
+                }
+            }).fail(function(a,b,err){
+                e.preventDefault();
+                alert(err);
+                Swal.fire({
+                    icon: 'error',
+                    title: "Can't register...",
+                    text: 'Something went wrong!',
+                    confirmButtonText: '<i class="fa fa-thumbs-up"></i> Try Again!!!',
+                    confirmButtonColor: '#0E2C4B',
+                    footer: '<a href="register">Register again</a>'
+                });
+                console.log(a,b,err);
+            });
             // xhttp.open("POST","http://localhost:8080/group39_fitbot_war_exploded/MedicalForm/MedicalForm.js");
             // xhttp.send();
             // $("#w3s").attr("href", "https://www.w3schools.com/jquery/");
-            location.replace("http://localhost:8080/group39_fitbot_war_exploded/medical");
-
-            // const registerFormRequest = new XMLHttpRequest();
-            // registerFormRequest.open('POST',"http://localhost:8080/group39_fitbot_war_exploded/register");
-            // const ourData = JSON.parse(registerFormRequest.responseText);
-            // console.log(ourData);
-
-            // $('#reg_submit_btn').click(function() {
-            //     console.log(ourRequest.responseText);
-            // });
-            // ourRequest.onload = function(){
-            //     console.log(ourRequest.responseText);
-            // }
-            registerFormRequest.send();
-            return true;
+            // location.replace("http://localhost:8080/group39_fitbot_war_exploded/medical");
 
         } else {
             e.preventDefault();
-            console.log("Form submit unsuccess");
-            return false;
+            console.log("Form submit unsuccessful");
+            Swal.fire({
+                icon: 'error',
+                title: 'Form submit unsuccessful',
+                text: 'Check your details again!',
+                confirmButtonText: '<i class="fa fa-thumbs-up"></i> Register again!',
+                confirmButtonColor: '#0E2C4B'
+                // footer: '<a href="register">Register again?</a>'
+            });
         }
     });
 });

@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="Landing/RegistrationForm/Registration.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="Landing/RegistrationForm/Registration.js"></script>
-    <script src="Landing/RegistrationForm/FormValidation.js"></script>
+
     <title>Registration</title>
 </head>
 <body>
@@ -26,7 +25,7 @@
             <h1>Let's get Started</h1>
 
             <a href="/register" class="link_to_anither_page" id="link_to_anither_page"></a>
-            <form action="medical" class="form_container" id="form_container" method="post">
+            <form action="register" class="form_container" id="form_container" method="post">
                 <div class="first_last_names">
                     <div class="first_name_label">
                         <label for="first_name">First Name<span class="require_star">*</span></label><br>
@@ -355,7 +354,7 @@
 
                 </div>
                 <br>
-                <button type="submit" class="btn_next reg_btn_class" id="reg_submit_btn">Next</button><br>
+                <input type="submit" class="btn_next reg_btn_class" id="reg_submit_btn" value="Next"><br>
                 <!-- <input type="button" class="btn_previous" value="Previous" onClick="form_next()"> -->
                 <!-- <div class="">
 
@@ -365,7 +364,9 @@
         </div>
     </div>
 </div>
-
+<script src="Landing/RegistrationForm/Registration.js" defer></script>
+<script src="Landing/RegistrationForm/FormValidation.js" defer></script>
+<script src="asserts/JSLibrary/sweetalert2.all.min.js" defer></script>
 </body>
 
 </html>

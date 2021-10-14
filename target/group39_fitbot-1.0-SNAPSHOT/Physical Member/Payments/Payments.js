@@ -6,4 +6,5 @@ function physical_member_payments() {
     anchor_payments.style.backgroundColor = "white";
     anchor_payments_i.style.color = "black";
     payment_text.style.color = "black";
-  }
+}
+

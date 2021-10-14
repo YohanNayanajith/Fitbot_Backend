@@ -445,6 +445,7 @@ $(document).ready(function(){
 
   }).done(function(data){
     // const data_object = JSON.parse(data);
+      alert(data);
     $('#dashboard_header_member').append(
         '<h1>'+'Hello '+data.first_name+'!!'+'</h1>'
     );

@@ -51,7 +51,7 @@
     display: block;
     padding:30px;
     max-width: 600px;
-    max-height: auto;
+    /*max-height: auto;*/
     /* text-align: center; */
     /* align-items: center;
     justify-content: center; */
@@ -183,15 +183,6 @@
     color:white;
     border: 1px solid white;
 }
-/* .login_social_media_google p, .login_social_media_facebook p{
-    float: right;
-} */
-
-/* .login_social_media_facebook {
-    width: 100%;
-    display: inline-block;
-} */
-
 @media screen and (max-width: 768px) {
     .login_header {
         flex-direction: column;
@@ -263,5 +254,108 @@
     .login_bottom_detail {
         position: relative;
     }
+}
 
+/*popup*/
+
+.forget_password_container {
+    text-align:left;
+}
+
+.reset_password_container, .reset_new_password_container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 350px;
+    text-align: center;
+    background-color: #F2F2F2;
+    /* box-sizing: border-box; */
+    padding: 15px;
+    z-index: 100;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    display: none;
+    -webkit-animation: fadeIn 2s;
+    animation: fadeIn 1s;
+    /*to hide popup initially*/
+}
+.reset_password_text, .reset_password_text_input, .reset_password_container_content {
+    text-align: left;
+}
+
+.reset_password_container_header{
+    /*padding-top: 15px;*/
+    /*padding-bottom: 20px;*/
+    text-align:left;
+    font-weight: bold;
+    font-size: 22px;
+    color: #0E2C4B;
+
+}
+.reset_password_container_content, .reset_password_text {
+    /* padding-top: 20px; */
+    padding-bottom: 20px;
+    font-size: 16px
+}
+
+.close_reset_btn_forget_password {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    /* padding: 4px; */
+    cursor: pointer;
+}
+.close_btn_forgot {
+    color:red;
+
+}
+.reset_password_contact_number, .craete_new_password_forget_password, .confirm_new_password_forget_password {
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    width: 290px;
+    height: 28px;
+}
+/* .reset_password_contact_number:focus, .craete_new_password_forget_password:focus, .confirm_new_password_forget_password:focus {
+    border-color:none;
+    border: 1px solid #2ebe1b;
+} */
+.reset_password_text_input label {
+    font-size: 14px;
+}
+.submit_new_reset_password, .submit_reset_password {
+    background: #FFFFFF;
+    border: 1px solid #0E2C4B;
+    color: #0E2C4B;
+    padding: 5px 10px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+}
+.submit_reset_password {
+    margin-top: 20px;
+}
+.submit_new_reset_password:hover, .submit_reset_password:hover {
+    background: #0E2C4B;
+    color:#FFFFFF;
+}
+.submit_reset_password_div, .submit_new_reset_password_div {
+    text-align: center;
+}
+.reset_password_text_input_warning {
+    color: red;
+}
+
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
 }

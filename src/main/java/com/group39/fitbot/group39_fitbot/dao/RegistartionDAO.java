@@ -27,6 +27,7 @@ public class RegistartionDAO {
         pst.setInt(12,register.getHeight());
         pst.setInt(13,register.getWeight());
 
+        System.out.println("Registration DAO");
         return pst.executeUpdate() > 0;
     }
 

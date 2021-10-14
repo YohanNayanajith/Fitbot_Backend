@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="Landing/Login/login.css">
     <script src="Landing/Login/login.js"></script>
     <title>Login</title>
@@ -39,7 +40,7 @@
                 <div class="login_detail_container">
                     <label><input type="checkbox" checked="checked" name="remember" class="login_remember_me"> Remember me</label>
                     <!-- <button type="button" onclick="login_cancel()" class="login_cancel_btn">Cancel</button> -->
-                    <span class="login_forgot_password"><a href="#">Forgot password?</a></span>
+                    <span class="login_forgot_password"><a onclick="togglePopup()">Forgot password?</a></span>
                 </div>
                 <div class="login_button_div">
                     <input type="submit" class="login_button" id="login_button" value="Login">
@@ -48,7 +49,7 @@
 
 
             <div class="login_bottom_detail">
-                Why Create an Account?  Create new accout and <a href="#">Register Now</a>
+                Why Create an Account?  Create new accout and <a href="register">Register Now</a>
             </div>
             <div class="login_social_media">
                 <div class="login_social_media_google">
@@ -59,6 +60,62 @@
                     <img src="Landing/Icons/login_facebook.svg" alt="Facebook">
                     <p>Facebook</p>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="forget_password_container" id="forget_password_container">
+
+        <!-- div containing the popup -->
+        <div class="reset_password_container" id="reset_password_container">
+            <div onclick="close_reset_password_Popup()" class="close_reset_btn_forget_password">
+                <i class='bx bx-x close_btn_forgot'></i>
+            </div>
+
+            <div>
+                <h3 class="reset_password_container_header">Reset Password</h3>
+            </div>
+
+            <div class="reset_password_text">
+                Enter the contact number associated with your account and we'll send an email with instructors to reset your password.
+            </div>
+
+            <div class="reset_password_text_input">
+                <label for="reset_password_contact_number">Enter OTP number</label><br>
+                <input type="tel" class="reset_password_contact_number" id="reset_password_contact_number" name="reset_password_contact_number"><br>
+
+                <div class="submit_reset_password_div"><input type="submit" class="submit_reset_password" id="submit_reset_password" onclick="open_new_password_Popup()" value="Send OTP"></div>
+            </div>
+        </div>
+
+
+        <div class="reset_new_password_container" id="reset_new_password_container">
+            <div onclick="close_new_password_Popup()" class="close_reset_btn_forget_password">
+                <i class='bx bx-x close_btn_forgot'></i>
+            </div>
+            <div>
+                <h3 class="reset_password_container_header">Create New Password</h3>
+            </div>
+
+            <div class="reset_password_container_content">
+                Your new password must be different from previous used passwords.
+            </div>
+
+            <div class="reset_password_text_input">
+                <div>
+                    <label for="craete_new_password_forget_password">Password</label><br>
+                    <input type="password" class="craete_new_password_forget_password" id="craete_new_password_forget_password" name="craete_new_password_forget_password"><br>
+                    <h5 class="reset_password_text_input_warning">Must be at least 4 characters</h5>
+                    <br>
+                </div>
+
+                <div>
+                    <label for="confirm_new_password_forget_password">Confirm Password</label><br>
+                    <input type="password" class="confirm_new_password_forget_password" id="confirm_new_password_forget_password" name="confirm_new_password_forget_password"><br>
+                    <h5 class="reset_password_text_input_warning">Both passwords must match</h5>
+                    <br>
+                </div>
+                <div class="submit_new_reset_password_div"><input type="submit" class="submit_new_reset_password" id="submit_new_reset_password" onclick="close_new_password_Popup()"></div>
             </div>
         </div>
     </div>
