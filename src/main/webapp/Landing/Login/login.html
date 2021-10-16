@@ -6,8 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+<!--    google-API-->
+    <meta name="google-signin-client_id" content="219280247391-n1pfanqvg278plmfef472rhbc43m7s0g.apps.googleusercontent.com">
+
     <link rel="stylesheet" href="Landing/Login/login.css">
-    <script src="Landing/Login/login.js"></script>
+
     <title>Login</title>
 </head>
 <body>
@@ -81,14 +85,36 @@
             </div>
 
             <div class="reset_password_text_input">
-                <label for="reset_password_contact_number">Enter OTP number</label><br>
+                <label for="reset_password_contact_number">Enter contact number</label><br>
                 <input type="tel" class="reset_password_contact_number" id="reset_password_contact_number" name="reset_password_contact_number"><br>
-
-                <div class="submit_reset_password_div"><input type="submit" class="submit_reset_password" id="submit_reset_password" onclick="open_new_password_Popup()" value="Send OTP"></div>
+                <h5 id="reset_password_text_input_h5">Enter value must be a contact number</h5>
+                <div class="submit_reset_password_div"><input type="submit" class="submit_reset_password" id="submit_reset_password" onclick="open_OTP_password_Popup()" value="Send OTP"></div>
             </div>
         </div>
 
+<!--        OTP number-->
+        <div class="reset_password_container" id="OTP_password_container">
+            <div onclick="close_OTP_password_Popup()" class="close_reset_btn_forget_password">
+                <i class='bx bx-x close_btn_forgot'></i>
+            </div>
 
+            <div>
+                <h3 class="reset_password_container_header">OTP Number</h3>
+            </div>
+
+            <div class="reset_password_text">
+                Enter the OTP number associated with your account and we'll send a message with instructors to reset your password.
+            </div>
+
+            <div class="reset_password_text_input">
+                <label for="reset_password_contact_number">Enter OTP number</label><br>
+                <input type="tel" class="reset_password_contact_number" id="OTP_password_number" name="reset_password_contact_number"><br>
+                <h5 id="OTP_password_text_input_h5">Enter OTP number invalid</h5>
+                <div class="submit_reset_password_div"><input type="submit" class="submit_reset_password" id="submit_OTP_password" onclick="open_new_password_Popup()" value="Reset Password"></div>
+            </div>
+        </div>
+
+<!--        reset-password-->
         <div class="reset_new_password_container" id="reset_new_password_container">
             <div onclick="close_new_password_Popup()" class="close_reset_btn_forget_password">
                 <i class='bx bx-x close_btn_forgot'></i>
@@ -119,6 +145,9 @@
             </div>
         </div>
     </div>
+    <script src="Landing/Login/login.js" defer></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="asserts/JSLibrary/sweetalert2.all.min.js" defer></script>
 </body>
 
 </html>
