@@ -38,6 +38,7 @@ $(document).ready(function(){
 });
 
 var OTP_number = null;
+var contact_number_without = null;
 function open_OTP_password_Popup(){
     $('#reset_password_text_input_h5').hide();
 
@@ -47,7 +48,7 @@ function open_OTP_password_Popup(){
     OTP_number = random_number;
     let new_message = "Hi, Your OTP is "+random_number;
     let contact_number_val = $('#reset_password_contact_number').val().trim();
-    let contact_number_without = null;
+    // let contact_number_without = null;
     if(filter.test(contact_number_val)){
         if(contact_number_val.length == 10) {
             console.log("length 10");
@@ -201,6 +202,7 @@ function open_new_password_Popup(){
         if(parseInt(OTP_val) == parseInt(OTP_number)){
             $('#OTP_password_container').hide();
             $('#reset_new_password_container').show();
+
             Swal.fire({
                 icon: 'success',
                 title: 'OTP is verified',
@@ -208,6 +210,8 @@ function open_new_password_Popup(){
                 confirmButtonText:"Ok",
                 confirmButtonColor: '#0E2C4B',
             })
+
+            // window.location.href = 'http://localhost:8080/group39_fitbot_war_exploded/login';
         }else{
             console.log("h5");
             $('#OTP_password_text_input_h5').html('You entered OTP number is incorrect');
@@ -227,6 +231,57 @@ function open_new_password_Popup(){
         $('#OTP_password_text_input_h5').css('color','red');
         return
     }
+}
+// function open_new_password_Popup() {
+//     passwordChecker();
+// }
+
+function open_confirm_password_Popup(){
+    let password_update = $('#craete_new_password_forget_password').val().trim();
+    let confirm_password_update = $('#confirm_new_password_forget_password').val().trim();
+
+    $.ajax({
+        method:"POST",
+        url:"passwordConfirm",
+        data: {"craete_new_password_forget_password":password_update,"confirm_new_password_forget_password":confirm_password_update,"phone_number":contact_number_without},
+        // dataType:"json",
+        // contentType:"application/json",
+        success: function (result){
+            if(result == "1"){
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Password updated',
+                    text: 'Password is successfully updated!',
+                    confirmButtonText:"Ok",
+                    confirmButtonColor: '#0E2C4B',
+                })
+                console.log("password is correct");
+                $('#reset_new_password_container').hide();
+                window.location.href = 'http://localhost:8080/group39_fitbot_war_exploded/login'
+            }else{
+                console.log(result);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Try Again',
+                    text: 'Your password is incorrect!',
+                    confirmButtonText:"Ok",
+                    confirmButtonColor: '#932828',
+                })
+                return 0;
+            }
+        },
+        error: function(err){
+            console.log("phone number wrong", err);
+            Swal.fire({
+                icon: 'error',
+                title: 'Try Again',
+                text: 'System issue!',
+                confirmButtonText:"Ok",
+                confirmButtonColor: '#932828',
+            })
+            return 0;
+        }
+    });
 }
 
 function close_reset_password_Popup(){

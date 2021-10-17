@@ -57,4 +57,22 @@
         <servlet-name>workout</servlet-name>
         <url-pattern>/workout</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>resetPassword</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.ResetPasswordController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>resetPassword</servlet-name>
+        <url-pattern>/resetpassword</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>confirmPassword</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.PasswordConfirmController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>confirmPassword</servlet-name>
+        <url-pattern>/passwordConfirm</url-pattern>
+    </servlet-mapping>
 </web-app>
