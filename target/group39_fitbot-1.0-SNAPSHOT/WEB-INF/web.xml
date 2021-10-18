@@ -75,4 +75,13 @@
         <servlet-name>confirmPassword</servlet-name>
         <url-pattern>/passwordConfirm</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>logOut</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.LogOutController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>logOut</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
 </web-app>

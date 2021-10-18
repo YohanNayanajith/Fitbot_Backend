@@ -134,14 +134,14 @@
 
 
         <li>
-          <a href="#" class="side_bar_anchor_tag" onclick="physical_member_settings()" id="phy_mem_settings">
+          <a class="side_bar_anchor_tag" onclick="physical_member_settings()" id="phy_mem_settings">
             <i class='bx bx-cog side_icon' id="phy_mem_settings_i"></i>
             <span class="links_name" id="physical_member_settings_text">Setting</span>
           </a>
           <span class="tooltip">Setting</span>
         </li>
         <li>
-          <a href="#" class="side_bar_anchor_tag" onclick="physical_member_conditions()" id="phy_mem_conditions">
+          <a class="side_bar_anchor_tag" onclick="physical_member_conditions()" id="phy_mem_conditions">
             <i class='bx bxs-food-menu side_icon' id="phy_mem_conditions_i"></i>
             <span class="links_name" id="physical_member_conditions_text">Conditions</span>
           </a>
@@ -169,9 +169,9 @@
           <div class="top_bar_navigation">
 
             <div class="top_bar_navigation_link">
-              <a href="#" class="bx bx-log-out side_icon top_nav_icons"></a>
-              <a href="#" class="bx bxs-bell-ring side_icon top_nav_icons"></a>
-              <a href="#" class="bx bx-cog side_icon top_nav_icons" ></a>
+              <a class="bx bx-log-out side_icon top_nav_icons" onclick="log_out_function()"></a>
+              <a class="bx bxs-bell-ring side_icon top_nav_icons" id="top_bar_notification_white_icon"></a>
+              <a class="bx bx-cog side_icon top_nav_icons" onclick="physical_member_settings()" id="top_bar_settings_icon_white"></a>
             </div>
             <div class="top_bar_navigation_profile">
               <div class="profile_my_money">
@@ -252,6 +252,54 @@
 
       </div>
     </section>
+
+<!--      notification-->
+      <section>
+          <div class="notification_messages_big_div" id="notification_messages_big_div">
+              <div class="notification_messages">
+                  <div class="notification_messages_header"><h1>Notifications</h1></div>
+                  <div class="notification_messages_header_icon"><i class='bx bx-dots-horizontal-rounded bx-burst bx-flip-horizontal' id="notification_messages_box_i"></i></div>
+              </div>
+
+              <div class="notification_messages_box">
+                  <div class="notification_messages_box_icon">
+                      <i class='bx bx-message-dots bx-tada notify_icon'></i>
+                  </div>
+                  <div class="notification_messages_box_messages">
+                      <span class="notification_messages_box_messages_text1">Notification 1</span><br>
+                      <span class="notification_messages_box_messages_text2">25 minutes ago</span>
+                  </div>
+              </div>
+
+              <div class="notification_messages_box">
+                  <div class="notification_messages_box_icon">
+                      <i class='bx bx-message-dots bx-tada notify_icon' ></i>
+                  </div>
+                  <div class="notification_messages_box_messages">
+                      <span class="notification_messages_box_messages_text1">Notification 1</span><br>
+                      <span class="notification_messages_box_messages_text2">25 minutes ago</span>
+                  </div>
+              </div>
+
+          </div>
+
+<!--          notification details-->
+          <div class="notification_messages_big_div new_btn_notify" id="new_btn_notify">
+
+              <div class="new_btn_notify_message">
+                  <i class='bx bx-check-double bx-tada' ></i>
+                  <span>Mark all as read</span>
+              </div>
+              <div class="new_btn_notify_message">
+                  <i class='bx bx-cog bx-tada' ></i>
+                  <span>Notification settings</span>
+              </div>
+              <div class="new_btn_notify_message">
+                  <i class='bx bx-envelope-open bx-tada' ></i>
+                  <span>Open notification</span>
+              </div>
+          </div>
+      </section>
   </div>
   <script src="Physical Member/LeftSidebar/LeftSidebar.js" defer></script>
   <script src="Physical Member/Dashboard/Dashboard.js" defer></script>
@@ -269,7 +317,7 @@
   <script src="Physical Member/Settings/Settings.js" defer></script>
 
   <script src="Physical Member/RightSidebar/RightSidebar.js" defer></script>
-
+  <script src="asserts/JSLibrary/sweetalert2.all.min.js" defer></script>
 <!--  <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>-->
 
   </body>

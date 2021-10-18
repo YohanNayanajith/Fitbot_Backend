@@ -42,18 +42,18 @@
             
                 
                 <div class="login_detail_container">
-                    <label><input type="checkbox" checked="checked" name="remember" class="login_remember_me"> Remember me</label>
+                    <label><input type="checkbox" checked="checked" name="remember" class="login_remember_me" id="login_remember_me"> Remember me</label>
                     <!-- <button type="button" onclick="login_cancel()" class="login_cancel_btn">Cancel</button> -->
                     <span class="login_forgot_password"><a onclick="togglePopup()">Forgot password?</a></span>
                 </div>
                 <div class="login_button_div">
-                    <input type="submit" class="login_button" id="login_button" value="Login">
+                    <input type="submit" class="login_button" id="login_button" value="Login" onclick="lsRememberMe()">
                 </div>
             </form>
 
 
             <div class="login_bottom_detail">
-                Why Create an Account?  Create new accout and <a href="register">Register Now</a>
+                Why Create an Account?  Create new account and <a href="register">Register Now</a>
             </div>
             <div class="login_social_media">
                 <div class="login_social_media_google">
