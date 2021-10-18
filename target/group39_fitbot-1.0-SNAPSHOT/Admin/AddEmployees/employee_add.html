@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="employee_add.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/> -->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   
+<body>
+
+
+    <!-- Sidebar  -->
+    <div class="sidebar">
+        <div class="logo-details">
+          <i class='bx bxl-c-plus-plus icon'></i>
+            <!-- <div class="logo_name">CodingLab</div> -->
+            <i class='bx bx-menu' id="btn" ></i>
+        </div>
+        <ul class="nav-list">
+          <li>
+              <i class='bx bx-search' ></i>
+             <input type="text" placeholder="Search...">
+             <span class="tooltip">Search</span>
+          </li>
+          <li>
+            <a href="#">
+              <i class='bx bx-grid-alt'></i>
+              <span class="links_name">Dashboard</span>
+            </a>
+             <span class="tooltip">Dashboard</span>
+          </li>
+          <li>
+           <a href="#">
+             <i class='bx bx-user' ></i>
+             <span class="links_name">Branches</span>
+           </a>
+           <span class="tooltip">Branches</span>
+         </li>
+         <li>
+           <a href="#">
+             <i class='bx bx-chat' ></i>
+             <span class="links_name">Members</span>
+           </a>
+           <span class="tooltip">Members</span>
+         </li>
+         <li>
+           <a href="#">
+             <i class='bx bx-pie-chart-alt-2' ></i>
+             <span class="links_name">Employees</span>
+           </a>
+           <span class="tooltip">Employees</span>
+         </li>
+         <li>
+           <a href="#">
+             <i class='bx bx-folder' ></i>
+             <span class="links_name">Reports</span>
+           </a>
+           <span class="tooltip">Reports</span>
+         </li>
+        </ul>
+      </div>
+
+      <section class="home-section">
+          <div class="header">
+            <ul>
+              <li><a href ="#"><i class='bx bxs-bell'></i></a></li>
+              <li><a href="#"><i class='bx bxs-virus'></i></li>
+              <li><a href ="#"><i class='bx bx-log-out'></i></a></li>
+            </ul>
+              
+          </div>
+        <!-- Content below the header -->
+        <div class="add_employee_view" id="add_employee_view">
+            <div class="employee_add_container">
+              <div class="title">
+                <h2>Add a New Employee</h2>
+              </div>
+
+              <form action="" class="employee_form">
+
+                  <div class="first_middle_last">
+                    <div class="first_label">
+                      <label for="designation">Designation<span class="require_star">*</span></label><br>
+                      <select name="designation" id="designation" class="employee_label designation" placeholder="Select the employee type" > 
+                        <option value="instructor">Instructor</option>
+                        <option value="maintainer">Maintainer</option>
+                        <option value="branch_manager">Branch Manager</option>
+                      </select> </br>
+                    </div>
+
+                    <div class="middle_label">
+                      <label for="user_id">User ID<span class="require_star">*</span></label></br>
+                      <input type="text" name="first_na" class="employee_label user_id" placeholder="Enter user ID" ><br>
+                    </div>
+
+                    <div class="last_label">
+                      <label for="branch_id">Branch ID<span class="require_star">*</span></label><br>
+                      <input type="text" name="branch_id" class="employee_label branch_id" placeholder="Enter branch id" >
+                  </div>
+                  </div>
+
+                  <div class="first_middle_last">
+                    <div class="first_label">
+                        <label for="first_name">First Name<span class="require_star">*</span></label></br>
+                        <input type="text" name="first_name" class="employee_label first_name" placeholder="Enter first name" ><br>
+                    </div>
+
+                    <div class="middle_label">
+                      
+                        <label for="last_name">Last Name<span class="require_star">*</span></label><br>
+                        <input type="text" name="last_name" id="last_name" class="employee_label last_name" placeholder="Enter last name" > <br> 
+                    </div>
+
+                    <div class="last_label">
+                    <label for="gender">Gender<span class="require_star">*</span></label><br>
+                    <select name="gender" id="gender" class="employee_label gender" placeholder="Select Gender" required> 
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                    <br> 
+                  </div>
+                  </div>
+
+                  <div class="first_middle_last">
+                    <div class="first_label">
+                        <label for="email">E-mail<span class="require_star">*</span></label></br>
+                        <input type="email" name="email" class="employee_label email" placeholder="Enter Email address" ><br>
+                    </div>
+
+                    <div class="middle_label">
+                      <label for="nic">NIC<span class="require_star">*</span></label><br>
+                      <input type="text" name="nic" class="employee_label nic" placeholder="Enter NIC Number" ><br>
+                    </div>
+
+                    <div class="last_label">
+                    <label for="date_of_birth">Date of Birth<span class="require_star">*</span></label><br>
+                    <input type="date" name="date_of_birth" class="employee_label date_of_birth" placeholder="Enter date of birth" required><br>
+                    </div>
+                  </div>
+
+                  <div class="first_middle_last">
+                    <div class="first_label">
+                      <label for="address">Address<span class="require_star">*</span></label></br>
+                      <input type="text" name="address" class="employee_label address" placeholder="Enter address" ><br>
+                  </div>
+
+                    <div class="middle_label">
+                        <label for="contact_no1">Primary Contact No<span class="require_star">*</span></label></br>
+                        <input type="text" name="contact_no1" class="employee_label contact_no1" placeholder="Enter Primary Contact" ><br>
+                    </div>
+
+                    <div class="last_label">
+                      <label for="contact_no2">Emergency  Contact No<span class="require_star">*</span></label></br>
+                        <input type="text" name="contact_no2" class="employee_label contact_no2" placeholder="Enter Secondary Contact" ><br>
+                    </div>
+
+                    <!-- <div class="last_label">
+                    <label for="date_of_birth">Date of Birth<span class="require_star">*</span></label><br>
+                    <input type="date" name="date_of_birth" class="employee_label date_of_birth" placeholder="Enter date of birth" required><br>
+                    </div> -->
+                  </div>
+                    
+                    <div class="add_btn_class">
+                     
+                      <input type="button" class="btn_add" value="Submit" onClick=""><br>
+                      <input type="button" class="btn_cancel" value="Cancel" onClick=""><br>
+                  </div>
+              </form>
+           
+          
+          </div>
+        </div>
+  
+        
+      </section>
+
+      <!-- ----------------------------- JavaScript Files ----------------------------------- -->
+      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script> -->
+      <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script> -->
+
+      
+      <script src="admin_employeeadd.js"></script>
+      </body>
+      </html>
+
+

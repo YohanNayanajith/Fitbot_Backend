@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Boxicons icons -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- <link href="./RightSidebar/RightSidebar.html" rel="import" /> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script>
+    <!-- css-file -->
+    <link rel="stylesheet" href="Admin/LeftSidebar/LeftSidebar.css">
+    <link rel="stylesheet" href="Admin/Dashboard/dashboard.css">
+    <link rel="stylesheet" href="Admin/Employees/employees.css">
+    <link rel="stylesheet" href="Admin/Members/members.css">
+    <link rel="stylesheet" href="Admin/Branches/branches.css">
+    <link rel="stylesheet" href="Admin/AddEmployees/employee_add.css">
+    <link rel="stylesheet" href="Admin/Reports/reports.css">
+    
+    
+    
+    <title>Admin</title>
+</head>
+<body>
+  <div class="full_nav_bars" id="full_nav_bars">
+    <div class="sidebar" id="sidebar">
+        <div class="logo-details">
+            <!-- <i class='bx bxl-c-plus-plus icon'></i> -->
+            <!-- <img class="icon" src="../Physical Member/Images/Fitbot_white_logo.png" alt="Logo"> -->
+            <img class="icon" src="Admin/Images/Fitbot_white_logo.png" alt="Logo">
+            <!-- <div class="logo_name">FitBot</div> -->
+            <i class='bx bx-menu side_icon' id="btn" onclick="visibleSocialMedia()"></i>
+        </div>
+        <ul class="nav-list">
+          <li>
+            <i class='bx bx-search side_icon'></i>
+            <input type="text" placeholder="Search...">
+            <span class="tooltip">Search</span>
+          </li>
+          <li>
+            <a href="#" class="side_bar_anchor_tag" onclick="adm_dashboard()" id="admin_dashboard">
+              <i class='bx bx-grid-alt side_icon' id="admin_dashboard_i"></i>
+              <span class="links_name" id="admin_dashboard_text">Dashboard</span>
+            </a>
+            <span class="tooltip">Dashboard</span>
+          </li>
+          <li>
+          <a href="#" class="side_bar_anchor_tag"  onclick="adm_branches()" id="admin_branches">
+            <i class='bx bxs-business side_icon' id="admin_branches_i" ></i>
+            <span class="links_name" id="admin_branches_text">Branches</span>
+          </a>
+          <span class="tooltip">Branches</span>
+        </li>
+        <li>
+          <a href="#" class="side_bar_anchor_tag" onclick="adm_employees()" id="admin_employees">
+              <i class='bx bx-male side_icon' id="admin_employees_i"></i>
+            <span class="links_name" id="admin_employees_text">Employees</span>
+          </a>
+          <span class="tooltip">Employees</span>
+        </li>
+        <li>
+          <a href="#" class="side_bar_anchor_tag" onclick="adm_members()" id="admin_members">
+            <i class='bx bx-user side_icon' id="admin_members_i" ></i>
+            <span class="links_name" id="admin_members_text" >Members</span>
+          </a>
+          <span class="tooltip">Members</span>
+          </li>
+
+          <li>
+          <a href="#" class="side_bar_anchor_tag" onclick="adm_reports()" id="admin_reports">
+              <i class='bx bx-notepad side_icon' id="admin_reports_i" ></i>
+            <span class="links_name" id="admin_reports_text">Reports</span>
+          </a>
+          <span class="tooltip">Reports</span>
+        </li>
+      </ul>
+    </div>
+
+    <section class="home-section">
+        <!-- <div class="text">Dashboard</div> -->
+        <div class="top_bar">
+          <div class="top_bar_navigation">
+
+            <div class="top_bar_navigation_link">
+              <a href="#" class="bx bxs-bell-ring side_icon top_nav_icons"></a>
+              <a href="#" class="bx bx-cog side_icon top_nav_icons" ></a>
+              <a href="#" class="bx bx-log-out side_icon top_nav_icons"></a>
+            </div>
+            
+  
+          </div>
+        </div>
+
+        <!-- dashboard -->
+        <div class="admin_dashboard_implementation" id="admin_dashboard_implementation">
+          <!-- <h2>Yohan Nayanajith</h2> -->
+        </div>
+        <!-- branches-->
+        <div class="adm_branches" id="adm_branches">
+
+        </div>
+        <!-- employees -->
+        <div class="adm_employees" id="adm_employees">
+
+        </div>
+        <!-- addemployees-->
+        <div class="adm_add_employees" id="adm_add_employees">
+
+        </div>
+        <!-- viewemployees -->
+        <div class="adm_view_employees" id="adm_view_employees">
+
+        </div>
+        <!-- members -->
+        <div class="adm_members" id="adm_members">
+
+        </div>
+        <!-- reports -->
+        <div class="adm_reports" id="adm_reports">
+        </div>
+        
+    </section>
+  </div>
+  </body>
+  <script src="Admin/LeftSidebar/LeftSidebar.js" defer></script>
+  <script src="Admin/Dashboard/dashboard.js" defer></script>
+  <script src="Admin/Employees/employees.js" defer></script>
+  <script src="Admin/Members/members.js" defer></script>
+  <script src="Admin/Branches/branches.js" defer></script>
+  <script src="Admin/AddEmployees/employee_add.js" defer></script>
+  <script src="Admin/Reports/reports.js" defer></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js" integrity="sha512-Wt1bJGtlnMtGP0dqNFH1xlkLBNpEodaiQ8ZN5JLA5wpc1sUlk/O5uuOMNgvzddzkpvZ9GLyYNa8w2s7rqiTk5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js" integrity="sha512-b3xr4frvDIeyC3gqR1/iOi6T+m3pLlQyXNuvn5FiRrrKiMUJK3du2QqZbCywH6JxS5EOfW0DY0M6WwdXFbCBLQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+  
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="http://127.0.0.1:5500/Admin/Employees/employee.css">
+    <!-- <link rel="stylesheet" href="http://127.0.0.1:5500/Admin/AddEmployees/employees_add.css"> -->
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   
+<body>
+
+
+    <!-- Sidebar  -->
+    <!-- <div class="sidebar">
+        <div class="logo-details">
+          <i class='bx bxl-c-plus-plus icon'></i>
+            <div class="logo_name">CodingLab</div> -->
+            <!-- <i class='bx bx-menu' id="btn" ></i>
+        </div>
+        <ul class="nav-list">
+          <li>
+              <i class='bx bx-search' ></i>
+             <input type="text" placeholder="Search...">
+             <span class="tooltip">Search</span>
+          </li>
+          <li>
+            <a href="#">
+              <i class='bx bx-grid-alt'></i>
+              <span class="links_name">Dashboard</span>
+            </a>
+             <span class="tooltip">Dashboard</span>
+          </li>
+          <li>
+           <a href="#">
+             <i class='bx bx-user' ></i>
+             <span class="links_name">Branches</span>
+           </a>
+           <span class="tooltip">Branches</span>
+         </li>
+         <li>
+           <a href="#">
+             <i class='bx bx-chat' ></i>
+             <span class="links_name">Members</span>
+           </a>
+           <span class="tooltip">Members</span>
+         </li>
+         <li>
+           <a href="#">
+             <i class='bx bx-pie-chart-alt-2' ></i>
+             <span class="links_name">Employees</span>
+           </a>
+           <span class="tooltip">Employees</span>
+         </li>
+         <li>
+           <a href="#">
+             <i class='bx bx-folder' ></i>
+             <span class="links_name">Reports</span>
+           </a>
+           <span class="tooltip">Reports</span>
+         </li>
+        </ul>
+      </div>
+
+      <section class="home-section">
+          <div class="header">
+            <ul>
+              <li><a href ="#"><i class='bx bxs-bell'></i></a></li>
+              <li><a href="#"><i class='bx bxs-virus'></i></li>
+              <li><a href ="#"><i class='bx bx-log-out'></i></a></li>
+            </ul>
+              
+          </div> --> 
+        <!-- Content below the header -->
+        <div class="employeeview_admin" id="employeeview_admin">
+            <div class="overview-boxes">
+                <div class="box">
+                    <div class ="left-side">
+                        <div class="box-topic"> Instructors</div>
+                        <div class= "number">1250</div>
+                    </div>
+                    <i class='bx bxs-user member'></i>
+                </div>
+            
+
+            <div class="box">
+                <div class ="left-side">
+                    <div class="box-topic"> Maintainers</div>
+                    <div class= "number">125</div>
+                </div>
+                <i class='bx bxs-user member'></i>
+            </div>
+
+            <div class="box">
+                <div class ="left-side">
+                    <div class="box-topic"> Branch Managers</div>
+                    <div class= "number">120</div>
+                </div>
+                <i class='bx bxs-user member'></i>
+            </div>
+
+            <div class="box">
+                <div class ="left-side">
+                    <div class="box-topic"> Total Employees</div>
+                    <div class= "number">500</div>
+                </div>
+                <i class='bx bxs-user member'></i>
+            </div>
+        </div>
+
+        <div class="all_employees">
+          <div class="title_employees">
+              <div class="all_gym_employees">
+                <h3>ALL EMPLOYEES </h3>
+              </div>
+              <div class="search-container">
+                <form action="">
+                  <input type="text" placeholder="Search for an employee" name="search_employee">
+                  <button type="submit"><i class='bx bx-search'></i></button>
+                </form>
+              </div>
+              <a href="#" class ="Add" onclick=" adm_add_employees()"  id="admin_add_employees">
+                <span>Add a New Employee</span>
+                <i class='bx bxs-message-square-add'></i>
+              </a>
+              
+          </div>
+
+            <div class="employee-details">
+                <table id="employee_list_table">
+                    <tr class ="employee_header">
+                      <th>User ID</th>
+                      <th>Name</th>
+                      <th>Branch</th>
+                      <th>Type</th>
+                      <th>Gender</th>
+                      <th>Email Addresses</th>
+                    </tr>
+<!--                   <tr class ="employee_info"> <a href="#">-->
+<!--                      <td>P0001</td>-->
+<!--                      <td>Shalani Chethana</td>-->
+<!--                      <td>-</td>-->
+<!--                      <td>Maintainer</td>-->
+<!--                      <td>Male</td>-->
+<!--                      <td>shalani.chethana@gmail.com</td></a>-->
+<!--                    </tr>-->
+<!--                    <tr class ="employee_info">-->
+<!--                        <td>P0001</td>-->
+<!--                        <td>Shalani Chethana</td>-->
+<!--                        <td>B001</td>-->
+<!--                        <td>Instructor</td>-->
+<!--                        <td>Male</td>-->
+<!--                        <td>shalani.chethana@gmail.com</td>-->
+<!--                    </tr>-->
+<!--                    <tr class ="employee_info">-->
+<!--                        <td>P0001</td>-->
+<!--                        <td>Shalani Chethana</td>-->
+<!--                        <td>B001</td>-->
+<!--                        <td>Branch Manager</td>-->
+<!--                        <td>Male</td>-->
+<!--                        <td>shalani.chethana@gmail.com</td>-->
+<!--                    </tr>-->
+<!--                    <tr class ="employee_info">-->
+<!--                        <td>P0001</td>-->
+<!--                        <td>Shalani Chethana</td>-->
+<!--                        <td>B001</td>-->
+<!--                        <td>Instrctor</td>-->
+<!--                        <td>Male</td>-->
+<!--                        <td>shalani.chethana@gmail.com</td>-->
+<!--                    </tr>-->
+<!--                    <tr class ="employee_info">-->
+<!--                        <td>P0001</td>-->
+<!--                        <td>Shalani Chethana</td>-->
+<!--                        <td>B001</td>-->
+<!--                        <td>Instrctor</td>-->
+<!--                        <td>Male</td>-->
+<!--                        <td>shalani.chethana@gmail.com</td>-->
+<!--                    </tr>-->
+<!--                    <tr class ="employee_info">-->
+<!--                        <td>P0001</td>-->
+<!--                        <td>Shalani Chethana</td>-->
+<!--                        <td>B001</td>-->
+<!--                        <td>Instrctor</td>-->
+<!--                        <td>Male</td>-->
+<!--                        <td>shalani.chethana@gmail.com</td>-->
+<!--                    </tr>-->
+<!--                    <tr class ="employee_info">-->
+<!--                        <td>P0001</td>-->
+<!--                        <td>Shalani Chethana</td>-->
+<!--                        <td>B001</td>-->
+<!--                        <td>Instrctor</td>-->
+<!--                        <td>Male</td>-->
+<!--                        <td>shalani.chethana@gmail.com</td>-->
+<!--                    </tr>-->
+<!--                    <tr class ="employee_info">-->
+<!--                        <td>P0001</td>-->
+<!--                        <td>Shalani Chethana</td>-->
+<!--                        <td>B001</td>-->
+<!--                        <td>Physical</td>-->
+<!--                        <td>Male</td>-->
+<!--                        <td>shalani.chethana@gmail.com</td>-->
+<!--                    </tr>-->
+                  </table>
+                  
+            </div>
+        </div>
+    </div>
+        
+      </section>
+
+
+      <script src="http://127.0.0.1:5500/Admin/Employees/employees.js"></script>
+      <!-- <script src="http://127.0.0.1:5500/Admin/AddEmployees/employees_add.js"></script> -->
+      </body>
+      </html>

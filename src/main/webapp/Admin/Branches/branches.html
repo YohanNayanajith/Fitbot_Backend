@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="branches.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   
+<body>
+
+
+    <!-- Sidebar  -->
+    <div class="sidebar">
+        <div class="logo-details">
+          <i class='bx bxl-c-plus-plus icon'></i>
+            <!-- <div class="logo_name">CodingLab</div> -->
+            <i class='bx bx-menu' id="btn" ></i>
+        </div>
+        <ul class="nav-list">
+          <li>
+              <i class='bx bx-search' ></i>
+             <input type="text" placeholder="Search...">
+             <span class="tooltip">Search</span>
+          </li>
+          <li>
+            <a href="../Admin - Dashboard/admin_dashboard.html">
+              <i class='bx bx-grid-alt'></i>
+              <span class="links_name">Dashboard</span>
+            </a>
+             <span class="tooltip">Dashboard</span>
+          </li>
+          <li>
+           <a href="#">
+             <i class='bx bx-user' ></i>
+             <span class="links_name">Branches</span>
+           </a>
+           <span class="tooltip">Branches</span>
+         </li>
+         <li>
+           <a href="../Admin -Members/admin_members.html">
+             <i class='bx bx-chat' ></i>
+             <span class="links_name">Members</span>
+           </a>
+           <span class="tooltip">Members</span>
+         </li>
+         <li>
+           <a href="../Admin - Employees/admin_employees.css">
+             <i class='bx bx-pie-chart-alt-2' ></i>
+             <span class="links_name">Employees</span>
+           </a>
+           <span class="tooltip">Employees</span>
+         </li>
+         <li>
+           <a href="#">
+             <i class='bx bx-folder' ></i>
+             <span class="links_name">Reports</span>
+           </a>
+           <span class="tooltip">Reports</span>
+         </li>
+        </ul>
+      </div>
+
+      <section class="home-section">
+          <div class="header">
+            <ul>
+              <li><a href ="#"><i class='bx bxs-bell'></i></a></li>
+              <li><a href="#"><i class='bx bxs-virus'></i></li>
+              <li><a href ="#"><i class='bx bx-log-out'></i></a></li>
+            </ul>
+              
+          </div>
+        <!-- Content below the header -->
+        <div class="home-content-branch" id="home-content-branch">
+            <div class ="branch_view" id="branch_view">
+              <div class ="each_branch">
+                  <div class ="branch_details">
+                    <div class ="branch_number">B0001</div>
+                    <div class="line_vertical"></div>
+                    <div class ="branch_info">
+                      <div class ="branch_name"> Nugegoda Branch</div>
+                      <div class="branch_contact">+94771313456/+947783129</div>
+                      <div class ="branch_email">fitbot.nugegoda@gmail.com</div>
+                      <div class ="branch_open">Opened Date <span>28/10/2010</span></div>
+                    </div>
+                  </div>
+
+                  <div class ="branch_manangers">
+                    Branch Managers
+                  </div>
+
+                  <div class ="instructors">
+                    Instructors
+                  </div>
+
+                  <div class ="members">
+                    Members
+                  </div>
+
+              </div>
+
+              <div class ="branch_list">
+                <div class ="list_top">
+                  <div class="all">All Branches</div>
+                  <div class ="add">Add New Branch <i class='bx bxs-plus-circle'></i></div>
+                </div>
+
+                <div class="list_bottom">
+                  <form action="action_page.php" class="search_branch">
+                    <input type="text" placeholder="Search.." name="search">
+                  </form>
+
+                  <div class="branch_detail_list">
+                    <div class ="branch01">
+                      <div class ="branch01_id">B001</div>
+                      <div class ="branch01_name">Nugegoda Branch</div>
+                    </div>
+                    <div class ="branch01">
+                      <div class ="branch01_id">B001</div>
+                      <div class ="branch01_name">Nugegoda Branch</div>
+                    </div>
+                    <div class ="branch01">
+                      <div class ="branch01_id">B001</div>
+                      <div class ="branch01_name">Nugegoda Branch</div>
+                    </div>
+                  </div>
+                </div>
+                  
+              </div>
+            </div>
+        </div>
+        
+      </section>
+
+      <!-- ----------------------------- JavaScript Files ----------------------------------- -->
+      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script> -->
+      <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script> -->
+
+      
+      <script src="branches.js"></script>
+      </body>
+      </html>
+
+
+
+       <!-- <form action="" class="addemployee_container">
+              <label for="type_of_employee">Type of Employee<span class="require_star">*</span></label><br>
+                    <select name="type_of_employee" id="type_of_employee" class="employee_label type_of_employee" placeholder="Select the type of employee" required>
+                      <option value ="Branch_Manager">Branch Manager</option>
+                      <option value="Instructor">Instructor</option>
+                      <option value="Maintainer">Maintainer</option>
+                    </select>
+                  </br> -->

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="http://127.0.0.1:5500/Admin/Members/members.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   
+<body>
+
+
+    <!-- Sidebar  -->
+    <!-- <div class="sidebar">
+        <div class="logo-details">
+          <i class='bx bxl-c-plus-plus icon'></i>
+            <div class="logo_name">CodingLab</div> -->
+            <!-- <i class='bx bx-menu' id="btn" ></i>
+        </div>
+        <ul class="nav-list">
+          <li>
+              <i class='bx bx-search' ></i>
+             <input type="text" placeholder="Search...">
+             <span class="tooltip">Search</span>
+          </li>
+          <li>
+            <a href="#">
+              <i class='bx bx-grid-alt'></i>
+              <span class="links_name">Dashboard</span>
+            </a>
+             <span class="tooltip">Dashboard</span>
+          </li>
+          <li>
+           <a href="#">
+             <i class='bx bx-user' ></i>
+             <span class="links_name">Branches</span>
+           </a>
+           <span class="tooltip">Branches</span>
+         </li>
+         <li>
+           <a href="#">
+             <i class='bx bx-chat' ></i>
+             <span class="links_name">Members</span>
+           </a>
+           <span class="tooltip">Members</span>
+         </li>
+         <li>
+           <a href="#">
+             <i class='bx bx-pie-chart-alt-2' ></i>
+             <span class="links_name">members</span>
+           </a>
+           <span class="tooltip">members</span>
+         </li>
+         <li>
+           <a href="#">
+             <i class='bx bx-folder' ></i>
+             <span class="links_name">Reports</span>
+           </a>
+           <span class="tooltip">Reports</span>
+         </li>
+        </ul>
+      </div>
+
+      <section class="home-section">
+          <div class="header">
+            <ul>
+              <li><a href ="#"><i class='bx bxs-bell'></i></a></li>
+              <li><a href="#"><i class='bx bxs-virus'></i></li>
+              <li><a href ="#"><i class='bx bx-log-out'></i></a></li>
+            </ul>
+              
+          </div> --> 
+        <!-- Content below the header -->
+        <div class="memberview_admin" id="memberview_admin">
+            <div class="overview-boxes">
+                <div class="box">
+                    <div class ="left-side">
+                        <div class="box-topic"> Physical Members</div>
+                        <div class= "number">125</div>
+                    </div>
+                    <i class='bx bxs-user member'></i>
+                </div>
+            
+
+            <div class="box">
+                <div class ="left-side">
+                    <div class="box-topic"> Virtual Members</div>
+                    <div class= "number">25</div>
+                </div>
+                <i class='bx bxs-user member'></i>
+            </div>
+
+            <div class="box">
+                <div class ="left-side">
+                    <div class="box-topic"> Banned Members</div>
+                    <div class= "number">12</div>
+                </div>
+                <i class='bx bxs-user member'></i>
+            </div>
+
+            <div class="box">
+                <div class ="left-side">
+                    <div class="box-topic"> Total members</div>
+                    <div class= "number">500</div>
+                </div>
+                <i class='bx bxs-user member'></i>
+            </div>
+        </div>
+
+        <div class="all_members">
+          <div class="title_members">
+              <div class="all_gym_members">
+                <h3>ALL MEMBERS</h3>
+              </div>
+              <div class="search-container">
+                <form action="">
+                  <input type="text" placeholder="Search for a member" name="search_member">
+                  <button type="submit"><i class='bx bx-search'></i></button>
+                </form>
+              </div>
+              <!-- <a href="#" class ="Add">
+                <span>Add a New member</span>
+                <i class='bx bxs-message-square-add'></i>
+              </a> -->
+              
+          </div>
+
+            <div class="member-details">
+                <table>
+                    <tr class ="member_info">
+                      <th>User ID</th>
+                      <th>Name</th>
+                      <th>Branch</th>
+                      <th>Type</th>
+                      <th>Gender</th>
+                      <th>Email Addresses</th>
+                    </tr>
+                   <tr class ="member_info"> <a href="#">
+                    <td>M0001</td>
+                    <td>Shalani Chethana</td>
+                    <td>B001</td>
+                    <td>Physical</td>
+                    <td>Male</td>
+                    <td>shalani.chethana@gmail.com</td></a>
+                    </tr>
+                    <tr class ="member_info">
+                        <td>M0001</td>
+                        <td>Shalani Chethana</td>
+                        <td>B001</td>
+                        <td>Physical</td>
+                        <td>Male</td>
+                        <td>shalani.chethana@gmail.com</td>
+                    </tr>
+                    <tr class ="member_info">
+                        <td>M0001</td>
+                        <td>Shalani Chethana</td>
+                        <td>B001</td>
+                        <td>Virtual</td>
+                        <td>Male</td>
+                        <td>shalani.chethana@gmail.com</td>
+                    </tr>
+                    <tr class ="member_info">
+                        <td>M0002</td>
+                        <td>Shalani Chethana</td>
+                        <td>B001</td>
+                        <td>Phsyical</td>
+                        <td>Female</td>
+                        <td>shalani.chethana@gmail.com</td>
+                    </tr>
+                    <tr class ="member_info">
+                        <td>P0001</td>
+                        <td>Shalani Chethana</td>
+                        <td>B001</td>
+                        <td>Virtual</td>
+                        <td>Female</td>
+                        <td>shalani.chethana@gmail.com</td>
+                    </tr>
+                    <tr class ="member_info">
+                        <td>P0001</td>
+                        <td>Shalani Chethana</td>
+                        <td>B001</td>
+                        <td>Phsyical</td>
+                        <td>Male</td>
+                        <td>shalani.chethana@gmail.com</td>
+                    </tr>
+                    <tr class ="member_info">
+                      <td>M0098</td>
+                      <td>Shalani Chethana</td>
+                      <td>B001</td>
+                      <td>Physical</td>
+                      <td>Female</td>
+                      <td>shalani.chethana@gmail.com</td>
+                    </tr>
+                    <tr class ="member_info">
+                      <td>M0056</td>
+                      <td>Shalani Chethana</td>
+                      <td>B001</td>
+                      <td>Physical</td>
+                      <td>Male</td>
+                      <td>shalani.chethana@gmail.com</td>
+                    </tr>
+                  </table>
+                  
+            </div>
+        </div>
+    </div>
+        
+      </section>
+
+
+      <script src="http://127.0.0.1:5500/Admin/Members/members.js"></script>
+      </body>
+      </html>

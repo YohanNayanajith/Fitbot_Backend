@@ -353,7 +353,7 @@ $(document).ready(function (){
                     window.location.href = 'http://localhost:8080/group39_fitbot_war_exploded/physicalMember';
                 }else if(result == "6"){
                     //admin
-                    window.location.href = 'http://localhost:8080/group39_fitbot_war_exploded/physicalMember';
+                    window.location.href = 'http://localhost:8080/group39_fitbot_war_exploded/admin';
                 }else{
                     alert("wrong");
                 }

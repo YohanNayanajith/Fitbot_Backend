@@ -75,4 +75,22 @@
         <servlet-name>confirmPassword</servlet-name>
         <url-pattern>/passwordConfirm</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>admin</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.AdminController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>admin</servlet-name>
+        <url-pattern>/admin</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>employee</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.EmployeeController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>employee</servlet-name>
+        <url-pattern>/employee</url-pattern>
+    </servlet-mapping>
 </web-app>
