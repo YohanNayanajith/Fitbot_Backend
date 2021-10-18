@@ -26,7 +26,7 @@
                         <span class="payble_date">Pay before {date}</span>
                     </div>
                     <div class="payment_button">
-                        <a href="" class="payment_button_div" type="submit" id="payhere-payment">PAY BILL</a>
+                        <a class="payment_button_div" type="submit" id="payhere-payment" onclick="payments_pay()">PAY BILL</a>
                     </div>
                 </div>
                 <div class="payment_cal_date">
@@ -126,9 +126,34 @@
                 </div>
             </div>
         </div>
+
+        <div class="payment_popup_details" id="payment_popup_details">
+            <form method="post" action="https://sandbox.payhere.lk/pay/checkout">
+                <input type="hidden" name="merchant_id" value="1218874">    <!-- Replace your Merchant ID -->
+                <input type="hidden" name="return_url" value="http://sample.com/return">
+                <input type="hidden" name="cancel_url" value="http://sample.com/cancel">
+                <input type="hidden" name="notify_url" value="http://sample.com/notify">
+                <br><br>Item Details<br>
+                <input type="text" name="order_id" value="ItemNo12345">
+                <input type="text" name="items" value="Door bell wireless"><br>
+                <input type="text" name="currency" value="LKR">
+                <input type="text" name="amount" value="1000">
+                <br><br>Customer Details<br>
+                <input type="text" name="first_name" value="Saman">
+                <input type="text" name="last_name" value="Perera"><br>
+                <input type="text" name="email" value="samanp@gmail.com">
+                <input type="text" name="phone" value="0771234567"><br>
+                <input type="text" name="address" value="No.1, Galle Road">
+                <input type="text" name="city" value="Colombo">
+                <input type="hidden" name="country" value="Sri Lanka"><br><br>
+                <input type="submit" value="Buy Now">
+            </form>
+        </div>
+
         <script src="Physical Member/Payments/Payments.js" defer></script>
         <script src="Physical Member/Payments/PayherePayment.js" defer></script>
         <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js" defer></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </div>
 
 </body>

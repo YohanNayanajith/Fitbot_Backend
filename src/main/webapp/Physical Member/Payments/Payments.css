@@ -172,3 +172,32 @@
     border:1px solid white;
     color:white;
 }
+
+/*payments popup*/
+.payment_popup_details {
+    display:flex;
+    flex-direction:column;
+    padding: 20px;
+    background-color:#F2F2F2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    z-index: 100;
+    border-radius: 5px;
+    display: none;
+    -webkit-animation: fadeIn 2s;
+    animation: fadeIn 1s;
+}
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
