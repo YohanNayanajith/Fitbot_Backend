@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script>
+    <link rel="stylesheet" href="Virtual Member/EditProfile/editProfileV.css">
+    <title>Edit Profile</title>
+</head>
+<body>
+    <div class="edit_profile_home">
+        <div class="header_edit"><h1>Edit Profile</h1></div>
+        <form  method="post" action="editProfile">
+            <div class="personal_edit">
+                <h2>Personal</h2>
+                <div class="personal_details">
+                    <div class="right_img"><img src="Virtual Member/Images/default-profile-300x300.png" id="photo" alt="#">
+                    <input type="file"  id="file" name="image">
+                    <label for="file" id="uploadBtn">Choose Photo</label>
+                    </div>
+                    <div class="left_cont">
+                        <div class="first_name">
+                            <label for="fname">First Name :</label><br>
+                            <input type="text" id="fname" name="fname" autofocus><br>
+                          </div>
+                          <div class="last_name">
+                            <label for="lname">Last Name :</label><br>
+                            <input type="text" id="lname" name="lname"><br>
+                          </div>
+                          <div class="contact">
+                            <label for="contact">Contact No :</label><br>
+                            <input type="text" id="contact" name="contact"><br>
+                          </div>
+                          <div class="email">
+                            <label for="email">Email :</label><br>
+                            <input type="email" id="email" name="email" ><br>
+                          </div>
+                          <!-- <div class="height">
+                            <label for="Height">Height :</label><br>
+                            <input type="number" id="height" ><br>
+                          </div> -->
+                           <div class="birthday">
+                            <label for="dob">Date of Birth :</label><br>
+                            <input type="date" id="dob" name="dob"><br>
+                           </div>
+                    </div>
+                </div>
+            </div>
+            <div class="password_change_main">
+               <h2>Password Change</h2>
+               <div class="change_password">
+
+                    <div class="old_password">
+                        <label for="Old_pass">Old Password :</label><br>
+                        <input type="password" id="Old_pass" name="Old_pass"><br>
+                      </div>
+                      <div class="new_password">
+                        <label for="New_pass">New Password :</label><br>
+                        <input type="password" id="New_pass" name="new_password"><br>
+                      </div>
+                      <div class="confirm_password">
+                        <label for="Conf_pass">Confirm Password :</label><br>
+                        <input type="password" id="Conf_pass" name="Conf_pass" ><br>
+                      </div>
+               </div>
+            </div>
+            <div class="save_cancel_bar">
+                <div class="cancel_btu"><button>Cancel</button></div>
+                <div class="save_btu"><button>Save</button></div>
+            </div>
+        </form>
+    </div>
+    <script src="Virtual Member/EditProfile/editPro.js" defer></script>
+    <script src="Virtual Member/Profile/Profile.js" defer></script>
+</body>
+</html>

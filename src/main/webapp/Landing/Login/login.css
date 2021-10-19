@@ -246,8 +246,10 @@
     .login_remember_me {
         width: 100%;
     }
-    .login_forgot_password {
+    .login_detail_container .login_forgot_password {
         width: 100%;
+        color: #44D201;
+        cursor: pointer;
 
     }
 

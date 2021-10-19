@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="http://localhost:8080/group39_fitbot_war_exploded/Maintainer/Dashboard/dashboard.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   
+<body>
+
+  <div class ="dashboard_maintainer" id="dashboard_maintainer">
+    <div class ="dashboard_view_maintainer">
+      <section class="home-section">
+        <!-- Content below the header -->
+        <div class="maintain_requests_view" id="maintain_requests_view">
+
+          <div class="all_maint_requests">
+            <div class="title_maint_requests">
+              <div class="all_maint_gym_requests">
+                All Maintenance Requests
+              </div>
+              <div class="search-container">
+                <form action="">
+                  <input type="text" placeholder="Search by branch" name="search_branch_requests">
+                  <button type="submit" onclick=""><i class='bx bx-search'></i></button>
+                </form>
+              </div>
+
+
+            </div>
+
+            <div class="maint_request-details">
+              <table class="maintain_requ_tab" id="maintain_requ_tab">
+                <tr class ="maint_request_info">
+                  <th>Branch </th>
+                  <th>Equipment ID</th>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th>Status</th>
+                  <th>Accepted</th>
+                  <th></th>
+                </tr>
+<!--                <tr class ="maint_request_info">-->
+<!--                  <td>Nugeoda</td>-->
+<!--                  <td>E002</td>-->
+<!--                  <td>26/10/2021</td>-->
+<!--                  <td>09:30 am</td>-->
+<!--                  <td class = "completed">Completed </td>-->
+<!--                  <td>02</td>-->
+<!--                  <td><a href="#">View More</a></td>-->
+<!--                </tr>-->
+
+              </table>
+
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </div>
+  <script src="http://localhost:8080/group39_fitbot_war_explodedMaintainer/Maintainer/Dashboard/dashboard.js" defer></script>
+</body>
+</html>

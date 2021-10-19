@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="http://localhost:8080/group39_fitbot_war_exploded/Maintainer/Maintainer-Form/maintainer_form.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   
+<body>
+
+
+    <!-- Sidebar  -->
+    <div class="sidebar">
+        <div class="logo-details">
+          <i class='bx bxl-c-plus-plus icon'></i>
+            <div class="logo_name">CodingLab</div>
+            <i class='bx bx-menu' id="btn" ></i>
+        </div>
+        <ul class="nav-list">
+          <li>
+              <i class='bx bx-search' ></i>
+             <input type="text" placeholder="Search...">
+             <span class="tooltip">Search</span>
+          </li>
+          <li>
+            <a href="#">
+              <i class='bx bx-grid-alt'></i>
+              <span class="links_name">Dashboard</span>
+            </a>
+             <span class="tooltip">Dashboard</span>
+          </li>
+          <li>
+           <a href="#">
+             <i class='bx bx-user' ></i>
+             <span class="links_name">Messages</span>
+           </a>
+           <span class="tooltip">Messages</span>
+         </li>
+         <li>
+           <a href="#">
+             <i class='bx bx-chat' ></i>
+             <span class="links_name">Equipments</span>
+           </a>
+           <span class="tooltip">Modified Equipments</span>
+         </li>
+        </ul>
+      </div>
+
+      <section class="home-section">
+          <div class="header">
+            <ul>
+              <li><a href ="#"><i class='bx bxs-bell'></i></a></li>
+              <li><a href="#"><i class='bx bxs-virus'></i></li>
+              <li><a href ="#"><i class='bx bx-log-out'></i></a></li>
+            </ul>
+              
+          </div>
+        <div class ="maintenance_completed_form">
+        <div class="form_view">
+          <div class ="maint_form">
+          <div class="form_title">
+            Maintence Completion Form
+          </div>
+        
+            <form class="form-complete">
+              <div class ="form_section">
+              <div class ="left-side">
+                Basic Details
+              </div>
+              <div class ="right-side">
+                <div class="right-side-sub">
+                  <label for="branch_id">Branch <span class="require_star">*</span></label></br>
+                  <input type="text" name="branch_id" class="label_form" placeholder="Enter Branch" ><br>
+                </div>
+
+                <div class="right-side-sub">
+                  <label for="equipment_id">Equipment ID<span class="require_star">*</span></label></br>
+                  <input type="text" name="equipment_id" class="label_form" placeholder="Enter Equipment ID" ><br>
+                </div>
+
+                <div class="right-side-sub">
+                  <label for="date">Date<span class="require_star">*</span></label></br>
+                  <input type="date" name="date" class="label_form" placeholder="Enter Date" ><br>
+                </div>
+
+                <div class="right-side-sub">
+                  <label for="time">Time<span class="require_star">*</span></label></br>
+                  <input type="time" name="time" class="label_form" placeholder="Enter Time" ><br>
+                </div>
+              </div>
+            </div>
+
+            <div class ="form_section">
+              <div class ="left-side">
+                Add Note
+              </div>
+              <div class ="right-side">
+                <div class="right-side-sub">
+                  <label for="note">Note<span class="require_star">*</span></label></br>
+                  <input type="textarea" rows="3" name="note" class="label_form" placeholder="Add Note" ><br>
+                </div>
+              </div>
+            </div>
+
+            <div class ="form_section">
+              <div class ="left-side">
+                Add Photo
+              </div>
+              <div class ="right-side">
+                <div class="right-side-sub">
+                  <label for="photo">Add Photo<span class="require_star">*</span></label></br>
+                  <input type="file" rows="3" name="photo" class="label_form" placeholder="" ><br>
+                </div>
+              </div>
+            </div>
+
+          
+            </form>
+          
+
+        </div>
+      </div>
+    </div>
+      </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script>
+    <script src="http://localhost:8080/group39_fitbot_war_exploded/Maintainer/Maintainer-Form/maintainer_form.js" defer></script>
+</body>
+</html>

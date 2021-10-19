@@ -1,0 +1,174 @@
+.payments_physical {
+    display:flex;
+    flex-direction:column;
+    margin: 30px 78px;
+}
+.payment_details_container {
+    background-color: #d6d4d4;
+    border-radius:5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom:30px;
+}
+.payments_details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* text-align: center; */
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.payment_details_container_header{
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+.payment_details_container_header span {
+    color: #0E2C4B;
+    font-size:26px;
+    font-weight: bold;
+}
+.payment_date_icon img {
+    width:60px;
+    height: 60px;
+}
+/* .payment_total_payble {
+    display: flex;
+    background-color: red;
+    width: 100%;
+    align-items: center;
+} */
+.payment_total_payble, .payment_cal_date{
+    display:flex;
+    background-color: #D7904F;
+    padding: 20px;
+    max-height:100px;
+    align-items: center;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    justify-content:space-evenly;
+}
+.total_payble, .previous_payment_date {
+    font-size: 18px;
+    font-weight: bold;
+}
+.payble_balance, .previous_payment_date_format {
+    font-size: 16px;
+}
+.payble_date, .previous_payment_date_details {
+    font-size: 14px;
+    color: #C4C4C4;
+}
+.payment_text, .payment_date_icon {
+    padding: 20px;
+}
+.payment_total_payble {
+    min-width: 400px;
+}
+.payment_cal_date {
+    min-width: 150px;
+}
+.payment_text {
+    /* background-color:aqua; */
+    width: 100%;
+}
+.payment_button {
+    /* background-color:orange; */
+    width: 100%;
+    text-align: left;
+}
+.payment_button_div {
+    background-color:#B52121;
+    padding: 10px 50px;
+    display: inline-block;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
+    color:white;
+    font-weight: bold;
+}
+
+.payment_button_div:hover{
+    background-color:white;
+    border:2px solid #B52121;
+    color:#B52121;
+}
+
+.payment_cal_date {
+    display: flex;
+    background-color:yelow;
+    /* width: 100%; */
+    /* flex: 40%; */
+}
+
+/* payment hostory */
+.payment_history {
+    background-color:#d6d4d4;
+    border-radius: 10px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    /* margin: 50px 70px; */
+}
+.payment_history_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.payment_history_container_header{
+    margin-top: 30px;
+    margin-left: 30px;
+}
+.payment_history_container_header span {
+    color: #0E2C4B;
+    font-size:26px;
+    font-weight: bold;
+}
+.payment_history_container_table{
+    width:92%;
+    /* width:100vw; */
+    /* margin-top:10px; */
+    border-collapse: collapse;
+    margin: 10px 4% 10px;
+    border-collapse:separate;
+    border-spacing:0 15px;
+    
+    /* background-color: white; */
+    /* border-radius: 30px; */
+}
+
+.payment_history_container_row, .payment_history_container_table_header  {
+    background-color: white;
+    height: 60px;
+    text-align: center;
+    padding: 10px; 
+    font-size: 18px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-left: 15px solid #7CD0FF;
+}
+.payment_history_container_row {
+    border-left: 15px solid #7CD0FF;
+}
+
+.payment_history_container_row:hover {
+    background-color:#75CDFF;
+    color: white;
+    /* box-shadow: 5px 0 0 0 gray; */
+}
+
+.view_bill_button {
+    background-color:white;
+    border:1px solid #B52121;
+    padding: 8px 20px;
+    display: inline-block;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
+    color:#B52121;
+    font-weight: bold;
+    font-size: 14px
+}
+.view_bill_button:hover{
+    background-color:#B52121;
+    border:1px solid white;
+    color:white;
+}

@@ -1,0 +1,177 @@
+/* robot-google-fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.edit_profile_home .header_edit h1{
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+.edit_profile_home h2{
+    background-color: rgb(204, 204, 204);
+    width: 80%;
+    font-size: 24px;
+    line-height: 36px;
+    border-radius: 10px;
+    padding-left: 25px;
+    margin-bottom: 25px;
+    
+}
+
+.edit_profile_home .personal_edit{
+    margin-bottom: 30px;
+}
+
+.edit_profile_home .personal_edit .personal_details{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+    justify-content: space-evenly;
+    /* background-color: blueviolet; */
+    
+}
+.edit_profile_home .personal_edit .personal_details .left_cont{
+    position: relative;
+    width: 40%;
+    /* background-color: brown; */
+    margin-left: 50px;
+}
+.edit_profile_home .first_name , .last_name , .weight , .height , .birthday , .contact{
+    position: relative;
+    /* width: px; */
+}
+
+.edit_profile_home label , input{
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.edit_profile_home label{
+    margin-bottom: 10px;
+    line-height: 36px;
+}
+
+.edit_profile_home input{
+    position: relative;
+    border-radius: 4px;
+    border: rgb(196, 196, 196) 1px solid;
+    margin-bottom: 25px;
+    width: 100%;
+    padding-left: 10px;
+    height: 25px;
+    /* background-color: aqua; */
+    /* align-items: center; */
+
+}
+.edit_profile_home input:focus{
+    outline: none;
+
+}
+
+
+/*---------------- profile pic -------------------------*/
+
+.edit_profile_home .personal_edit .personal_details .right_img{
+    height: 250px;
+    width: 250px;
+    /* position: absolute; */
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    border: rgba(71, 70, 70, 0.925) 1px solid;
+    /* transform: translate(-50%,-50%); */
+}
+
+.edit_profile_home .personal_edit .personal_details .right_img img{
+    height: 250px;
+    width: 250px;
+    
+}
+
+#photo{
+    height: 100%;
+    width: 100%;
+
+}
+
+#file{
+    display: none;
+}
+
+#uploadBtn{
+    height: 40px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.616);
+    color: white;
+    line-height: 30px;
+    font-size: 15px;
+    cursor: pointer;
+
+
+}
+
+
+/* -------------------change password------------------ */
+
+.password_change_main .change_password{
+    margin-left: 72px;
+    width: 30%;
+}
+
+/* ----------------button------------- */
+
+.edit_profile_home .save_cancel_bar{
+    width: 80%;
+    display: flex;
+    margin-top: 50px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.edit_profile_home .save_cancel_bar button{
+    width: 100px;
+    padding: 10px 20px 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+    
+.edit_profile_home .save_cancel_bar .cancel_btu button{
+    border:  #0E2C4B 2px solid;
+    color: #0E2C4B;  
+   
+}
+
+
+.edit_profile_home .save_cancel_bar .save_btu button{
+    border:  #0E2C4B 2px solid;
+    background-color:#0E2C4B ;
+    color: #ffffff;  
+   
+}
+
+
+.edit_profile_home .save_cancel_bar .save_btn:hover{
+    background-color: #7CD0FF;
+
+}
+
+
+
+
+
+
+
+
+

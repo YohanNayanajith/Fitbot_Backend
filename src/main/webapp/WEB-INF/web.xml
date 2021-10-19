@@ -75,4 +75,38 @@
         <servlet-name>confirmPassword</servlet-name>
         <url-pattern>/passwordConfirm</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>contactUs</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.LandingContactUsController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>contactUs</servlet-name>
+        <url-pattern>/contactUs</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>virtualMember</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.VirtualMemberController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>virtualMember</servlet-name>
+        <url-pattern>/virtualMember</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>maintainer</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.MaintainerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>maintainer</servlet-name>
+        <url-pattern>/maintainer</url-pattern>
+    </servlet-mapping>
+
+
+
+
+
+
+
 </web-app>

@@ -127,16 +127,15 @@ function clear_dashboard_functions(full_background,dashboard_icon,dashboard_text
   dashboard_icon_ID.style.color = "white";
   dashboard_text_ID.style.color = "white";
 }
-
+var load = [0,0,0,0,0,0,0,0,0,0,0,0];
 //dashboard
 $(document).ready(function(){
   $('#dashboard_implementation').load('http://localhost:8080/group39_fitbot_war_exploded/Physical%20Member/Dashboard/Dashboard.html #dashboard_middle',function(responseTxt, statusTxt, xhr){
-  if(statusTxt == "error")
+    load[0] += 1;
+    if(statusTxt == "error")
       alert("Error: " + xhr.status + ": " + xhr.statusText);
   });
 });
-
-var load = [0,0,0,0,0,0,0,0,0,0,0,0];
 
 $(document).ready(function(){
   //dashboard

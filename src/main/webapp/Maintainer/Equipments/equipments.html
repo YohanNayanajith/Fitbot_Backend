@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="http://localhost:8080/group39_fitbot_war_exploded/Maintainer/Equipments/equipments.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   
+<body>
+
+
+    <!-- Sidebar  -->
+    <div class="sidebar">
+        <div class="logo-details">
+          <i class='bx bxl-c-plus-plus icon'></i>
+            <div class="logo_name">CodingLab</div>
+            <i class='bx bx-menu' id="btn" ></i>
+        </div>
+        <ul class="nav-list">
+          <li>
+              <i class='bx bx-search' ></i>
+             <input type="text" placeholder="Search...">
+             <span class="tooltip">Search</span>
+          </li>
+          <li>
+            <a href="#">
+              <i class='bx bx-grid-alt'></i>
+              <span class="links_name">Dashboard</span>
+            </a>
+             <span class="tooltip">Dashboard</span>
+          </li>
+          <li>
+           <a href="#">
+             <i class='bx bx-user' ></i>
+             <span class="links_name">Messages</span>
+           </a>
+           <span class="tooltip">Messages</span>
+         </li>
+         <li>
+           <a href="#">
+             <i class='bx bx-chat' ></i>
+             <span class="links_name">Equipments</span>
+           </a>
+           <span class="tooltip">Modified Equipments</span>
+         </li>
+        </ul>
+      </div>
+
+      <section class="home-section">
+          <div class="header">
+            <ul>
+              <li><a href ="#"><i class='bx bxs-bell'></i></a></li>
+              <li><a href="#"><i class='bx bxs-virus'></i></a></li>
+              <li><a href ="#"><i class='bx bx-log-out'></i></a></li>
+            </ul>
+              
+          </div>
+        <!-- Content below the header -->
+        <div class="equipment_view_maintainer" id="equipment_view_maintainer">
+
+        <div class="all_equipments">
+          <div class="title_equipments">
+              <div class="all_gym_equipments">
+                All Equipments 
+              </div>
+              <div class="search-container">
+                <form action="">
+                  <input type="text" placeholder="Search for an equipment" name="search_equipment">
+                  <button type="submit" onclick=""><i class='bx bx-search'></i></button>
+                </form>
+              </div>
+              
+              
+          </div>
+
+            <div class="equipment-details">
+                <table>
+                    <tr class="equipment_info">
+                      <th>Equipment ID</th>
+                      <th>Type</th>
+                      <th>Branch</th>
+                      <th>Last Modified</th>
+                      <th>Next Maintenance Date</th>
+                      
+                    </tr>
+                    <tr class ="equipment_info">
+                      <td>E0001</td>
+                      <td>Threadmill</td>
+                      <td>B001</td>
+                      <td>26/10/2021</td>
+                      <td>26/10/2021</td>
+                      
+                    </tr>
+                    <tr class ="equipment_info">
+                        <td>E0005</td>
+                        <td>Dumbell</td>
+                        <td>B002</td>
+                        <td>03/09/2021</td>
+                        <td>26/10/2021</td>
+                    </tr>
+                    <tr class ="equipment_info">
+                        <td>P0001</td>
+                        <td>Threadmill</td>
+                        <td>B001</td>
+                        <td>03/09/2021</td>
+                        <td>26/10/2021</td>
+                    </tr>
+                    <tr class ="equipment_info">
+                        <td>P0001</td>
+                        <td>Threadmill</td>
+                        <td>B001</td>
+                        <td>03/09/2021</td>
+                        <td>26/10/2021</td>
+                    </tr>
+                    <tr class ="equipment_info">
+                        <td>P0001</td>
+                        <td>Threadmill</td>
+                        <td>B001</td>
+                        <td>07/08/2021</td>
+                        <td>26/10/2021</td>
+                    </tr>
+                    <tr class ="equipment_info">
+                        <td>P0001</td>
+                        <td>Threadmill</td>
+                        <td>B001</td>
+                        <td>07/08.2021</td>
+                        <td>26/10/2021</td>
+                    </tr>
+                    <tr class ="equipment_info">
+                        <td>P0001</td>
+                        <td>Exercise Machine</td>
+                        <td>B001</td>
+                        <td>06/06/2021</td>
+                        <td>26/10/2021</td>
+                    </tr>
+                    <tr class ="equipment_info">
+                        <td>P0001</td>
+                        <td>Threadmill</td>
+                        <td>B001</td>
+                        <td>28/10/2021</td>
+                        <td>26/10/2021</td>
+                    </tr>
+                  </table>
+                  
+            </div>
+        </div>
+    </div>
+        
+      </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script>
+    <script src="http://localhost:8080/group39_fitbot_war_exploded/Maintainer/Equipments/equipments.js" defer></script>
+</body>
+</html>
