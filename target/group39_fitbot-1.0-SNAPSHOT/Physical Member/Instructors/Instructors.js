@@ -6,3 +6,6 @@ function physical_member_instructors(){
     instructors_workout_i.style.color = "black";
     instructors_text.style.color = "black";
 }
+function open_instructor_details(){
+    $('#instructors_physical_container_detail_popup').toggle();
+}
