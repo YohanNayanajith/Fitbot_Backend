@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+*{
+    font-family:  'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+body{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: scroll;
+    background-color: white;
+}
+ 
+/* ----------------------------------------------------home ---------------------------------------- */
+
+
+.home_section_manager_member{
+    position: relative;
+    background: white;
+    min-height: 100vh;
+    top: 0;
+    left: 85px;
+    width: calc(100% - 85px);
+    transition: all 0.5s ease;
+    z-index: 2;
+  }
+
+
+
+  .payment{
+      margin: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      width: 200px;
+      /* width: max-content; */
+  }
+
+  .payment .pay_title{
+      margin: 10px;
+      display: inline-block;
+      /* background-color: #F2F2F2; */
+      font-size: 22px;
+      font-weight: bold;
+  }
+
+
+  .payment .payment_detail{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #F2F2F2;
+    flex-direction: row;
+  }
+
+
+  .payment .payment_detail .pay_left{
+    display: inline-block;
+    background-color: #F2F2F2;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 30px;
+    padding: 20px;
+  }
+
+
+  .payment .payment_detail .pay_right{
+    display: inline-block;
+    background-color: #F2F2F2;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 20px;
+  }
+
+
+  .payment .payment_detail .pay_left .pay_line{
+      position: relative;
+      width: 230px;
+      margin: 0 auto;
+      border: 2px solid black;
+      background-color: black;
+  }
+
+  .require_star{
+    color: red;
+}
+
+
+
+/* -------------------------------------------------submit button---------------------------------------------------- */
+
+
+.btn_add {
+    margin:10px 0;
+    display:inline-block;
+    padding:10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border-color: transparent;
+    background-color: #0E2C4B;
+    color: white;
+    padding:10px 25px;
+    /* border-bottom: 2px solid #0E2C4B;  */
+  }
+  
+  .add_btn_class{
+    text-align: center;
+  }
+  
+  .btn_add:hover {
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+    background-color: white;
+    color: #0E2C4B;
+    border-color: #0E2C4B;
+  }
+
+
+
+
+/* 
+  .home_section_manager_member .home-content {
+      background-color: white;
+      position: relative;
+      margin-top:15px;
+  } */
+
+
+  /* ----------------Member-Details-------- */
+
+  .home_section_manager_member .manager_mem_sachi {
+    margin-top:15px;
+    background-color: #FBFAFA;
+    width:100%;
+    padding:20px;
+    /* border-radius: 20px solid black; */
+  }
+
+ 
+
+  /* -------------------------------search bar--------------------------- */
+  .search_box_sachi{
+    border-radius: 10px;
+    margin:0 auto;
+    width: 400px;
+    display: inline-block;
+  }
+  
+  
+  .search_box_sachi input{
+      padding: 6px;
+      font-size: 14px;
+      border-radius: 10px;
+      width: 250px;
+  }
+  
+  .search_box_sachi button{
+    width: 100px;
+    float: right;
+    padding: 6px;
+    color: white;
+    margin-right: 36px;
+    background: #0E2C4B;
+    font-size: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+  
+  }
+  
+  .search_box_sachi button:hover{
+      box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+      background-color: white;
+      color: #0E2C4B;
+      border-color: #0E2C4B;  
+  } 
+  
+
+
+  .home_section_manager_member .manager_mem_sachi table{
+      width:100%;
+      margin-top:10px;
+      border-collapse: collapse;
+      /* border-left: 15px solid #7CD0FF; */
+     
+  }
+
+  .home_section_manager_member .manager_mem_sachi table td, th {
+      border-bottom: 15px solid white;
+      text-align: center;
+      padding: 10px; 
+  }
+
+  .home_section_manager_member .manager_mem_sachi table .manager_member_row{
+       border-left: 15px solid #7CD0FF;
+  }
+
+
+  .home_section_manager_member .manager_mem_sachi table .manager_member_row:hover {
+        background-color: #D6EEEE;
+        /* box-shadow: 5px 0 0 0 gray; */
+}
+
+
+
+/* -------------------------check box------------------------------- */
+
+.manager_member_row .atte{
+    width: 20px;
+    height: 20px;
+}
+
+/* ------------------------------------top bar-------------------------------------- */
+
+.topbar{
+    display: inline-block;
+    flex-direction: column;
+    width: 100%;
+    background-color: #0E2C4B; 
+    line-height: 60px;
+    
+}
+
+.topbar .topbaricon{
+    flex: 100%;
+    width: 100%;
+    align-items: right;
+    padding-top: 10px;
+}
+
+.topbar .topbaricon img{
+    width: 40px;
+    height: 40px;
+    text-align: right;
+    float: right;
+    padding: 6px 3px 0 1px;
+}
+
+.topbar .topbaricon a{
+  padding: 10px;
+}
+
+
+
+
