@@ -3,12 +3,12 @@
 
 /* Google Font Link */
 
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-}
+/**{*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  box-sizing: border-box;*/
+/*  font-family: 'Roboto', sans-serif;*/
+/*}*/
 
 /* --------sidebar-------------------- */
 
@@ -254,7 +254,7 @@
   }
 
   .dashboard_admin .user_employees {
-    width:(100%-144px);
+    /*width:(100%-144px);*/
     display:flex;
     justify-content: space-between;
     gap:20px;

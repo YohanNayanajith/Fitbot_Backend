@@ -130,7 +130,7 @@ $(document).ready(function(){
   });
 
   // //payments
-  $('#admin_employees').click(function(){
+  $('#admin_employees').click( function(){
     page_select(sideBar_links_variable);
     sideBar_links_variable = "#adm_employees";
     
@@ -155,7 +155,46 @@ $(document).ready(function(){
           $.map(result,function(x){
             $('#employee_list_table').append(
 
-                `<tr class="employee_info"><td>${x.employee_id}</td><td>${x.firstname+x.lastname}</td><td>${x.branch_id}</td><td>${x.type}</td><td>${x.gender}</td><td>${x.email}</td></tr>`
+                `<tr class="employee_info"><td>${x.employee_id}</td><td>${x.firstname+x.lastname}</td><td>${x.branch_name}</td><td>${x.type}</td><td>${x.gender}</td><td>${x.email}</td></tr>`
+            );
+          });
+
+          // alert(result);
+          // alert("Data is comming babe");
+        }).fail(function(a,b,err){
+          alert("Error");
+          console.log(a,b,err);
+        });
+
+        $.ajax({
+          method:'POST',
+          url:"employeecount",
+          dataType:'json',
+          // contentType:"application/json",
+        }).done(function(result){
+          // const data_object = JSON.parse(result);
+          // $.map(result,function(post,i){
+          // let total_reps_phy = result.dob;
+          // alert(total_reps_phy);
+
+          console.log(result);
+          $.map(result,function(y){
+            $('#instructorcount').append(
+
+                `<p>${y.instructor_count}</p>`
+            );
+            $('#maintainercount').append(
+
+                `<p>${y.maintainer_count}</p>`
+            );
+            $('#branchmanagercount').append(
+
+                `<p>${y.branch_manager_count}</p>`
+            );
+
+            $('#totalemployee').append(
+
+                `<p>${y.instructor_count+y.maintainer_count+y.branch_manager_count}</p>`
             );
           });
 
@@ -239,6 +278,60 @@ $(function () {
           if(statusTxt == "error")
               alert(`Error: ${xhr.status}: ${xhr.statusText}`);
           });
+
+      $(document).on('submit', '#employee_form', function(e) {
+        // e.preventDefault();
+        // alert("submitted");
+
+        // let designation = (this.designation).val();
+        // let employee_id = (this.employee_id).val();
+        $.ajax({
+      method: 'POST',
+      url: "addemployee",
+      data: {
+        'designation': designation,
+        'employee_id': employee_id,
+        'branch_name': branch_name,
+        'first_name_employee': first_name_employee,
+        'last_name_employee': last_name_employee,
+        'gender_employee': gender_employee,
+        'email_employee': email_employee,
+        'nic_employee': nic_employee,
+        'date_of_birth_employee': date_of_birth_employee,
+        'address_employee': address_employee,
+        'contact_no1_employee': contact_no1_employee,
+        'contact_no2_employee': contact_no2_employee
+      },
+      // dataType: "json",
+      // contentType:"application/json; charset=utf-8",
+    }).done(function (result) {
+      alert(result);
+      Swal.fire({
+        icon: 'error',
+        title: "Can't register...",
+        text: 'Something went wrong!',
+        confirmButtonText: '<i class="fa fa-thumbs-up"></i> Try Again!',
+        confirmButtonColor: '#0E2C4B',
+        footer: '<a href="employee">Register again</a>'
+      })
+
+
+    }).fail(function (a, b, err) {
+
+      alert(err);
+      Swal.fire({
+        icon: 'error',
+        title: "Can't register...",
+        text: 'Something went wrong!',
+        confirmButtonText: '<i class="fa fa-thumbs-up"></i> Try Again!!!',
+        confirmButtonColor: '#0E2C4B',
+        footer: '<a href="register">Register again</a>'
+      });
+      console.log(a, b, err);
+    });
+
+  });
+
           load[4] += 1;
         }else{
           $('#adm_add_employees').show();

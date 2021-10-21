@@ -7,3 +7,10 @@ function adm_add_employees() {
   anchor_employees_i.style.color = "black";
   anchor_employees_text.style.color = "black";
 }
+
+//
+
+// $( "#employee_form" ).submit(function( event ) {
+//   alert( "Handler for .submit() called." );
+//   event.preventDefault();
+// });

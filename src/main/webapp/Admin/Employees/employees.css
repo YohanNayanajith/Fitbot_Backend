@@ -3,12 +3,12 @@
 
 /* Google Font Link */
 
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-}
+/**{*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  box-sizing: border-box;*/
+/*  font-family: 'Roboto', sans-serif;*/
+/*}*/
 
 /* --------sidebar-------------------- */
 
@@ -253,12 +253,10 @@
 
   .employeeview_admin .overview-boxes {
       display: flex;
-      width:calc(100% - 40px);
       justify-content: space-between;
-      /* padding:0 20px; */
-      /*flex:wrap;*/
-      margin-bottom: 50px;;
-      /* margin:10px; */
+      margin-bottom: 50px;
+
+
   }
 
   .employeeview_admin .overview-boxes .box{

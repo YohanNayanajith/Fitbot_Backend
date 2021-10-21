@@ -93,4 +93,22 @@
         <servlet-name>employee</servlet-name>
         <url-pattern>/employee</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>addemployee</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.EmployeeAddController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addemployee</servlet-name>
+        <url-pattern>/addemployee</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>employeecount</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.EmployeeCountController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>employeecount</servlet-name>
+        <url-pattern>/employeecount</url-pattern>
+    </servlet-mapping>
 </web-app>

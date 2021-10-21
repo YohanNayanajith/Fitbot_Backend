@@ -81,12 +81,12 @@
                 <h2>Add a New Employee</h2>
               </div>
 
-              <form action="" class="employee_form">
+              <form  class="employee_form" method="post" id="employee_form" action="employee" >
 
                   <div class="first_middle_last">
                     <div class="first_label">
                       <label for="designation">Designation<span class="require_star">*</span></label><br>
-                      <select name="designation" id="designation" class="employee_label designation"  >
+                      <select name="designation" id="designation" class="employee_label designation" >
                         <option value="instructor">Instructor</option>
                         <option value="maintainer">Maintainer</option>
                         <option value="branch_manager">Branch Manager</option>
@@ -94,13 +94,13 @@
                     </div>
 
                     <div class="middle_label">
-                      <label for="user_id">User ID<span class="require_star">*</span></label></br>
-                      <input type="text" name="user_id" id="user_id" class="employee_label user_id" placeholder="Enter user ID" ><br>
+                      <label for="employee_id">Employee ID<span class="require_star">*</span></label></br>
+                      <input type="text" name="employee_id" id="employee_id" class="employee_label employee_id" placeholder="Enter user ID" ><br>
                     </div>
 
                     <div class="last_label">
-                      <label for="branch_id">Branch ID<span class="require_star">*</span></label><br>
-                      <input type="text" name="branch_id" id="branch_id" class="employee_label branch_id" placeholder="Enter branch id" >
+                      <label for="branch_name">Branch Name<span class="require_star">*</span></label><br>
+                      <input type="text" name="branch_name" id="branch_name" class="employee_label branch_name" placeholder="Enter branch id" >
                   </div>
                   </div>
 
@@ -167,8 +167,8 @@
                     
                     <div class="add_btn_class">
                      
-                      <input type="button" class="btn_add" value="Submit" onClick=""><br>
-                      <input type="button" class="btn_cancel" value="Cancel" onClick=""><br>
+                      <input type="submit" class="btn_add" value="Submit"><br>
+                      <input type="button" class="btn_cancel" value="Cancel"><br>
                   </div>
               </form>
            
@@ -185,7 +185,8 @@
       <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script> -->
 
       
-      <script src="admin_employeeadd.js"></script>
+      <script src="employee_add.js" defer></script>
+      <script src="asserts/JSLibrary/sweetalert2.all.min.js" defer></script>
       </body>
       </html>
 

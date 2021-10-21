@@ -1,10 +1,10 @@
 
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-}
+/**{*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  box-sizing: border-box;*/
+/*  font-family: 'Roboto', sans-serif;*/
+/*}*/
 
 /* --------sidebar-------------------- */
 
@@ -150,7 +150,7 @@
 .sidebar .bx-search:hover{
   background: #FFF;
   color: #11101d;
-} */ */
+} */
 /* .sidebar li a{
   display: flex;
   height: 100%;
@@ -238,7 +238,7 @@
   
   .home-section .header ul li a :hover{
     color:#7CD0FF;
-  } */ */ */
+  } */
 
   /* Content below header in home-section */
   .home-section .add_employee_view {

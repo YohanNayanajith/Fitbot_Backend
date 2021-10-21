@@ -1,32 +1,52 @@
 package com.group39.fitbot.group39_fitbot.model;
 
-import java.time.LocalDate;
-import java.util.Date;
+
+import java.sql.Date;
 
 public class Employee {
     private String employee_id;
+    private String branch_name;
     private String firstname;
     private String lastname;
+    private String gender;
     private String email;
     private String nic;
     private Date dob;
-    private String gender;
-    private String branch_id;
+    private String address;
+    private String primarycontact;
+    private String secondarycontact;
     private String type;
 
     public Employee() {
     }
 
-    public Employee(String employee_id, String firstname, String lastname, String email, String nic, Date dob, String gender, String branch_id, String type) {
+    public Employee(String employee_id, String branch_name, String firstname, String lastname, String gender, String email, String nic, Date dob, String address, String primarycontact, String secondarycontact, String type) {
         this.employee_id = employee_id;
+        this.branch_name = branch_name;
         this.firstname = firstname;
         this.lastname = lastname;
+        this.gender = gender;
         this.email = email;
         this.nic = nic;
         this.dob = dob;
-        this.gender = gender;
-        this.branch_id = branch_id;
+        this.address = address;
+        this.primarycontact = primarycontact;
+        this.secondarycontact = secondarycontact;
         this.type = type;
+    }
+
+    public Employee(String employee_id, String branch_name, String firstname, String lastname, String gender, String email, String nic, Date dob, String address, String primarycontact, String secondarycontact) {
+        this.employee_id = employee_id;
+        this.branch_name = branch_name;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.gender = gender;
+        this.email = email;
+        this.nic = nic;
+        this.dob = dob;
+        this.address = address;
+        this.primarycontact = primarycontact;
+        this.secondarycontact = secondarycontact;
     }
 
     public String getEmployee_id() {
@@ -37,20 +57,36 @@ public class Employee {
         this.employee_id = employee_id;
     }
 
-    public String getFirst_name() {
+    public String getBranch_name() {
+        return branch_name;
+    }
+
+    public void setBranch_id(String branch_id) {
+        this.branch_name = branch_name;
+    }
+
+    public String getFirstname() {
         return firstname;
     }
 
-    public void setFirst_name(String first_name) {
-        this.firstname = first_name;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
-    public String getLast_name() {
+    public String getLastname() {
         return lastname;
     }
 
-    public void setLast_name(String last_name) {
-        this.lastname = last_name;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public String getEmail() {
@@ -69,28 +105,36 @@ public class Employee {
         this.nic = nic;
     }
 
-    public Date getDob() {
-        return dob;
+    public java.sql.Date getDob() {
+        return (java.sql.Date) dob;
     }
 
     public void setDob(Date dob) {
         this.dob = dob;
     }
 
-    public String getGender() {
-        return gender;
+    public String getAddress() {
+        return address;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public String getBranch_id() {
-        return branch_id;
+    public String getPrimarycontact() {
+        return primarycontact;
     }
 
-    public void setBranch_id(String branch_id) {
-        this.branch_id = branch_id;
+    public void setPrimarycontact(String primarycontact) {
+        this.primarycontact = primarycontact;
+    }
+
+    public String getSecondarycontact() {
+        return secondarycontact;
+    }
+
+    public void setSecondarycontact(String secondarycontact) {
+        this.secondarycontact = secondarycontact;
     }
 
     public String getType() {
@@ -99,5 +143,23 @@ public class Employee {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "employee_id='" + employee_id + '\'' +
+                ", branch_name='" + branch_name + '\'' +
+                ", firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", gender='" + gender + '\'' +
+                ", email='" + email + '\'' +
+                ", nic='" + nic + '\'' +
+                ", dob=" + dob +
+                ", address='" + address + '\'' +
+                ", primarycontact='" + primarycontact + '\'' +
+                ", secondarycontact='" + secondarycontact + '\'' +
+                ", type='" + type + '\'' +
+                '}';
     }
 }

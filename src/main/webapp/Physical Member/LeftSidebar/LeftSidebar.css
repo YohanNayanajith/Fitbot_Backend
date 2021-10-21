@@ -328,7 +328,7 @@
   justify-content: center;
 }
 .top_bar_navigation a ,.right_side_bar_open_btn{
-  font-style: none;
+  /*font-style: none;*/
   color: white;
   text-decoration:none;
 }

@@ -1,8 +1,8 @@
 package com.group39.fitbot.group39_fitbot.controller;
 
 import com.google.gson.Gson;
-import com.group39.fitbot.group39_fitbot.dao.EmployeeDAO;
-import com.group39.fitbot.group39_fitbot.model.Employee;
+import com.group39.fitbot.group39_fitbot.dao.EmployeeCountDAO;
+import com.group39.fitbot.group39_fitbot.model.EmployeeCount;
 
 
 import javax.servlet.RequestDispatcher;
@@ -15,7 +15,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EmployeeController extends HttpServlet {
+public class EmployeeCountController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("Employee get method called");
@@ -25,18 +25,18 @@ public class EmployeeController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("Employee Post Method called");
+        System.out.println("EmployeeCount Post Method called");
 
 //        Employee employee = new Employee();
         try {
-            List<Employee> all_employees = new ArrayList<>();
-            all_employees = EmployeeDAO.getEmployee();
-            System.out.println(all_employees);
+            List<EmployeeCount> all_employee_count = new ArrayList<>();
+            all_employee_count = EmployeeCountDAO.getEmployeeCount();
+            System.out.println(all_employee_count);
             Gson gson = new Gson();
-            String employeeJSON = gson.toJson(all_employees);
+            String employeecountJSON = gson.toJson(all_employee_count);
             resp.setContentType("application/json");
             resp.setCharacterEncoding("UTF-8");
-            resp.getWriter().write(employeeJSON);
+            resp.getWriter().write(employeecountJSON);
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
@@ -44,5 +44,6 @@ public class EmployeeController extends HttpServlet {
         }
 
     }
-    }
+}
+
 

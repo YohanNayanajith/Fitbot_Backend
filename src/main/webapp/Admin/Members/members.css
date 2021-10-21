@@ -3,12 +3,12 @@
 
 /* Google Font Link */
 
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-}
+/**{*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  box-sizing: border-box;*/
+/*  font-family: 'Roboto', sans-serif;*/
+/*}*/
 
 /* --------sidebar-------------------- */
 
@@ -253,12 +253,9 @@
 
   .memberview_admin .overview-boxes {
       display: flex;
-      width:calc(100%-40px);
       justify-content: space-between;
-      /* padding:0 20px; */
-      flex:wrap;
       margin-bottom: 50px;;
-      /* margin:10px; */
+
   }
 
   .memberview_admin .overview-boxes .box{
@@ -280,12 +277,12 @@
       font-size : 30px;
       font-weight :500;
       margin-top: 5px;
-      display:inline block;
+      display:inline-block;
   }
 
 .memberview_admin .overview-boxes .box .member{
       font-size:50px;
-      font-weight:500px;
+      font-weight:500;
       height:50px;
       width:50px;
       line-height:50px;
@@ -298,7 +295,7 @@
   /* ----------------Member-Details-------- */
 
   .memberview_admin .all_members {
-    margin:50px 0px;
+    margin:50px 0;
     background-color:#d6d4d4;
     border-radius: 10px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
