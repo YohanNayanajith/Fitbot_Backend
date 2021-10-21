@@ -347,6 +347,8 @@
   color: black;
   padding:10px;
   font-weight:bold;
+  align-items: center;
+  justify-content: center;
 }
 
 .profile_picture_top_bar img {

@@ -1,0 +1,23 @@
+.workout_plan_physical {
+    margin:30px 72px;
+}
+
+.workout_plan_physical_btn_group {
+    display:flex;
+    justify-content:space-between;
+    margin-bottom: 30px;
+}
+.workout_plan_physical_btn_group_vir input, .workout_plan_physical_btn_group_req input {
+    padding: 10px 15px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color:#0E2C4B;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.workout_plan_physical_btn_group_vir input:hover, .workout_plan_physical_btn_group_req input:hover{
+    background-color:white;
+    border: 1px solid #0E2C4B;
+    color:#0E2C4B;
+}

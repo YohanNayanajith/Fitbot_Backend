@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Physical Member/Profile/Profile.css">
+    <title>Profile</title>
+</head>
+<body>
+    <div class="profile_physical" id="profile_physical">
+        <div class="profile_physical_big_container">
+            <div class="profile_physical_container">
+                <div class="profile_physical_container_header">
+                    <h1>My Profile</h1>
+                </div>
+                <div class="profile_physical_container_btn">
+                    <a value="Edit Profile" id="profile_physical_container_btn_a" onclick="edit_profile_popup()">Edit Profile</a>
+                </div>
+            </div>
+
+            <div class="profile_physical_container_details">
+                <div class="profile_physical_container_details_image">
+                    <img src="http://127.0.0.1:5500/Physical%20Member/Images/profile_image.jpg" alt="profile_image">
+                </div>
+                <div class="profile_physical_container_member_details">
+                    <div class="profile_physical_container_member_details_line"></div>
+                    <div class="profile_physical_container_member">
+                        <span>Yohan Nayanajith</span><br>
+                        <span>Age - #</span><br>
+                        <span>Height - #</span><br>
+                        <span>Weight - #</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="profile_physical_container_monthly_goal">
+                <h1>Monthly Goal</h1>
+                <div class="profile_physical_container_edit_monthly_goal" id="profile_physical_container_edit_monthly_goal">
+                    <!-- <div id="myPlot" style="width:100%;max-width:700px;"></div> -->
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+        <!-- pop-up model -->
+        <div class="profile_physical_container_edit_profile" id="profile_physical_container_edit_profile">
+            <div class="edit_profile_container" id="edit_profile_container">
+                <div class="edit_profile_container_header">
+                    <h1>Edit Profile</h1>
+                    <div onclick="close_edit_profile_Popup()" class="close_edit_profile_btn">
+                        <i class='bx bx-x close_btn_forgot'></i>
+                    </div>
+                </div>
+                <div class="edit_profile_container_detail">
+                    <form action="physicalMember" method="post">
+                        <div class="edit_profile_container_detail_input1">
+                            <div>
+                                <label for="edit_profile_container_detail_name">First Name</label><br>
+                                <input type="text" name="edit_profile_container_detail_name" class="edit_profile_container_detail_name" id="edit_profile_container_detail_name">
+                            </div>
+
+                            <div>
+                                <label for="edit_profile_container_detail_last_name">Last Name</label><br>
+                                <input type="text" name="edit_profile_container_detail_last_name" class="edit_profile_container_detail_last_name" id="edit_profile_container_detail_last_name">
+                            </div>
+                        </div>
+
+                        <div class="edit_profile_container_detail_input2">
+                            <div>
+                                <label for="edit_profile_container_detail_weight">Weight</label><br>
+                                <input type="number" name="edit_profile_container_detail_weight" class="edit_profile_container_detail_weight" id="edit_profile_container_detail_weight">
+                            </div>
+
+                            <div>
+                                <label for="edit_profile_container_detail_last_height">Height</label><br>
+                                <input type="number" name="edit_profile_container_detail_last_height" class="edit_profile_container_detail_last_height" id="edit_profile_container_detail_last_height">
+                            </div>
+                        </div>
+
+                        <div class="edit_profile_container_detail_input3">
+                            <div>
+                                <label for="edit_profile_container_detail_dob">Date of Birth</label><br>
+                                <input type="date" name="edit_profile_container_detail_dob" class="edit_profile_container_detail_dob" id="edit_profile_container_detail_dob">
+                            </div>
+
+                            <div>
+                                <label for="edit_profile_container_detail_last_conatct">Contact Number</label><br>
+                                <input type="tel" name="edit_profile_container_detail_last_conatct" class="edit_profile_container_detail_last_conatct" id="edit_profile_container_detail_last_conatct">
+                            </div>
+                        </div>
+
+                        <div class="edit_profile_container_detail_input4">
+                            <a class="edit_profile_container_detail_input4_btn1" onclick="edit_profile_change_password()">Change Password</a>
+                            <a class="edit_profile_container_detail_input4_btn2" onclick="edit_profile_submit()">Save Changes</a>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="profile_physical_container_edit_profile">
+            <div class="edit_profile_container" id="edit_profile_change_password_container">
+                <div class="edit_profile_container_header">
+                    <h1>Change Password</h1>
+                    <div onclick="close_edit_profile_change_password_Popup()" class="close_edit_profile_btn">
+                        <i class='bx bx-x close_btn_forgot'></i>
+                    </div>
+                </div>
+                <div class="edit_profile_container_detail">
+                    <form action="physicalMember" method="post">
+                        <div class="edit_profile_container_detail_input1">
+                            <div>
+                                <label for="edit_profile_container_detail_name">New Password</label><br>
+                                <input type="password" name="edit_profile_container_detail_name" class="edit_profile_container_detail_name" id="edit_profile_container_change_new_password">
+                            </div>
+
+                            <div>
+                                <label for="edit_profile_container_detail_last_name">Confirm Password</label><br>
+                                <input type="password" name="edit_profile_container_detail_last_name" class="edit_profile_container_detail_last_name" id="edit_profile_container_change_confirm_password">
+                            </div>
+                        </div>
+
+                        <div class="edit_profile_container_detail_input4">
+                            <a class="edit_profile_container_detail_input4_btn1" onclick="edit_profile_change_password_back()">Back</a>
+                            <a class="edit_profile_container_detail_input4_btn2" onclick="edit_profile_change_password_submit()">Save Changes</a>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="Physical Member/Profile/Profile.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+</html>
