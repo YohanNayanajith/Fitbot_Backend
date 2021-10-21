@@ -1,0 +1,75 @@
+.appointments_physical {
+    display:flex;
+    flex-direction:column;
+    margin: 30px 78px;
+}
+
+.appointment_total_detail, .appointment_cal_date{
+    display:flex;
+    background-color: #D7904F;
+    padding: 20px;
+    max-height:100px;
+    align-items: center;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    justify-content:space-evenly;
+}
+.total_payble, .previous_payment_date {
+    font-size: 18px;
+    font-weight: bold;
+}
+.payble_balance, .previous_payment_date_format {
+    font-size: 16px;
+}
+.payble_date, .previous_payment_date_details {
+    font-size: 14px;
+    color: #C4C4C4;
+}
+.payment_text, .payment_date_icon {
+    padding: 10px;
+}
+.appointment_total_detail {
+    min-width: 600px;
+}
+.appointment_cal_date {
+    min-width:200px;
+}
+.appointment_date_icon img{
+    width:60px;
+    height: 60px;
+}
+
+.appointment_button_div {
+    background-color:#44D201;
+    padding: 10px 50px;
+    display: inline-block;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
+    color:white;
+    font-weight: bold;
+}
+
+.appointment_button_div:hover{
+    background-color:white;
+    border:2px solid #44D201;
+    color:#44D201;
+}
+.show_more_button {
+    background-color:white;
+    border:1px solid #44D201;
+    padding: 8px 20px;
+    display: inline-block;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
+    color:#44D201;
+    font-weight: bold;
+    font-size: 14px
+}
+.show_more_button:hover{
+    background-color:#44D201;
+    border:1px solid white;
+    color:white;
+}

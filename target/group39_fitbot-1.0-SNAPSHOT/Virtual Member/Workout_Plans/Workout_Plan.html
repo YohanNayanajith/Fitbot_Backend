@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script>
+    <link rel="stylesheet" href="Physical Member/Payments/Payments.css">
+    <link rel="stylesheet" href="Physical Member/Workout_Plans/Workout_Plan.css">
+    <title>Workout Plans</title>
+</head>
+<body>
+    <div class="workout_plan_physical" id="workout_plan_physical">
+
+        <div class="workout_plan_physical_btn_group">
+            <div class="workout_plan_physical_btn_group_vir"><input type="button" value="Virtual Workout Plans"></div>
+            <div class="workout_plan_physical_btn_group_req"><input type="button" value="Request a Workout Plan"></div>
+        </div>
+
+        <div class="after_the_table" id="after_the_table">
+
+        </div>
+        <div class="payment_history">
+            <div class="payment_history_container">
+                <div class="payment_history_container_header">
+                    <span>Physical Workout Plan</span>
+                    <div id="workout_container_header"></div>
+                </div>
+
+                <div class="payment_history_container_details" id="workout_container_details">
+                    <table class="payment_history_container_table" id="workout_container_table">
+                        <tr class="payment_history_container_table_header">
+                            <th>Exercise</th>
+                            <th>Start Time</th>
+                            <th>Day</th>
+                            <th>Duration</th>
+                            <th>Complete</th>
+                        </tr>
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="Physical Member/Workout_Plans/Workout_Plan.js" defer></script>
+    <script src="Physical Member/LeftSidebar/LeftSidebar.js" defer></script>
+</body>
+
+</html>

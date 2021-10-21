@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script>
+
+    <link rel="stylesheet" href="./Payments.css">
+    <title>Physical Member Payments</title>
+</head>
+<body>
+    <div class="payments_physical" id="payments_physical">
+        <div class="payment_details_container">
+            <div class="payment_details_container_header">
+                <span>Payment Details</span>
+            </div>
+            <div class="payments_details">
+                <div class="payment_total_payble">
+                    <div class="payment_text">
+                        <span class="total_payble">Total Payble</span><br>
+                        <span class="payble_balance">Rs. 5000.00</span><br>
+                        <span class="payble_date">Pay before {date}</span>
+                    </div>
+                    <div class="payment_button">
+                        <a class="payment_button_div" type="submit" id="payhere-payment" onclick="payments_pay()">PAY BILL</a>
+                    </div>
+                </div>
+                <div class="payment_cal_date">
+                    <div class="payment_date_icon">
+                        <img src="http://localhost:8080/group39_fitbot_war_exploded/Physical%20Member/Icons/calendar.svg" alt="calendar">
+                    </div>
+                    <div class="payment_date_details">
+                        <span class="previous_payment_date">Date</span><br>
+                        <span class="previous_payment_date_format">{date}</span><br>
+                        <span class="previous_payment_date_details">Last payment {date}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="payment_history">
+            <div class="payment_history_container">
+                <div class="payment_history_container_header">
+                    <span>Payment History</span>
+                </div>
+                
+                <div class="payment_history_container_details">
+                    <table class="payment_history_container_table">
+                        <tr class="payment_history_container_table_header">
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Payment Method</th>
+                            <th>Payment</th>
+                            <th></th>
+                        </tr>
+                    
+                        <tr class="payment_history_container_row">
+                            <td>21/10/2021</td>
+                            <td>15:00</td>
+                            <td>DEBIT CARD</td>
+                            <td>Rs 10000</td>
+                            <td><a href="#" class="view_bill_button" onclick="pay_bill_view()">VIEW BILL</a></td>
+                        </tr>
+        
+                        <tr class="payment_history_container_row">
+                            <td>21/10/2021</td>
+                            <td>15:00</td>
+                            <td>DEBIT CARD</td>
+                            <td>Rs 5000</td>
+                            <td><a href="#" class="view_bill_button">PAY BILL</a></td>
+                        </tr>   
+        
+                        <tr class="payment_history_container_row">
+                            <td>21/10/2021</td>
+                            <td>15:00</td>
+                            <td>DEBIT CARD</td>
+                            <td>Rs 5000</td>
+                            <td><a href="#" class="view_bill_button">PAY BILL</a></td>
+                        </tr>
+        
+                        <tr class="payment_history_container_row">
+                            <td>21/10/2021</td>
+                            <td>15:00</td>
+                            <td>DEBIT CARD</td>
+                            <td>Rs 5000</td>
+                            <td><a href="#" class="view_bill_button">PAY BILL</a></td>
+                        </tr>
+        
+                        <tr class="payment_history_container_row">
+                            <td>21/10/2021</td>
+                            <td>15:00</td>
+                            <td>DEBIT CARD</td>
+                            <td>Rs 5000</td>
+                            <td><a href="#" class="view_bill_button">PAY BILL</a></td>>
+                        </tr>
+        
+                        <tr class="payment_history_container_row">
+                            <td>21/10/2021</td>
+                            <td>15:00</td>
+                            <td>DEBIT CARD</td>
+                            <td>Rs 5000</td>
+                            <td><a href="#" class="view_bill_button">PAY BILL</a></td>
+                        </tr>
+        
+                        <tr class="payment_history_container_row">
+                            <td>21/10/2021</td>
+                            <td>15:00</td>
+                            <td>DEBIT CARD</td>
+                            <td>Rs 5000</td>
+                            <td><a href="#" class="view_bill_button">PAY BILL</a></td>
+                        </tr>
+        
+                        <tr class="payment_history_container_row">
+                            <td>21/10/2021</td>
+                            <td>15:00</td>
+                            <td>DEBIT CARD</td>
+                            <td>Rs 5000</td>
+                            <td><a href="#" class="view_bill_button">PAY BILL</a></td>
+                        </tr>
+                           
+                    </table>
+                      
+                </div>
+            </div>
+        </div>
+
+        <div class="payment_popup_details" id="payment_popup_details">
+            <div class="payment_detail_header">
+                <span>Payment Details</span>
+                <div onclick="close_payment_details()" class="close_payment_detail_btn">
+                    <i class='bx bx-x close_btn_forgot'></i>
+                </div>
+            </div>
+
+            <div class="payment_detail_container">
+                <form method="post" action="https://sandbox.payhere.lk/pay/checkout" class="payment_detail_container_form">
+                    <input type="hidden" name="merchant_id" value="1218874">    <!-- Replace your Merchant ID -->
+                    <input type="hidden" name="return_url" value="http://sample.com/return">
+                    <input type="hidden" name="cancel_url" value="http://sample.com/cancel">
+                    <input type="hidden" name="notify_url" value="http://sample.com/notify">
+
+                    <div class="payment_detail_container_form_headers"><span>Membership Details</span><br></div>
+
+                    <div class="payment_detail_container_mem_details">
+                        <div class="payment_detail_container_input">
+                            <div>
+                                <label for="order_id">Branch Name</label><br>
+                                <input type="text" name="order_id" id="order_id" value="ItemNo12345"><br>
+                            </div>
+
+                            <div>
+                                <label for="items">Membership Category</label><br>
+                                <select name="items" id="items">
+                                    <option value="family_membership">Family Membership</option>
+                                    <option value="couple_membership">Couple Membership</option>
+                                    <option value="platinum_membership">Platinum Membership</option>
+                                    <option value="gold_membership">Gold Membership</option>
+                                    <option value="silver_membership">Silver Membership</option>
+                                </select>
+                                <!-- <input type="text" name="items" value="Door bell wireless"><br> -->
+                            </div>
+                        </div>
+
+                        <div class="payment_detail_container_input">
+                            <div>
+                                <label for="currency">Currency</label><br>
+                                <input type="text" name="currency" id="currency" value="LKR"><br>
+                            </div>
+
+                            <div>
+                                <label for="amount">Membership Fee</label><br>
+                                <input type="text" name="amount" id="amount" value="1000"><br>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="payment_detail_container_form_headers"><span>Customer Details</span></div>
+
+                    <div class="payment_detail_container_cus_details">
+                        <div class="payment_detail_container_input">
+                            <div>
+                                <label for="first_name">First Name</label><br>
+                                <input type="text" name="first_name" id="first_name" value="Saman"><br>
+                            </div>
+
+                            <div>
+                                <label for="last_name">Last Name</label><br>
+                                <input type="text" name="last_name" id="last_name" value="Perera"><br>
+                            </div>
+                        </div>
+
+                        <div class="payment_detail_container_input">
+                            <div>
+                                <label for="email">Email</label><br>
+                                <input type="email" name="email" id="email" value="samanp@gmail.com"><br>
+                            </div>
+
+                            <div>
+                                <label for="phone">Contact Number</label><br>
+                                <input type="tel" name="phone" id="phone" value="0771234567"><br>
+                            </div>
+                        </div>
+
+                        <div class="payment_detail_container_input">
+                            <div>
+                                <label for="address">Address</label><br>
+                                <input type="text" name="address" id="address" value="No.1, Galle Road"><br>
+                            </div>
+
+                            <div>
+                                <label for="city">City</label><br>
+                                <input type="text" name="city" id="city" value="Colombo"><br>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="hidden" name="country" value="Sri Lanka"><br>
+                    <div class="payment_detail_container_input_submit">
+                        <input type="button" value="Cash Payment" onclick="payment_cash()">
+                        <input type="submit" value="Online Payment">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+        <div class="payment_popup_details" id="after_payment_popup_details">
+            <div class="payment_detail_header">
+                <span>Payment Details</span>
+                <div onclick="close_after_payment_details()" class="close_payment_detail_btn">
+                    <i class='bx bx-x close_btn_forgot'></i>
+                </div>
+            </div>
+            <div class="payment_detail_container">
+                <form method="post" action="" class="payment_detail_container_form">
+
+                    <div class="payment_detail_container_form_headers"><span>Membership Details</span><br></div>
+
+                    <div class="payment_detail_container_mem_details">
+                        <div class="payment_detail_container_input">
+                            <div>
+                                <span>Branch Name</span><br>
+                                <span>Malabe Branch</span>
+                            </div>
+
+                            <div>
+                                <span>Membership Category</span><br>
+                                <span>Family Membership</span>
+                                <!-- <input type="text" name="items" value="Door bell wireless"><br> -->
+                            </div>
+                        </div>
+
+                        <div class="payment_detail_container_input">
+                            <div>
+                                <span>Currency</span><br>
+                                <span>LKR</span>
+                            </div>
+
+                            <div>
+                                <span>Membership Fee</span><br>
+                                <span>5000/=</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="payment_detail_container_form_headers"><span>Customer Details</span></div>
+
+                    <div class="payment_detail_container_cus_details">
+                        <div class="payment_detail_container_input">
+                            <div>
+                                <span>First Name</span><br>
+                                <span>Saman</span>
+                            </div>
+
+                            <div>
+                                <span>Last Name</span><br>
+                                <span>Perera</span>
+                            </div>
+                        </div>
+
+                        <div class="payment_detail_container_input">
+                            <div>
+                                <span>Email</span><br>
+                                <span>samanp@gmail.com</span>
+                            </div>
+
+                            <div>
+                                <span>Contact Number</span><br>
+                                <span>0758565750</span>
+                            </div>
+                        </div>
+
+                        <div class="payment_detail_container_input">
+                            <div>
+                                <span>Address</span><br>
+                                <span>No.1, Galle Road</span>
+                            </div>
+
+                            <div>
+                                <span>City</span><br>
+                                <span>Colombo</span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script src="Physical Member/Payments/Payments.js" defer></script>
+        <script src="Physical Member/Payments/PayherePayment.js" defer></script>
+        <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js" defer></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </div>
+
+</body>
+
+</html>
