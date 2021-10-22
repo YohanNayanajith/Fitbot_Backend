@@ -52,35 +52,32 @@ public class LoginController extends HttpServlet {
             session.setAttribute("userName",loginData.getUser_name());
             session.setAttribute("userType",loginData.getUserType());
 
-            if(true){
-                String userType = loginData.getUserType();
-                switch (userType) {
-                    case "Physical Member":
-                        out.print("1");
-                        break;
-                    case "Virtual Member":
-                        out.print("2");
-                        break;
-                    case "Instructor":
-                        out.print("3");
-                        break;
-                    case "Manager":
-                        out.print("4");
-                        break;
-                    case "Owner":
-                        out.print("5");
-                        break;
-                    case "admin":
-                        out.print("6");
-                        break;
-                    default:
-                        out.print("You can't log now..please contact our administration");
-                        break;
-                }
-            }else {
-                out.print("Unsucesss");
+            String userType = loginData.getUserType();
+            switch (userType) {
+                case "Physical Member":
+                    out.print("1");
+                    break;
+                case "Virtual Member":
+                    out.print("2");
+                    break;
+                case "Instructor":
+                    out.print("3");
+                    break;
+                case "Manager":
+                    out.print("4");
+                    break;
+                case "Owner":
+                    out.print("5");
+                    break;
+                case "admin":
+                    out.print("6");
+                    break;
+                default:
+//                        out.print("You can't log now..please contact our administration");
+                    out.print("7");
+                    break;
             }
-//            Gson gson = new Gson();
+            //            Gson gson = new Gson();
 //            String memberJSON = gson.toJson(loginData);
 //            resp.setContentType("application/json");
 //            resp.setCharacterEncoding("UTF-8");

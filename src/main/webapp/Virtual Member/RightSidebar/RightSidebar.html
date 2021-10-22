@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://localhost:8080/group39_fitbot_war_exploded/Physical%20Member/RightSidebar/RightSidebar.css">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script> -->
+
+    <title>Document</title>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div id="right_side_nav" class="right_side_nav">
+        <a href="javascript:void(0)" class="close_btn_right_sidebar" id="close_btn_right_sidebar" onclick="closeNav()"><i class='bx bx-right-arrow side_icon top_nav_icons'></i></a>
+        <!-- <a class="close_btn_right_sidebar" id="close_btn_right_sidebar">X</a> -->
+        <div class="right_side_nav_image_div">
+            <img src="http://localhost:8080/group39_fitbot_war_exploded/Physical%20Member/Images/profile_image.jpg" alt="profile_image_large" class="right_side_nav_image">
+        </div>
+        <!-- <img src="../Images/profile_image.jpg" alt="profile_image_large"> -->
+        <h2><span>Y</span>ohan <span>N</span>ayanajith</h2>
+
+        <div class="user_details_profile">
+            <div class="height_profile">
+                <div>
+                    <span class="height">Height</span><br>
+                    <span class="height_value">176cm</span>
+                </div>
+            </div>
+            <div class="age_profile">
+                <div>
+                    <span class="age">Age</span><br>
+                    <span class="age_value">22</span>
+                </div>
+            </div>
+            <div class="weight_profile">
+                <div>
+                    <span class="weight">Height</span><br>
+                    <span class="weight_value">65Kg</span>
+                </div>
+            </div>
+        </div>
+
+        <h2>MONTHLY <span>GOAL</span></h2>
+
+        <div class="monthly_goal_profile">
+            <div>
+                <canvas id="monthly_goal_chart"></canvas>
+            </div>
+        </div>
+        
+        <h2>UPCOMING <span>TASK</span></h2>
+
+        <div class="upcoming_task_profile">
+            <div class="right_side_bar_task_1">
+                <div>
+                    <span>GYMNASTIC</span><br>
+                    <span>21/08/2021 - 3.45 PM</span>
+                </div>
+                <input type="checkbox" id="gymnastic_checkbox1" class="gymnastic_checkbox">
+            </div>
+
+            <!-- copied-items-doesnt change anything -->
+            <div class="right_side_bar_task_2">
+                <div>
+                    <span>RUNNING</span><br>
+                    <span>21/08/2021 - 3.45 PM</span>
+                </div>
+                <input type="checkbox" id="gymnastic_checkbox2" class="gymnastic_checkbox">
+            </div>
+            <div class="right_side_bar_task_3">
+                <div>
+                    <span>GYMNASTIC</span><br>
+                    <span>21/08/2021 - 3.45 PM</span>
+                </div>
+                <input type="checkbox" id="gymnastic_checkbox3" class="gymnastic_checkbox">
+            </div>
+        </div>
+        
+    </div>
+      
+    <!-- <span class="open_btn_right_sidebar" onclick="openNav()">&#9776; open</span> -->
+    
+</body>
+
+<!-- chart js -->
+<script src="http://127.0.0.1:5500/Physical%20Member/RightSidebar/RightSidebar.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</html>

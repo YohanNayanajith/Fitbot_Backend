@@ -301,7 +301,7 @@ function close_new_password_Popup(){
     window.location.href = 'http://localhost:8080/group39_fitbot_war_exploded/login';
 }
 
-
+// login select
 $(document).ready(function (){
     $('#login_form_submit').submit(function(e){
         e.preventDefault();
@@ -313,10 +313,24 @@ $(document).ready(function (){
 
         if(login_username == '' || login_password == ''){
             e.preventDefault();
-            alert("Cant empty feilds");
+            // alert("Cant empty feilds");
+            Swal.fire({
+                icon: 'error',
+                title: 'Login unsuccessfully!',
+                text: 'Cannot be empty!',
+                confirmButtonText:"Ok",
+                confirmButtonColor: '#932828',
+            })
             return;
         }else if(login_username.length < 3){
-            alert("Password length should be greater than 3 characters");
+            // alert("Password length should be greater than 3 characters");
+            Swal.fire({
+                icon: 'error',
+                title: 'Login unsuccessfully!',
+                text: 'Password length should be greater than 3 characters!',
+                confirmButtonText:"Ok",
+                confirmButtonColor: '#932828',
+            })
         }
 
         $.ajax({
@@ -354,16 +368,59 @@ $(document).ready(function (){
                 }else if(result == "6"){
                     //admin
                     window.location.href = 'http://localhost:8080/group39_fitbot_war_exploded/physicalMember';
-                }else{
-                    alert("wrong");
+                }else if(result == '7'){
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Login unsuccessfully!',
+                        text: 'You cannot log now.Please contact our administration!',
+                        confirmButtonText:"Ok",
+                        confirmButtonColor: '#932828',
+                    })
+                }else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Login unsuccessfully!',
+                        text: 'Cannot resolve, System issue!',
+                        confirmButtonText:"Ok",
+                        confirmButtonColor: '#932828',
+                    })
                 }
 
+            },
+            error: function(error){
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Login unsuccessfully!',
+                    text: 'User name and password does not match!',
+                    confirmButtonText:"Ok",
+                    confirmButtonColor: '#932828',
+                })
             }
         });
     });
 });
 
+// remember me
+const rmCheck = document.getElementById("login_remember_me")
+const emailInput = document.getElementById("login_username");
 
+if (localStorage.checkbox && localStorage.checkbox !== "") {
+    rmCheck.setAttribute("checked", "checked");
+    emailInput.value = localStorage.username;
+} else {
+    rmCheck.removeAttribute("checked");
+    emailInput.value = "";
+}
+
+function lsRememberMe() {
+    if (rmCheck.checked && emailInput.value !== "") {
+        localStorage.username = emailInput.value;
+        localStorage.checkbox = rmCheck.value;
+    } else {
+        localStorage.username = "";
+        localStorage.checkbox = "";
+    }
+}
 
 
 // $.ajax({

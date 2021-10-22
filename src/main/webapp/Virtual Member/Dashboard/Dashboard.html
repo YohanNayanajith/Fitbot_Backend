@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Dashboard.css">
+
+    <!-- full-navbar -->
+    <!-- Boxicons icons -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script>
+    <!-- css-file -->
+    <link rel="stylesheet" href="http://localhost:8080/group39_fitbot_war_exploded/Physical%20Member/Dashboard/Dashboard.css">
+    
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="dashboard_middle" id="dashboard_middle">
+        <section class="home-section">
+            <div class="physical_member_full_dashboard">
+                <div class="dashboard_header_member" id="dashboard_header_member">
+<!--                    <h1>Hello, </h1>-->
+                </div>
+                <div class="water_sleep_walking">
+                    <div class="i_water">
+                        <div class="i_water_detail">
+                            <span class="i_water_detail_first_text">I WATER</span><br>
+                            <span class="i_water_detail_second_text">4-6 Lettres</span>
+                        </div>
+                        <img src="http://localhost:8080/group39_fitbot_war_exploded/Physical%20Member/Icons/water-bottle.svg" alt="water_bottle">
+                    </div>
+                    <div class="i_sleep">
+                        <div class="i_water_detail">
+                            <span class="i_water_detail_first_text">I SLEEP</span><br>
+                            <span class="i_water_detail_second_text">6-8 Hours</span>
+                        </div>
+                        <img src="http://localhost:8080/group39_fitbot_war_exploded/Physical%20Member/Icons/clock.svg" alt="clock">
+                    </div>
+                    <div class="i_walking">
+                        <div class="i_water_detail">
+                            <span class="i_water_detail_first_text">I WALKING</span><br>
+                            <span class="i_water_detail_second_text">5000+ Steps</span>
+                        </div>
+                        <img src="http://localhost:8080/group39_fitbot_war_exploded/Physical%20Member/Icons/footprint.svg" alt="footprint">
+                    </div>
+                </div>
+                <div class="dashboard_membership_details">
+                    <h2>Membership Details</h2>
+                    <div class="dashboard_membership_details_column">
+                        <div class="dashboard_mambership">
+                            <img src="http://localhost:8080/group39_fitbot_war_exploded/Physical%20Member/Icons/membership.svg" alt="membership">
+                            <div class="membership_platinum">
+                                <span class="dashboard_mambership_first_text">Membership</span><br>
+                                <span class="dashboard_mambership_second_text">Platinum</span> 
+                                <!-- getting from db -->
+                            </div>
+                        </div>
+                        <div class="dashboard_payment">
+                            <img src="http://localhost:8080/group39_fitbot_war_exploded/Physical%20Member/Icons/credit-card.svg" alt="payment">
+                            <div class="payment_detail">
+                                <span class="dashboard_mambership_first_text">Payment</span><br>
+                                <span class="dashboard_mambership_second_text">XXXXXX</span>
+                            </div>
+                        </div>
+                        <div class="dashboard_date">
+                            <img src="http://localhost:8080/group39_fitbot_war_exploded/Physical%20Member/Icons/calendar.svg" alt="calendar">
+                            <div class="date_details">
+                                <span class="dashboard_mambership_first_text">Date</span><br>
+                                <span class="dashboard_mambership_second_text">09/09/2022</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- task-table -->
+                <div class="dashboard_upcoming_task">
+                    <div class="physical_member_upcoming_events">
+                        <div class="physical_member_upcoming_events_header">
+                            <span>Upcomming Tasks</span>
+                        </div>
+                        
+                        <div class="physical_member_upcoming_events_details">
+                            <table class="physical_member_upcoming_events_table1">
+                                <tr class="physical_member_upcoming_events_table_header">
+                                    <th>Exercise</th>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Status</th>
+                                </tr>
+                            
+                                <tr class="physical_member_upcoming_events_row">
+                                    <td>GYMNASTIC</td>
+                                    <td>21/10/2021</td>
+                                    <td>15:00</td>
+                                    <td><input type="checkbox"></td>
+                                </tr>
+                
+                                <tr class="physical_member_upcoming_events_row">
+                                    <td>GYMNASTIC</td>
+                                    <td>21/10/2021</td>
+                                    <td>15:00</td>
+                                    <td><input type="checkbox"></td>
+                                </tr>   
+                
+                                <tr class="physical_member_upcoming_events_row">
+                                    <td>GYMNASTIC</td>
+                                    <td>21/10/2021</td>
+                                    <td>15:00</td>
+                                    <td><input type="checkbox"></td>
+                                </tr>
+                
+                                <tr class="physical_member_upcoming_events_row">
+                                    <td>GYMNASTIC</td>
+                                    <td>21/10/2021</td>
+                                    <td>15:00</td>
+                                    <td><input type="checkbox"></td>
+                                </tr>
+                
+                                <tr class="physical_member_upcoming_events_row">
+                                    <td>GYMNASTIC</td>
+                                    <td>21/10/2021</td>
+                                    <td>15:00</td>
+                                    <td><input type="checkbox"></td>
+                                </tr>
+                
+                                <tr class="physical_member_upcoming_events_row">
+                                    <td>GYMNASTIC</td>
+                                    <td>21/10/2021</td>
+                                    <td>15:00</td>
+                                    <td><input type="checkbox"></td>
+                                </tr>
+                
+                                <tr class="physical_member_upcoming_events_row">
+                                    <td>GYMNASTIC</td>
+                                    <td>21/10/2021</td>
+                                    <td>15:00</td>
+                                    <td><input type="checkbox"></td>
+                                </tr>
+                
+                                <tr class="physical_member_upcoming_events_row">
+                                    <td>GYMNASTIC</td>
+                                    <td>21/10/2021</td>
+                                    <td>15:00</td>
+                                    <td><input type="checkbox"></td>
+                                </tr>
+                                   
+                            </table>
+                              
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+<script src="./Dashboard.js"></script>
+
+<!-- full-navbar -->
+<!-- <script src="http://127.0.0.1:5500/Physical%20Member/LeftSidebar/LeftSidebar.js"></script> -->
+<!-- <script src="http://127.0.0.1:5500/Physical%20Member/RightSidebar/RightSidebar.js"></script> -->
+</html>

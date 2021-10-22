@@ -94,7 +94,7 @@ function page_select(sideBar_links_variable){
     clear_dashboard_functions("phy_mem_appointments","phy_mem_appointments_i","physical_member_appointments_text");
     console.log("appointments");
 
-  }else if(sideBar_links_variable == "#physical_member_settings"){
+  }else if(sideBar_links_variable == "#physical_member_settings" || sideBar_links_variable == "top_bar_settings_icon_white"){
     $('#physical_member_settings').hide();
     clear_dashboard_functions("phy_mem_settings","phy_mem_settings_i","physical_member_settings_text");
 
@@ -134,6 +134,7 @@ $(document).ready(function(){
   if(statusTxt == "error")
       alert("Error: " + xhr.status + ": " + xhr.statusText);
   });
+  load[0] += 1;
 });
 
 var load = [0,0,0,0,0,0,0,0,0,0,0,0];
@@ -252,7 +253,7 @@ $(document).ready(function(){
           });
 
           alert(result);
-          alert("Data is comming babe");
+          // alert("Data is comming babe");
         }).fail(function(a,b,err){
           alert("Error");
           console.log(a,b,err);
@@ -375,8 +376,28 @@ $(document).ready(function(){
       page_select(sideBar_links_variable);
       sideBar_links_variable = "#physical_member_settings";
       $(sideBar_links_variable).load('http://localhost:8080/group39_fitbot_war_exploded/Physical%20Member/Settings/Settings.html #settings_physical',function(responseTxt, statusTxt, xhr){
-      
+
       if(statusTxt == "error")
+          alert("Error: " + xhr.status + ": " + xhr.statusText);
+      });
+      load[10] += 1;
+    }else if(sideBar_links_variable == "#physical_member_settings"){
+      return;
+    }else{
+      page_select(sideBar_links_variable);
+      sideBar_links_variable = "#physical_member_settings";
+      $('#physical_member_settings').show();
+    }
+  });
+
+  //top bar settings
+  $('#top_bar_settings_icon_white').click(function(){
+    if(load[10] == 0){
+      page_select(sideBar_links_variable);
+      sideBar_links_variable = "#physical_member_settings";
+      $(sideBar_links_variable).load('http://localhost:8080/group39_fitbot_war_exploded/Physical%20Member/Settings/Settings.html #settings_physical',function(responseTxt, statusTxt, xhr){
+
+        if(statusTxt == "error")
           alert("Error: " + xhr.status + ": " + xhr.statusText);
       });
       load[10] += 1;
@@ -455,8 +476,93 @@ $(document).ready(function(){
     console.log(a,b,err)
   });
 
-  // $('#phy_mem_diet_plan').click(function(){
+  $.ajax({
+    method:'POST',
+    url:"membership",
+    dataType:'json',
 
-  // });
+  }).done(function(data){
+    // const data_object = JSON.parse(data);
+    alert(data);
+    $('#dashboard_mambership_first_text').append(
+        '<span class="dashboard_mambership_second_text"><b>'+data.membership_category+'</b></span>'
+    );
 
+    $('#dashboard_mambership_first_text1').append(
+        '<span class="dashboard_mambership_second_text"><b>'+data.membership_fee+'</b></span>'
+    );
+
+    $('#dashboard_mambership_first_text2').append(
+        '<span class="dashboard_mambership_second_text"><b>'+data.expiry_day+'</b></span>'
+    );
+
+    $('#money').append(
+        '<span><b>'+'Rs. '+data.renewal+'</b></span>'
+    );
+    // alert(data);
+  }).fail(function(a,b,err){
+    alert("Error");
+    console.log(a,b,err)
+  });
+
+});
+
+// logout
+function log_out_function(){
+  $.ajax({
+    method:"POST",
+    url:"logout",
+    data:"",
+    success: function(result){
+      if(result == "1"){
+        setTimeout(function() {
+          Swal.fire({
+            icon: 'success',
+            title: 'Successfully Logout',
+            // text: 'Password is successfully updated!',
+            confirmButtonText:"Ok",
+            confirmButtonColor: '#0E2C4B',
+          })
+        }, 2000);
+        console.log("logout is correct");
+        window.location.href = "http://localhost:8080/group39_fitbot_war_exploded";
+      }else {
+        console.log("Something went wrong");
+        setTimeout(function() {
+          Swal.fire({
+            icon: 'error',
+            title: 'Try Again',
+            text: 'Logout unsuccessfully!',
+            confirmButtonText:"Ok",
+            confirmButtonColor: '#932828',
+          })
+        }, 2000);
+      }
+    },
+    error: function(error){
+      console.log(error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Try Again',
+        text: 'Logout unsuccessfully!',
+        confirmButtonText:"Ok",
+        confirmButtonColor: '#932828',
+      })
+    }
+  });
+}
+
+//notifications
+
+$(document).ready(function(){
+  $('#notification_messages_big_div').hide();
+  $('#new_btn_notify').hide();
+  $('#top_bar_notification_white_icon').click(function(){
+    $('#notification_messages_big_div').toggle();
+
+    $('#new_btn_notify').hide();
+    $('#notification_messages_box_i').click(function(){
+      $('#new_btn_notify').toggle();
+    });
+  });
 });

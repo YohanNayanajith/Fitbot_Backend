@@ -347,6 +347,8 @@
   color: black;
   padding:10px;
   font-weight:bold;
+  align-items: center;
+  justify-content: center;
 }
 
 .profile_picture_top_bar img {
@@ -391,3 +393,99 @@
 .physical_member_payments {
   display: none;
 } */
+
+/*notification*/
+.notification_messages_big_div {
+  display:flex;
+  flex-direction:column;
+
+  /* align-items: center; */
+  width: 300px;
+  background-color:#F2F2F2;
+  color:black;
+  border-radius: 5px;
+  position: absolute;
+  top: 60px;
+  right: 35px;
+  z-index: 99;
+  padding: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.notification_messages {
+  justify-content:center;
+  align-items: center;
+  /* margin-top: 5px; */
+}
+.notification_messages_header h1 {
+  font-size:22px;
+  font-weight: bold;
+}
+.notification_messages_header_icon i {
+  font-size: 32px;
+}
+.notification_messages {
+  display:flex;
+  justify-content: space-between;
+}
+.notification_messages_box_icon {
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 5px 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+.notify_icon {
+  color:#0E2C4B;
+  font-size: 32px;
+  align-items: center;
+  justify-content: center;
+}
+
+.notification_messages_box {
+  display:flex;
+  /* justify-content:space-evenly; */
+  margin-top: 10px;
+  background-color: #DFDFDF;
+  border-radius: 5px;
+  align-items: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  /* justify-content: center; */
+}
+/* .notification_messages_box_messages {
+  margin-left: 20px;
+} */
+.notification_messages_box_messages span {
+  line-height: 25px;
+  font-weight: bold;
+}
+.notification_messages_box_messages_text1 {
+  color: black;
+  font-size:16px;
+}
+.notification_messages_box_messages_text2{
+  color: #0E2C4B;
+  font-size:14px;
+}
+
+/*notification details*/
+.new_btn_notify {
+  top:100px;
+  background-color: #DFDFDF;
+  justify-content: center;
+}
+.new_btn_notify_message {
+  display: flex;
+  margin-bottom: 5px;
+}
+.new_btn_notify_message span {
+  line-height: 25px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.new_btn_notify_message i {
+  font-size: 24px;
+  color: #0E2C4B;
+  margin-left: 10px;
+  margin-right: 10px;
+}
