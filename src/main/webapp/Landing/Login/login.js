@@ -341,22 +341,83 @@ $(document).ready(function (){
 
                 }else if(result == "2"){
                     //virtual member
-                    window.location.href = 'http://localhost:8080/group39_fitbot_war_exploded/physicalMember';
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Successfully login',
+                        text: 'Virtual Member!',
+                        confirmButtonText:"Ok",
+                        confirmButtonColor: '#0E2C4B',
+                    })
+                    setTimeout(function() {
+                        window.location.href = 'http://localhost:8080/group39_fitbot_war_exploded/physicalMember';
+                    }, 2000);
+
                 }else if(result == "3"){
                     //instructor
-                    window.location.href = 'http://localhost:8080/group39_fitbot_war_exploded/physicalMember';
+
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Successfully login',
+                        text: 'Instructor!',
+                        confirmButtonText:"Ok",
+                        confirmButtonColor: '#0E2C4B',
+                    })
+                    setTimeout(function() {
+                        window.location.href = 'http://localhost:8080/group39_fitbot_war_exploded/physicalMember';
+                    }, 2000);
+
                 }else if(result == "4"){
                     //manager
-                    window.location.href = 'http://localhost:8080/group39_fitbot_war_exploded/physicalMember';
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Successfully login',
+                        text: 'Manager!',
+                        confirmButtonText:"Ok",
+                        confirmButtonColor: '#0E2C4B',
+                    })
+                    setTimeout(function() {
+                        window.location.href = 'http://localhost:8080/group39_fitbot_war_exploded/physicalMember';
+                    }, 2000);
+
                 }else if(result == "5"){
                     //owner
-                    window.location.href = 'http://localhost:8080/group39_fitbot_war_exploded/physicalMember';
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Successfully login',
+                        text: 'Owner!',
+                        confirmButtonText:"Ok",
+                        confirmButtonColor: '#0E2C4B',
+                    })
+                    setTimeout(function() {
+                        window.location.href = 'http://localhost:8080/group39_fitbot_war_exploded/physicalMember';
+                    }, 2000);
+
                 }else if(result == "6"){
                     //admin
-                    window.location.href = 'http://localhost:8080/group39_fitbot_war_exploded/physicalMember';
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Successfully login',
+                        text: 'Admin!',
+                        confirmButtonText:"Ok",
+                        confirmButtonColor: '#0E2C4B',
+                    })
+                    setTimeout(function() {
+                        window.location.href = 'http://localhost:8080/group39_fitbot_war_exploded/physicalMember';
+                    }, 2000);
+
                 }else if(result == "7"){
                     //maintainer
-                    window.location.href = 'http://localhost:8080/group39_fitbot_war_exploded/maintainer';
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Successfully login',
+                        text: 'Maintainer!',
+                        confirmButtonText:"Ok",
+                        confirmButtonColor: '#0E2C4B',
+                    })
+                    setTimeout(function() {
+                        window.location.href = 'http://localhost:8080/group39_fitbot_war_exploded/maintainer';
+                    }, 2000);
+
                 }else{
                     alert("wrong");
                 }

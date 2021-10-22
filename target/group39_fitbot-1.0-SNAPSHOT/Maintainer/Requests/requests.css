@@ -318,10 +318,10 @@
 }
 
 
- .all_maint_requests table .maint_request_info:hover {
-      background-color: #D6EEEE;
-      /* box-shadow: 5px 0 0 0 gray; */
-}
+/* .all_maint_requests table .maint_request_info:hover {*/
+/*      background-color: #D6EEEE;*/
+/*      !* box-shadow: 5px 0 0 0 gray; *!*/
+/*}*/
 
 .completed {
   color:green;

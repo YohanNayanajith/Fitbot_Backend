@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <!-- Stylesheet -->
     <link rel="stylesheet" href="http://localhost:8080/group39_fitbot_war_exploded/Maintainer/Dashboard/dashboard.css">
+    <link rel="stylesheet" href="http://localhost:8080/group39_fitbot_war_exploded/Maintainer/Maintainer-Form/maintainer_form.css">
+
+
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
@@ -13,57 +16,66 @@
    
 <body>
 
-  <div class ="dashboard_maintainer" id="dashboard_maintainer">
-    <div class ="dashboard_view_maintainer">
-      <section class="home-section">
-        <!-- Content below the header -->
-        <div class="maintain_requests_view" id="maintain_requests_view">
+<div class ="dashboard_maintainer" id="dashboard_maintainer">
 
-          <div class="all_maint_requests">
-            <div class="title_maint_requests">
-              <div class="all_maint_gym_requests">
-                All Maintenance Requests
-              </div>
-              <div class="search-container">
-                <form action="">
-                  <input type="text" placeholder="Search by branch" name="search_branch_requests">
-                  <button type="submit" onclick=""><i class='bx bx-search'></i></button>
-                </form>
-              </div>
+  <div class="request_content_box">
 
+    <div class="new_req_box">
+      <div class="box_header">New Request</div>
+      <div class="horizontal_line"></div>
+      <p>Last 24 hours</p>
+      <div class="new_req_value">01</div>
+    </div>
+    <div class="progress_req_box">
+      <div class="box_header">Current Progress</div>
+      <div class="horizontal_line"></div>
+      <p>Not completed maintenance</p>
+      <div class="prog_req_value">02</div>
+    </div>
+    <div class="completed_req_box">
+      <div class="box_header">Completed Request</div>
+      <div class="horizontal_line"></div>
+      <p>Last 30 days</p>
+      <div class="compt_req_value">08</div>
+    </div>
 
-            </div>
+  </div>
+  <!-- Content below the header -->
 
-            <div class="maint_request-details">
-              <table class="maintain_requ_tab" id="maintain_requ_tab">
-                <tr class ="maint_request_info">
-                  <th>Branch </th>
-                  <th>Equipment ID</th>
-                  <th>Date</th>
-                  <th>Time</th>
-                  <th>Status</th>
-                  <th>Accepted</th>
-                  <th></th>
-                </tr>
-<!--                <tr class ="maint_request_info">-->
-<!--                  <td>Nugeoda</td>-->
-<!--                  <td>E002</td>-->
-<!--                  <td>26/10/2021</td>-->
-<!--                  <td>09:30 am</td>-->
-<!--                  <td class = "completed">Completed </td>-->
-<!--                  <td>02</td>-->
-<!--                  <td><a href="#">View More</a></td>-->
-<!--                </tr>-->
+  <div class="all_maint_requests">
 
-              </table>
+    <div class="title_maint_requests">
+      <div class="all_maint_gym_requests">
+        All Maintenance Requests
+      </div>
+      <div class="search-container">
+        <form action="">
+          <input type="text" placeholder="Search by branch" name="search_branch_requests">
+          <button type="submit" onclick=""><i class='bx bx-search'></i></button>
+        </form>
+      </div>
+    </div>
 
-            </div>
-          </div>
-        </div>
-
-      </section>
+    <div class="maint_request-details">
+      <table class="maintain_requ_tab" id="maintain_requ_tab">
+        <tr class ="maint_request_info">
+          <th>Branch </th>
+          <th>Equipment ID</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Status</th>
+          <th>Accepted</th>
+          <th></th>
+        </tr>
+      </table>
     </div>
   </div>
-  <script src="http://localhost:8080/group39_fitbot_war_explodedMaintainer/Maintainer/Dashboard/dashboard.js" defer></script>
+  <section>
+    <div class="formPop" id="formPop"></div>
+  </section>
+</div>
+
+<script src="http://localhost:8080/group39_fitbot_war_explodedMaintainer/Maintainer/Maintainer-Form/maintainer_form.js" defer></script>
+<script src="http://localhost:8080/group39_fitbot_war_explodedMaintainer/Maintainer/Dashboard/dashboard.js" defer></script>
 </body>
 </html>

@@ -3,12 +3,12 @@
 
 /* Google Font Link */
 
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-}
+/**{*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  box-sizing: border-box;*/
+/*  font-family: 'Roboto', sans-serif;*/
+/*}*/
 
 /* --------sidebar-------------------- */
 
@@ -331,7 +331,7 @@
 }
 
 
-.home-section .all_equipments table .equipment_info:hover {
-      background-color: #D6EEEE;
-      /* box-shadow: 5px 0 0 0 gray; */
-}
+/*.home-section .all_equipments table .equipment_info:hover {*/
+/*      background-color: #D6EEEE;*/
+/*      !* box-shadow: 5px 0 0 0 gray; *!*/
+/*}*/

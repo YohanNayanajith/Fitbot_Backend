@@ -103,6 +103,15 @@
         <url-pattern>/maintainer</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>maintainerStatus</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.MaintainerStatusChangeController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>maintainerStatus</servlet-name>
+        <url-pattern>/maintainerStatus</url-pattern>
+    </servlet-mapping>
+
 
 
 

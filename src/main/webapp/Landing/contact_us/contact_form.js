@@ -37,7 +37,6 @@ $(document).ready(function (){
          data: {name:name, email:email,contact:contact,message:message},
 
          success:function (result){
-
          }
 
 

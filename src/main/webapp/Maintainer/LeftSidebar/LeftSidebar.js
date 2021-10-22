@@ -72,22 +72,38 @@ $(document).ready(function (){
       contentType: "application/json",
     }).done(function (result){
       // const data_object = JSON.resp(result);
+
       $.map(result,function (x){
-        $('#maintain_requ_tab').append(
-            '<tr class="request_details_row">' +
-            '<td>' + x.branch_id + '</td>' +
-            '<td>' + x.equipment_type + '</td>' +
-            '<td>' + x.re_date + '</td>' +
-            '<td>' + x.re_time + '</td>' +
-            '<td>' + x.ststus + '</td>' +
-            '<td>' + '<input type="checkbox">' + '</td>' +
-            '<td>' + '<a>View more</a>'+ '</td>' +
-            '</tr>'
-        );
+            if(x.ststus == "New"){
+              $('#maintain_requ_tab').append(
+              '<tr class="request_details_row">' +
+              '<td>' + x.branch_id + '</td>' +
+              '<td>' + x.equipment_type + '</td>' +
+              '<td>' + x.re_date + '</td>' +
+              '<td>' + x.re_time + '</td>' +
+              '<td>' + x.ststus + '</td>' +
+              '<td>' + '<div class="button"><input type="button" id="button1"><input type="button" id="button2"></div>' + '</td>' +
+              '<td>' + '<a class="viewBtn">View more</a>'+ '</td>' +
+              '</tr>'
+              );
+
+            }else{
+              $('#maintain_requ_tab').append(
+                '<tr class="request_details_row">' +
+                '<td>' + x.branch_id + '</td>' +
+                '<td>' + x.equipment_type + '</td>' +
+                '<td>' + x.re_date + '</td>' +
+                '<td>' + x.re_time + '</td>' +
+                '<td>' + x.ststus + '</td>' +
+                '<td>' + '<p></p>' + '</td>' +
+                '<td>' + '<a class="viewBtn">View more</a>'+ '</td>' +
+                '</tr>'
+              );
+
+            }
+
       });
-
       alert("Data is loading now");
-
     }).fail(function (a,b,err) {
         alert("Data loading error");
         console.log(a,b,err);
