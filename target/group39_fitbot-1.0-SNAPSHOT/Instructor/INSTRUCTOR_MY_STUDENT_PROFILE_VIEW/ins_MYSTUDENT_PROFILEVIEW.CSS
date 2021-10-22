@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+*{
+    font-family:  'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+body{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: scroll;
+    background-color: white;
+}
+ 
+/* ----------------------------------------------------home ---------------------------------------- */
+
+  .home_content{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    justify-content:center;
+    padding: 20px;
+  }
+  
+/* ------------------------------first box----------------------------------------- */
+  .home_content .profile_view_sachi{
+      display: flex;
+      flex-wrap: wrap;
+      height: 300px;
+      background-color: #FBFAFA;
+      width: 80%;
+      margin: 5px;
+      border-radius: 15px;
+      box-shadow: 0px 5px rgb(190, 189, 189);
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+  
+  .home_content .left_image_box{
+    background-color: #FBFAFA;
+    display: flex;
+    flex-wrap: wrap;
+    width: 40%;
+    left: 0;
+    height: 300px;
+    border-radius: 15px;
+  }
+
+  .home_content .left_image_box .studentphoto_sachi img{
+    width: 50%;
+    /* margin-left: auto;
+    margin-right: auto; */
+    margin: 0 auto;
+    display: block;
+    padding-top: 40px;
+  }
+
+  .home_content .right_details_box .line_sachi{
+    border-left: 5px solid black;
+    height: 270px;
+    position: absolute;
+    left: 40%;
+    margin-top: 20px;
+  }
+
+
+  .home_content .right_details_box{
+      background-color: #FBFAFA;
+      display: flex;
+      flex-wrap: wrap;
+      width: 60%;
+      right: 0;
+      height: 300px;
+      border-radius: 15px;
+  }
+
+  .home_content .right_details_box .fee{
+    display: inline-block;
+    border: 2px solid #B52121;
+    border-radius: 5px;
+    color: #B52121;
+    padding: 8px 28px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 450px;
+    width: 140px;
+  }
+
+
+  .home_content .right_details_box .student_name_sachi{
+    font-size: 36px;
+    height: 10px;
+    font-weight: bold;
+    color: #1d1b31;
+  }
+
+  .home_content .right_details_box .information_sachi{
+    display: flex;
+    position: relative;
+    margin: 0px 300px 30px 50px;
+    align-self: center;
+    height: 200px;
+    width: 250px;
+    background-color: #FBFAFA;
+    font-size: 20px;
+    line-height: 40px; 
+  }
+
+  .information_sachi .info1_sachi{
+    float: left;
+    text-align: left;
+    padding-right: 50px;
+  }
+
+  .information_sachi .info2_sachi{
+    /* float: right; */
+    text-align: left;
+  }
+
+
+
+/* -----------------------------------bottom buttons---------------------- */
+
+.details_dropdown_button_sachi {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+.details_dropdown_button_sachi .btn{
+  display: inline-block;
+  border: 2px solid #0E2C4B;
+  border-radius: 5px;
+  color: #0E2C4B;
+  padding: 10px 28px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 20px 10px 0 50px;
+ 
+}
+
+.details_dropdown_button_sachi .btn a:hover{
+  background-color: #7CD0FF;
+}
+
+
+
+
+  /* ------------------------------------top bar-------------------------------------- */
+
+.topbar{
+    display: inline-block;
+    flex-direction: column;
+    width: 100%;
+    background-color: #0E2C4B; 
+    line-height: 60px;
+    
+}
+
+.topbar .topbaricon{
+    flex: 100%;
+    width: 100%;
+    align-items: right;
+    padding-top: 10px;
+}
+
+.topbar .topbaricon img{
+    width: 40px;
+    height: 40px;
+    text-align: right;
+    float: right;
+    padding: 6px 3px 0 1px;
+}
+
+.topbar .topbaricon a{
+  padding: 10px;
+}
+
+
+/* -------------------------------------ACCORDIAN BARS---------------------------- */
+
+.accordian_workut_sachi {
+  display: flex;
+  flex-wrap: wrap;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+
+.ins_accordion {
+  background-color: #FBFAFA;
+  color: black;
+  cursor: pointer;
+  padding: 20px;
+  width:80%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  border-radius: 15px;
+  box-shadow: 0px 5px rgb(190, 189, 189);
+  /* margin: 10px 0px 0px 70px; */
+  /* margin-left: 140px; */
+  
+}
+
+.active, .ins_accordion:hover {
+  background-color: #C4C4C4;
+}
+
+.ins_accordion:after {
+  content: '\002B';
+  color: #C4C4C4;
+  font-weight: bold;
+  float: right;
+  margin-left: 50px;
+  color: black;
+}
+
+.active:after {
+  content: "\2212";
+  color: black;
+}
+
+.acc_sachi {
+  padding: 0 100px;
+  margin-top: 5px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  
+}
+
+.acc_sachi p{
+  text-align: left;
+  font-size: 15px;
+  line-height: 30px;
+  margin: 5px;
+}

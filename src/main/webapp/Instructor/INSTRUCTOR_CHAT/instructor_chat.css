@@ -1,0 +1,10 @@
+.chat_home{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 30px 72px 30px 72px;
+}
+
+.chat_title{
+    width: max-content;
+}

@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+*{
+    font-family:  'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+body{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: scroll;
+    /* background-color: yellow; */
+}
+ 
+/* --------------------------------boxes--------------------------- */
+
+.maintainer_request_home{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 90%;
+    margin: 30px;
+    /* background-color: red; */
+}
+
+
+.title_name{
+    padding: 0px 160px 40px 160px;
+    font-weight: bold;
+    /* margin: auto; */
+}
+
+.reuest{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: white;
+    margin: 30px 72px 30px 72px;
+}
+  
+.request_title{
+    margin-left: 30px;
+    display: inline-block;
+    background-color: white;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.request_box{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: white;
+}
+
+.left_request{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: #C4C4C4;
+    margin: 30px;
+    border-radius: 10px;
+    line-height: 30px;
+}
+
+.left1_req_sachi{
+    background-color: #C4C4C4;
+    margin: 20px;
+    float: left;
+}
+
+.left2_req_sachi{
+   background-color: #C4C4C4;
+   margin: 20px;
+   float: left;
+}
+
+
+
+
+
+
+
+/* ---------------------------form---------------------------- */
+
+.request_form_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: white;
+    margin: auto;
+    padding: 25px;
+    align-items:center;
+    justify-content: center;
+    font-size: 18px;
+    width: fit-content;
+    box-shadow: 0px 10px 10px 10px gray;
+} 
+
+.maintainer_request_form .form_label{
+    margin:15px 0;
+    display:inline-block;
+    padding:6px;
+    font-size: 16px;
+    border-radius: 5px;
+    border-color: transparent;
+    border-bottom: 2px solid #0E2C4B;
+    width: 500px;
+}
+
+
+
+/* -------------------submit button----------------------- */
+
+
+.btn_submit {
+    margin:10px 0;
+    display:inline-block;
+    padding:10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border-color: transparent;
+    background-color: #0E2C4B;
+    color: white;
+    padding:10px 25px;
+    width: 100px;
+  }
+  
+  .submit_btn_class{
+    text-align: center;
+  }
+  
+  .btn_submit:hover {
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+    background-color: white;
+    color: #0E2C4B;
+    border-color: #0E2C4B;
+  }
+

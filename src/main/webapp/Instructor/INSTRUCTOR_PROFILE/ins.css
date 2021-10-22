@@ -1,0 +1,208 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');*/
+
+/**{*/
+/*    font-family:  'Roboto', sans-serif;*/
+/*    padding: 0;*/
+/*    margin: 0;*/
+/*    box-sizing: border-box;*/
+/*  }*/
+
+/*body{*/
+/*    position: relative;*/
+/*    min-height: 100vh;*/
+/*    width: 100%;*/
+/*    overflow: scroll;*/
+/*}*/
+/* */
+/* ----------------------------------------------------home ---------------------------------------- */
+
+.home_content_profile{
+  
+  position: relative;
+  /* height: 100%; */
+  /* padding: 80px 260px 0 260px; */
+  /* width: calc(100%-260px); */
+  /* left: 280px;
+  right: 260px;
+  top: 60px; */
+  /* z-index: -1; */
+  margin: 30px 72px 30px 72px;
+  background-color: white;
+}
+
+.home_content_profile .edit_profile{
+    display: inline-block;
+    padding: 10px;
+    background-color: #0E2C4B;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    float:right;
+    margin: 10px 10px 0px 0px;
+}
+
+.home_content_profile .text{
+    font-size: 36px;
+    font-weight: bold;
+    color: black;
+    margin-top: 12px;
+}
+
+.flex-container_sachi {
+   
+    display: flex;
+    flex-wrap: wrap;
+    /* background-color: DodgerBlue; */
+  }
+  
+.flex-container_sachi .first_sachi {
+    display: flex;
+    flex-wrap: wrap;
+    /* background-color: green; */
+    width: 100%;
+    height: 300px;
+    margin: 10px;
+  }
+
+  .flex-container_sachi .first_sachi .leftcontainer_sachi{
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    width: 45%;
+    left: 0;
+    height: 300px;
+  }
+
+  .flex-container_sachi .first_sachi .leftcontainer_sachi .image_instructor{
+      /* padding: 10px 60px 10px 100px; */
+      width: 400px;
+      margin: 30px;
+      text-align: center;
+      /* background-color: red; */
+  }
+
+  .image_instructor .ins_image{
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 50%;
+  }
+
+  .flex-container_sachi .first_sachi .leftcontainer_sachi .line {
+    border-left: 4px solid black;
+    height: 290px;
+    position: absolute;
+    left: 40%;
+    margin-left: -3px;
+    top: 80px;
+  }
+
+  .flex-container_sachi .first_sachi .rightcontainer_sachi{
+    display: flex;
+    flex-wrap: wrap;
+    /* padding-top: 80px; */
+    background-color: white;
+    width: 55%;
+    height: 300px;
+    right: 0;
+  }
+
+  .flex-container_sachi .first_sachi .rightcontainer_sachi .p{
+      float: left;
+      font-size: 20px;
+      padding-left: 10px;
+  }
+  .details_instructor{
+      padding: 10px;
+  }
+  
+
+  .rightcontainer_sachi .kalindu{
+      /* margin: 20px 0px 0px 100px; */
+      /* display: inline-block; */
+      padding-top: 0px;
+      height: 30px;
+      font-weight: bold;
+      font-size: 24px;
+  }
+
+  .rightcontainer_sachi .details_instructor{
+    display: inline-block;
+    height: 200px;
+    width: 500px;
+    /* padding: 10px ; */
+    /* margin: 10px 0px 10px 100px; */
+    box-shadow: 5px 5px 5px #888888;
+    background-color: #F2F2F2;
+    border-radius: 15px;
+    font-size: 20px;
+    line-height: 45px;
+    /* text-align: center; */
+    
+  }
+  
+  .details_instructor .box1 {
+       float: left;
+       text-align: left;
+       /* font-weight: 800;  */
+        
+  }
+
+  .details_instructor .box2 {
+    float:right;
+    text-align: left;
+    /* font-weight: 800; */
+    
+}
+
+  .flex-container .second_sachi {
+    background-color: white;
+    width: 100%;
+    height: 200px;
+    margin: 10px;
+  
+  }
+
+  .flex-container_sachi .second_sachi .word_bio{
+    text-align: left;
+    font-weight: bold;
+    font-size: 22px;
+    padding: 0 0 20px 20px;
+  }
+
+  .flex-container_sachi .second_sachi .bio{
+    text-align: justify;
+    padding: 0 20px 20px 20px;
+    line-height: 30px;
+    font-size: 20px;
+    color: black;
+  }
+
+
+  .flex-container_sachi .third_sachi {
+    background-color: white;
+    width: 100%;
+    height: 200px;
+    margin: 10px;
+  }
+
+  .flex-container_sachi .third_sachi .instructor_offers{
+    text-align: left;
+    font-weight: bold;
+    font-size: 22px;
+    padding: 0 0 20px 10px;
+  }
+
+  .flex-container_sachi .third_sachi .offer1, .offer2, .offer3, .offer4, .offer4, .offer5, .offer6, .offer7{
+    display: inline-block;
+    padding: 15px;
+    margin: 10px;
+    box-shadow: 5px 5px 5px #888888;
+    background-color: #F2F2F2;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+
+

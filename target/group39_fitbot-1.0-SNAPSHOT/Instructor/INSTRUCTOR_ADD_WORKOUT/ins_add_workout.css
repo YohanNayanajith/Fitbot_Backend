@@ -1,0 +1,81 @@
+
+/* --------------------------------form------------------------------ */
+
+.form_container{
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  height: max-content;
+  align-items: center;
+}
+
+
+.form_container .workout_form{
+  background-color: #DDDDDD;
+  padding: 20px;
+  width: 650px;
+  height: max-content;
+  border: 2px solid black;
+  margin: 20px;
+}
+
+.workout_form .title_form_sachi{
+  margin: 20px;
+  font-size: 25px;
+}
+
+.form_container .input_flex{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+label{
+  flex-basis: 160px;
+  margin: 20px;
+  font-size: 20px;
+ 
+}
+
+.form_container .workout_form textarea, input, select{
+  /* padding: 10px; */
+  border-radius: 10px;
+  font-size: 20px;
+  border:none;
+  margin: 10px;
+}
+
+/* -------------------------------search ------------------------------------ */
+
+.search_box_sachi{
+  border-radius: 10px;
+  width: 70%;
+  display: inline-block;
+}
+
+
+.search_box_sachi input{
+    padding: 6px;
+    font-size: 18px;
+    border-radius: 10px;
+    width: 250px;
+}
+
+.search_box_sachi button{
+    width: 100px;
+    padding: 6px;
+    color: white;
+    background: #0E2C4B;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+
+.search_box_sachi button:hover{
+    background-color: white;
+    color: #0E2C4B;
+    border-color: #0E2C4B;  
+} 
+
+

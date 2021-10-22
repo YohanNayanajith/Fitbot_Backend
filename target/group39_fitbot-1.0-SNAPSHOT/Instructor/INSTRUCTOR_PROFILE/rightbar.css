@@ -1,0 +1,36 @@
+.rightbar{
+    position: relative;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 260px;
+    background-color: #0E2C4B;
+    padding: 6px 14px;
+    z-index: -1;
+    
+}
+
+.rightbar .image img{
+    width: 200px;
+    height: 200px;
+    padding: 80px 10px 0px 50px;
+}
+
+.rightbar .image a{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.rightbar .calendar a{
+    
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.rightbar .calendar{
+    padding-top: 100px;
+}
