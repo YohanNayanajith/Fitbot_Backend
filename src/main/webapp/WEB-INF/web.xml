@@ -93,4 +93,22 @@
         <servlet-name>membership</servlet-name>
         <url-pattern>/membership</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>editProfile</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.EditPasswordController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>editProfile</servlet-name>
+        <url-pattern>/editProfile</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>memberDetails</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.MemberDetailsController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>memberDetails</servlet-name>
+        <url-pattern>/memberDetails</url-pattern>
+    </servlet-mapping>
 </web-app>

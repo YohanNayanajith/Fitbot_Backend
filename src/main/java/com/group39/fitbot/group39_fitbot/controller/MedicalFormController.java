@@ -11,8 +11,8 @@ public class MedicalFormController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("Medical form controller is called");
-//        RequestDispatcher requestDispatcher = req.getRequestDispatcher("Landing/MedicalForm/MedicalForm.html");
-//        requestDispatcher.forward(req,resp);
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("Landing/MedicalForm/MedicalForm.html");
+        requestDispatcher.forward(req,resp);
     }
 
     @Override

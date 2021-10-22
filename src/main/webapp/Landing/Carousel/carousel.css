@@ -28,7 +28,7 @@
     font-size: 15px;
     /* padding: 8px 12px; */
     /* margin-top: 20px; */
-    top:30%;
+    top:20%;
     position: absolute;
     /* bottom: 8px; */
     width: 50%;
@@ -54,7 +54,7 @@
 }
 .image_slides_text_des {
     position: relative;
-    font-size: 24px;
+    font-size: 20px;
     color:black;
     margin: 10px 0;
 }

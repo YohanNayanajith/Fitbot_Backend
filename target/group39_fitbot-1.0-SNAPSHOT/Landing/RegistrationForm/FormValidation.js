@@ -264,26 +264,17 @@ $(document).ready(function () {
 
     }
 
-    let first_name = $('#first_name').val();
-    let last_name = $('#last_name').val();
-    let date_of_birth = $('#date_of_birth').val();
-    let phone_number = $('#phone_number').val();
-    let selected_country = $('#selected_country').val();
-    let height = $('#height').val();
-    let weight = $('#weight').val();
-    let email = $('#email').val();
-    let reg_password = $('#reg_password').val();
-    let confirm_password = $('#confirm_password').val();
+
 
     // Submitt button
-
+    // $('#form_container').submit(function(e)
     $('#form_container').submit(function(e){
         // let form_data = $('#form_container').serializeArray();
         // let json_data_form = JSON.stringify(form_data);
         // console.log(json_data_form);
         // alert(json_data_form);
 
-
+        // e.preventDefault();
         // alert(form_data);
         validateUsername();
         validateDOB();
@@ -302,19 +293,30 @@ $(document).ready(function () {
         console.log(heightError);
         console.log(weightError);
 
+        let first_name = $('#first_name').val();
+        let last_name = $('#last_name').val();
+        let date_of_birth = $('#date_of_birth').val();
+        let phone_number = $('#phone_number').val();
+        let selected_country = $('#selected_country').val();
+        let height = $('#height').val();
+        let weight = $('#weight').val();
+        let email = $('#email').val();
+        let reg_password = $('#reg_password').val();
+        let confirm_password = $('#confirm_password').val();
+
 
         if ((usernameError == true) && (passwordError == true) && (confirmPasswordError == true) && (emailError == true) && (dobError == true) && (phoneNumberError == true) && (heightError == true) && (weightError == true)) {
             console.log("Form submit success");
-
+            e.preventDefault();
             $.ajax({
                 method:'POST',
                 url:"register",
-                data:{'first_name':first_name,'last_name':last_name,'date_of_birth':date_of_birth,'phone_number':phone_number,'selected_country':selected_country,'height':height,'weight':weight,'email':email,'reg_password':reg_password,'confirm_password':confirm_password},
-                dataType:"json",
+                data:{first_name:first_name,last_name:last_name,date_of_birth:date_of_birth,phone_number:phone_number,selected_country:selected_country,height:height,weight:weight,email:email,reg_password:reg_password,confirm_password:confirm_password},
+                // dataType:"json",
                 // contentType:"application/json; charset=utf-8",
                 success:function(result) {
                     alert(result);
-                    if (result == '1') {
+                    if (result.trim() == "1") {
                         window.location.href ="http://localhost:8080/group39_fitbot_war_exploded/medical";
                     } else {
                         Swal.fire({

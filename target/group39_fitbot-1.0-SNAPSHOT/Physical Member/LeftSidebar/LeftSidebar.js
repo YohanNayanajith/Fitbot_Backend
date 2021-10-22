@@ -476,9 +476,34 @@ $(document).ready(function(){
     console.log(a,b,err)
   });
 
-  // $('#phy_mem_diet_plan').click(function(){
+  $.ajax({
+    method:'POST',
+    url:"membership",
+    dataType:'json',
 
-  // });
+  }).done(function(data){
+    // const data_object = JSON.parse(data);
+    alert(data);
+    $('#dashboard_mambership_first_text').append(
+        '<span class="dashboard_mambership_second_text"><b>'+data.membership_category+'</b></span>'
+    );
+
+    $('#dashboard_mambership_first_text1').append(
+        '<span class="dashboard_mambership_second_text"><b>'+data.membership_fee+'</b></span>'
+    );
+
+    $('#dashboard_mambership_first_text2').append(
+        '<span class="dashboard_mambership_second_text"><b>'+data.expiry_day+'</b></span>'
+    );
+
+    $('#money').append(
+        '<span><b>'+'Rs. '+data.renewal+'</b></span>'
+    );
+    // alert(data);
+  }).fail(function(a,b,err){
+    alert("Error");
+    console.log(a,b,err)
+  });
 
 });
 
