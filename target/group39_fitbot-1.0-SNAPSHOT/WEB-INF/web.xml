@@ -77,6 +77,34 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>manager</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.ManagerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>manager</servlet-name>
+        <url-pattern>/manager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>notice</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.NoticeManagerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>notice</servlet-name>
+        <url-pattern>/notice</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>equipment</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.EquipmentController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>equipment</servlet-name>
+        <url-pattern>/equipment</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
         <servlet-name>logOut</servlet-name>
         <servlet-class>com.group39.fitbot.group39_fitbot.controller.LogOutController</servlet-class>
     </servlet>

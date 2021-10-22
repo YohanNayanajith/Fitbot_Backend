@@ -1,0 +1,199 @@
+
+.home_manager_member{
+    margin: 30px 72px 30px 72px;
+}
+
+/* -------------------------------------------------submit button---------------------------------------------------- */
+
+.button_row{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn_add {
+    margin:10px 0;
+    display:inline-block;
+    font-size: 14px;
+    border-radius: 5px;
+    width: 70px;
+    background-color: #0E2C4B;
+    color: white;
+    padding:8px 10px;
+  }
+  
+  .add_btn_class{
+    text-align: center;
+  }
+  
+  .btn_add:hover {
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
+    background-color: white;
+    color: #0E2C4B;
+    border-color: #0E2C4B;
+  }
+
+
+  /* ----------------reject button---------------------------- */
+
+  .btn_reject {
+    margin:10px 0;
+    display:inline-block;
+    font-size: 14px;
+    border-radius: 5px;
+    background-color: #B52121;
+    color: white;
+      width: 70px;
+      padding:8px 10px;
+  }
+  
+  .reject_btn_class{
+    text-align: center;
+  }
+  
+  .btn_reject:hover {
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
+    background-color: white;
+    color: #B52121;
+    border-color: #B52121;
+  }
+
+
+  /* -------------------------------search bar--------------------------- */
+  .search_box_member_sachi{
+      width: 350px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+  }
+  
+  
+  .search_box_member_sachi input{
+      padding: 6px;
+      font-size: 14px;
+      border-radius: 10px;
+      width: 250px;
+  }
+  
+  .search_box_member_sachi button{
+      width: 100px;
+      padding: 6px;
+      color: white;
+      background: #0E2C4B;
+      font-size: 14px;
+      border-radius: 10px;
+      cursor: pointer;
+  }
+  
+  .search_box_member_sachi button:hover{
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
+      background-color: white;
+      color: #0E2C4B;
+      border-color: #0E2C4B;
+  }
+  
+
+/* -----------------------table---------------------------- */
+
+ .manager_mem_sachi{
+     background-color:#d6d4d4;
+     border-radius: 10px;
+     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+     /*margin: 30px 72px 30px 72px;*/
+ }
+
+ .manager_mem_details_view{
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+ }
+
+ .title_member_man_sachi{
+     display: flex;
+     justify-content: space-between;
+     width: 95%;
+     margin: 30px 0 0 30px;
+ }
+
+ .title_member_man_sachi span {
+     font-size: 30px;
+     font-weight: bold;
+ }
+
+.ins_manager_mem_details {
+  overflow-x: auto;
+}
+.ins_manager_mem_details_table{
+    width:92%;
+    margin: 35px 4% 10px;
+    border-collapse:separate;
+    border-spacing:0 15px;
+}
+
+.manager_member_row, .manager_member_header  {
+    background-color: white;
+    height: 60px;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.manager_member_row:hover {
+    background-color:#75CDFF;
+    color: white;
+}
+
+
+/* -------------------------check box------------------------------- */
+
+.manager_member_row .atte{
+    width: 20px;
+    height: 20px;
+}
+
+
+
+/*------------------------------payment request view table-------------------------------*/
+
+.payment_request{
+    background-color:#d6d4d4;
+    border-radius: 10px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    margin-top: 30px;
+}
+
+.payment_title{
+    display: flex;
+    justify-content: space-between;
+    width: max-content;
+    margin: 30px 0 0 30px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.payment_req_view {
+    overflow-x: auto;
+}
+.payment_request_table{
+    width:92%;
+    margin: 35px 4% 10px;
+    border-collapse:separate;
+    border-spacing:0 15px;
+}
+
+.payment_request_row, .payment_request_header  {
+    background-color: white;
+    height: 60px;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.payment_request_row:hover {
+    background-color:#75CDFF;
+    color: white;
+}

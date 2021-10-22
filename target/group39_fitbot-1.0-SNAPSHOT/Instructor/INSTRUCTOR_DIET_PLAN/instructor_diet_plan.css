@@ -1,0 +1,293 @@
+
+/* ----------------------------------------------------home ---------------------------------------- */
+
+.home_content_diet_sachi{
+    display: flex;
+    background-color: white;
+    margin: 30px 72px 30px 72px;
+    flex-direction: row;
+}
+
+.home_content_diet_sachi .diet1_sachi ,.diet2_sachi{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    margin: 10px;
+    flex: 50%;
+    flex-direction: row;
+    padding: 10px;
+}
+
+
+.diet1_sachi .create_new{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #F2F2F2;
+    margin: 10px;
+    flex: 50%;
+}
+
+.diet1_sachi .create_new .diet_header{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #F2F2F2;
+    margin: 10px;
+    flex: 50%;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+
+.diet1_sachi .create_new .drag_space_sachi{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #F2F2F2;
+    margin: 10px;
+    flex: 50%;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.drag_space_sachi .drag_box_sachi{
+   width: 90%;
+   /*margin: 0 auto;*/
+   background-color: grey;
+   margin: 30px;
+   height: 100px;
+   position: relative;
+}
+
+
+.diet1_sachi .history{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #F2F2F2;
+    margin: 10px;
+    flex: 50%;
+}
+
+.history .history_header_sachi{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #F2F2F2;
+    margin: 10px;
+    flex: 50%;
+    font-size: 22px;
+    font-weight: bold;
+    color: grey;
+}
+
+
+.diet2_sachi{
+  background-color: #F2F2F2;
+  margin: 30px;
+}
+
+.diet2_sachi .diet_right_sachi{
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.diet2_sachi .diet_right2_sachi{
+  font-size: 22px;
+  font-weight: bold;
+  margin-left: auto;
+}
+
+
+.diet2_sachi .diet_right2_sachi i{
+  font-size: 25px;
+}
+
+/* -----------------------------accordian list----------------------------------- */
+
+.history .diet_accordian{
+    background-color: #F2F2F2;
+    margin: 10px;
+    flex: 50%;
+}
+
+
+.history_title {
+    background-color: #FBFAFA;
+    color: black;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+  }
+  
+  .active, .history_title:hover {
+    background-color: #C4C4C4;
+  }
+  
+  .history_title:after {
+    content: '\2304';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .active:after {
+    content: "\02C4";
+  }
+  
+  .history_info {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 18px;
+    background-color: #FBFAFA;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+
+
+  .history_info .diet_info1_sachi{
+      display: inline-block;
+      padding-right: 30px;
+  }
+
+
+
+  .history_title .acco_table_sachi td{
+       text-align: right;
+       padding-right: 90px;
+  }
+
+  .history_title .line_diet{
+    width: 100%;
+    border-bottom: 3px solid black;
+    position: relative;
+  }
+
+  .acco_table_sachi a{
+    color: #7CD0FF;
+  }
+
+
+/* ---------------------search box left------------------------------ */
+
+.search_box_sachi{
+    border-radius: 10px;
+    margin:auto;
+    width: 90%;
+    display: inline-block;
+}
+
+
+.search_box_sachi input{
+      padding: 6px;
+      font-size: 14px;
+      border-radius: 10px;
+      width: 250px;
+}
+
+.search_box_sachi button{
+  width: 100px;
+  float: right;
+  padding: 6px;
+  color: white;
+  margin-right: 36px;
+  background: #0E2C4B;
+  font-size: 14px;
+  border-radius: 10px;
+  cursor: pointer;
+
+}
+
+ .search_box_sachi button:hover{
+      box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+      background-color: white;
+      color: #0E2C4B;
+      border-color: #0E2C4B;  
+} 
+
+
+/* ---------------------------search box right---------------------------- */
+
+.search_box_right_sachi{
+  border-radius: 10px;
+  margin:auto;
+  width: 90%;
+  margin: auto;
+  display: inline-block;
+}
+
+
+.search_box_right_sachi input{
+    padding: 6px;
+    font-size: 14px;
+    border-radius: 10px;
+    width: 250px;
+}
+
+.search_box_right_sachi button{
+width: 100px;
+float: right;
+padding: 6px;
+color: white;
+margin-right: 36px;
+background: #0E2C4B;
+font-size: 14px;
+border-radius: 10px;
+cursor: pointer;
+
+}
+
+.search_box_right_sachi button:hover{
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+  background-color: white;
+  color: #0E2C4B;
+  border-color: #0E2C4B;  
+} 
+
+
+
+/* --------------------table-------------------------------- */
+
+
+ .diet_table table{
+   position: relative;
+      border-collapse: separate;
+      border-spacing: 0 10px;
+}
+
+.diet_table {
+    border-collapse:separate;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.diet_table table td, th {
+  background-color: white;
+  width: 180px;
+  text-align: center;
+  padding: 15px;
+  
+}
+
+.diet_table table .diet_plan_row{
+   border-left: 15px solid #7CD0FF;
+   box-shadow: 0px 0px 5px 0px grey;
+}
+
+
+.diet_plan_row i{
+  font-size: 25px;
+}
+
+.diet_plan_row button{
+  cursor: pointer;
+  color: #B52121;
+}
+

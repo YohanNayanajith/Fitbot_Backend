@@ -1,0 +1,172 @@
+
+/* ---------------------------------boxses--------------------------------------------- */
+
+/*.upcoming_maintainance{*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    flex-wrap: wrap;*/
+/*    background-color: white;*/
+/*    margin: 30px;*/
+/*}*/
+
+
+/*.upcoming_maintainance .equip_title .maintain_title_sachi{*/
+/*    background-color: white;*/
+/*    font-size: 28px;*/
+/*    font-weight: bold;*/
+/*    float: left;*/
+/*    margin: 10px;*/
+/*    !* color: #0E2C4B; *!*/
+/*}*/
+
+
+/*.upcoming_maintainance .equip_title .add_new_sachi{*/
+/*    background-color: white;*/
+/*    font-size: 20px;*/
+/*    font-weight: bold;*/
+/*    margin-right: 0;*/
+/*    margin: 10px;*/
+/*}*/
+
+/*.upcoming_maintainance .equip_title .add_new_sachi i{*/
+/*    font-size: 22px;*/
+/*    color: #0E2C4B;*/
+/*}*/
+
+
+/*.upcoming_maintainance .maintain_box{*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*    flex-direction: row;*/
+/*    background-color: white;*/
+/*}*/
+
+
+/*.upcoming_maintainance .maintain_box .left_maintain{*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*    flex-direction: row;*/
+/*    background-color: #C4C4C4;*/
+/*    margin: 30px;*/
+/*    border-radius: 10px;*/
+/*    line-height: 30px;*/
+/*}*/
+
+/*.upcoming_maintainance .maintain_box .left_maintain .left1_sachi{*/
+/*    !* background-color: greenyellow; *!*/
+/*    margin: 20px;*/
+/*    !* float: left; *!*/
+/*}*/
+
+/*.upcoming_maintainance .maintain_box .left_maintain .left2_sachi{*/
+/*    !* background-color: grey; *!*/
+/*    margin: 20px;*/
+/*    !* float: right; *!*/
+/*}*/
+
+
+
+
+.upcoming_maintainance .equip_title{
+    display: flex;
+    background-color: white;
+    justify-content: space-between;
+    width: 150px;
+}
+
+.add_new_sachi{
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.add_new_sachi i{
+    font-size: 22px;
+}
+
+  /* -------------------------------search bar--------------------------- */
+  .search_box_sachi{
+      width: 350px;
+      display: flex;
+      justify-content: space-between;
+  }
+
+  .search_box_sachi input{
+      padding: 6px;
+      font-size: 14px;
+      border-radius: 10px;
+      width: 250px;
+  }
+  
+  .search_box_sachi button{
+      width: 100px;
+      padding: 6px;
+      color: white;
+      background: #0E2C4B;
+      font-size: 14px;
+      border-radius: 10px;
+      cursor: pointer;
+  }
+  
+  .search_box_sachi button:hover{
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
+      background-color: white;
+      color: #0E2C4B;
+      border-color: #0E2C4B;
+  } 
+
+/* -------------------------table----------------------------------------- */
+.manager_equip_sachi {
+    background-color:#d6d4d4;
+    border-radius: 10px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    margin: 30px 72px 30px 72px;
+}
+
+.title_man_equip_sachi{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.title_equip_name_sachi{
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    margin-top: 30px;
+}
+
+.title_equip_name_sachi span{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.ins_manager_equip_details {
+    overflow-x: auto;
+}
+.manager_equipment_table{
+    width:92%;
+    margin: 35px 4% 10px;
+    border-collapse:separate;
+    border-spacing:0 15px;
+}
+
+.manager_equipment_row, .manager_equipment_header  {
+    background-color: white;
+    height: 60px;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.manager_equipment_row:hover {
+    background-color:#75CDFF;
+    color: white;
+}
+
+
+
+
+
