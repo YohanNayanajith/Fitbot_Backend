@@ -29,7 +29,7 @@ public class RegistrationController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("Registartion post contoller called");
         PrintWriter out = resp.getWriter();
-//        resp.setContentType("text/plain");
+        resp.setContentType("text/plain");
 
 
         String first_name = req.getParameter("first_name");
@@ -71,16 +71,22 @@ public class RegistrationController extends HttpServlet {
                             height,
                             weight
                     )
+
             );
+
+//            resp.setContentType("application/json");
+            resp.setCharacterEncoding("UTF-8");
+
             if(added){
                 System.out.println("Added");
 //            req.setAttribute("message","Successfully added");
-                out.write("1");
+                out.print("1");
+//                resp.getWriter().write("1");
 
             }else{
                 System.out.println("Not added");
 //            req.setAttribute("message","Not Added");
-                out.write("0");
+                out.print("0");
             }
 
         } catch (SQLException | NoSuchAlgorithmException | ClassNotFoundException throwables) {

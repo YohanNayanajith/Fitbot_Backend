@@ -8,3 +8,16 @@ function Workout_plan_dashboard(){
 }
 // alert("workout");
 
+function virtual_workoutplan_open(){
+    $('#virtual_workout_packages').show();
+}
+
+function close_virtual_workoutplan_Popup(){
+    $('#virtual_workout_packages').hide();
+}
+function physical_workoutplan_open(){
+    $('#physical_workout_packages').show();
+}
+function close_physical_workoutplan_Popup(){
+    $('#physical_workout_packages').hide();
+}

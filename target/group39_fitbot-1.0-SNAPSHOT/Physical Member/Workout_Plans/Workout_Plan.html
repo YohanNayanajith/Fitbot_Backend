@@ -14,8 +14,8 @@
     <div class="workout_plan_physical" id="workout_plan_physical">
 
         <div class="workout_plan_physical_btn_group">
-            <div class="workout_plan_physical_btn_group_vir"><input type="button" value="Virtual Workout Plans"></div>
-            <div class="workout_plan_physical_btn_group_req"><input type="button" value="Request a Workout Plan"></div>
+            <div class="workout_plan_physical_btn_group_vir"><input type="button" value="Virtual Workout Plans" onclick="virtual_workoutplan_open()"></div>
+            <div class="workout_plan_physical_btn_group_req"><input type="button" value="Request a Workout Plan" onclick="physical_workoutplan_open()"></div>
         </div>
 
         <div class="after_the_table" id="after_the_table">
@@ -43,6 +43,117 @@
                 </div>
             </div>
         </div>
+
+        <!-- virtual workout -->
+        <div class="virtual_workout_packages" id="virtual_workout_packages">
+            <div class="virtual_workout_packages_header">
+                <h1 class="virtual_workout_packages_header_h1">Packages For Home Workout</h1>
+                <div onclick="close_virtual_workoutplan_Popup()" class="virtual_workout_packages_header_close">
+                    <i class='bx bx-x close_btn_forgot'></i>
+                </div>
+            </div>
+
+            <!-- <i class='bx bxs-down-arrow' ></i> -->
+            <div class="virtual_workout_packages_male">
+                <div class="virtual_workout_packages_male_text"><i class='bx bx-caret-right'></i>For Male</div>
+                <div class="virtual_workout_packages_male_text_con">
+                    <div class="virtual_workout_packages_male_text_con1 workout_packages">
+                        <a href="#"><i class='bx bx-minus'></i>Lose weight and keep fit</a>
+                    </div>
+                    <div class="virtual_workout_packages_male_text_con2 workout_packages">
+                        <a href="#"><i class='bx bx-minus'></i>Leg workout</a>
+                    </div>
+                    <div class="virtual_workout_packages_male_text_con3 workout_packages">
+                        <a href="#"><i class='bx bx-minus'></i>Arm and Chest workout</a>
+                    </div>
+                    <div class="virtual_workout_packages_male_text_con4 workout_packages">
+                        <a href="#"><i class='bx bx-minus'></i>Abs and six pack</a>
+                    </div>
+                    <div class="virtual_workout_packages_male_text_con5 workout_packages">
+                        <a href="#"><i class='bx bx-minus'></i>Body building and strength</a>
+                    </div>
+                </div>
+            </div>
+            <div class="virtual_workout_packages_female">
+                <div class="virtual_workout_packages_female_text">
+                    <i class='bx bx-caret-right'></i>For Female
+                </div>
+                <div class="virtual_workout_packages_female_text_con">
+                    <div class="virtual_workout_packages_female_text_con1 workout_packages">
+                        <a href="#"><i class='bx bx-minus'></i>Lose weight and keep fit</a>
+                    </div>
+                    <div class="virtual_workout_packages_female_text_con2 workout_packages">
+                        <a href="#"><i class='bx bx-minus'></i>Leg workout</a>
+                    </div>
+                    <div class="virtual_workout_packages_female_text_con3 workout_packages">
+                        <a href="#"><i class='bx bx-minus'></i>Arm and Chest workout</a>
+                    </div>
+                    <div class="virtual_workout_packages_female_text_con4 workout_packages">
+                        <a href="#"><i class='bx bx-minus'></i>Abs and six pack</a>
+                    </div>
+                    <div class="virtual_workout_packages_female_text_con5 workout_packages">
+                        <a href="#"><i class='bx bx-minus'></i>Body building and strength</a>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="virtual_workout_packages_container">
+                <div class="virtual_workout_packages_container_flip" id="flip" onclick="accordion_open_workout()">Click to slide down panel</div>
+                <div class="virtual_workout_packages_container_panel" id="panel">Hello world!</div>
+            </div> -->
+        </div>
+
+        <!-- physical workout -->
+        <div class="virtual_workout_packages" id="physical_workout_packages">
+            <div class="virtual_workout_packages_header">
+                <h1 class="virtual_workout_packages_header_h1">Packages For Physical Workout</h1>
+                <div onclick="close_physical_workoutplan_Popup()" class="virtual_workout_packages_header_close">
+                    <i class='bx bx-x close_btn_forgot'></i>
+                </div>
+            </div>
+
+            <!-- <i class='bx bxs-down-arrow' ></i> -->
+            <div class="virtual_workout_packages_male">
+                <div class="virtual_workout_packages_male_text"><i class='bx bx-caret-right'></i>For Male</div>
+                <div class="virtual_workout_packages_male_text_con">
+                    <div class="virtual_workout_packages_male_text_con1 workout_packages">
+                        <a href="#"><i class='bx bx-minus'></i>Cardio</a>
+                    </div>
+                    <div class="virtual_workout_packages_male_text_con2 workout_packages">
+                        <a href="#"><i class='bx bx-minus'></i>Bodybuilding basic</a>
+                    </div>
+                    <div class="virtual_workout_packages_male_text_con3 workout_packages">
+                        <a href="#"><i class='bx bx-minus'></i>Crossfit</a>
+                    </div>
+                    <div class="virtual_workout_packages_male_text_con4 workout_packages">
+                        <a href="#"><i class='bx bx-minus'></i>Hiit (High intensity interval training)</a>
+                    </div>
+                </div>
+            </div>
+            <div class="virtual_workout_packages_female">
+                <div class="virtual_workout_packages_female_text">
+                    <i class='bx bx-caret-right'></i>For Female
+                </div>
+                <div class="virtual_workout_packages_female_text_con">
+                    <div class="virtual_workout_packages_female_text_con1 workout_packages">
+                        <a href="#"><i class='bx bx-minus'></i>Cardio</a>
+                    </div>
+                    <div class="virtual_workout_packages_female_text_con2 workout_packages">
+                        <a href="#"><i class='bx bx-minus'></i>Bodybuilding basic</a>
+                    </div>
+                    <div class="virtual_workout_packages_female_text_con3 workout_packages">
+                        <a href="#"><i class='bx bx-minus'></i>Crossfit</a>
+                    </div>
+                    <div class="virtual_workout_packages_female_text_con4 workout_packages">
+                        <a href="#"><i class='bx bx-minus'></i>Hiit (High intensity interval training)</a>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="virtual_workout_packages_container">
+                <div class="virtual_workout_packages_container_flip" id="flip" onclick="accordion_open_workout()">Click to slide down panel</div>
+                <div class="virtual_workout_packages_container_panel" id="panel">Hello world!</div>
+            </div> -->
+        </div>
+
     </div>
     <script src="Physical Member/Workout_Plans/Workout_Plan.js" defer></script>
     <script src="Physical Member/LeftSidebar/LeftSidebar.js" defer></script>

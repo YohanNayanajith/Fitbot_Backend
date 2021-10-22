@@ -82,6 +82,8 @@ function open_OTP_password_Popup(){
         return
     }
 
+    let correct_otp = 0;
+
     $.ajax({
         method:"POST",
         url:"resetpassword",
@@ -91,6 +93,7 @@ function open_OTP_password_Popup(){
         success: function (result){
             if(result == "1"){
                 alert(result);
+                correct_otp = 1;
             }else{
                 console.log(result);
                 Swal.fire({
@@ -116,42 +119,46 @@ function open_OTP_password_Popup(){
         }
     });
 
-    $.ajax({
-        url: "https://meghaduta.dhahas.com/sms/sendSMS",
-        type: "POST",
-        data: JSON.stringify({"senders": [
-                contact_number_val
-            ],
-            "message": new_message,
-            "apiKey": "61687c1b3fdf47002ef1c91d"}),
-        dataType:'json',
-        contentType: 'application/json',
-        success: function (response) {
-            console.log(response);
-            Swal.fire({
-                icon: 'success',
-                title: 'SMS sent',
-                text: 'OTP sent successfully!',
-                confirmButtonText:"Ok",
-                confirmButtonColor: '#0E2C4B',
-            })
-            setTimeout(function() {
-                $('#reset_password_container').hide();
-                $('#OTP_password_container').show();
-                // $('#reset_new_password_container').show();
-            }, 2000);
-        },
-        error: function(error){
-            console.log("Something went wrong", error);
-            Swal.fire({
-                icon: 'error',
-                title: 'Try Again',
-                text: 'OTP sent unsuccessfully!',
-                confirmButtonText:"Ok",
-                confirmButtonColor: '#932828',
-            })
-        }
-    });
+    if(correct_otp == 1) {
+        $.ajax({
+            url: "https://meghaduta.dhahas.com/sms/sendSMS",
+            type: "POST",
+            data: JSON.stringify({
+                "senders": [
+                    contact_number_val
+                ],
+                "message": new_message,
+                "apiKey": "61687c1b3fdf47002ef1c91d"
+            }),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (response) {
+                console.log(response);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'SMS sent',
+                    text: 'OTP sent successfully!',
+                    confirmButtonText: "Ok",
+                    confirmButtonColor: '#0E2C4B',
+                })
+                setTimeout(function () {
+                    $('#reset_password_container').hide();
+                    $('#OTP_password_container').show();
+                    // $('#reset_new_password_container').show();
+                }, 2000);
+            },
+            error: function (error) {
+                console.log("Something went wrong", error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Try Again',
+                    text: 'OTP sent unsuccessfully!',
+                    confirmButtonText: "Ok",
+                    confirmButtonColor: '#932828',
+                })
+            }
+        });
+    }
 
     // $.ajax({
     //     method:"POST",
