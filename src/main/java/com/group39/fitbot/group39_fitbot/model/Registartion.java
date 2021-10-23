@@ -23,7 +23,7 @@ public class Registartion {
     public Registartion() {
     }
 
-    public Registartion(String first_name, String last_name, LocalDate date_of_birth, int contact_number, String address, String country, String gender, String password, String confirm_password, String member_type, String membership_category, int weight, int height) {
+    public Registartion(String first_name, String last_name, LocalDate date_of_birth, int contact_number, String address, String country, String gender, String password, String confirm_password, String member_type, String membership_category, int weight, int height, String member_id) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.date_of_birth = date_of_birth;
@@ -39,6 +39,7 @@ public class Registartion {
 //        this.register_id = register_id;
         this.weight = weight;
         this.height = height;
+        this.member_id = member_id;
 
     }
 
@@ -161,6 +162,7 @@ public class Registartion {
     public void setMember_type(String member_type) {
         this.member_type = member_type;
     }
+
 
     @Override
     public String toString() {
