@@ -1,0 +1,101 @@
+
+/* ----------------------------------------------------home ---------------------------------------- */
+
+.home_content_appoinment{
+    margin: 30px 72px 30px 72px;
+}
+
+.overview_boxes_appoinment_sachi {
+      display: flex;
+      width:100%;
+      justify-content: space-between;
+  }
+
+  .overview_boxes_appoinment_sachi .box i{
+    font-size: 50px;
+  }
+
+  /* .overview_boxes_appoinment_sachi .box .line{
+    position: absolute;
+    width: 200px;
+    top: 80px;
+    border: 1px solid #000000;
+    background-color:black;
+  } */
+
+.overview_boxes_appoinment_sachi .box{
+      padding: 15px 14px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius:12px;
+      box-shadow: 5px 5px 5px #888888;
+      background-color: #FBFAFA;
+      text-align: right;
+  }
+
+ .overview_boxes_appoinment_sachi .box-topic {
+      font-size: 20px;
+      font-weight: 500;
+  }
+
+.overview_boxes_appoinment_sachi .number {
+      font-size : 30px;
+      font-weight :500;
+      margin-top: 5px;
+      display:inline-block;
+  }
+
+  /* ----------------table-------- */
+
+ .appoinment_sachi {
+      background-color: #d6d4d4;
+      border-radius: 10px;
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+      margin-top: 30px;
+      /*margin: 30px 72px 30px 72px;*/
+  }
+
+.ins_appoinment_view{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+  }
+
+.title_appoinment_sachi{
+      display: flex;
+      justify-content: space-between;
+      width: 95%;
+      margin: 30px 0 0 30px;
+  }
+.title_appoinment_sachi span {
+      font-size: 30px;
+      font-weight: bold;
+}
+
+.appoinment_details {
+    overflow-x: auto;
+}
+.appoinment_details_table{
+    width:92%;
+    margin: 35px 4% 10px;
+    border-collapse:separate;
+    border-spacing:0 15px;
+}
+
+.member_appoinment_row, .member_appoinment_header  {
+    background-color: white;
+    height: 60px;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.member_appoinment_row:hover {
+    background-color:#75CDFF;
+    color: white;
+}
+
+
+
