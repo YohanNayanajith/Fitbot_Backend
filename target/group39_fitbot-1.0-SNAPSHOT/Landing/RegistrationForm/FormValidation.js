@@ -297,6 +297,10 @@ $(document).ready(function () {
         let last_name = $('#last_name').val();
         let date_of_birth = $('#date_of_birth').val();
         let phone_number = $('#phone_number').val();
+        let address = $('#address').val();
+        let gender = $('#gender').val();
+        let membership_type = $('#membership_type').val();
+        let membership_category = $('#membership_category').val();
         let selected_country = $('#selected_country').val();
         let height = $('#height').val();
         let weight = $('#weight').val();
@@ -311,7 +315,7 @@ $(document).ready(function () {
             $.ajax({
                 method:'POST',
                 url:"register",
-                data:{first_name:first_name,last_name:last_name,date_of_birth:date_of_birth,phone_number:phone_number,selected_country:selected_country,height:height,weight:weight,email:email,reg_password:reg_password,confirm_password:confirm_password},
+                data:{first_name:first_name,last_name:last_name,date_of_birth:date_of_birth,phone_number:phone_number,selected_country:selected_country,height:height,weight:weight,email:email,reg_password:reg_password,confirm_password:confirm_password,address:address,gender:gender, membership_type:membership_type, membership_category:membership_category},
                 // dataType:"json",
                 // contentType:"application/json; charset=utf-8",
                 success:function(result) {
