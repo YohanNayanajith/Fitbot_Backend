@@ -62,58 +62,14 @@ var load = [0,0,0,0,0,0,0,0,0,0,0];
 
 
 //dashboard
-$(document).ready(function (){
+$(document).ready(function(){
   $('#maintainer_dashboard_implementation').load('http://localhost:8080/group39_fitbot_war_exploded/Maintainer/Dashboard/dashboard.html #dashboard_maintainer', function (responseTxt, statusTxt, xhr) {
     load[0] += 1;
-    $.ajax({
-      method:'POST',
-      url:"maintainer",
-      dataType: 'json',
-      contentType: "application/json",
-    }).done(function (result){
-      // const data_object = JSON.resp(result);
-
-      $.map(result,function (x){
-            if(x.ststus == "New"){
-              $('#maintain_requ_tab').append(
-              '<tr class="request_details_row">' +
-              '<td>' + x.branch_id + '</td>' +
-              '<td>' + x.equipment_type + '</td>' +
-              '<td>' + x.re_date + '</td>' +
-              '<td>' + x.re_time + '</td>' +
-              '<td>' + x.ststus + '</td>' +
-              '<td>' + '<div class="button"><input type="button" id="button1"><input type="button" id="button2"></div>' + '</td>' +
-              '<td>' + '<a class="viewBtn">View more</a>'+ '</td>' +
-              '</tr>'
-              );
-
-            }else{
-              $('#maintain_requ_tab').append(
-                '<tr class="request_details_row">' +
-                '<td>' + x.branch_id + '</td>' +
-                '<td>' + x.equipment_type + '</td>' +
-                '<td>' + x.re_date + '</td>' +
-                '<td>' + x.re_time + '</td>' +
-                '<td>' + x.ststus + '</td>' +
-                '<td>' + '<p></p>' + '</td>' +
-                '<td>' + '<a class="viewBtn">View more</a>'+ '</td>' +
-                '</tr>'
-              );
-
-            }
-
-      });
-      alert("Data is loading now");
-    }).fail(function (a,b,err) {
-        alert("Data loading error");
-        console.log(a,b,err);
-
-    });
-
     if (statusTxt == "error")
       alert("Error: " + xhr.status + ": " + xhr.statusText);
   });
 });
+
 
 //dashboard
 $(document).ready(function (){
@@ -139,6 +95,58 @@ $(document).ready(function (){
 
     if (load[1] == 0) {
       $(sideBar_links_variable).load('http://localhost:8080/group39_fitbot_war_exploded/Maintainer/Requests/requests.html #maintain_requests_view', function (responseTxt, statusTxt, xhr) {
+
+        $.ajax({
+          method:'POST',
+          url:"maintainerRequest",
+          dataType: 'json',
+          contentType: "application/json",
+        }).done(function (result){
+          // const data_object = JSON.resp(result);
+
+          // let arr = [0,0,0,0,0];
+          // let count_num = 0;
+          $.map(result,function (x){
+            if(x.ststus == "New"){
+              $('#maintain_requ_tab').append(
+              '<tr class="request_details_row" id="request_details_row">' +
+              '<td>' + x.branch_id + '</td>' +
+              '<td>' + x.equipment_type + '</td>' +
+              '<td>' + x.re_date + '</td>' +
+              '<td>' + x.re_time + '</td>' +
+              '<td>' + x.ststus + '</td>' +
+              '<td>' + '<div class="button"><input type="button" id="button1" onclick="ChangeStatus()"><input type="button" id="button2"></div>' + '</td>' +
+              '<td>' + '<a value="View more" class="viewBtn"  id= "viewBtn" onclick="PopupForm()">View more</a>'+ '</td>' +
+              '</tr>'
+                  );
+              // count_num++;
+              // arr.add(x.branch_id);
+              // let id = document.getElementById('request_details_row');
+              // $('#complet_dis').append("<p>"+x.branch_id+"</p>");
+
+            }else{
+              $('#maintain_requ_tab').append(
+              '<tr class="request_details_row">' +
+              '<td>' + x.branch_id + '</td>' +
+              '<td>' + x.equipment_type + '</td>' +
+              '<td>' + x.re_date + '</td>' +
+              '<td>' + x.re_time + '</td>' +
+              '<td>' + x.ststus + '</td>' +
+              '<td>' + '<p></p>' + '</td>' +
+              '<td>' + '<a value="View more" class="viewBtn"  id= "viewBtn" onclick="PopupForm()">View more</a>'+ '</td>' +
+              '</tr>'
+                  );
+
+            }
+
+          });
+          alert("Data is loading now");
+        }).fail(function (a,b,err) {
+          alert("Data loading error  Shalani");
+          console.log(a,b,err);
+
+        });
+
         if (statusTxt == "error")
           alert("Error: " + xhr.status + ": " + xhr.statusText);
       });
@@ -170,6 +178,44 @@ $(document).ready(function (){
 
 });
 
+// $('#button1').on('click', ()=>{
+//
+//   ChangeStatus();
+//
+// })
+
+// function ChangeStatus(){
+//   alert("Shalani aaaaaaaaaa");
+//
+//     // alert("check allll");
+//     // let form_id = $('#login_username').val()
+//
+//     $.ajax({
+//       method:'POST',
+//       url:"maintainerStatus",
+//       // dataType:'json',
+//       data: {form_id:1},
+//       // data(form_id="form_id");
+//
+//     }).done(function(result){
+//       // const data_object = JSON.parse(data);
+//       alert(result);
+//       if(result==true){
+//
+//       }else{
+//
+//       }
+//     }).fail(function(a,b,err){
+//       alert("Error");
+//       console.log(a,b,err)
+//     });
+//
+//     // $('#phy_mem_diet_plan').click(function(){
+//
+//     // });
+//
+// }
+//
 
 
 

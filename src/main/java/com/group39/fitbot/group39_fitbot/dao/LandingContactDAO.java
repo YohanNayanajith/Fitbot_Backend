@@ -13,10 +13,13 @@ public class LandingContactDAO {
         Connection connection = DBConnection.getInstance().getConnection();
         String query ="INSERT INTO contact VALUES(?,?,?,?)";
         PreparedStatement pst = connection.prepareStatement(query);
+
+
         pst.setString(1, landingContact.getV_name());
         pst.setString(2, landingContact.getV_email());
         pst.setString(3, landingContact.getV_contact());
         pst.setString(4, landingContact.getV_message());
+
         System.out.println("");
         return pst.executeUpdate()>0;
     }

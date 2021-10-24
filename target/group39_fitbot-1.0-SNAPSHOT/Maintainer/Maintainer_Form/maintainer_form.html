@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="http://localhost:8080/group39_fitbot_war_exploded/Maintainer/Maintainer_Form/maintainer_form.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   
+<body>
+<!--<div class="maintainer_form" id="maintainer_form" >-->
+<!--    <div class="start_form">-->
+<!--        <noscript>-->
+<!--            <span class="javascript_enable_error_message">JavaScript is blocked, Please enable the javaScript</span><br>-->
+<!--            <span class="javascript_enable">In Google chrome browser software => Go to Settings => In “Privacy and security” Section => Site Settings => JavaScript</span><br>-->
+<!--            <span class="javascript_enable">In Firefox, type “about:config” in browser address bar => Click on “Accept the risk and continue” => Type “JavaScript” in the “Search” box => Double-click the “JavaScript.enabled”</span>-->
+<!--        </noscript>-->
+
+<!--        <a href="/register" class="link_to_anither_page" id="link_to_anither_page"></a>-->
+
+<!--        <form action="#" class="form_maintainer_con" id="form_maintainer_con">-->
+<!--            <div class="detail_content">-->
+<!--                <div class="form_header">-->
+<!--                    <h1>Maintence Completion Form</h1>-->
+<!--                    <div class="headerLine"></div>-->
+<!--                </div>-->
+<!--                <div class="branch_manager_con">-->
+
+<!--                    <div class="first_header_label">-->
+<!--                        <h1>Request Details</h1><br>-->
+<!--                        <p>Only branch manager</p>-->
+<!--                    </div>-->
+<!--                    <div class="details_label_b">-->
+<!--                        <label for="branch_id_select">01. Branch Id<span class="require_star">*</span></label><br>-->
+<!--                        <select name="branch_id_select" id="branch_id_select" class="form_label branch_category" >-->
+<!--                            <option value="Badulla_branch">BN</option>-->
+<!--                            <option value="Colomb_branch">CM</option>-->
+<!--                            <option value="Polonnaruwa_branch">PM</option>-->
+<!--                            <option value="Gampaha_branch">GL</option>-->
+<!--                            <option value="Nugegoda_branch">NB</option>-->
+<!--                        </select>-->
+<!--                        <br>-->
+<!--                        <br>-->
+<!--                        <label for="equipment_type_select">02. Equipment Type<span class="require_star">*</span></label><br>-->
+<!--                        <select name="equipment_type_select" id="equipment_type_select" class="form_label equipment_select" >-->
+<!--                            <option value="Dumbel_bar">Dumbel bar</option>-->
+<!--                            <option value="Curiling_bar">Curiling bar</option>-->
+<!--                            <option value="Tricep_bar">Tricep bar</option>-->
+<!--                            <option value="Olympic_bar">Olympic bar</option>-->
+<!--                            <option value="Leg_press_machine">Leg press machine</option>-->
+<!--                            <option value="Leg_curl_machine">Leg curl machine</option>-->
+<!--                            <option value="Leg_extention_machine">Leg extention machine</option>-->
+<!--                            <option value="Smith_machine">Smith machine</option>-->
+<!--                            <option value="Bench">Bench</option>-->
+<!--                            <option value="Incline_bench">Incline bench</option>-->
+<!--                            <option value="Decline_bench">Decline bench</option>-->
+<!--                            <option value="Cable_crossover">Cable crossover</option>-->
+<!--                            <option value="Dumbel_rack">Dumbel rack</option>-->
+<!--                            <option value="Squat_rack">Squat rack</option>-->
+<!--                            <option value="Bar_rack">Bar rack</option>-->
+<!--                            <option value="Tradmail">Tradmail</option>-->
+<!--                            <option value="Crosschainer">Crosschainer</option>-->
+<!--                            <option value="Cycle">Cycle</option>-->
+<!--                        </select>-->
+<!--                        <br>-->
+
+<!--                        <label for="problem_dis">03. Discription</label><br>-->
+<!--                        <input type="textarea" id="problem_dis" name="problem_dis" class="form_label problem_dis" placeholder="Discrib the problem"><br>-->
+<!--                        <br>-->
+<!--                        <div class="dateTime">-->
+<!--                            <div class="dateAdd">-->
+<!--                                <label for="req_date">04. Request Send Date<span class="require_star">*</span></label><br>-->
+<!--                                <input type="date" id="req_date" name="req_date" class="form_label req_date" placeholder="Enter date"><br>-->
+<!--                            </div>-->
+<!--                            <div class="timeAdd">-->
+<!--                                <label for="req_time">05. Request Send Time<span class="require_star">*</span></label><br>-->
+<!--                                <input type="time" id="req_time" name="req_date" class="form_label req_date" placeholder="Enter date"><br>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <br>-->
+
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="hoLine"></div>-->
+<!--                <div class="maintainer_add_con">-->
+<!--                    <div class="first_header_label">-->
+<!--                        <h1>Completed Details</h1><br>-->
+<!--                        <p>Only maintainer</p>-->
+<!--                    </div>-->
+<!--                    <div class="details_label_m">-->
+<!--                        <label for="complet_dis">06. Add Note</label><br>-->
+<!--                        <input type="textarea" id="complet_dis" name="complet_dis" class="form_label complet_dis" placeholder="Add note about equipment"><br>-->
+<!--                        <br>-->
+
+<!--                        <label for="complet_img">07. Image after maintained<span class="require_star">*</span></label><br>-->
+<!--                        <input type="file" id="complet_img" name="complet_img" class="complet_img" ><br>-->
+<!--                        <h5 class="dob_check hidden_validate_text" id="dob_check">**image is missing</h5>-->
+<!--                        &lt;!&ndash; <h5 class="age_check hidden_validate_text" id="age_check">**Your age should be 14 to 80</h5> &ndash;&gt;-->
+
+
+<!--                        <div class="dateTime">-->
+<!--                            <div class="dateAdd">-->
+<!--                                <label for="comp_date">08. Completed Date<span class="require_star">*</span></label><br>-->
+<!--                                <input type="date" id="comp_date" name="req_date" class="form_label req_date" placeholder="Enter date"><br>-->
+<!--                            </div>-->
+<!--                            <div class="timeAdd">-->
+<!--                                <label for="comp_time">09. Send Time<span class="require_star">*</span></label><br>-->
+<!--                                <input type="time" id="comp_time" name="req_date" class="form_label req_date" placeholder="Enter date"><br>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="btnFeeld">-->
+<!--                    <div class="cancelBtn"><button>Cancel</button></div>-->
+<!--                    <div class="sendBtn"><button>Send</button></div>-->
+
+<!--                </div>-->
+<!--            </div>-->
+<!--        </form>-->
+
+
+<!--    </div>-->
+<!--</div>-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script>
+    <script src="http://localhost:8080/group39_fitbot_war_exploded/Maintainer/Maintainer_Form/maintainer_form.js" defer></script>
+</body>
+</html>

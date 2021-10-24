@@ -8,36 +8,57 @@
 
 }
 
+
 .maintainer_form{
-    position: relative;
-    display: flex;
     justify-content: space-evenly;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    border-radius: 5px;
+    display: none;
+    -webkit-animation: fadeIn 2s;
+    animation: fadeIn 1s;
+    filter: drop-shadow(0px 4px 4px rgba(44, 44, 44, 0.758));
 
 
 }
+.close_edit_profile_btn {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    cursor: pointer;
+}
+.maintainer_form .start_form .close_edit_profile_btn i {
+    font-size: 28px;
+    color:black;
+}
+.maintainer_form .start_form .close_edit_profile_btn i:hover {
+    font-size: 30px;
+    color:red;
+}
+
+
 .require_star{
     color: red;
 }
 .maintainer_form .start_form{
+
     position: absolute;
-    /* text-align: center; */
-    /* flex: 80%; */
     width: 60%;
     margin: 50px;
-    /* margin-bottom: 100px; */
-
-    /* background-color: aqua; */
     padding: 25px;
     border: navy 2px solid;
     border-radius: 10px;
+    background-color: white;
 
 }
 .maintainer_form .start_form .detail_content .branch_manager_con{
     margin-bottom: 30px;
 }
-/* .maintainer_form .start_form .detail_content .form_header{
-    width: fit-content;
-} */
+
 .maintainer_form .start_form .detail_content .form_header .headerLine{
     width: 100%;
     height: 2px;
@@ -51,10 +72,7 @@
     text-align: center;
     color: midnightblue;
     margin-bottom: 30px;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center; */
+    font-size: 36px;
 }
 
 .maintainer_form .start_form .detail_content .branch_manager_con , .maintainer_add_con{
@@ -64,12 +82,10 @@
 
 .maintainer_form .start_form .detail_content .first_header_label {
     flex: 40%;
-    /* background-color: mistyrose; */
     z-index: 1;
 }
 
 .maintainer_form .start_form .detail_content .details_label_b , .details_label_m{
-    /* background-color: midnightblue; */
     flex: 60%;
     z-index: 2;
 }
@@ -142,8 +158,6 @@
     width: 100%;
     display: flex;
     justify-content: space-around;
-    /* background-color: violet; */
-    /* margin: 50px; */
     margin-top: 50px;
     margin-bottom: 50px;
 

@@ -7,3 +7,4 @@ function physical_member_dashboard() {
     anchor_dashboard_i.style.color = "black";
     dashboard_text.style.color = "black";
   }
+

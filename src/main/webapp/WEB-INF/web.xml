@@ -104,6 +104,17 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>maintainerRequest</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.MaintainerRequestController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>maintainerRequest</servlet-name>
+        <url-pattern>/maintainerRequest</url-pattern>
+    </servlet-mapping>
+
+
+
+    <servlet>
         <servlet-name>maintainerStatus</servlet-name>
         <servlet-class>com.group39.fitbot.group39_fitbot.controller.MaintainerStatusChangeController</servlet-class>
     </servlet>
@@ -112,8 +123,14 @@
         <url-pattern>/maintainerStatus</url-pattern>
     </servlet-mapping>
 
-
-
+    <servlet>
+        <servlet-name>maintainerFormSubmit</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.MaintainerFormSubmitController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>maintainerFormSubmit</servlet-name>
+        <url-pattern>/maintainerFormSubmit</url-pattern>
+    </servlet-mapping>
 
 
 

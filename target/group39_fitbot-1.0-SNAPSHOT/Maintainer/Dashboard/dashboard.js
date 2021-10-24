@@ -7,43 +7,42 @@ function maintain_dashboard() {
     anchor_dashboard_i.style.color = "black";
     anchor_dashboard_text.style.color = "black";
   }
+console.log("mokada meee dashboard1111111111111");
+// $('#formPop').hide();
 
-$(document).ready(function (){
-    $('#button1').click(function (){
-        // let form_id = $('#login_username').val()
-        $.ajax({
-            method:'POST',
-            url:"maintainerStatus",
-            dataType:'json',
-            // data(form_id="form_id");
+//
+// $(document).ready(function (){
+//
+//     $('#formPop').load('http://localhost:8080/group39_fitbot_war_exploded/Maintainer/Maintainer_Form/maintainer_form.html #maintainer_form', function (responseTxt, statusTxt, xhr) {
+//         if (statusTxt == "error")
+//             alert("Error: " + xhr.status + ": " + xhr.statusText);
+//
+//     });
+//     });
 
-        }).done(function(result){
-            // const data_object = JSON.parse(data);
-            alert(result);
-            if(result==true){
+//
+// $(document).ready(function(){
+//     $.ajax({
+//         method:'POST',
+//         url:"maintainer",
+//         dataType:'json',
+//
+//     }).done(function(data){
+//         // const data_object = JSON.parse(data);
+//         alert(data);
+//         $('#dashboard_header_maintainer').append(
+//         '<h1>'+'Hello '+data.first_name+'!!'+'</h1>'
+//             );
+//         // alert(data);
+//     }).fail(function(a,b,err){
+//         alert("Error name print");
+//         console.log(a,b,err)
+//     });
+//
+//     // $('#phy_mem_diet_plan').click(function(){
+//
+//     // });
+//
+// });
+//
 
-            }else{
-
-            }
-        }).fail(function(a,b,err){
-            alert("Error");
-            console.log(a,b,err)
-        });
-
-        // $('#phy_mem_diet_plan').click(function(){
-
-        // });
-    });
-
-
-
-    $('.viewBtn').click(function (){
-
-    });
-
-
-
-
-
-
-});

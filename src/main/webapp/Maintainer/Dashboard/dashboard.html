@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <!-- Stylesheet -->
     <link rel="stylesheet" href="http://localhost:8080/group39_fitbot_war_exploded/Maintainer/Dashboard/dashboard.css">
-    <link rel="stylesheet" href="http://localhost:8080/group39_fitbot_war_exploded/Maintainer/Maintainer-Form/maintainer_form.css">
+    <link rel="stylesheet" href="http://localhost:8080/group39_fitbot_war_exploded/Maintainer/Maintainer_Form/maintainer_form.css">
 
 
     <!-- Boxicons CDN Link -->
@@ -17,65 +17,72 @@
 <body>
 
 <div class ="dashboard_maintainer" id="dashboard_maintainer">
+  <div class="dashboard_cont">
+    <div class="left_cont">
 
-  <div class="request_content_box">
+      <div class="request_content_box_dash">
+          <div class="new_req_box">
+            <div class="iconSet">
+              <i class='bx bxs-comment-dots bx-tada' ></i>
+            </div>
+            <div class="contentSet">
+              <div class="box_header">New Request</div>
+              <div class="horizontal_line"></div>
+              <p>Last 24 hours</p>
+              <div class="new_req_value">01</div>
+            </div>
+          </div>
 
-    <div class="new_req_box">
-      <div class="box_header">New Request</div>
-      <div class="horizontal_line"></div>
-      <p>Last 24 hours</p>
-      <div class="new_req_value">01</div>
-    </div>
-    <div class="progress_req_box">
-      <div class="box_header">Current Progress</div>
-      <div class="horizontal_line"></div>
-      <p>Not completed maintenance</p>
-      <div class="prog_req_value">02</div>
-    </div>
-    <div class="completed_req_box">
-      <div class="box_header">Completed Request</div>
-      <div class="horizontal_line"></div>
-      <p>Last 30 days</p>
-      <div class="compt_req_value">08</div>
-    </div>
+          <div class="progress_req_box">
+            <div class="iconSet">
+              <i class='bx bxs-chevrons-down bx-fade-down' ></i>
+            </div>
+            <div class="contentSet">
+              <div class="box_header">Current Progress</div>
+              <div class="horizontal_line"></div>
+              <p>Not completed maintenance</p>
+              <div class="prog_req_value">02</div>
+            </div>
+          </div>
 
-  </div>
-  <!-- Content below the header -->
-
-  <div class="all_maint_requests">
-
-    <div class="title_maint_requests">
-      <div class="all_maint_gym_requests">
-        All Maintenance Requests
+          <div class="completed_req_box">
+            <div class="iconSet">
+              <i class='bx bxs-check-square' ></i>
+            </div>
+            <div class="contentSet">
+              <div class="box_header">Completed</div>
+              <div class="horizontal_line"></div>
+              <p>Last 30 days</p>
+              <div class="compt_req_value">08</div>
+            </div>
+          </div>
       </div>
-      <div class="search-container">
-        <form action="">
-          <input type="text" placeholder="Search by branch" name="search_branch_requests">
-          <button type="submit" onclick=""><i class='bx bx-search'></i></button>
-        </form>
+
+      <div class="activityChart">
+        <p>Activity Chart</p>
       </div>
+
     </div>
 
-    <div class="maint_request-details">
-      <table class="maintain_requ_tab" id="maintain_requ_tab">
-        <tr class ="maint_request_info">
-          <th>Branch </th>
-          <th>Equipment ID</th>
-          <th>Date</th>
-          <th>Time</th>
-          <th>Status</th>
-          <th>Accepted</th>
-          <th></th>
-        </tr>
-      </table>
+    <div class="right_cont">
+
+      <div class="calendar_maint">
+        <p>Calendar</p>
+      </div>
+
+      <div class="upcome_t">
+        <p>Upcomming Tacks</p>
+      </div>
+
     </div>
   </div>
-  <section>
-    <div class="formPop" id="formPop"></div>
-  </section>
+
+
 </div>
-
-<script src="http://localhost:8080/group39_fitbot_war_explodedMaintainer/Maintainer/Maintainer-Form/maintainer_form.js" defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script>
+<script src="http://localhost:8080/group39_fitbot_war_explodedMaintainer/Maintainer/Maintainer_Form/maintainer_form.js" defer></script>
 <script src="http://localhost:8080/group39_fitbot_war_explodedMaintainer/Maintainer/Dashboard/dashboard.js" defer></script>
+<script src="http://localhost:8080/group39_fitbot_war_explodedMaintainer/Maintainer/LeftSidebar/LeftSidebar.js" defer></script>
 </body>
 </html>
