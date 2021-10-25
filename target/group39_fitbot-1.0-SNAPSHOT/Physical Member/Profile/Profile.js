@@ -1,3 +1,5 @@
+
+
 function physical_member_profile(){
     let profile_workout = document.getElementById("phy_mem_profile");
     let profile_workout_i = document.getElementById("phy_mem_profile_i");
@@ -171,7 +173,7 @@ function edit_profile_submit(){
             // dataType:"json",
             // contentType:"application/json",
             success: function (result) {
-                alert(result);
+                // alert(result);
                 console.log(result);
                 console.log(typeof (result));
                 result.toString();
@@ -190,6 +192,8 @@ function edit_profile_submit(){
                     // }, 2000);
                     $('#edit_profile_container_detail').find("input[type=text], input[type=number], input[type=date], input[type=tel]").val("");
                     $('#edit_profile_container').hide();
+
+                    getRegisterDetails();
 
                 } else {
                     Swal.fire({
@@ -213,4 +217,37 @@ function edit_profile_submit(){
             }
         });
     }
+}
+
+//leftsidebar repeated code
+function getRegisterDetails(){
+    $('#profile_physical_container_member').html('');
+    $.ajax({
+        method:"POST",
+        url:"memberDetails",
+        dataType:"json",
+        // contentType:"application/json",
+        success: function (result){
+            // alert(result);
+            const date = new Date();
+            let year_age = date.getFullYear() - result.date_of_birth['year'];
+            $('#profile_physical_container_member').append(
+                '<span>'+result.first_name+" "+result.last_name+'</span><br>'
+            );
+            $('#profile_physical_container_member').append(
+                '<span>'+'Age - '+year_age+'</span><br>'
+            );
+            $('#profile_physical_container_member').append(
+                '<span>'+'Height - '+result.height+' Kg'+'</span><br>'
+            );
+            $('#profile_physical_container_member').append(
+                '<span>'+'Weight - '+result.weight+' cm'+'</span><br>'
+            );
+
+            console.log(result);
+        },
+        error: function(error){
+            console.log(error+"edit profile");
+        }
+    });
 }

@@ -183,4 +183,13 @@
         <servlet-name>contact</servlet-name>
         <url-pattern>/contact</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>instructors</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.InstructorLandingController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>instructors</servlet-name>
+        <url-pattern>/instructors</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -386,7 +386,7 @@ $(document).ready(function (){
                     Swal.fire({
                         icon: 'error',
                         title: 'Login unsuccessfully!',
-                        text: 'Cannot resolve, System issue!',
+                        text: 'User name and password does not match!',
                         confirmButtonText:"Ok",
                         confirmButtonColor: '#932828',
                     })
@@ -397,7 +397,7 @@ $(document).ready(function (){
                 Swal.fire({
                     icon: 'error',
                     title: 'Login unsuccessfully!',
-                    text: 'User name and password does not match!',
+                    text: 'Cannot resolve, System issue!',
                     confirmButtonText:"Ok",
                     confirmButtonColor: '#932828',
                 })

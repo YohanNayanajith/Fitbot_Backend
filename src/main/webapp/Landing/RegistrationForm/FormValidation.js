@@ -319,8 +319,17 @@ $(document).ready(function () {
                 // dataType:"json",
                 // contentType:"application/json; charset=utf-8",
                 success:function(result) {
-                    alert(result);
+                    // alert(result);
                     if (result.trim() == "1") {
+                        setTimeout(function() {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Successfull',
+                                // text: 'Password is successfully updated!',
+                                confirmButtonText:"Next",
+                                confirmButtonColor: '#0E2C4B',
+                              })
+                            }, 1500);
                         window.location.href ="http://localhost:8080/group39_fitbot_war_exploded/medical";
                     } else {
                         Swal.fire({

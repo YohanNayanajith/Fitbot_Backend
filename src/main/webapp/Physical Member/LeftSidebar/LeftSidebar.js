@@ -46,43 +46,43 @@ $(document).ready(function(){
           alert("Error: " + xhr.status + ": " + xhr.statusText);
       });
 
-      $.ajax({
-        method: "POST",
-        url: "memberDetails",
-        dataType: "json",
-        // contentType:"application/json",
-        success: function (result) {
-          alert(result);
-          const date = new Date();
-          let year_age = date.getFullYear() - result.date_of_birth['year'];
-
-          const first_name = result.first_name;
-          const first_name_slice = first_name.slice(1);
-          const last_name = result.last_name;
-          const last_name_slice = last_name.slice(1);
-
-          $('#right_sideBar_name').append(
-              '<h2><span>' + first_name[0] + '</span>' + first_name_slice + ' ' + '<span>' + last_name[0] + '</span>' + last_name_slice + '</h2>'
-          );
-          $('#height_profile').append(
-              '<span class="height">' + 'Height' + '</span><br>' +
-              '<span class="height_value">' + result.height + '</span>'
-          );
-          $('#age_profile').append(
-              '<span class="age">' + 'Age' + '</span><br>' +
-              '<span class="age_value">' + year_age + '</span>'
-          );
-          $('#weight_profile').append(
-              '<span class="weight">' + 'Weight' + '</span><br>' +
-              '<span class="weight_value">' + result.weight + '</span>'
-          );
-          console.log(result);
-        },
-        error: function (error) {
-          console.log(error + "edit profile");
-        }
-      });
-      right_load++;
+      // $.ajax({
+      //   method: "POST",
+      //   url: "memberDetails",
+      //   dataType: "json",
+      //   // contentType:"application/json",
+      //   success: function (result) {
+      //     alert(result);
+      //     const date = new Date();
+      //     let year_age = date.getFullYear() - result.date_of_birth['year'];
+      //
+      //     const first_name = result.first_name;
+      //     const first_name_slice = first_name.slice(1);
+      //     const last_name = result.last_name;
+      //     const last_name_slice = last_name.slice(1);
+      //
+      //     $('#right_sideBar_name').append(
+      //         '<h2><span>' + first_name[0] + '</span>' + first_name_slice + ' ' + '<span>' + last_name[0] + '</span>' + last_name_slice + '</h2>'
+      //     );
+      //     $('#height_profile').append(
+      //         '<span class="height">' + 'Height' + '</span><br>' +
+      //         '<span class="height_value">' + result.height + '</span>'
+      //     );
+      //     $('#age_profile').append(
+      //         '<span class="age">' + 'Age' + '</span><br>' +
+      //         '<span class="age_value">' + year_age + '</span>'
+      //     );
+      //     $('#weight_profile').append(
+      //         '<span class="weight">' + 'Weight' + '</span><br>' +
+      //         '<span class="weight_value">' + result.weight + '</span>'
+      //     );
+      //     console.log(result);
+      //   },
+      //   error: function (error) {
+      //     console.log(error + "edit profile");
+      //   }
+      // });
+      // right_load++;
     }else {
       right_load++;
     }
@@ -202,37 +202,10 @@ $(document).ready(function(){
       sideBar_links_variable = "#physical_member_profile";
       $(sideBar_links_variable).load('http://localhost:8080/group39_fitbot_war_exploded/Physical%20Member/Profile/Profile.html #profile_physical',function(responseTxt, statusTxt, xhr){
       
-      if(statusTxt == "error")
-          alert("Error: " + xhr.status + ": " + xhr.statusText);
-
-        $.ajax({
-          method:"POST",
-          url:"memberDetails",
-          dataType:"json",
-          // contentType:"application/json",
-          success: function (result){
-            alert(result);
-            const date = new Date();
-            let year_age = date.getFullYear() - result.date_of_birth['year'];
-            $('#profile_physical_container_member').append(
-                '<span>'+result.first_name+" "+result.last_name+'</span><br>'
-            );
-            $('#profile_physical_container_member').append(
-                '<span>'+'Age - '+year_age+'</span><br>'
-            );
-            $('#profile_physical_container_member').append(
-                '<span>'+'Height - '+result.height+' Kg'+'</span><br>'
-            );
-            $('#profile_physical_container_member').append(
-                '<span>'+'Weight - '+result.weight+' cm'+'</span><br>'
-            );
-
-            console.log(result);
-          },
-          error: function(error){
-            console.log(error+"edit profile");
-          }
-        });
+      if(statusTxt == "error") {
+        alert("Error: " + xhr.status + ": " + xhr.statusText);
+      }
+      getRegisterDetails();
 
       });
       load[1] += 1;
@@ -407,7 +380,7 @@ $(document).ready(function(){
     if(load[8] == 0){
       page_select(sideBar_links_variable);
       sideBar_links_variable = "#physical_member_branch_messages";
-      $(sideBar_links_variable).load('http://localhost:8080/group39_fitbot_war_exploded/Physical%20Member/Messages/Messages.html #messages_physical',function(responseTxt, statusTxt, xhr){
+      $(sideBar_links_variable).load('http://localhost:8080/group39_fitbot_war_exploded/Physical%20Member/BranchMessages/BranchMessages.html #branch_messages_physical',function(responseTxt, statusTxt, xhr){
       
       if(statusTxt == "error")
           alert("Error: " + xhr.status + ": " + xhr.statusText);
@@ -530,22 +503,39 @@ console.log("AJAX FUNCTION CALLED");
 var user_name;
 
 $(document).ready(function(){
-  $.ajax({
-    method:'POST',
-    url:"physicalMember",
-    dataType:'json',
 
-  }).done(function(data){
-    // const data_object = JSON.parse(data);
-      alert(data);
-    $('#dashboard_header_member').append(
-        '<h1>'+'Hello '+data.first_name+'!!'+'</h1>'
-    );
-    // alert(data);
-  }).fail(function(a,b,err){
-    alert("Error");
-    console.log(a,b,err)
+  $.ajax({
+    method:"POST",
+    url:"memberDetails",
+    dataType:"json",
+    // contentType:"application/json",
+    success: function (result){
+      $('#dashboard_header_member').append(
+          '<h1>'+'Hello '+result.first_name+'!!!'+'</h1>'
+      );
+      console.log(result);
+    },
+    error: function(error){
+      console.log(error+"edit profile");
+    }
   });
+
+  // $.ajax({
+  //   method:'POST',
+  //   url:"physicalMember",
+  //   dataType:'json',
+  //
+  // }).done(function(data){
+  //   // const data_object = JSON.parse(data);
+  //   //   alert(data);
+  //   $('#dashboard_header_member').append(
+  //       '<h1>'+'Hello '+data.first_name+'!!'+'</h1>'
+  //   );
+  //   // alert(data);
+  // }).fail(function(a,b,err){
+  //   alert("Error");
+  //   console.log(a,b,err)
+  // });
 
   $.ajax({
     method:'POST',
@@ -554,7 +544,7 @@ $(document).ready(function(){
 
   }).done(function(data){
     // const data_object = JSON.parse(data);
-    alert(data);
+    // alert(data);
     $('#dashboard_mambership_first_text').append(
         '<span class="dashboard_mambership_second_text"><b>'+data.membership_category+'</b></span>'
     );
@@ -586,17 +576,35 @@ function log_out_function(){
     data:"",
     success: function(result){
       if(result == "1"){
-        setTimeout(function() {
-          Swal.fire({
-            icon: 'success',
-            title: 'Successfully Logout',
-            // text: 'Password is successfully updated!',
-            confirmButtonText:"Ok",
-            confirmButtonColor: '#0E2C4B',
-          })
-        }, 2000);
-        console.log("logout is correct");
-        window.location.href = "http://localhost:8080/group39_fitbot_war_exploded";
+
+        Swal.fire({
+          title: 'Do you want to log out?',
+          // text: "Registration is not completed,You won't be able to revert this!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#0E2C4B',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, log out!'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.href = "http://localhost:8080/group39_fitbot_war_exploded/login";
+          }else if (result.isDenied){
+            // Swal.fire('Changes are not saved', '', 'info')
+            console.log("Log out cancel");
+          }
+        })
+
+        // setTimeout(function() {
+        //   Swal.fire({
+        //     icon: 'success',
+        //     title: 'Successfully Logout',
+        //     // text: 'Password is successfully updated!',
+        //     confirmButtonText:"Ok",
+        //     confirmButtonColor: '#0E2C4B',
+        //   })
+        // }, 2000);
+        // console.log("logout is correct");
+        // window.location.href = "http://localhost:8080/group39_fitbot_war_exploded";
       }else {
         console.log("Something went wrong");
         setTimeout(function() {
@@ -637,3 +645,34 @@ $(document).ready(function(){
     });
   });
 });
+
+function getRegisterDetails(){
+  $.ajax({
+    method:"POST",
+    url:"memberDetails",
+    dataType:"json",
+    // contentType:"application/json",
+    success: function (result){
+      // alert(result);
+      const date = new Date();
+      let year_age = date.getFullYear() - result.date_of_birth['year'];
+      $('#profile_physical_container_member').append(
+          '<span>'+result.first_name+" "+result.last_name+'</span><br>'
+      );
+      $('#profile_physical_container_member').append(
+          '<span>'+'Age - '+year_age+'</span><br>'
+      );
+      $('#profile_physical_container_member').append(
+          '<span>'+'Height - '+result.height+' Kg'+'</span><br>'
+      );
+      $('#profile_physical_container_member').append(
+          '<span>'+'Weight - '+result.weight+' cm'+'</span><br>'
+      );
+
+      console.log(result);
+    },
+    error: function(error){
+      console.log(error+"edit profile");
+    }
+  });
+}
