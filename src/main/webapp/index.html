@@ -7,8 +7,6 @@
 
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
     <link rel="stylesheet" href="Landing/Navbar/NavBar.css">
     <link rel="stylesheet" href="Landing/Carousel/carousel.css">
     <link rel="stylesheet" href="Landing/First_Content/first_content.css">
@@ -53,12 +51,12 @@
 
 <div class="topnav" id="nav_mobile">
     <div class="landing_navbar_items">
-      <a href="#" class="nav_item" id="active_item">Home</a>
-      <a href="#" class="nav_item">Packages</a>
+      <a href="home" class="nav_item" id="active_item">Home</a>
+      <a href="pricing" class="nav_item">Pricing Plan</a>
       <a href="#" class="nav_item">Trainers</a>
-      <a href="#" class="nav_item">Branches</a>
-      <a href="#" class="nav_item">About Us</a>
-      <a href="#" class="nav_item">Contact Us</a>
+      <a href="branches" class="nav_item">Branches</a>
+      <a href="about" class="nav_item">About Us</a>
+      <a href="contact" class="nav_item">Contact Us</a>
     </div>
 <!--  <button class="dropbtn" id="login">Login</button>-->
 <!--  <button class="dropbtn" id="registration">Sign Up</button>-->
@@ -171,14 +169,41 @@
     </div>
 
     <div class="fitness_experience">
-       <div class="virtual_experience">
-            <img src="Landing/Images/virtual_example.jpg" alt="virtual_image">
-            <!-- <h1>Yohan Nayanajith</h1> -->
-       </div>
-       <div class="physical_experience">
-            <img src="Landing/Images/physical_example.jpg" alt="physical_image">
-            <!-- <h1>Yohan Nayanajith</h1> -->
-       </div>
+        <div class="physical_experience" id="physical_experience">
+            <div class="physical_experience_image"><img src="Landing/Images/physical_example.jpg" alt="physical_image" id="physical_experience_image"></div>
+            <div class="physical_experience_text" id="physical_experience_text">
+                <h1>Physical Experience</h1>
+                <div class="physical_experience_text_detail">
+                    <div>Access virtual environment</div>
+                    <div>Workout plans</div>
+                    <div>Diet plans</div>
+                    <div>Chat</div>
+                    <div>Online & cash Payments</div>
+                    <div>Customize own workout plans</div>
+                    <div>Mentoring</div>
+                </div>
+                <div class="physical_experience_text_btn">
+                    <a href="register">Registration</a>
+                </div>
+            </div>
+        </div>
+        <div class="virtual_experience" id="virtual_experience">
+            <div class="virtual_experience_image"><img src="Landing/Images/virtual_example.jpg" alt="virtual_image" id="virtual_experience_image"></div>
+            <div class="virtual_experience_text" id="virtual_experience_text">
+                <h1>Virtual Experience</h1>
+                <div class="virtual_experience_text_detail">
+                    <div>Home workout plans</div>
+                    <div>Diet plans</div>
+                    <div>Chat</div>
+                    <div>Online Payments</div>
+                    <div>Customize own workout plans</div>
+                    <div>Mentoring</div>
+                </div>
+                <div class="virtual_experience_text_btn">
+                    <a href="register">Registration</a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="gym_values">
@@ -363,9 +388,11 @@
 
 
 </div>
-<script src="Landing/Navbar/NavBar.js"></script>
-<script src="Landing/Carousel/carousel.js"></script>
-<script src="Landing/InstructorCarousel/instructor_carousel.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
+<script src="Landing/Navbar/NavBar.js" defer></script>
+<script src="Landing/Carousel/carousel.js" defer></script>
+<script src="Landing/InstructorCarousel/instructor_carousel.js" defer></script>
+<script src="Landing/FitnessExperience/fitness_experience.js" defer></script>
 
 </body>
 

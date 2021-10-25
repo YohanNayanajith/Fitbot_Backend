@@ -36,16 +36,57 @@ function visibleSocialMedia(){
   }
 }
 
+var right_load = 0;
 
 $(document).ready(function(){
   $('#click_me').click(function () {
-    $('#right_side_bar_view').load('http://localhost:8080/group39_fitbot_war_exploded/Physical%20Member/RightSidebar/RightSidebar.html #right_side_nav',function(responseTxt, statusTxt, xhr){
-      if(statusTxt == "error")
-        alert("Error: " + xhr.status + ": " + xhr.statusText);
+    if(right_load == 0) {
+      $('#right_side_bar_view').load('http://localhost:8080/group39_fitbot_war_exploded/Physical%20Member/RightSidebar/RightSidebar.html #right_side_nav', function (responseTxt, statusTxt, xhr) {
+        if (statusTxt == "error")
+          alert("Error: " + xhr.status + ": " + xhr.statusText);
       });
-  });
 
-  
+      $.ajax({
+        method: "POST",
+        url: "memberDetails",
+        dataType: "json",
+        // contentType:"application/json",
+        success: function (result) {
+          alert(result);
+          const date = new Date();
+          let year_age = date.getFullYear() - result.date_of_birth['year'];
+
+          const first_name = result.first_name;
+          const first_name_slice = first_name.slice(1);
+          const last_name = result.last_name;
+          const last_name_slice = last_name.slice(1);
+
+          $('#right_sideBar_name').append(
+              '<h2><span>' + first_name[0] + '</span>' + first_name_slice + ' ' + '<span>' + last_name[0] + '</span>' + last_name_slice + '</h2>'
+          );
+          $('#height_profile').append(
+              '<span class="height">' + 'Height' + '</span><br>' +
+              '<span class="height_value">' + result.height + '</span>'
+          );
+          $('#age_profile').append(
+              '<span class="age">' + 'Age' + '</span><br>' +
+              '<span class="age_value">' + year_age + '</span>'
+          );
+          $('#weight_profile').append(
+              '<span class="weight">' + 'Weight' + '</span><br>' +
+              '<span class="weight_value">' + result.weight + '</span>'
+          );
+          console.log(result);
+        },
+        error: function (error) {
+          console.log(error + "edit profile");
+        }
+      });
+      right_load++;
+    }else {
+      right_load++;
+    }
+  });
 });
 
 var sideBar_links_variable = "#dashboard_implementation";
@@ -163,6 +204,36 @@ $(document).ready(function(){
       
       if(statusTxt == "error")
           alert("Error: " + xhr.status + ": " + xhr.statusText);
+
+        $.ajax({
+          method:"POST",
+          url:"memberDetails",
+          dataType:"json",
+          // contentType:"application/json",
+          success: function (result){
+            alert(result);
+            const date = new Date();
+            let year_age = date.getFullYear() - result.date_of_birth['year'];
+            $('#profile_physical_container_member').append(
+                '<span>'+result.first_name+" "+result.last_name+'</span><br>'
+            );
+            $('#profile_physical_container_member').append(
+                '<span>'+'Age - '+year_age+'</span><br>'
+            );
+            $('#profile_physical_container_member').append(
+                '<span>'+'Height - '+result.height+' Kg'+'</span><br>'
+            );
+            $('#profile_physical_container_member').append(
+                '<span>'+'Weight - '+result.weight+' cm'+'</span><br>'
+            );
+
+            console.log(result);
+          },
+          error: function(error){
+            console.log(error+"edit profile");
+          }
+        });
+
       });
       load[1] += 1;
     }else if(sideBar_links_variable == "#physical_member_profile"){
@@ -236,7 +307,7 @@ $(document).ready(function(){
           // const data_object = JSON.parse(result);
           // $.map(result,function(post,i){
           let total_reps_phy = result.total_reps;
-          alert(total_reps_phy);
+          // alert(total_reps_phy);
 
           console.log(result);
           $.map(result,function(x){

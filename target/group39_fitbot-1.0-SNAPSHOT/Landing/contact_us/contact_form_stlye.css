@@ -1,0 +1,82 @@
+*{
+    box-sizing: border-box;
+}
+
+
+.contact_form{
+    display: flex;
+    justify-content: center;
+    margin: 100px 20px;
+}
+
+.form_details{
+    border: #ccc 2px solid;
+    border-radius: 10px;
+    width: 450px;
+    height: 100vh;
+    padding: 50px 80px 80px 80px;
+    filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.5)); 
+    background-color: #FBFAFA;
+      
+}
+
+
+.form_details h2{
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.form_details label{
+    font-size: 18px;
+}
+
+input[type=text],input[type=email]{
+    height: 30px;
+}
+
+input[type=text],input[type=email], textarea{ 
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-top: 7px;
+    margin-bottom: 25px;  
+
+}
+textarea{
+    height: 100px;
+}
+
+input[type=submit]{
+    background-color: #0E2C4B;
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    /*align-self: right;*/
+    /* margin-left: 78%; */
+}
+
+input[type=submit]:hover {
+    background-color: #ffffff;
+    border: #0E2C4B 2px solid;
+    color: #0E2C4B;
+    cursor: pointer;
+} 
+
+textarea:hover, input[type=text]:hover , input[type=email]:hover{
+    filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.3)); 
+}
+
+.contact_form .form_details input:focus, textarea:focus{
+    outline: none; 
+}
+
+.contact_map{
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+

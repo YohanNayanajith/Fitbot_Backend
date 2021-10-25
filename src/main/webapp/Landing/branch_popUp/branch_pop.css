@@ -1,0 +1,173 @@
+*{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.branch_background{
+    padding: 20px;
+    border: black 1px solid;
+    width: 700px;
+    height: fit-content;
+    
+}
+.branch_background .branch_details{
+    display: flex;
+    flex-direction: row;
+}
+
+.branch_background .branch_details .branch_img img{
+width: 300px;
+height: 400px;
+overflow: hidden;
+}
+
+/* .branch_background .branch_details .branch_img img{
+  height: 50%;
+  width: 50%;
+} */
+
+.branch_background .branch_details .details{
+    position: relative;
+    margin-left: 50px;
+
+}
+.branch_background .branch_details .details h2{
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #0E2C4B ;
+}
+
+.branch_background .branch_details .details p{
+    font-size: 18px;
+}
+
+
+/*--------------- img gallery------------ */
+.branch_garllery{
+    margin-top: 50px;
+}
+
+.branch_background h1{
+text-align: center;
+color: #0E2C4B  ;
+}
+
+.branch_garllery .imges_more{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;    
+
+}
+.branch_garllery .imges_more .img1{
+    border: black 2px solid;
+    padding: 5px;
+}
+
+.branch_garllery .imges_more img{
+height: 80px;
+width: 130px;
+}
+
+/* -----------------------Instructor view------------------------ */
+
+.branch_background .OurInst{
+    margin-top: 50px;
+
+}
+.Inst_details{
+    display: flex;
+    justify-content:space-evenly;
+    Flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 20px;
+}
+
+/* all content edit*/
+
+.Inst_details .content{
+    width: 180px;
+    height: 250px;
+    background-color: #F2F2F2;
+    border-radius: 6px;
+    text-align: center;
+    padding-top: 10px;
+    background-color: blue;
+
+}
+
+/* add flex one by one margin and padding */
+.Inst_details  .inst_view_01 , .inst_view_02 , .inst_view_03 , .inst_view_04 , .inst_view_05 , .inst_view_06 , .inst_view_07 , .inst_view_08 {
+    margin-top: 20px;
+    padding: 0px;
+
+}
+
+/* images in all */
+.Inst_details .content .imge_inst{
+    position: relative;
+    border-radius: 6px;
+   
+    margin: 15px;
+    margin-top: 15px;
+}
+.branch_background .Inst_details img{
+    width: 150px;
+    height: 120px;}
+
+/* name in all */
+.Inst_details .name {
+    position: relative;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* small rectangle */
+.Inst_details .rectangle{
+    margin: auto;
+    background-color: #7CD0FF;
+    width: 75px;
+    height: 2px;
+    border-radius: 50px;
+    margin-bottom: 15px;
+    margin-top: 2px;
+}
+
+/* all catagory */
+.Inst_details .category {
+    position: relative;
+    font-size: 12px;
+} 
+
+/* icon for social icon */
+.Inst_details .social_icon{
+    margin-top: 15px;
+}
+
+
+.Inst_details .social_icon i{
+    margin: 5px;
+}
+
+.Inst_details .eye_mark{
+    text-align: center;
+}
+/* .inst_profile_sha .eye_mark i{
+    margin-top: -20px;
+} */
+
+
+.inst_view_02:hover , .inst_view_03:hover , .inst_view_04:hover , .inst_view_05:hover , .inst_view_06:hover , .inst_view_07:hover , .inst_view_08:hover{
+    filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.5)); 
+
+}
+
+
+.Inst_details .eye_mark:hover{
+    color: rgb(14, 1, 128);
+    filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.5)); 
+   
+}

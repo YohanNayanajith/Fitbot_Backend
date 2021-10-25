@@ -47,11 +47,11 @@ function edit_profile_change_password_submit(){
     let confirm_password = $('#edit_profile_container_change_confirm_password').val().trim();
 }
 
-$(document).ready(function(){
-    $('#phy_mem_profile').click(function(){
-        alert("Iam here babe");
-    });
-});
+// $(document).ready(function(){
+//     $('#phy_mem_profile').click(function(){
+//         alert("Iam here babe");
+//     });
+// });
 
 function edit_profile_submit(){
     let edit_profile_container_detail_name = $('#edit_profile_container_detail_name').val().trim();
@@ -82,7 +82,7 @@ function edit_profile_submit(){
             dataType:"json",
             // contentType:"application/json",
             success: function (result){
-                alert(result);
+                // alert(result);
                 console.log(result);
                 console.log(typeof(result));
                 result_object = result;
@@ -99,7 +99,7 @@ function edit_profile_submit(){
         $('#edit_profile_error_height').hide();
         $('#edit_profile_error_dob').hide();
 
-        alert(result_object);
+        // alert(result_object);
         console.log(result_object);
         if(edit_profile_container_detail_name == ''){
             edit_profile_container_detail_name = result_object.first_name.toString();

@@ -1,0 +1,85 @@
+/**{*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    box-sizing: border-box;*/
+/*}*/
+body{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.image_contact{
+    background-image: url(image/contact_us_image.jpg);
+    max-height: 90vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.rect_contact{
+    background-image: linear-gradient(to right,#0E2C4B 60%,rgba(0, 0, 0, 0) );
+    width: 50%;
+    height: 90vh;
+}
+
+.rect_contact h1{
+    color: #ffff;
+    font-size: 78px;
+    width: 50px;
+    line-height: 91px;
+    padding-left: 50px;
+    padding-top: 150px;
+}
+
+.contact_details{
+    display: flex;
+    justify-content:space-evenly;
+    flex-wrap: wrap;
+    margin: 100px;
+}
+
+.phone_contact,.mail_contact,.location_contact{
+ 
+    border: #0E2C4B 2px solid;
+    border-radius: 10px;
+    
+    text-align: center;
+    align-items: center;
+    padding: 35px 10px 10px 10px;
+    width: 300px;
+    height: 350px;
+    background-color: rgb(255, 255, 255);;
+    filter:  drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.5));
+    margin-top: 30px;
+}
+
+.contact_details li{
+    list-style-type: none;
+}
+
+.address p{
+    padding-left: 35%;
+    text-align: left;
+}
+
+.contact_details h2{
+    margin: 20px 10px;
+}
+.mail_contact a{
+    color: rgb(0, 0, 0);
+}
+a:hover {
+    color: #003452;
+}
+.location_contact:hover{
+    border-color:#7CD0FF ;
+    filter:  drop-shadow(1px 4px 4px #7CD0FF);
+}
+.phone_contact:hover{
+    border-color:#7CD0FF ;
+    filter:  drop-shadow(1px 4px 4px #7CD0FF);
+}
+.mail_contact:hover{
+    border-color:#7CD0FF ;
+    filter:  drop-shadow(1px 4px 4px #7CD0FF);
+}

@@ -1,0 +1,149 @@
+*{
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+.rect_contact h1{
+    color: #ffff;
+    font-size: 78px;
+    width: 50px;
+    line-height: 91px;
+    padding-left: 50px;
+    padding-top: 150px;
+}
+
+.image_about{
+    /* display: flex; */
+    /* top: 0; */
+    /* max-height: 90vh; */
+    width: 100%;
+    background-image: url("http://localhost:8080/group39_fitbot_war_exploded/Landing/Images/image_slider_1.jpg");
+    background-position: center;
+    background-size: cover;
+    /* position: relative; */
+}
+
+.rect_contact{
+    background-image: linear-gradient(to right,#0E2C4B 60%,rgba(0, 0, 0, 0) );
+    width: 50%;
+    height: 90vh;
+}
+
+
+
+.landing_pricing_plan {
+    margin:10px 72px;
+}
+
+.landing_pricing_plan_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* header */
+.landing_pricing_plan_container_header {
+    align-items: center;
+}
+.landing_pricing_plan_container_header h1 {
+    font-weight:bold;
+    font-size:28px;
+    text-align: center;
+}
+.landing_pricing_plan_container_header_choose, .landing_pricing_plan_container_physical_head_choose {
+    color:#7CD0FF;
+}
+.landing_pricing_plan_container_header_mem, .landing_pricing_plan_container_physical_head_mem {
+    color: #0E2C4B;
+}
+.landing_pricing_plan_container_physical_head h1{
+    font-weight:bold;
+    font-size:26px;
+}
+
+/* physical membership */
+.landing_pricing_plan_container_physical {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 100px 60px;
+}
+.pricing_plan_mem {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    background-color: #E5E5E5;
+    /* max-width: 350px; */
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    transition: 1s;
+}
+.pricing_plan_mem:hover{
+    background-color:white;
+    filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.25));
+}
+
+/* sliver membership */
+.landing_pricing_plan_physical_silver_header {
+    padding-top: 10px;
+}
+.landing_pricing_plan_physical_silver_header h1 {
+    font-size:24px;
+    font-weight: bold;
+    color: black;
+    text-align:center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.landing_pricing_plan_physical_silver_price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.landing_pricing_plan_physical_silver_price_title {
+    font-size:20px;
+    font-weight: bold;
+    color: #0E2C4B;
+}
+.landing_pricing_plan_physical_silver_month {
+    font-size:14px;
+    /* font-weight: 100; */
+    color: black;
+}
+
+.landing_pricing_plan_physical_silver_detail {
+    display: flex;
+    flex-direction: column;
+    /* margin: 0 10px; */
+    text-align: left;
+    padding: 15px 0;
+    height:120px;
+}
+.landing_pricing_plan_physical_silver_detail div {
+    text-indent: 10px;
+    font-size:16px;
+    color: black;
+    font-style: italic;
+    line-height:30px;
+}
+.landing_pricing_plan_physical_silver_detail div i {
+    padding-left:10px ;
+    padding-right:10px ;
+    font-size: 16px;
+    color: #0E2C4B;
+}
+.landing_pricing_plan_physical_silver_btn {
+    text-align: center;
+    margin: 30px 0;
+}
+.landing_pricing_plan_physical_silver_btn a {
+    text-decoration: none;
+    
+    background-color:black;
+    color:white;
+    font-weight: bold;
+    padding: 10px 15px;
+    /* border-radius: 5px; */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.landing_pricing_plan_physical_silver_btn a:hover {
+    background-color:#0E2C4B;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
+}

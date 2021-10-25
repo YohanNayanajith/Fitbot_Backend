@@ -123,6 +123,11 @@
 .hidden_validate_text {
     color:red;
 }
+.btn_group_reg_form {
+    display: flex;
+    justify-content:space-evenly;
+}
+
 .btn_next {
     margin:10px 0;
     display:inline-block;
@@ -156,5 +161,8 @@
 @media screen and (max-width: 768px){
     .reg_form_side_image {
         display:none;
+    }
+    .btn_group_reg_form {
+        flex-direction: column;
     }
 }

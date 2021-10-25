@@ -16,7 +16,7 @@
   // var ctx = $('#monthly_goal_chart').getContext('2d');
 
 
-console.log("RightSidebar called");
+// console.log("RightSidebar called");
 // var ctx = document.getElementById('monthly_goal_chart').getContext('2d');
 // var myChart = new Chart(ctx, {
 //     type: 'bar',
@@ -40,8 +40,8 @@ console.log("RightSidebar called");
 //             borderWidth: 1,
 //             barPercentage: 0.8,
 //             barThickness: 20,
-            
-            
+//
+//
 //             // maxBarThickness: 8,
 //             // minBarLength: 2
 //           }]
@@ -54,7 +54,7 @@ console.log("RightSidebar called");
 //               position: 'left',
 //               min: 0,
 //               max: 20,
-              
+//
 //               // display:false
 //               // ticks: {
 //               //   fontColor: "green",
@@ -85,7 +85,7 @@ console.log("RightSidebar called");
 //         },
 //       }
 //   });
-  // myChart.render();
-// });
+//   myChart.render();
+
 
 

@@ -1,0 +1,83 @@
+
+/* main content with eye */
+.branch_landing_sha{
+    display: flex;
+    justify-content:space-evenly;
+    Flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 20px;
+}
+
+/* all content edit*/
+
+.branch_landing_sha .content_branch{
+    width: 265px;
+    height: 400px;
+    background-color: #F2F2F2;
+    border-radius: 6px;
+    text-align: center;
+    padding-top: 2px;
+
+}
+
+/* add flex one by one margin and padding */
+.branch_landing_sha  .branch_view1 , .branch_view2 , .branch_view3 , .branch_view4 , .branch_view5{
+    margin-top: 50px;
+    padding: 0px;
+
+}
+
+/* images in all */
+.branch_landing_sha .image_branch1 img{
+    position: relative;
+    border-radius: 6px;
+    width: 225px;
+    height: 230px;
+    margin: 20px;
+    margin-top: 20px;
+}
+
+/* name in all */
+.branch_landing_sha .name {
+    position: relative;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* small rectangle */
+.branch_landing_sha .rectangle{
+    margin: auto;
+    background-color: #7CD0FF;
+    width: 100px;
+    height: 5px;
+    border-radius: 50px;
+    margin-bottom: 25px;
+    margin-top: 5px;
+}
+
+/* all cantact Numbers */
+.branch_landing_sha .cantact_no {
+    position: relative;
+    font-size: 14px;
+} 
+
+.branch_landing_sha .cantact_no li{
+    list-style-type: none;
+}
+
+.branch_landing_sha .eye_mark{
+    text-align: center;
+}
+
+
+.branch_view1:hover , .branch_view2:hover , .branch_view3:hover , .branch_view4:hover , .branch_view5:hover {
+    filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.5)); 
+
+}
+
+.branch_landing_sha .eye_mark:hover{
+
+    color: blue;
+}

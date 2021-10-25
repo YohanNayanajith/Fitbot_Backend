@@ -365,3 +365,10 @@ $(document).ready(function () {
         }
     });
 });
+
+$(document).ready(function(){
+    // alert('back button');
+    $('#reg_back_btn').click(function(){
+        window.location.href = "http://localhost:8080/group39_fitbot_war_exploded/";
+    });
+});
