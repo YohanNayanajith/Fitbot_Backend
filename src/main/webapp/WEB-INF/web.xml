@@ -76,6 +76,7 @@
         <url-pattern>/passwordConfirm</url-pattern>
     </servlet-mapping>
 
+    <servlet>
     <servlet-name>manager</servlet-name>
         <servlet-class>com.group39.fitbot.group39_fitbot.controller.ManagerController</servlet-class>
     </servlet>
