@@ -8,9 +8,14 @@ function adm_add_employees() {
   anchor_employees_text.style.color = "black";
 }
 
-//
+function Branchvisibility(){
+  var x =document.getElementById("designation").value;
+  if (x=="maintainer")
+  {
+    document.getElementById("branch_name_employee").style.opacity=0.2;
 
-// $( "#employee_form" ).submit(function( event ) {
-//   alert( "Handler for .submit() called." );
-//   event.preventDefault();
-// });
+  }
+  else{
+    document.getElementById("branch_name_employee").style.opacity=1;
+  }
+}

@@ -283,6 +283,7 @@
     color: red;
 }
 
+
   .first_middle_last {
     display: flex;
     margin-bottom: 10px;
@@ -373,3 +374,8 @@
   color: #0E2C4B;
   border-color: #0E2C4B;
 }
+
+ .validation_label {
+   color: red;
+ }
+/*}*/

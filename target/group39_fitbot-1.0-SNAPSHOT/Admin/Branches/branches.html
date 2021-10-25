@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
-   
+
 <body>
 
 
@@ -66,14 +66,7 @@
       </div>
 
       <section class="home-section">
-          <div class="header">
-            <ul>
-              <li><a href ="#"><i class='bx bxs-bell'></i></a></li>
-              <li><a href="#"><i class='bx bxs-virus'></i></li>
-              <li><a href ="#"><i class='bx bx-log-out'></i></a></li>
-            </ul>
-              
-          </div>
+
         <!-- Content below the header -->
         <div class="home-content-branch" id="home-content-branch">
             <div class ="branch_view" id="branch_view">
@@ -106,11 +99,11 @@
               <div class ="branch_list">
                 <div class ="list_top">
                   <div class="all">All Branches</div>
-                  <div class ="add">Add New Branch <i class='bx bxs-plus-circle'></i></div>
+                  <a class ="add" onclick="add_new_branch()">Add New Branch <i class='bx bxs-plus-circle'></i></a>
                 </div>
 
                 <div class="list_bottom">
-                  <form action="action_page.php" class="search_branch">
+                  <form action="" class="search_branch">
                     <input type="text" placeholder="Search.." name="search">
                   </form>
 
@@ -129,11 +122,11 @@
                     </div>
                   </div>
                 </div>
-                  
+
               </div>
             </div>
         </div>
-        
+
       </section>
 
       <!-- ----------------------------- JavaScript Files ----------------------------------- -->
@@ -141,7 +134,7 @@
       <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
       <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script> -->
 
-      
+
       <script src="branches.js"></script>
       </body>
       </html>

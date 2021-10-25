@@ -4,6 +4,7 @@ import com.group39.fitbot.group39_fitbot.database.DBConnection;
 import com.group39.fitbot.group39_fitbot.model.Employee;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
@@ -20,10 +21,11 @@ public class EmployeeAddDAO {
         pst.setString(5,employee.getGender());
         pst.setString(6,employee.getEmail());
         pst.setString(7, employee.getNic());
-        pst.setDate(8,employee.getDob());
+        pst.setString(8, (employee.getDob()));
         pst.setString(9,employee.getAddress());
         pst.setString(10, employee.getPrimarycontact());
         pst.setString(11,employee.getSecondarycontact());
+
 
         return pst.executeUpdate()>0;
 
@@ -42,10 +44,12 @@ public class EmployeeAddDAO {
         pst.setString(5,employee.getGender());
         pst.setString(6,employee.getEmail());
         pst.setString(7, employee.getNic());
-        pst.setDate(8,employee.getDob());
+        pst.setString(8, (employee.getDob()));
         pst.setString(9,employee.getAddress());
         pst.setString(10, employee.getPrimarycontact());
         pst.setString(11,employee.getSecondarycontact());
+
+
 
         return pst.executeUpdate()>0;
 
@@ -54,7 +58,7 @@ public class EmployeeAddDAO {
 
     public static boolean addbranchmanager (Employee employee) throws SQLException, ClassNotFoundException{
         Connection connection=DBConnection.getInstance().getConnection();
-        String query = "INSERT INTO branchmanager VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+        String query = "INSERT INTO branch_manager VALUES (?,?,?,?,?,?,?,?,?,?,?)";
         PreparedStatement pst = connection.prepareStatement(query);
 
         pst.setString(1,employee.getEmployee_id());
@@ -64,10 +68,11 @@ public class EmployeeAddDAO {
         pst.setString(5,employee.getGender());
         pst.setString(6,employee.getEmail());
         pst.setString(7, employee.getNic());
-        pst.setDate(8,employee.getDob());
+        pst.setString(8, (employee.getDob()));
         pst.setString(9,employee.getAddress());
         pst.setString(10, employee.getPrimarycontact());
         pst.setString(11,employee.getSecondarycontact());
+
 
         return pst.executeUpdate()>0;
 

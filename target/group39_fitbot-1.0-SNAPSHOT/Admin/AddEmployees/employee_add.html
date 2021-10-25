@@ -15,55 +15,6 @@
 
 
     <!-- Sidebar  -->
-    <div class="sidebar">
-        <div class="logo-details">
-          <i class='bx bxl-c-plus-plus icon'></i>
-            <!-- <div class="logo_name">CodingLab</div> -->
-            <i class='bx bx-menu' id="btn" ></i>
-        </div>
-        <ul class="nav-list">
-          <li>
-              <i class='bx bx-search' ></i>
-             <input type="text" placeholder="Search...">
-             <span class="tooltip">Search</span>
-          </li>
-          <li>
-            <a href="#">
-              <i class='bx bx-grid-alt'></i>
-              <span class="links_name">Dashboard</span>
-            </a>
-             <span class="tooltip">Dashboard</span>
-          </li>
-          <li>
-           <a href="#">
-             <i class='bx bx-user' ></i>
-             <span class="links_name">Branches</span>
-           </a>
-           <span class="tooltip">Branches</span>
-         </li>
-         <li>
-           <a href="#">
-             <i class='bx bx-chat' ></i>
-             <span class="links_name">Members</span>
-           </a>
-           <span class="tooltip">Members</span>
-         </li>
-         <li>
-           <a href="#">
-             <i class='bx bx-pie-chart-alt-2' ></i>
-             <span class="links_name">Employees</span>
-           </a>
-           <span class="tooltip">Employees</span>
-         </li>
-         <li>
-           <a href="#">
-             <i class='bx bx-folder' ></i>
-             <span class="links_name">Reports</span>
-           </a>
-           <span class="tooltip">Reports</span>
-         </li>
-        </ul>
-      </div>
 
       <section class="home-section">
           <div class="header">
@@ -81,12 +32,12 @@
                 <h2>Add a New Employee</h2>
               </div>
 
-              <form  class="employee_form" method="post" id="employee_form" action="employee" >
+              <form  class="employee_form" method="post" id="employee_form" action="addemployee" >
 
                   <div class="first_middle_last">
                     <div class="first_label">
                       <label for="designation">Designation<span class="require_star">*</span></label><br>
-                      <select name="designation" id="designation" class="employee_label designation" >
+                      <select name="designation" id="designation"  onchange="Branchvisibility()"  class="employee_label designation" >
                         <option value="instructor">Instructor</option>
                         <option value="maintainer">Maintainer</option>
                         <option value="branch_manager">Branch Manager</option>
@@ -96,11 +47,13 @@
                     <div class="middle_label">
                       <label for="employee_id">Employee ID<span class="require_star">*</span></label></br>
                       <input type="text" name="employee_id" id="employee_id" class="employee_label employee_id" placeholder="Enter user ID" ><br>
+                        <h6 id ="validation_employee_id" class="validation_label">Employee ID cannot be empty</h6>
                     </div>
 
-                    <div class="last_label">
+                    <div class="last_label" id="branch_name_employee">
                       <label for="branch_name">Branch Name<span class="require_star">*</span></label><br>
                       <input type="text" name="branch_name" id="branch_name" class="employee_label branch_name" placeholder="Enter branch id" >
+                        <h6 id ="validation_branch" class="validation_label">Branch name cannot be empty</h6>
                   </div>
                   </div>
 
@@ -108,12 +61,14 @@
                     <div class="first_label">
                         <label for="first_name_employee">First Name<span class="require_star">*</span></label></br>
                         <input type="text" name="first_name_employee" id="first_name_employee" class="employee_label first_name" placeholder="Enter first name" ><br>
+                        <h6 id ="validation_first_name" class="validation_label">First name cannot be empty</h6>
                     </div>
 
                     <div class="middle_label">
                       
                         <label for="last_name_employee">Last Name<span class="require_star">*</span></label><br>
-                        <input type="text" name="last_name_employee" id="last_name_employee" class="employee_label last_name" placeholder="Enter last name" > <br>
+                        <input type="text" name="last_name_employee" id="last_name_employee" class="employee_label last_name" placeholder="Enter last name"  > <br>
+                        <h6 id ="validation_last_name" class="validation_label">Last name cannot be empty</h6>
                     </div>
 
                     <div class="last_label">
@@ -130,16 +85,19 @@
                     <div class="first_label">
                         <label for="email_employee">E-mail<span class="require_star">*</span></label></br>
                         <input type="email" name="email_employee" id="email_employee" class="employee_label email" placeholder="Enter Email address" ><br>
+                        <h6 id ="validation_email" class="validation_label">Email name cannot be empty</h6>
                     </div>
 
                     <div class="middle_label">
                       <label for="nic_employee">NIC<span class="require_star">*</span></label><br>
                       <input type="text" name="nic_employee" id="nic_employee" class="employee_label nic" placeholder="Enter NIC Number" ><br>
+                        <h6 id ="validation_nic" class="validation_label">NIC  cannot be empty</h6>
                     </div>
 
                     <div class="last_label">
                     <label for="date_of_birth_employee">Date of Birth<span class="require_star">*</span></label><br>
-                    <input type="date" name="date_of_birth_employee" id="date_of_birth_employee" class="employee_label date_of_birth" placeholder="Enter date of birth" required><br>
+                    <input type="date" name="date_of_birth_employee" id="date_of_birth_employee" class="employee_label date_of_birth" placeholder="Enter date of birth"><br>
+                        <h6 id ="validation_dob" class="validation_label">Date of Birth cannot be empty</h6>
                     </div>
                   </div>
 
@@ -147,22 +105,21 @@
                     <div class="first_label">
                       <label for="address_employee">Address<span class="require_star">*</span></label></br>
                       <input type="text" name="address_employee" id="address_employee" class="employee_label address" placeholder="Enter address" ><br>
-                  </div>
+                        <h6 id ="validation_address" class="validation_label">Address cannot be empty</h6>
+                    </div>
 
                     <div class="middle_label">
                         <label for="contact_no1_employee">Primary Contact No<span class="require_star">*</span></label></br>
                         <input type="text" name="contact_no1_employee" id="contact_no1_employee" class="employee_label contact_no1" placeholder="Enter Primary Contact" ><br>
+                        <h6 id ="validation_contactno1" class="validation_label">Contact cannot be empty</h6>
                     </div>
-
                     <div class="last_label">
                       <label for="contact_no2_employee">Emergency  Contact No<span class="require_star">*</span></label></br>
                         <input type="text" name="contact_no2_employee" id="contact_no2_employee" class="employee_label contact_no2" placeholder="Enter Secondary Contact" ><br>
+                        <h6 id ="validation_contactno2" class="validation_label">Contact cannot be empty</h6>
                     </div>
 
-                    <!-- <div class="last_label">
-                    <label for="date_of_birth">Date of Birth<span class="require_star">*</span></label><br>
-                    <input type="date" name="date_of_birth" class="employee_label date_of_birth" placeholder="Enter date of birth" required><br>
-                    </div> -->
+
                   </div>
                     
                     <div class="add_btn_class">
@@ -179,10 +136,7 @@
         
       </section>
 
-      <!-- ----------------------------- JavaScript Files ----------------------------------- -->
-      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script> -->
-      <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
-      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script> -->
+
 
       
       <script src="employee_add.js" defer></script>

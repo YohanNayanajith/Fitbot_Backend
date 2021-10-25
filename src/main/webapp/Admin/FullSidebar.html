@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="Admin/Branches/branches.css">
     <link rel="stylesheet" href="Admin/AddEmployees/employee_add.css">
     <link rel="stylesheet" href="Admin/Reports/reports.css">
+    <link rel="stylesheet" href="Admin/AddBranch/branch_add.css">
     
     
     
@@ -86,7 +87,7 @@
             <div class="top_bar_navigation_link">
               <a href="#" class="bx bxs-bell-ring side_icon top_nav_icons"></a>
               <a href="#" class="bx bx-cog side_icon top_nav_icons" ></a>
-              <a href="#" class="bx bx-log-out side_icon top_nav_icons"></a>
+              <a href="#" class="bx bx-log-out side_icon top_nav_icons" onclick="log_out_function()"></a>
             </div>
             
   
@@ -99,6 +100,10 @@
         </div>
         <!-- branches-->
         <div class="adm_branches" id="adm_branches">
+
+        </div>
+        <!--add new branch-->
+        <div class="adm_branch_add" id="adm_branch_add">
 
         </div>
         <!-- employees -->
@@ -131,6 +136,7 @@
   <script src="Admin/Branches/branches.js" defer></script>
   <script src="Admin/AddEmployees/employee_add.js" defer></script>
   <script src="Admin/Reports/reports.js" defer></script>
+<script src="Admin/AddBranch/branch_add.js" defer></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"defer></script>
   <script src="asserts/JSLibrary/sweetalert2.all.min.js" defer></script>
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js" integrity="sha512-Wt1bJGtlnMtGP0dqNFH1xlkLBNpEodaiQ8ZN5JLA5wpc1sUlk/O5uuOMNgvzddzkpvZ9GLyYNa8w2s7rqiTk5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

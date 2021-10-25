@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Boxicons icons -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- <link href="./RightSidebar/RightSidebar.html" rel="import" /> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script>
+    <!-- css-file -->
+    <link rel="stylesheet" href="Owner/LeftSidebar/LeftSidebar.css">
+    <link rel="stylesheet" href="Owner/Dashboard/dashboard.css">
+    <link rel="stylesheet" href="Owner/Employees/employees.css">
+    <link rel="stylesheet" href="Owner/Members/members.css">
+    <link rel="stylesheet" href="Owner/Branches/branches.css">
+    <link rel="stylesheet" href="Owner/AddEmployees/employee_add.css">
+    <link rel="stylesheet" href="Owner/Reports/reports.css">
+    
+    
+    
+    <title>Owner</title>
+</head>
+<body>
+  <div class="full_nav_bars" id="full_nav_bars">
+    <div class="sidebar" id="sidebar">
+        <div class="logo-details">
+            <!-- <i class='bx bxl-c-plus-plus icon'></i> -->
+            <!-- <img class="icon" src="../Physical Member/Images/Fitbot_white_logo.png" alt="Logo"> -->
+            <img class="icon" src="http://localhost:8080/group39_fitbot_war_exploded/Owner/Images/Fitbot_white_logo.png" alt="Logo">
+            <!-- <div class="logo_name">FitBot</div> -->
+            <i class='bx bx-menu side_icon' id="btn" onclick="visibleSocialMedia()"></i>
+        </div>
+        <ul class="nav-list">
+          <li>
+            <i class='bx bx-search side_icon'></i>
+            <input type="text" placeholder="Search...">
+            <span class="tooltip">Search</span>
+          </li>
+          <li>
+            <a href="#" class="side_bar_anchor_tag" onclick="own_dashboard()" id="owner_dashboard">
+              <i class='bx bx-grid-alt side_icon' id="owner_dashboard_i"></i>
+              <span class="links_name" id="owner_dashboard_text">Dashboard</span>
+            </a>
+            <span class="tooltip">Dashboard</span>
+          </li>
+          <li>
+          <a href="#" class="side_bar_anchor_tag"  onclick="own_branches()" id="owner_branches">
+            <i class='bx bxs-business side_icon' id="owner_branches_i" ></i>
+            <span class="links_name" id="owner_branches_text">Branches</span>
+          </a>
+          <span class="tooltip">Branches</span>
+        </li>
+        <li>
+          <a href="#" class="side_bar_anchor_tag" onclick="own_employees()" id="owner_employees">
+              <i class='bx bx-male side_icon' id="owner_employees_i"></i>
+            <span class="links_name" id="owner_employees_text">Employees</span>
+          </a>
+          <span class="tooltip">Employees</span>
+        </li>
+        <li>
+          <a href="#" class="side_bar_anchor_tag" onclick="own_members()" id="owner_members">
+            <i class='bx bx-user side_icon' id="owner_members_i" ></i>
+            <span class="links_name" id="owner_members_text" >Members</span>
+          </a>
+          <span class="tooltip">Members</span>
+          </li>
+
+          <li>
+          <a href="#" class="side_bar_anchor_tag" onclick="own_reports()" id="owner_reports">
+              <i class='bx bx-notepad side_icon' id="owner_reports_i" ></i>
+            <span class="links_name" id="owner_reports_text">Reports</span>
+          </a>
+          <span class="tooltip">Reports</span>
+        </li>
+      </ul>
+    </div>
+
+    <section class="home-section">
+        <!-- <div class="text">Dashboard</div> -->
+        <div class="top_bar">
+          <div class="top_bar_navigation">
+
+            <div class="top_bar_navigation_link">
+              <a href="#" class="bx bxs-bell-ring side_icon top_nav_icons"></a>
+              <a href="#" class="bx bx-cog side_icon top_nav_icons" ></a>
+              <a href="#" class="bx bx-log-out side_icon top_nav_icons"></a>
+            </div>
+            
+  
+          </div>
+        </div>
+
+        <!-- dashboard -->
+        <div class="owner_dashboard_implementation" id="owner_dashboard_implementation">
+          <!-- <h2>Yohan Nayanajith</h2> -->
+        </div>
+        <!-- branches-->
+        <div class="own_branches" id="own_branches">
+
+        </div>
+        <!-- employees -->
+        <div class="own_employees" id="own_employees">
+
+        </div>
+        <!-- addemployees-->
+        <div class="own_add_employees" id="own_add_employees">
+
+        </div>
+        <!-- viewemployees -->
+        <div class="own_view_employees" id="own_view_employees">
+
+        </div>
+        <!-- members -->
+        <div class="own_members" id="own_members">
+
+        </div>
+        <!-- reports -->
+        <div class="own_reports" id="own_reports">
+        </div>
+        
+    </section>
+  </div>
+  </body>
+  <script src="Owner/LeftSidebar/LeftSidebar.js" defer></script>
+  <script src="Owner/Dashboard/dashboard.js" defer></script>
+  <script src="Owner/Employees/employees.js"></script>
+  <script src="Owner/Members/members.js"></script>
+  <script src="Owner/Branches/branches.js"></script>
+  <script src="Owner/AddEmployees/employee_add.js"></script>
+  <script src="Owner/Reports/reports.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js" integrity="sha512-Wt1bJGtlnMtGP0dqNFH1xlkLBNpEodaiQ8ZN5JLA5wpc1sUlk/O5uuOMNgvzddzkpvZ9GLyYNa8w2s7rqiTk5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js" integrity="sha512-b3xr4frvDIeyC3gqR1/iOi6T+m3pLlQyXNuvn5FiRrrKiMUJK3du2QqZbCywH6JxS5EOfW0DY0M6WwdXFbCBLQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+  
+</html>

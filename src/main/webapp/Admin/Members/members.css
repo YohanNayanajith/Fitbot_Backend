@@ -268,10 +268,10 @@
       border-radius:12px;
       min-width:200px;
   }
-  .memberview_admin.overview-boxes .box-topic {
-      font-size: 20px;
-      font-weight: 500;
-  }
+  /*.memberview_admin.overview-boxes .box-topic {*/
+  /*    font-size: 20px;*/
+  /*    font-weight: 500;*/
+  /*}*/
 
   .memberview_admin .overview-boxes .number {
       font-size : 30px;
