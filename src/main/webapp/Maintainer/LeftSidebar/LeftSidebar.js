@@ -95,57 +95,7 @@ $(document).ready(function (){
 
     if (load[1] == 0) {
       $(sideBar_links_variable).load('http://localhost:8080/group39_fitbot_war_exploded/Maintainer/Requests/requests.html #maintain_requests_view', function (responseTxt, statusTxt, xhr) {
-
-        $.ajax({
-          method:'POST',
-          url:"maintainerRequest",
-          dataType: 'json',
-          contentType: "application/json",
-        }).done(function (result){
-          // const data_object = JSON.resp(result);
-
-          // let arr = [0,0,0,0,0];
-          // let count_num = 0;
-          $.map(result,function (x){
-            if(x.ststus == "New"){
-              $('#maintain_requ_tab').append(
-              '<tr class="request_details_row" id="request_details_row">' +
-              '<td>' + x.branch_id + '</td>' +
-              '<td>' + x.equipment_type + '</td>' +
-              '<td>' + x.re_date + '</td>' +
-              '<td>' + x.re_time + '</td>' +
-              '<td>' + x.ststus + '</td>' +
-              '<td>' + '<div class="button"><input type="button" id="button1" onclick="ChangeStatus()"><input type="button" id="button2"></div>' + '</td>' +
-              '<td>' + '<a value="View more" class="viewBtn"  id= "viewBtn" onclick="PopupForm()">View more</a>'+ '</td>' +
-              '</tr>'
-                  );
-              // count_num++;
-              // arr.add(x.branch_id);
-              // let id = document.getElementById('request_details_row');
-              // $('#complet_dis').append("<p>"+x.branch_id+"</p>");
-
-            }else{
-              $('#maintain_requ_tab').append(
-              '<tr class="request_details_row">' +
-              '<td>' + x.branch_id + '</td>' +
-              '<td>' + x.equipment_type + '</td>' +
-              '<td>' + x.re_date + '</td>' +
-              '<td>' + x.re_time + '</td>' +
-              '<td>' + x.ststus + '</td>' +
-              '<td>' + '<p></p>' + '</td>' +
-              '<td>' + '<a value="View more" class="viewBtn"  id= "viewBtn" onclick="PopupForm()">View more</a>'+ '</td>' +
-              '</tr>'
-                  );
-
-            }
-
-          });
-          alert("Data is loading now");
-        }).fail(function (a,b,err) {
-          alert("Data loading error  Shalani");
-          console.log(a,b,err);
-
-        });
+        reloadRequestData();
 
         if (statusTxt == "error")
           alert("Error: " + xhr.status + ": " + xhr.statusText);
@@ -216,6 +166,71 @@ $(document).ready(function (){
 //
 // }
 //
+
+
+function reloadRequestData(){
+  alert("call load function");
+
+  $.ajax({
+    method:'POST',
+    url:"maintainerRequest",
+    dataType: 'json',
+    contentType: "application/json",
+  }).done(function (result){
+    // const data_object = JSON.resp(result);
+
+    // let arr = [0,0,0,0,0];
+    // let count_num = 0;
+    $.map(result,function (x){
+      if(x.status == "New"){
+        $('#maintain_requ_tab').append(
+        '<tr class="request_details_row" id="request_details_row">' +
+        '<td>' + x.branch_id + '</td>' +
+        '<td>' + x.equipment_type + '</td>' +
+        '<td>' + x.re_date + '</td>' +
+        '<td>' + x.re_time + '</td>' +
+        '<td>' + x.status + '</td>' +
+        '<td>' + '<div class="button"><input type="button" id="button1" onclick="ChangeStatus()"><input type="button" id="button2"></div>' + '</td>' +
+        '<td>' + '<a value="View more" class="viewBtn"  id= "viewBtn" onclick="PopupForm()">View more</a>'+ '</td>' +
+        '</tr>'
+            );
+        // count_num++;
+        // arr.add(x.branch_id);
+        // let id = document.getElementById('request_details_row');
+        // $('#complet_dis').append("<p>"+x.branch_id+"</p>");
+
+      }else{
+        $('#maintain_requ_tab').append(
+        '<tr class="request_details_row">' +
+        '<td>' + x.branch_id + '</td>' +
+        '<td>' + x.equipment_type + '</td>' +
+        '<td>' + x.re_date + '</td>' +
+        '<td>' + x.re_time + '</td>' +
+        '<td>' + x.status + '</td>' +
+        '<td>' + '<p></p>' + '</td>' +
+        '<td>' + '<a value="View more" class="viewBtn"  id= "viewBtn" onclick="PopupForm()">View more</a>'+ '</td>' +
+        '</tr>'
+            );
+
+      }
+
+    });
+    // alert("Data is loading now");
+  }).fail(function (a,b,err) {
+    alert("Data loading error  Shalani");
+    console.log(a,b,err);
+
+  });
+
+}
+
+
+
+
+
+
+
+
 
 
 

@@ -10,7 +10,7 @@
 
 
 .maintainer_form{
-    justify-content: space-evenly;
+    /*justify-content: space-evenly;*/
     position: absolute;
     top: 50%;
     left: 50%;
@@ -163,22 +163,22 @@
 
 }
 
-.maintainer_form .start_form .btnFeeld button{
+.maintainer_form .start_form .btnFeeld .cancelBtn , .sendBtn input{
     width: fit-content;
     padding: 10px 20px 10px 20px;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 18px;
     border-radius: 5px;
 
 
 }
-.maintainer_form .start_form .btnFeeld .cancelBtn button{
+.maintainer_form .start_form .btnFeeld .cancelBtn {
     border: midnightblue 2px solid;
     color: midnightblue;
 
 }
 
-.maintainer_form .start_form .btnFeeld .sendBtn button{
+.maintainer_form .start_form .btnFeeld .sendBtn input{
     background-color: midnightblue;
     color: white;
 

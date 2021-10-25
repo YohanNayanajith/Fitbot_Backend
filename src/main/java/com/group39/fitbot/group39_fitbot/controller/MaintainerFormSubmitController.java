@@ -28,19 +28,21 @@ public class MaintainerFormSubmitController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter out = resp.getWriter();
         resp.setContentType("text/plain");
+//        System.out.println("in mt onr thana**********************");
 
-        int form_id_m = Integer.parseInt(req.getParameter("form_id_m"));
+        int form_id_m = 1;
+//        int form_id_m = Integer.parseInt(req.getParameter("form_id_m"));
         String complet_dis = req.getParameter("complet_dis");
         String complet_img = req.getParameter("complet_img");
-        Date comp_date = Date.valueOf(req.getParameter("comp_date"));
-        Time comp_time = Time.valueOf(req.getParameter("comp_time"));
+        String comp_date = req.getParameter("comp_date");
+        String comp_time = req.getParameter("comp_time");
 
-
-        System.out.println(form_id_m);
-        System.out.println(complet_dis);
-        System.out.println(complet_img);
-        System.out.println(comp_date);
-        System.out.println(comp_time);
+//
+//        System.out.println(form_id_m);
+//        System.out.println(complet_dis);
+//        System.out.println(complet_img);
+//        System.out.println(comp_date);
+//        System.out.println(comp_time);
 
 
         boolean updateResult= false;

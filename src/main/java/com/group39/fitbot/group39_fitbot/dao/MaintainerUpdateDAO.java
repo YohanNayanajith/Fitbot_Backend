@@ -12,11 +12,11 @@ public class MaintainerUpdateDAO {
         String query ="UPDATE form SET status = ? , complet_dis=?, complet_img=?, comp_date=?, comp_time=? WHERE form_id =?";
         PreparedStatement pst = connection.prepareStatement(query);
 
-        pst.setString(1, "Progrees");
+        pst.setString(1, "Completed");
         pst.setString(2, formMaintain.getComplet_dis());
         pst.setString(3, formMaintain.getComplet_img());
-        pst.setDate(4, (Date) formMaintain.getComp_date());
-        pst.setTime(5, formMaintain.getComp_time());
+        pst.setString(4, formMaintain.getComp_date());
+        pst.setString(5, formMaintain.getComp_time());
         pst.setInt(6, formMaintain.getForm_id() );
 
 

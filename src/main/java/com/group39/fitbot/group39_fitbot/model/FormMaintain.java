@@ -1,9 +1,6 @@
 package com.group39.fitbot.group39_fitbot.model;
 
 
-import java.sql.Time;
-import java.util.Date;
-
 public class FormMaintain {
      private int form_id;
      private int maintainer_id;
@@ -13,17 +10,17 @@ public class FormMaintain {
      private String status;
      private String branchmanager_id;
      private String branch_id;
-     private Time re_time;
-     private Date re_date;
+     private String re_time;
+     private String re_date;
      private String complet_dis;
      private String complet_img;
-     private Date comp_date;
-     private Time comp_time;
+     private String comp_date;
+     private String comp_time;
 
      public FormMaintain() {
      }
 
-     public FormMaintain(int form_id, int maintainer_id, String equipment_type, int no_of_maintainers, String description, String status, String branchmanager_id, String branch_id, Time re_time, Date re_date, String complet_dis, String complet_img, Date comp_date, Time comp_time) {
+     public FormMaintain(int form_id, int maintainer_id, String equipment_type, int no_of_maintainers, String description, String status, String branchmanager_id, String branch_id, String re_time, String re_date, String complet_dis, String complet_img, String comp_date, String comp_time) {
           this.form_id = form_id;
           this.maintainer_id = maintainer_id;
           this.equipment_type = equipment_type;
@@ -40,7 +37,7 @@ public class FormMaintain {
           this.comp_time = comp_time;
      }
 
-     public FormMaintain(int form_id, String complet_dis, String complet_img, Date comp_date, Time comp_time) {
+     public FormMaintain(int form_id, String complet_dis, String complet_img, String comp_date, String comp_time) {
           this.form_id = form_id;
           this.complet_dis = complet_dis;
           this.complet_img = complet_img;
@@ -112,19 +109,19 @@ public class FormMaintain {
           this.branch_id = branch_id;
      }
 
-     public Time getRe_time() {
+     public String getRe_time() {
           return re_time;
      }
 
-     public void setRe_time(Time re_time) {
+     public void setRe_time(String re_time) {
           this.re_time = re_time;
      }
 
-     public Date getRe_date() {
+     public String getRe_date() {
           return re_date;
      }
 
-     public void setRe_date(Date re_date) {
+     public void setRe_date(String re_date) {
           this.re_date = re_date;
      }
 
@@ -144,22 +141,21 @@ public class FormMaintain {
           this.complet_img = complet_img;
      }
 
-     public Date getComp_date() {
+     public String getComp_date() {
           return comp_date;
      }
 
-     public void setComp_date(Date comp_date) {
+     public void setComp_date(String comp_date) {
           this.comp_date = comp_date;
      }
 
-     public Time getComp_time() {
+     public String getComp_time() {
           return comp_time;
      }
 
-     public void setComp_time(Time comp_time) {
+     public void setComp_time(String comp_time) {
           this.comp_time = comp_time;
      }
-
 
      @Override
      public String toString() {
@@ -172,14 +168,16 @@ public class FormMaintain {
                   ", status='" + status + '\'' +
                   ", branchmanager_id='" + branchmanager_id + '\'' +
                   ", branch_id='" + branch_id + '\'' +
-                  ", re_time=" + re_time +
-                  ", re_date=" + re_date +
+                  ", re_time='" + re_time + '\'' +
+                  ", re_date='" + re_date + '\'' +
                   ", complet_dis='" + complet_dis + '\'' +
                   ", complet_img='" + complet_img + '\'' +
-                  ", comp_date=" + comp_date +
-                  ", comp_time=" + comp_time +
+                  ", comp_date='" + comp_date + '\'' +
+                  ", comp_time='" + comp_time + '\'' +
                   '}';
      }
+
+
 }
 
 

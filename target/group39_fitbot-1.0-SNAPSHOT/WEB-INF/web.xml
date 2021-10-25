@@ -112,7 +112,14 @@
         <url-pattern>/maintainerRequest</url-pattern>
     </servlet-mapping>
 
-
+    <servlet>
+        <servlet-name>maintainerWrite</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.MaintainerWriteController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>maintainerWrite</servlet-name>
+        <url-pattern>/maintainerWrite</url-pattern>
+    </servlet-mapping>
 
     <servlet>
         <servlet-name>maintainerStatus</servlet-name>
