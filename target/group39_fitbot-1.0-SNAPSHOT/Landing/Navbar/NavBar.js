@@ -10,19 +10,19 @@ function toggle_navbar() {
 }
 
 //scroll function
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-    let navbar = document.getElementById("nav_mobile");
-    let sticky = navbar.offsetTop;
-    if (window.pageYOffset >= sticky) {
-        navbar.classList.add("fixed")
-    }else {
-        navbar.classList.remove("fixed");
-        // navbar.classList.add("fixed")
-    }
-}
-console.log("Navbar js is called");
+// window.onscroll = function() {scrollFunction()};
+//
+// function scrollFunction() {
+//     let navbar = document.getElementById("nav_mobile");
+//     let sticky = navbar.offsetTop;
+//     if (window.pageYOffset >= sticky) {
+//         navbar.classList.add("fixed")
+//     }else {
+//         navbar.classList.remove("fixed");
+//         // navbar.classList.add("fixed")
+//     }
+// }
+// console.log("Navbar js is called");
 
 //login button
 console.log("navbar js");

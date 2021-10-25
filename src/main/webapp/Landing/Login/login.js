@@ -25,7 +25,7 @@ function close_model(){
 console.log("login js form");
 
 function togglePopup() {
-    alert("onclick event");
+    // alert("onclick event");
     $('.model').hide();
     $('#reset_password_container').show();
     $('.reset_password_text_input_warning').hide();
@@ -82,7 +82,7 @@ function open_OTP_password_Popup(){
         return
     }
 
-    let correct_otp = 0;
+    let correct_otp = "0";
 
     $.ajax({
         method:"POST",
@@ -93,7 +93,8 @@ function open_OTP_password_Popup(){
         success: function (result){
             if(result == "1"){
                 alert(result);
-                correct_otp = 1;
+                correct_otp = "1";
+                console.log("Correct OTP "+correct_otp);
             }else{
                 console.log(result);
                 Swal.fire({
@@ -103,7 +104,7 @@ function open_OTP_password_Popup(){
                     confirmButtonText:"Ok",
                     confirmButtonColor: '#932828',
                 })
-                return 0;
+                return;
             }
         },
         error: function(err){
@@ -115,11 +116,10 @@ function open_OTP_password_Popup(){
                 confirmButtonText:"Ok",
                 confirmButtonColor: '#932828',
             })
-            return 0;
+            return;
         }
     });
 
-    if(correct_otp == 1) {
         $.ajax({
             url: "https://meghaduta.dhahas.com/sms/sendSMS",
             type: "POST",
@@ -158,7 +158,6 @@ function open_OTP_password_Popup(){
                 })
             }
         });
-    }
 
     // $.ajax({
     //     method:"POST",

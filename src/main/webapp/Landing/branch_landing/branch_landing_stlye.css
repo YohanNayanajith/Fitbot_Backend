@@ -1,0 +1,147 @@
+body{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* ------------------first image css part-------------------- */
+
+.image_branch{
+    background-image: url(imagesB/unnamedNew.jpg);
+    max-height: 90vh;
+    width: 100%;
+    background-size: cover;
+    position: relative;
+
+}
+
+.rect_branch{
+    background-image: linear-gradient(to right,#0E2C4B 60%,rgba(0, 0, 0, 0) );
+    max-width: 50%;
+    height: 90vh;
+}
+
+.rect_branch h1{
+    color: #ffff;
+    font-size: 78px;
+    width: 100px;
+    line-height: 91px;
+    padding-left: 50px;
+    padding-top: 150px;
+}
+
+/* ---------------- Our Branch header ------------- */
+
+.our_branches{
+    text-align: center;
+    width: 100%;
+    font-size: 28px;
+    margin: 50px 10px;
+}
+
+
+
+/* -------------------------------search bar and search Branch-------------------------- */
+
+/* Full search bar positiondesing in center */
+.search_instructer_landig{
+   display: flex;
+   justify-content: center;
+}
+
+/* full search bar properties */
+.search_bar_sha{
+    border: #0E2C4B 2px solid;
+    border-radius: 10px;
+    width: 800px;
+    height: 40px;
+    margin: 50px;
+    padding-left: 20px;
+    display: flex;
+}
+
+/* input font and others size propertices */
+.search_bar_sha input,input::placeholder ,i{
+    font-size: 18px;
+    border: none;
+    align-self: center;
+
+}
+
+/* search icon position go to right */
+.search_bar_sha i{
+    position: relative;
+    margin-right: 10px;
+    margin-left: auto;
+    float: right;
+ 
+}
+
+/* click out line none */
+.search_instructer_landig .search_bar_sha input:focus{
+    outline: none;
+}
+
+
+/* ------------------------------------media change size- 800px ------------------------------------ */
+
+@media screen and (max-width: 800px){
+    .rect_instructer h1{
+        font-size: 64px;
+    }
+    
+    .our_instructers{
+        font-size: 25px;
+        margin: 40px 7px;
+    }
+
+    .search_bar_sha{
+        height: 40px;
+        margin: 40px;
+        padding-left: 15px;
+    }
+
+    .search_bar_sha input,input::placeholder ,i{
+        font-size: 18px;
+    }
+    
+}
+
+/* ------------------------------------media change size- 570px ------------------------------------ */
+
+@media screen and (max-width: 570px){
+    
+    .rect_instructer h1{
+        font-size: 48px;
+    }
+    
+    .our_instructers{
+        font-size: 20px;
+        margin: 30px 5px;
+    }
+
+    .search_bar_sha{
+        height: 35px;
+        margin: 40px;
+        padding-left: 12px;
+    }
+    
+    .search_bar_sha input,input::placeholder ,i{
+        font-size: 16px;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -76,7 +76,8 @@
         <url-pattern>/passwordConfirm</url-pattern>
     </servlet-mapping>
 
-    <servlet-name>manager</servlet-name>
+    <servlet>
+        <servlet-name>manager</servlet-name>
         <servlet-class>com.group39.fitbot.group39_fitbot.controller.ManagerController</servlet-class>
     </servlet>
     <servlet-mapping>
@@ -136,5 +137,50 @@
     <servlet-mapping>
         <servlet-name>memberDetails</servlet-name>
         <url-pattern>/memberDetails</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>pricing</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.PricingPlanLandingController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>pricing</servlet-name>
+        <url-pattern>/pricing</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>home</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.HomeLandingController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>home</servlet-name>
+        <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>about</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.AboutUsLandingController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>about</servlet-name>
+        <url-pattern>/about</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>branches</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.BranchDetailsLandingController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>branches</servlet-name>
+        <url-pattern>/branches</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>contact</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.ContactUsLandingController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>contact</servlet-name>
+        <url-pattern>/contact</url-pattern>
     </servlet-mapping>
 </web-app>

@@ -72,7 +72,7 @@ $(document).ready(function(){
                         confirmButtonColor: '#0E2C4B',
                     })
                     setTimeout(function() {
-                        window.location.href = 'http://localhost:8080/group39_fitbot_war_exploded/physicalMember';
+                        window.location.href = 'http://localhost:8080/group39_fitbot_war_exploded/';
                     }, 2000);
 
                 }else if(result == "2"){
