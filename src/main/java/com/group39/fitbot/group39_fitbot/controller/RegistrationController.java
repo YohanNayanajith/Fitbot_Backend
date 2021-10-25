@@ -37,7 +37,7 @@ public class RegistrationController extends HttpServlet {
         String first_name = req.getParameter("first_name");
         String last_name = req.getParameter("last_name");
         LocalDate dob = LocalDate.parse(req.getParameter("date_of_birth"));
-
+        String email = req.getParameter("email");
         int phone_number = Integer.parseInt(req.getParameter("phone_number"));
         String address = req.getParameter("address");
         String selected_country = req.getParameter("selected_country");
@@ -63,12 +63,13 @@ public class RegistrationController extends HttpServlet {
         }
 
         //password hashed - SHA256
-        boolean added = false;
+        boolean added1 = false;
+        boolean added2 = false;
 
         try {
             reg_password = toHexStr(obtainSHA(reg_password));
             confirm_password = toHexStr(obtainSHA(confirm_password));
-            added = RegistartionDAO.addRegistration(new Registartion(
+            added1 = RegistartionDAO.addRegistration(new Registartion(
                             first_name,
                             last_name,
                             dob,
@@ -82,10 +83,33 @@ public class RegistrationController extends HttpServlet {
                             membership_category,
                             height,
                             weight,
-                            member_id
+                            member_id,
+                            email
                     )
 
             );
+
+            added2 = RegistartionDAO.addRegistrationToUserTable(new Registartion(
+                            first_name,
+                            last_name,
+                            dob,
+                            phone_number,
+                            address,
+                            selected_country,
+                            gender,
+                            reg_password,
+                            confirm_password,
+                            membership_type,
+                            membership_category,
+                            height,
+                            weight,
+                            member_id,
+                            email
+                    )
+
+            );
+
+
 
             HttpSession session = req.getSession(true);
             session.setAttribute("MemberID",member_id);
@@ -93,7 +117,7 @@ public class RegistrationController extends HttpServlet {
 //            resp.setContentType("application/json");
             resp.setCharacterEncoding("UTF-8");
 
-            if(added){
+            if(added1 && added2){
                 System.out.println("Added");
 //            req.setAttribute("message","Successfully added");
                 out.print("1");

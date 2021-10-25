@@ -3,7 +3,8 @@ $(document).ready(function(){
     $("#reg_submit_btn").attr("disabled", true);
     $('input[type="checkbox"]').click(function(){
         if($('#medical_question_terms').prop("checked") == true) {
-            alert("Checkbox is checked.");
+            // alert("Checkbox is checked.");
+            console.log("Checkbox is checked");
             // $('#edit_profile_error_dob').html("**Your age should be 14 to 80");
             $('#reg_submit_btn').css("background-color", "#0E2C4B");
             $('#reg_submit_btn').css("box-shadow", "0 10px 10px rgba(0, 0, 0, 0.25)");
@@ -14,7 +15,7 @@ $(document).ready(function(){
     $('#reg_back_btn').click(function(){
         Swal.fire({
             title: 'Are you sure?',
-            text: "Registration are not completed,You won't be able to revert this!",
+            text: "Registration is not completed,You won't be able to revert this!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#0E2C4B',
@@ -42,7 +43,7 @@ $(document).ready(function(){
     });
 
     $('#form_container').submit(function(e){
-        alert('medical form');
+        // alert('medical form');
         e.preventDefault();
 
         let form_data = $("form").serializeArray();
@@ -63,7 +64,7 @@ $(document).ready(function(){
             // contentType:"application/json",
             success: function (result){
                 if(result == "1"){
-                    alert(result);
+                    // alert(result);
                     Swal.fire({
                         icon: 'success',
                         title: 'Successfully Register',

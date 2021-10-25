@@ -18,8 +18,13 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Objects;
+
+import static com.group39.fitbot.group39_fitbot.controller.PasswordHashingController.obtainSHA;
+import static com.group39.fitbot.group39_fitbot.controller.PasswordHashingController.toHexStr;
 
 public class LoginController extends HttpServlet {
     @Override
@@ -37,6 +42,13 @@ public class LoginController extends HttpServlet {
         resp.setContentType("text/plain");
         String login_username = req.getParameter("login_username");
         String login_password = req.getParameter("login_password");
+
+        try {
+            login_password = toHexStr(obtainSHA(login_password));
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+
         System.out.println(login_password);
         System.out.println(login_username);
 
@@ -44,7 +56,9 @@ public class LoginController extends HttpServlet {
         login.setUser_name(login_username);
         login.setPassword(login_password); //pass the hashing password
         System.out.println(login);
+
         try {
+
             Login loginData = LoginDAO.getLoginData(login);
 
             HttpSession session = req.getSession(true);
@@ -53,29 +67,34 @@ public class LoginController extends HttpServlet {
             session.setAttribute("userType",loginData.getUserType());
 
             String userType = loginData.getUserType();
-            switch (userType) {
-                case "Physical Member":
-                    out.print("1");
-                    break;
-                case "Virtual Member":
-                    out.print("2");
-                    break;
-                case "Instructor":
-                    out.print("3");
-                    break;
-                case "Manager":
-                    out.print("4");
-                    break;
-                case "Owner":
-                    out.print("5");
-                    break;
-                case "admin":
-                    out.print("6");
-                    break;
-                default:
-//                        out.print("You can't log now..please contact our administration");
-                    out.print("7");
-                    break;
+
+            if(checkLogin(login,loginData)) {
+                switch (userType) {
+                    case "physical_member":
+                        out.print("1");
+                        break;
+                    case "virtual_member":
+                        out.print("2");
+                        break;
+                    case "Instructor":
+                        out.print("3");
+                        break;
+                    case "Manager":
+                        out.print("4");
+                        break;
+                    case "Owner":
+                        out.print("5");
+                        break;
+                    case "admin":
+                        out.print("6");
+                        break;
+                    default:
+                        //                        out.print("You can't log now..please contact our administration");
+                        out.print("7");
+                        break;
+                }
+            }else {
+                out.print("8");
             }
             //            Gson gson = new Gson();
 //            String memberJSON = gson.toJson(loginData);
@@ -92,10 +111,11 @@ public class LoginController extends HttpServlet {
     }
 
     public boolean checkLogin(Login login_user, Login loginDatabase){
-        if((login_user.getUser_name() == loginDatabase.getUser_name()) && (login_user.getPassword() == loginDatabase.getPassword())){
+        if((Objects.equals(login_user.getUser_name(), loginDatabase.getUser_name())) && (Objects.equals(login_user.getPassword(), loginDatabase.getPassword()))){
             System.out.println(login_user.getUser_name()+loginDatabase.getUser_name());
             return true;
         }else{
+            System.out.println("Login incorrect");
             return false;
         }
     }

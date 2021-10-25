@@ -10,7 +10,7 @@ import java.sql.*;
 public class RegistartionDAO {
     public static boolean addRegistration(Registartion register) throws SQLException, ClassNotFoundException {
         Connection connection = DBConnection.getInstance().getConnection();
-        String query = "INSERT INTO register VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        String query = "INSERT INTO register VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         PreparedStatement pst = connection.prepareStatement(query);
 
         pst.setString(1,register.getFirst_name());
@@ -28,8 +28,21 @@ public class RegistartionDAO {
         pst.setInt(12,register.getHeight());
         pst.setInt(13,register.getWeight());
         pst.setString(14,register.getMember_id());
+        pst.setString(15,register.getEmail());
 
         System.out.println("Registration DAO");
+        return pst.executeUpdate() > 0;
+    }
+
+    public static boolean addRegistrationToUserTable(Registartion register) throws SQLException, ClassNotFoundException {
+        Connection connection = DBConnection.getInstance().getConnection();
+        String query = "INSERT INTO users VALUES(?,?,?,?)";
+        PreparedStatement pst = connection.prepareStatement(query);
+
+        pst.setString(1,register.getFirst_name());
+        pst.setString(2,register.getPassword());
+        pst.setString(3,register.getMember_type());
+        pst.setString(4,register.getMember_id());
         return pst.executeUpdate() > 0;
     }
 

@@ -13,6 +13,7 @@ public class Registartion {
     private String password;
     private String confirm_password;
     private String membership_category;
+    private String email;
 
     private String member_id;
     private String register_id;
@@ -23,7 +24,7 @@ public class Registartion {
     public Registartion() {
     }
 
-    public Registartion(String first_name, String last_name, LocalDate date_of_birth, int contact_number, String address, String country, String gender, String password, String confirm_password, String member_type, String membership_category, int weight, int height, String member_id) {
+    public Registartion(String first_name, String last_name, LocalDate date_of_birth, int contact_number, String address, String country, String gender, String password, String confirm_password, String member_type, String membership_category, int weight, int height, String member_id,String email) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.date_of_birth = date_of_birth;
@@ -40,7 +41,7 @@ public class Registartion {
         this.weight = weight;
         this.height = height;
         this.member_id = member_id;
-
+        this.email= email;
     }
 
     public String getFirst_name() {
@@ -123,6 +124,14 @@ public class Registartion {
         this.membership_category = membership_category;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getMember_id() {
         return member_id;
     }
@@ -163,7 +172,6 @@ public class Registartion {
         this.member_type = member_type;
     }
 
-
     @Override
     public String toString() {
         return "Registartion{" +
@@ -177,6 +185,7 @@ public class Registartion {
                 ", password='" + password + '\'' +
                 ", confirm_password='" + confirm_password + '\'' +
                 ", membership_category='" + membership_category + '\'' +
+                ", email='" + email + '\'' +
                 ", member_id='" + member_id + '\'' +
                 ", register_id='" + register_id + '\'' +
                 ", weight=" + weight +
