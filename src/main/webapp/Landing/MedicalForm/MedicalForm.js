@@ -63,7 +63,7 @@ $(document).ready(function(){
             // dataType:"json",
             // contentType:"application/json",
             success: function (result){
-                if(result == "1"){
+                if(result.trim() == "1"){
                     // alert(result);
                     Swal.fire({
                         icon: 'success',
@@ -76,7 +76,7 @@ $(document).ready(function(){
                         window.location.href = 'http://localhost:8080/group39_fitbot_war_exploded/';
                     }, 2000);
 
-                }else if(result == "2"){
+                }else if(result.trim() == "2"){
                     Swal.fire({
                         icon: 'error',
                         title: 'Registration Unsuccessfully!',

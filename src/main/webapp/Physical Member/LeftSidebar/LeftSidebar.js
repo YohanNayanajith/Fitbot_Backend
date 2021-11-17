@@ -228,6 +228,9 @@ $(document).ready(function(){
       if(statusTxt == "error")
           alert("Error: " + xhr.status + ": " + xhr.statusText);
       });
+
+      instructorGetData();
+
       load[2] += 1;
     }else if(sideBar_links_variable == "#physical_member_instructors"){
       return;
@@ -248,6 +251,9 @@ $(document).ready(function(){
       if(statusTxt == "error")
           alert("Error: " + xhr.status + ": " + xhr.statusText);
       });
+
+      selectMemberMessages();
+
       load[3] += 1;
     }else if(sideBar_links_variable == "#physical_member_messages"){
       return;
@@ -288,16 +294,15 @@ $(document).ready(function(){
 
                 '<tr class="payment_history_container_row">'+
                   '<td>'+x.exercise+'</td>'+
-                  '<td>'+x.duration+'</td>'+
+                  '<td>'+x.workout_type+'</td>'+
                   '<td>'+x.total_reps+'</td>'+
-                  '<td>'+x.equipment_type+'</td>'+
+                  '<td>'+x.duration+'</td>'+
                   '<td>'+'<input type="checkbox">'+'</td>'+
                 '</tr>'
             );
           });
 
-          alert(result);
-          // alert("Data is comming babe");
+          // alert(result);
         }).fail(function(a,b,err){
           alert("Error");
           console.log(a,b,err);
@@ -520,23 +525,6 @@ $(document).ready(function(){
     }
   });
 
-  // $.ajax({
-  //   method:'POST',
-  //   url:"physicalMember",
-  //   dataType:'json',
-  //
-  // }).done(function(data){
-  //   // const data_object = JSON.parse(data);
-  //   //   alert(data);
-  //   $('#dashboard_header_member').append(
-  //       '<h1>'+'Hello '+data.first_name+'!!'+'</h1>'
-  //   );
-  //   // alert(data);
-  // }).fail(function(a,b,err){
-  //   alert("Error");
-  //   console.log(a,b,err)
-  // });
-
   $.ajax({
     method:'POST',
     url:"membership",
@@ -669,6 +657,67 @@ function getRegisterDetails(){
           '<span>'+'Weight - '+result.weight+' cm'+'</span><br>'
       );
 
+      console.log(result);
+    },
+    error: function(error){
+      console.log(error+"edit profile");
+    }
+  });
+}
+
+//instructors
+
+function instructorGetData(){
+  $.ajax({
+    method:'POST',
+    url:"physicalInstructor",
+    dataType:'json',
+    // contentType:"application/json",
+  }).done(function(result){
+    console.log(result);
+    // alert("This is physical instructor");
+    $.map(result,function(x){
+
+      $('#instructors_physical_container_first').append(
+          '<div class="instructors_physical_container_detail" id="instructors_physical_container_detail_1">'+
+          '<img src='+'"'+ x["profile_image_url"]+'"'+'alt="instructor image">'+
+
+          '<div class="instructors_physical_container_detail_con" id="instructors_physical_container_detail_con">'+
+          '<h1>'+ x["first_name"]+' '+x["last_name"] +'</h1>'+
+          '<div class="instructors_physical_container_detail_line">'+'</div>'+
+          '<p class="instructors_physical_container_detail_title">'+x["main_skill"]+'</p>'+
+          '</div>'+
+
+          '<div class="instructors_physical_container_detail_icon">'+
+          '<a href="#"><i class="bx bxl-facebook-circle bx-tada"></i></a>'+
+          '<a href="#"><i class="bx bxl-instagram-alt bx-tada"></i></a>'+
+          '<a href="#"><i class="bx bxl-youtube bx-tada"></i></a>'+
+          '</div>'+
+          '<div class="instructors_physical_container_detail_eye_icon">'+
+          '<a onClick="open_instructor_details()">'+'<i class="bx bx-show bx-tada">'+'</i>'+'</a>'+
+          '</div>'+
+          '</div>'
+      );
+    });
+
+    // alert(result);
+  }).fail(function(a,b,err){
+    alert("Physical Instructor Error");
+    console.log(a,b,err);
+  });
+}
+
+//messages
+function selectMemberMessages(){
+  $.ajax({
+    method:"POST",
+    url:"memberDetails",
+    dataType:"json",
+    // contentType:"application/json",
+    success: function (result){
+      $('#messages_physical_container_left_name').append(
+          '<h1>'+result.first_name+' '+result.last_name+'</h1>'
+      );
       console.log(result);
     },
     error: function(error){

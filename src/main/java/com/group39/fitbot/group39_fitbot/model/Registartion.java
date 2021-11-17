@@ -14,6 +14,7 @@ public class Registartion {
     private String confirm_password;
     private String membership_category;
     private String email;
+    private String branch_type;
 
     private String member_id;
     private String register_id;
@@ -24,7 +25,7 @@ public class Registartion {
     public Registartion() {
     }
 
-    public Registartion(String first_name, String last_name, LocalDate date_of_birth, int contact_number, String address, String country, String gender, String password, String confirm_password, String member_type, String membership_category, int weight, int height, String member_id,String email) {
+    public Registartion(String first_name, String last_name, LocalDate date_of_birth, int contact_number, String address, String country, String gender, String password, String confirm_password, String member_type, String membership_category, int weight, int height, String member_id,String email,String branch_type) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.date_of_birth = date_of_birth;
@@ -42,6 +43,7 @@ public class Registartion {
         this.height = height;
         this.member_id = member_id;
         this.email= email;
+        this.branch_type= branch_type;
     }
 
     public String getFirst_name() {
@@ -170,6 +172,14 @@ public class Registartion {
 
     public void setMember_type(String member_type) {
         this.member_type = member_type;
+    }
+
+    public String getBranch_type() {
+        return branch_type;
+    }
+
+    public void setBranch_type(String branch_type) {
+        this.branch_type = branch_type;
     }
 
     @Override

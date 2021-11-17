@@ -40,7 +40,7 @@ public class PhysicalMemberController extends HttpServlet {
         login.setMember_id(memberID);
         login.setUser_name(userName);
         login.setUserType(memberType);
-        System.out.println(userName);
+//        System.out.println(userName);
 
         try {
             Member member = MemberDAO.retriveMember(login);

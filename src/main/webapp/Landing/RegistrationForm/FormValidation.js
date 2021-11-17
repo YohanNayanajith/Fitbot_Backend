@@ -230,9 +230,9 @@ $(document).ready(function () {
             passwordError = false;
             return false;
         }
-        else if ((passwrdValue.length < 3) || (passwrdValue.length > 10)) {
+        else if ((passwrdValue.length < 6) || (passwrdValue.length > 16)) {
             $('#password_check').show();
-            $('#password_check').html("**length of your password must be between 3 and 10 and spaces must be unacceptable");
+            $('#password_check').html("**length of your password must be between 6 and 16 and spaces must be unacceptable");
             $('#password_check').css("color", "red");
             passwordError = false;
             return false;
@@ -307,6 +307,11 @@ $(document).ready(function () {
         let email = $('#email').val();
         let reg_password = $('#reg_password').val();
         let confirm_password = $('#confirm_password').val();
+        let branch_type = null;
+
+        if(membership_type == "physical_member"){
+            branch_type = $('#branch_type').val();
+        }
 
 
         if ((usernameError == true) && (passwordError == true) && (confirmPasswordError == true) && (emailError == true) && (dobError == true) && (phoneNumberError == true) && (heightError == true) && (weightError == true)) {
@@ -315,7 +320,7 @@ $(document).ready(function () {
             $.ajax({
                 method:'POST',
                 url:"register",
-                data:{first_name:first_name,last_name:last_name,date_of_birth:date_of_birth,phone_number:phone_number,selected_country:selected_country,height:height,weight:weight,email:email,reg_password:reg_password,confirm_password:confirm_password,address:address,gender:gender, membership_type:membership_type, membership_category:membership_category},
+                data:{first_name:first_name,last_name:last_name,date_of_birth:date_of_birth,phone_number:phone_number,selected_country:selected_country,height:height,weight:weight,email:email,reg_password:reg_password,confirm_password:confirm_password,address:address,gender:gender, membership_type:membership_type, membership_category:membership_category, branch_type:branch_type},
                 // dataType:"json",
                 // contentType:"application/json; charset=utf-8",
                 success:function(result) {
@@ -324,7 +329,7 @@ $(document).ready(function () {
                         setTimeout(function() {
                             Swal.fire({
                                 icon: 'success',
-                                title: 'Successfull',
+                                title: 'Successful',
                                 // text: 'Password is successfully updated!',
                                 confirmButtonText:"Next",
                                 confirmButtonColor: '#0E2C4B',

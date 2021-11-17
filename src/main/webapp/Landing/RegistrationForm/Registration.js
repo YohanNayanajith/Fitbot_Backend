@@ -70,3 +70,27 @@ function regFormValidate(frm) {
     // true => form is error free
     // false => form validation errors
 }
+
+function branch_select(){
+    // alert("branch");
+    let member_type = $('#membership_type').val();
+
+    if(member_type == "virtual_member"){
+        $("#branch_type").attr("disabled", true);
+        $('#branch_type').css("border-bottom", "2px solid grey");
+        $('#branch_type_label').css("color", "grey");
+
+        $("#membership_category").attr("disabled", true);
+        $('#membership_category').css("border-bottom", "2px solid grey");
+        $('#membership_category_label').css("color", "grey");
+    }else if(member_type == "physical_member"){
+        $("#branch_type").attr("disabled", false);
+        $('#branch_type').css("border-bottom", "2px solid #0E2C4B");
+        $('#branch_type_label').css("color", "black");
+
+        $("#membership_category").attr("disabled", false);
+        $('#membership_category').css("border-bottom", "2px solid #0E2C4B");
+        $('#membership_category_label').css("color", "black");
+    }
+
+}

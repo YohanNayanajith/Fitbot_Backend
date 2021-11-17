@@ -309,11 +309,30 @@ function close_new_password_Popup(){
 
 // login select
 $(document).ready(function (){
+    function email_regex_Validate(emailValue){
+        let regexPattern = new RegExp(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);    // regular expression pattern
+        // let regexPattern = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
+        return regexPattern.test(emailValue);
+    }
     $('#login_form_submit').submit(function(e){
         e.preventDefault();
         // alert("login js called");
+
         let login_username = $('#login_username').val().trim();
         let login_password = $('#login_password').val().trim();
+
+        if(!email_regex_Validate(login_username)){
+            alert(email_regex_Validate(login_username));
+            Swal.fire({
+                icon: 'error',
+                title: 'Email type is incorrect!',
+                // text: 'Cannot be empty!',
+                confirmButtonText:"Ok",
+                confirmButtonColor: '#932828',
+            })
+            return;
+        }
+
         // let form_inputs = {"user_name":login_name,"user_password":login_password};
         // form_inputs = JSON.stringify(form_inputs);
 
@@ -328,7 +347,7 @@ $(document).ready(function (){
                 confirmButtonColor: '#932828',
             })
             return;
-        }else if(login_username.length < 3){
+        }else if(login_username.length < 6){
             // alert("Password length should be greater than 3 characters");
             Swal.fire({
                 icon: 'error',
@@ -397,7 +416,7 @@ $(document).ready(function (){
                 Swal.fire({
                     icon: 'error',
                     title: 'Login unsuccessfully!',
-                    text: 'Cannot resolve, System issue!',
+                    text: 'User name and password does not match!',
                     confirmButtonText:"Ok",
                     confirmButtonColor: '#932828',
                 })

@@ -323,14 +323,24 @@
                 <input type="password" id="confirm_password" name="confirm_password" class="form_label confirm_password" placeholder="Confirm your password" ><br>
                 <h5 class="confirm_password_check hidden_validate_text" id="confirm_password_check">**Password didn't match</h5>
 
-                <label for="membership_type">Which membership are you signing up for<span class="require_star">*</span></label><br>
-                <select name="membership_type" id="membership_type" class="form_label membership_type" >
+                <label for="membership_type" >Which membership are you signing up for<span class="require_star">*</span></label><br>
+                <select name="membership_type" id="membership_type" class="form_label membership_type" onclick="branch_select()">
                     <option value="physical_member">Physical Member</option>
                     <option value="virtual_member">Virtual Member</option>
                 </select>
                 <br>
 
-                <label for="membership_category">Select membership category<span class="require_star">*</span></label><br>
+                <label for="branch_type" id="branch_type_label">Which branch would you like to join<span class="require_star">*</span></label><br>
+                <select name="branch_type" id="branch_type" class="form_label membership_type" >
+                    <option value="malabe_branch">Malabe Branch</option>
+                    <option value="maharagama_branch">Maharagama Branch</option>
+                    <option value="matara_branch">Matara Branch</option>
+                    <option value="nugegoda_branch">Nugegoda Branch</option>
+                    <option value="arangala_branch">Arangala Branch</option>
+                </select>
+                <br>
+
+                <label for="membership_category" id="membership_category_label">Select membership category<span class="require_star">*</span></label><br>
                 <select name="membership_category" id="membership_category" class="form_label membership_category" >
                     <option value="family_membership">Family Membership</option>
                     <option value="couple_membership">Couple Membership</option>

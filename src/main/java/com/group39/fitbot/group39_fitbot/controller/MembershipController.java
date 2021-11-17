@@ -31,7 +31,7 @@ public class MembershipController extends HttpServlet {
 //        String userName = (String) session.getAttribute("userName");
         String memberID = (String) session.getAttribute("MemberID");
 
-        System.out.println(memberID);
+//        System.out.println(memberID);
 
         try {
             Membership membership = MembershipDAO.membershipGetData(memberID);

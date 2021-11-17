@@ -23,7 +23,7 @@
                     <div class="payment_text">
                         <span class="total_payble">Total Payble</span><br>
                         <span class="payble_balance">Rs. 5000.00</span><br>
-                        <span class="payble_date">Pay before {date}</span>
+                        <span class="payble_date">Pay before 26-10-2021</span>
                     </div>
                     <div class="payment_button">
                         <a class="payment_button_div" type="submit" id="payhere-payment" onclick="payments_pay()">PAY BILL</a>
@@ -34,9 +34,9 @@
                         <img src="http://localhost:8080/group39_fitbot_war_exploded/Physical%20Member/Icons/calendar.svg" alt="calendar">
                     </div>
                     <div class="payment_date_details">
-                        <span class="previous_payment_date">Date</span><br>
-                        <span class="previous_payment_date_format">{date}</span><br>
-                        <span class="previous_payment_date_details">Last payment {date}</span>
+                        <span class="previous_payment_date">Next Payment Date</span><br>
+                        <span class="previous_payment_date_format">26-10-2021</span><br>
+                        <span class="previous_payment_date_details">Last payment 26-10-2021</span>
                     </div>
                 </div>
             </div>
@@ -66,19 +66,27 @@
                         </tr>
         
                         <tr class="payment_history_container_row">
-                            <td>21/10/2021</td>
-                            <td>15:00</td>
-                            <td>DEBIT CARD</td>
+                            <td>25/09/2020</td>
+                            <td>09:00</td>
+                            <td>CREDIT CARD</td>
                             <td>Rs 5000</td>
-                            <td><a href="#" class="view_bill_button">PAY BILL</a></td>
+                            <td><a href="#" class="view_bill_button">VIEW BILL</a></td>
                         </tr>   
         
                         <tr class="payment_history_container_row">
-                            <td>21/10/2021</td>
-                            <td>15:00</td>
+                            <td>15/05/2019</td>
+                            <td>03:00</td>
                             <td>DEBIT CARD</td>
                             <td>Rs 5000</td>
-                            <td><a href="#" class="view_bill_button">PAY BILL</a></td>
+                            <td><a href="#" class="view_bill_button">VIEW BILL</a></td>
+                        </tr>
+
+                        <tr class="payment_history_container_row">
+                            <td>14/04/2018</td>
+                            <td>09:00</td>
+                            <td>DEBIT CARD</td>
+                            <td>Rs 5000</td>
+                            <td><a href="#" class="view_bill_button">VIEW BILL</a></td>
                         </tr>
         
                         <tr class="payment_history_container_row">
@@ -86,7 +94,7 @@
                             <td>15:00</td>
                             <td>DEBIT CARD</td>
                             <td>Rs 5000</td>
-                            <td><a href="#" class="view_bill_button">PAY BILL</a></td>
+                            <td><a href="#" class="view_bill_button">VIEW BILL</a></td>>
                         </tr>
         
                         <tr class="payment_history_container_row">
@@ -94,7 +102,7 @@
                             <td>15:00</td>
                             <td>DEBIT CARD</td>
                             <td>Rs 5000</td>
-                            <td><a href="#" class="view_bill_button">PAY BILL</a></td>>
+                            <td><a href="#" class="view_bill_button">VIEW BILL</a></td>
                         </tr>
         
                         <tr class="payment_history_container_row">
@@ -102,7 +110,7 @@
                             <td>15:00</td>
                             <td>DEBIT CARD</td>
                             <td>Rs 5000</td>
-                            <td><a href="#" class="view_bill_button">PAY BILL</a></td>
+                            <td><a href="#" class="view_bill_button">VIEW BILL</a></td>
                         </tr>
         
                         <tr class="payment_history_container_row">
@@ -110,15 +118,7 @@
                             <td>15:00</td>
                             <td>DEBIT CARD</td>
                             <td>Rs 5000</td>
-                            <td><a href="#" class="view_bill_button">PAY BILL</a></td>
-                        </tr>
-        
-                        <tr class="payment_history_container_row">
-                            <td>21/10/2021</td>
-                            <td>15:00</td>
-                            <td>DEBIT CARD</td>
-                            <td>Rs 5000</td>
-                            <td><a href="#" class="view_bill_button">PAY BILL</a></td>
+                            <td><a href="#" class="view_bill_button">VIEW BILL</a></td>
                         </tr>
                            
                     </table>
@@ -136,11 +136,12 @@
             </div>
 
             <div class="payment_detail_container">
-                <form method="post" action="https://sandbox.payhere.lk/pay/checkout" class="payment_detail_container_form">
+                <form method="post" action="https://sandbox.payhere.lk/pay/checkout" class="payment_detail_container_form" id="payment_detail_container_form">
                     <input type="hidden" name="merchant_id" value="1218874">    <!-- Replace your Merchant ID -->
-                    <input type="hidden" name="return_url" value="http://sample.com/return">
-                    <input type="hidden" name="cancel_url" value="http://sample.com/cancel">
-                    <input type="hidden" name="notify_url" value="http://sample.com/notify">
+                    <input type="hidden" name="return_url" value="http://localhost:8080/group39_fitbot_war_exploded/physicalMember">
+                    <input type="hidden" name="cancel_url" value="http://localhost:8080/group39_fitbot_war_exploded/physicalMember">
+                    <input type="hidden" name="notify_url" value="http://localhost:8080/group39_fitbot_war_exploded/payment">
+                    payment">
 
                     <div class="payment_detail_container_form_headers"><span>Membership Details</span><br></div>
 
@@ -220,7 +221,7 @@
                     <input type="hidden" name="country" value="Sri Lanka"><br>
                     <div class="payment_detail_container_input_submit">
                         <input type="button" value="Cash Payment" onclick="payment_cash()">
-                        <input type="submit" value="Online Payment">
+                        <input type="submit" value="Online Payment" onclick = "payment_online()">
                     </div>
                 </form>
             </div>
