@@ -715,8 +715,9 @@ function selectMemberMessages(){
     dataType:"json",
     // contentType:"application/json",
     success: function (result){
-      $('#messages_physical_container_left_name').append(
-          '<h1>'+result.first_name+' '+result.last_name+'</h1>'
+      // alert(result);
+      $('#messages_physical_container_left_fullname').append(
+          '<h1>'+result["first_name"]+' '+result["last_name"]+'</h1>'
       );
       console.log(result);
     },

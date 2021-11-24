@@ -71,7 +71,7 @@ public class RegistrationController extends HttpServlet {
         Date expire_date = null;
         try {
             expire_date = sdf.parse(after_year);
-            System.out.println("expire_date "+expire_date);
+//            System.out.println("expire_date "+expire_date);
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -82,7 +82,7 @@ public class RegistrationController extends HttpServlet {
 
         try {
             int memberCount = GetMemberCountDAO.getMemberCount();
-            System.out.println(memberCount);
+//            System.out.println(memberCount);
             member_id = "Phy"+(memberCount+1);
             payment_id = memberCount+1;
             membership_id = memberCount+1;

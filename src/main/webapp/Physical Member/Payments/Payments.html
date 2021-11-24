@@ -136,31 +136,36 @@
             </div>
 
             <div class="payment_detail_container">
+
                 <form method="post" action="https://sandbox.payhere.lk/pay/checkout" class="payment_detail_container_form" id="payment_detail_container_form">
                     <input type="hidden" name="merchant_id" value="1218874">    <!-- Replace your Merchant ID -->
                     <input type="hidden" name="return_url" value="http://localhost:8080/group39_fitbot_war_exploded/physicalMember">
                     <input type="hidden" name="cancel_url" value="http://localhost:8080/group39_fitbot_war_exploded/physicalMember">
                     <input type="hidden" name="notify_url" value="http://localhost:8080/group39_fitbot_war_exploded/payment">
-                    payment">
 
                     <div class="payment_detail_container_form_headers"><span>Membership Details</span><br></div>
 
                     <div class="payment_detail_container_mem_details">
                         <div class="payment_detail_container_input">
-                            <div>
+                            <div id="payment_detail_container_input_hide">
                                 <label for="order_id">Branch Name</label><br>
                                 <input type="text" name="order_id" id="order_id" value="ItemNo12345"><br>
+                            </div>
+                            <div>
+                                <label for="expiry_day">Expire Date</label><br>
+                                <input type="text" name="expiry_day" id="expiry_day"><br>
                             </div>
 
                             <div>
                                 <label for="items">Membership Category</label><br>
-                                <select name="items" id="items">
-                                    <option value="family_membership">Family Membership</option>
-                                    <option value="couple_membership">Couple Membership</option>
-                                    <option value="platinum_membership">Platinum Membership</option>
-                                    <option value="gold_membership">Gold Membership</option>
-                                    <option value="silver_membership">Silver Membership</option>
-                                </select>
+                                <input type="text" name="items" id="items"><br>
+<!--                                <select name="items" id="items">-->
+<!--                                    <option value="family_membership">Family Membership</option>-->
+<!--                                    <option value="couple_membership">Couple Membership</option>-->
+<!--                                    <option value="platinum_membership">Platinum Membership</option>-->
+<!--                                    <option value="gold_membership">Gold Membership</option>-->
+<!--                                    <option value="silver_membership">Silver Membership</option>-->
+<!--                                </select>-->
                                 <!-- <input type="text" name="items" value="Door bell wireless"><br> -->
                             </div>
                         </div>
@@ -168,7 +173,11 @@
                         <div class="payment_detail_container_input">
                             <div>
                                 <label for="currency">Currency</label><br>
-                                <input type="text" name="currency" id="currency" value="LKR"><br>
+                                <input type="text" name="currency" id="currency"><br>
+<!--                                <select name="items" name="currency" id="currency">-->
+<!--                                    <option value="LKR">LKR</option>-->
+<!--                                    <option value="USD">USD</option>-->
+<!--                                </select>-->
                             </div>
 
                             <div>
@@ -184,12 +193,14 @@
                         <div class="payment_detail_container_input">
                             <div>
                                 <label for="first_name">First Name</label><br>
-                                <input type="text" name="first_name" id="first_name" value="Saman"><br>
+                                <input type="text" name="first_name" id="first_name"><br>
+                                <h5 id="payment_error1"></h5>
                             </div>
 
                             <div>
                                 <label for="last_name">Last Name</label><br>
-                                <input type="text" name="last_name" id="last_name" value="Perera"><br>
+                                <input type="text" name="last_name" id="last_name"><br>
+                                <h5 id="payment_error2"></h5>
                             </div>
                         </div>
 
@@ -197,11 +208,13 @@
                             <div>
                                 <label for="email">Email</label><br>
                                 <input type="email" name="email" id="email" value="samanp@gmail.com"><br>
+                                <h5 id="payment_error3"></h5>
                             </div>
 
                             <div>
                                 <label for="phone">Contact Number</label><br>
                                 <input type="tel" name="phone" id="phone" value="0771234567"><br>
+                                <h5 id="payment_error4"></h5>
                             </div>
                         </div>
 
@@ -309,6 +322,7 @@
                     </div>
                 </form>
             </div>
+
         </div>
 
         <script src="Physical Member/Payments/Payments.js" defer></script>

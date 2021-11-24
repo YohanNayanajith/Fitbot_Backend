@@ -49,13 +49,13 @@ public class LoginController extends HttpServlet {
             e.printStackTrace();
         }
 
-        System.out.println(login_password);
-        System.out.println(login_username);
+//        System.out.println(login_password);
+//        System.out.println(login_username);
 
         Login login = new Login();
         login.setUser_name(login_username);
         login.setPassword(login_password); //pass the hashing password
-        System.out.println(login);
+//        System.out.println(login);
 
         try {
 
@@ -112,7 +112,7 @@ public class LoginController extends HttpServlet {
 
     public boolean checkLogin(Login login_user, Login loginDatabase){
         if((Objects.equals(login_user.getUser_name(), loginDatabase.getUser_name())) && (Objects.equals(login_user.getPassword(), loginDatabase.getPassword()))){
-            System.out.println(login_user.getUser_name()+loginDatabase.getUser_name());
+//            System.out.println(login_user.getUser_name()+loginDatabase.getUser_name());
             return true;
         }else{
             System.out.println("Login incorrect");

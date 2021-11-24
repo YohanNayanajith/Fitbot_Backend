@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 public class PhysicalPaymentController extends HttpServlet {
     @Override
@@ -34,12 +36,26 @@ public class PhysicalPaymentController extends HttpServlet {
         String merchant_id = req.getParameter("merchant_id");
         String order_id = req.getParameter("order_id");
         String payhere_amount = req.getParameter("payhere_amount");
+        String payhere_currency = req.getParameter("payhere_currency");
         String status_code = req.getParameter("status_code");
         String md5sig = req.getParameter("md5sig");
+        String status_message = req.getParameter("status_message");
+        String authorization_token = req.getParameter("authorization_token");
 
         System.out.println(merchant_id+" "+order_id+" "+payhere_amount+" "+status_code+" "+md5sig);
 
-        String merchant_secret = "8Rfx6YXbuds4OZr1HcPO6e8m1o8l4O6ET4ZHkIEBY0Op";
+        String merchant_secret = "4UtzoQHR7Lu4OUfoB2eiT34Uop6X9fWJY4JJgy9IpX19";
+
+        try {
+            MessageDigest md5 = MessageDigest.getInstance("MD5");
+//            md5.update(value.getBytes("UTF-8"));
+//            String local_md5sig = toUpperCase(md5 ( merchant_id . order_id . payhere_amount . payhere_currency . status_code . toUpperCase(md5(merchant_secret)) ) );
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+
+
+
 
         out.println("1");
     }
