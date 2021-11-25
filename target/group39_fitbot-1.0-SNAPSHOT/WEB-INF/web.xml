@@ -173,4 +173,14 @@
         <servlet-name>physicalInstructor</servlet-name>
         <url-pattern>/physicalInstructor</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>physicalPaymentCount</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.PhysicalPaymentCountController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>physicalPaymentCount</servlet-name>
+        <url-pattern>/physicalPaymentCount</url-pattern>
+    </servlet-mapping>
+
 </web-app>

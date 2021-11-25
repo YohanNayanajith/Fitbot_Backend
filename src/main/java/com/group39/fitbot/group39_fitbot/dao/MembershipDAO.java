@@ -38,9 +38,9 @@ public class MembershipDAO {
             membership.setMembership_id(resultSet2.getInt(1));
             membership.setMembership_fee(resultSet2.getInt(2));
             membership.setMembership_category(resultSet2.getString(3));
-            membership.setExpiry_day(resultSet2.getDate(4));
+            membership.setExpiry_day(resultSet2.getDate(4).toLocalDate());
             membership.setRenewal(resultSet2.getInt(5));
-            membership.setMembership_payment_date(resultSet2.getDate(6));
+            membership.setMembership_payment_date(resultSet2.getDate(6).toLocalDate());
             membership.setHas_instructor(resultSet2.getString(7));
             membership.setInstructor_price(resultSet2.getInt(8));
             membership.setDiscount_price(resultSet2.getInt(9));
@@ -60,9 +60,9 @@ public class MembershipDAO {
         pst.setInt(1,membership.getMembership_id());
         pst.setInt(2,membership.getMembership_fee());
         pst.setString(3,membership.getMembership_category());
-        pst.setDate(4, (Date) membership.getExpiry_day());
+        pst.setDate(4, Date.valueOf(membership.getExpiry_day()));
         pst.setInt(5,membership.getRenewal());
-        pst.setDate(6, (Date) membership.getMembership_payment_date());
+        pst.setDate(6, Date.valueOf(membership.getMembership_payment_date()));
         pst.setString(7,membership.getHas_instructor());
         pst.setInt(8,membership.getInstructor_price());
         pst.setInt(9,membership.getDiscount_price());

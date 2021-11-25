@@ -72,9 +72,9 @@ $(document).ready(function(){
                         confirmButtonText:"Ok",
                         confirmButtonColor: '#0E2C4B',
                     })
-                    setTimeout(function() {
-                        window.location.href = 'http://localhost:8080/group39_fitbot_war_exploded/';
-                    }, 2000);
+                    // setTimeout(function() {
+                    //     window.location.href = 'http://localhost:8080/group39_fitbot_war_exploded/';
+                    // }, 2000);
 
                 }else if(result.trim() == "2"){
                     Swal.fire({

@@ -20,6 +20,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.Objects;
 
 import static com.group39.fitbot.group39_fitbot.controller.PasswordHashingController.obtainSHA;
 import static com.group39.fitbot.group39_fitbot.controller.PasswordHashingController.toHexStr;
@@ -54,29 +55,17 @@ public class RegistrationController extends HttpServlet {
         int height = Integer.parseInt(req.getParameter("height"));
         int weight = Integer.parseInt(req.getParameter("weight"));
         String branch_type = req.getParameter("branch_type");
+        LocalDate fullDate = LocalDate.parse(req.getParameter("fullDate"));
+        LocalDate new_expire_date = LocalDate.parse(req.getParameter("new_expire_date"));
 
         String member_id = null;
         int payment_id = 0;
         int membership_id = 0;
 
-        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
         int renewal = checkMembershipFee(membership_category);
-//        System.out.println("Renewal "+renewal);
-        Date current_date = new Date();
-        int current_year = current_date.getYear() + 1;
-//        System.out.println("current_date "+current_date);
-//        System.out.println("current_year "+current_year);
-        String after_year = current_date.getMonth()+"-"+current_date.getDate()+"-"+current_year;
-//        System.out.println("after_year "+after_year);
-        Date expire_date = null;
-        try {
-            expire_date = sdf.parse(after_year);
-//            System.out.println("expire_date "+expire_date);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        System.out.println("Renewal "+renewal);
 
-        String has_instructor = "FALSE";
+        String has_instructor = "0";
         int instructor_price = 0;
         int discount_price = 0;
 
@@ -98,7 +87,6 @@ public class RegistrationController extends HttpServlet {
         boolean added1 = false;
         boolean added2 = false;
         boolean added3 = false;
-        boolean added4 = false;
 
         try {
             reg_password = toHexStr(obtainSHA(reg_password));
@@ -145,17 +133,17 @@ public class RegistrationController extends HttpServlet {
 
             );
 
-//            added3 = MembershipDAO.membershipInsertData(new Membership(
-//                    membership_id,
-//                    renewal,
-//                    membership_category,
-//                    expire_date,
-//                    renewal,
-//                    current_date,
-//                    has_instructor,
-//                    instructor_price,
-//                    discount_price
-//            ));
+            added3 = MembershipDAO.membershipInsertData(new Membership(
+                    membership_id,
+                    renewal,
+                    membership_category,
+                    new_expire_date,
+                    renewal,
+                    fullDate,
+                    has_instructor,
+                    instructor_price,
+                    discount_price
+            ));
 
             HttpSession session = req.getSession(true);
             session.setAttribute("MemberID",member_id);
@@ -165,7 +153,7 @@ public class RegistrationController extends HttpServlet {
 //            resp.setContentType("application/json");
             resp.setCharacterEncoding("UTF-8");
 
-            if(added1 && added2){
+            if((added1 && added2) && added3){
                 System.out.println("Added");
 //            req.setAttribute("message","Successfully added");
                 out.print("1");
@@ -186,15 +174,15 @@ public class RegistrationController extends HttpServlet {
     }
 
     private int checkMembershipFee(String membership_category){
-        if(membership_category == "family_membership"){
+        if(Objects.equals(membership_category, "family_membership")){
             return 12000;
-        }else if(membership_category == "couple_membership"){
+        }else if(Objects.equals(membership_category, "couple_membership")){
             return 10000;
-        }else if(membership_category == "platinum_membership"){
+        }else if(Objects.equals(membership_category, "platinum_membership")){
             return 8000;
-        }else if(membership_category == "gold_membership"){
+        }else if(Objects.equals(membership_category, "gold_membership")){
             return 5000;
-        }else if( membership_category == "silver_membership" ){
+        }else if(Objects.equals(membership_category, "silver_membership")){
             return 2500;
         }else {
             return 0;

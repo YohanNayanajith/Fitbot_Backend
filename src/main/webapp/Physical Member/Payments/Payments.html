@@ -141,15 +141,15 @@
                     <input type="hidden" name="merchant_id" value="1218874">    <!-- Replace your Merchant ID -->
                     <input type="hidden" name="return_url" value="http://localhost:8080/group39_fitbot_war_exploded/physicalMember">
                     <input type="hidden" name="cancel_url" value="http://localhost:8080/group39_fitbot_war_exploded/physicalMember">
-                    <input type="hidden" name="notify_url" value="http://localhost:8080/group39_fitbot_war_exploded/payment">
+                    <input type="hidden" name="notify_url" value="http://localhost:8080/group39_fitbot_war_exploded/Physical%20Member/Payments/Notify.js">
 
                     <div class="payment_detail_container_form_headers"><span>Membership Details</span><br></div>
 
                     <div class="payment_detail_container_mem_details">
                         <div class="payment_detail_container_input">
                             <div id="payment_detail_container_input_hide">
-                                <label for="order_id">Branch Name</label><br>
-                                <input type="text" name="order_id" id="order_id" value="ItemNo12345"><br>
+                                <label for="order_id">Payment ID</label><br>
+                                <input type="text" name="order_id" id="order_id"><br>
                             </div>
                             <div>
                                 <label for="expiry_day">Expire Date</label><br>
@@ -182,7 +182,7 @@
 
                             <div>
                                 <label for="amount">Membership Fee</label><br>
-                                <input type="text" name="amount" id="amount" value="1000"><br>
+                                <input type="text" name="amount" id="amount"><br>
                             </div>
                         </div>
                     </div>

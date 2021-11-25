@@ -35,6 +35,7 @@ public class MembershipController extends HttpServlet {
 
         try {
             Membership membership = MembershipDAO.membershipGetData(memberID);
+//            session.setAttribute("MembershipID",membership.getMembership_id());
 //            System.out.println(membership);
             Gson gson = new Gson();
             String memberJSON = gson.toJson(membership);
