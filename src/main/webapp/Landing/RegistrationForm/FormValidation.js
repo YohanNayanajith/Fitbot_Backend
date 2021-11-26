@@ -296,6 +296,7 @@ $(document).ready(function () {
         let first_name = $('#first_name').val();
         let last_name = $('#last_name').val();
         let date_of_birth = $('#date_of_birth').val();
+        console.log("date of birth"+date_of_birth);
         let phone_number = $('#phone_number').val();
         let address = $('#address').val();
         let gender = $('#gender').val();

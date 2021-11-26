@@ -24,6 +24,7 @@ import java.util.Objects;
 
 import static com.group39.fitbot.group39_fitbot.controller.PasswordHashingController.obtainSHA;
 import static com.group39.fitbot.group39_fitbot.controller.PasswordHashingController.toHexStr;
+import static java.lang.Integer.parseInt;
 
 public class RegistrationController extends HttpServlet {
     @Override
@@ -145,6 +146,8 @@ public class RegistrationController extends HttpServlet {
                     discount_price
             ));
 
+            boolean added4 = MembershipDAO.membershipAlterTableInsertData(member_id, membership_id, payment_id);
+
             HttpSession session = req.getSession(true);
             session.setAttribute("MemberID",member_id);
 //            session.setAttribute("payment_id",member_id);
@@ -153,7 +156,7 @@ public class RegistrationController extends HttpServlet {
 //            resp.setContentType("application/json");
             resp.setCharacterEncoding("UTF-8");
 
-            if((added1 && added2) && added3){
+            if((added1 && added2) && added3 && added4){
                 System.out.println("Added");
 //            req.setAttribute("message","Successfully added");
                 out.print("1");

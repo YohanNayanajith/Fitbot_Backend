@@ -186,19 +186,32 @@ function payment_online(){
 // console.log(fullDate);
 function afterOnlinePayment(data){
     const date = new Date();
-    let fullDate = date.getFullYear()+"-"+date.getMonth()+"-"+date.getDate();
+    let fullDate = date.getFullYear()+"-"+(date.getMonth() + 1).toString().padStart(2, "0")+"-"+date.getDate().toString().padStart(2, "0");
     data["current_date"] = fullDate;
     // console.log(data);
-    let new_expire_date = parseInt(date.getFullYear())+1;
-    new_expire_date = new_expire_date + "-" +date.getMonth()+"-"+date.getDate();
+    let new_expire_date1 = parseInt(date.getFullYear())+1;
+    let new_expire_date = new_expire_date1 + "-" +(date.getMonth() + 1).toString().padStart(2, "0")+"-"+date.getDate().toString().padStart(2, "0");
     data["new_expire_date"] = new_expire_date;
 
     console.log(data);
+    let payment_id = paymentId;
+    let payment_date = data.current_date;
+    // let payment_method = data.
+    let previous_expire_date = data.expiry_day;
+    let currency = data.currency;
+    let payment_amount = data.amount;
+    // let authorization_token
+    // let payment_status
+    let cus_first_name = data.first_name;
+    let cus_last_name = data.last_name;
+    let cus_address = data.address;
+    let cus_city = data.city;
+    // let new_expire_date = new_expire_date2;
 
     $.ajax({
         method:"POST",
         url:"payment",
-        data: data,
+        data: {payment_id:payment_id, payment_date:payment_date, previous_expire_date:previous_expire_date, currency:currency, payment_amount:payment_amount, cus_first_name:cus_first_name, cus_last_name:cus_last_name, cus_address:cus_address, cus_city:cus_city, new_expire_date:new_expire_date},
         // dataType:"json",
         // contentType:"application/json",
         success: function (result){
@@ -221,7 +234,7 @@ function afterOnlinePayment(data){
                     confirmButtonColor: '#932828',
                 })
             }else {
-                alert(result);
+                // alert(result);
                 Swal.fire({
                     icon: 'error',
                     title: 'Paid Unsuccessfully!',
@@ -233,7 +246,7 @@ function afterOnlinePayment(data){
 
         },
         error: function(error){
-            alert(error);
+            console.log(error);
             Swal.fire({
                 icon: 'error',
                 title: 'Payment Unsuccessfully!',

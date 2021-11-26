@@ -350,6 +350,7 @@ $(document).ready(function(){
       if(statusTxt == "error")
           alert("Error: " + xhr.status + ": " + xhr.statusText);
       });
+      displayPaymentsData();
       load[6] += 1;
     }else if(sideBar_links_variable == "#physical_member_payments"){
       return;
@@ -540,9 +541,11 @@ $(document).ready(function(){
     $('#dashboard_mambership_first_text1').append(
         '<span class="dashboard_mambership_second_text"><b>'+data.membership_fee+'</b></span>'
     );
+    let date = data.expiry_day;
+    let currectdate = date["year"]+"-"+date["month"]+"-"+date["day"];
 
     $('#dashboard_mambership_first_text2').append(
-        '<span class="dashboard_mambership_second_text"><b>'+data.expiry_day+'</b></span>'
+        '<span class="dashboard_mambership_second_text"><b>'+currectdate+'</b></span>'
     );
 
     $('#money').append(
@@ -725,4 +728,77 @@ function selectMemberMessages(){
       console.log(error+"edit profile");
     }
   });
+}
+
+//payments
+function displayPaymentsData(){
+  $.ajax({
+    method:'POST',
+    url:"membership",
+    dataType:'json',
+
+  }).done(function(data){
+    // const data_object = JSON.parse(data);
+    // alert(data);
+    let date = data.expiry_day;
+    let currectdate = date["year"]+"-"+date["month"]+"-"+date["day"];
+    $('#payment_text').append(
+        '<span class="total_payble">Total Payble</span><br>'+
+      '<span class="payble_balance">'+'Rs. '+data.renewal+'</span><br>'+
+      '<span class="payble_date">Pay before '+ currectdate+'</span>'
+    );
+    if(parseInt(data.renewal) == 0){
+      $('#payhere-payment').unbind("click");
+      $('#payhere-payment').unbind("mouseenter mouseleave");
+      // $('#payhere-payment').attr("disabled", true);
+      // $('#payhere-payment').prop("disabled", true);
+      // $('#payhere-payment').css("background-color", "2px solid grey");
+      $('#payhere-payment').css("background-color", "grey");
+    }
+  }).fail(function(a,b,err){
+    alert("Error");
+    console.log(a,b,err)
+  });
+
+  $.ajax({
+    method:'POST',
+    url:"paymentDetails",
+    dataType:'json',
+    // contentType:"application/json",
+  }).done(function(result){
+    console.log(result);
+    let paymentId = 0;
+    // let currectdate = x["year"]+"-"+date["month"]+"-"+date["day"];
+    // let new_expire_date_1 = "";
+    $.map(result,function(x){
+
+      $('#payment_history_container_table').append(
+          '<tr class="payment_history_container_row">'+
+            '<td>'+x.previous_expire_date["year"]+"-"+x.previous_expire_date["month"]+"-"+x.previous_expire_date["day"]+'</td>'+
+            '<td>'+x.currency+'</td>'+
+            '<td>'+x.payment_method+'</td>'+
+            '<td>'+x.payment_amount+'</td>'+
+            '<td><a href="#" class="view_bill_button" onClick="pay_bill_view()">VIEW BILL</a></td>'+
+          '</tr>'
+      );
+
+      if(paymentId < x.payment_id){
+        paymentId = x.payment_id;
+      }
+
+    });
+    $.map(result,function(x){
+      if(paymentId == x.payment_id){
+          $('#payment_date_details').append(
+              '<span class="previous_payment_date">Next Payment Date</span><br>'+
+              '<span class="previous_payment_date_format">'+x.new_expire_date["year"]+"-"+x.new_expire_date["month"]+"-"+x.new_expire_date["day"]+'</span><br>'+
+              '<span class="previous_payment_date_details">Last payment '+ x.previous_expire_date["year"]+"-"+x.previous_expire_date["month"]+"-"+x.previous_expire_date["day"]+'</span>'
+          );
+      }
+    });
+  }).fail(function(a,b,err){
+    alert("Error");
+    console.log(a,b,err);
+  });
+
 }

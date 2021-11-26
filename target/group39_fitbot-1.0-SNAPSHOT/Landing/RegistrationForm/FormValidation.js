@@ -296,6 +296,7 @@ $(document).ready(function () {
         let first_name = $('#first_name').val();
         let last_name = $('#last_name').val();
         let date_of_birth = $('#date_of_birth').val();
+        console.log("date of birth"+date_of_birth);
         let phone_number = $('#phone_number').val();
         let address = $('#address').val();
         let gender = $('#gender').val();
@@ -316,11 +317,15 @@ $(document).ready(function () {
 
         if ((usernameError == true) && (passwordError == true) && (confirmPasswordError == true) && (emailError == true) && (dobError == true) && (phoneNumberError == true) && (heightError == true) && (weightError == true)) {
             console.log("Form submit success");
+            const date = new Date();
+            let fullDate = date.getFullYear()+"-"+date.getMonth()+"-"+date.getDate();
+            let new_expire_date = parseInt(date.getFullYear())+1;
+            new_expire_date = new_expire_date + "-" +date.getMonth()+"-"+date.getDate();
             e.preventDefault();
             $.ajax({
                 method:'POST',
                 url:"register",
-                data:{first_name:first_name,last_name:last_name,date_of_birth:date_of_birth,phone_number:phone_number,selected_country:selected_country,height:height,weight:weight,email:email,reg_password:reg_password,confirm_password:confirm_password,address:address,gender:gender, membership_type:membership_type, membership_category:membership_category, branch_type:branch_type},
+                data:{first_name:first_name,last_name:last_name,date_of_birth:date_of_birth,phone_number:phone_number,selected_country:selected_country,height:height,weight:weight,email:email,reg_password:reg_password,confirm_password:confirm_password,address:address,gender:gender, membership_type:membership_type, membership_category:membership_category, branch_type:branch_type, fullDate:fullDate, new_expire_date:new_expire_date},
                 // dataType:"json",
                 // contentType:"application/json; charset=utf-8",
                 success:function(result) {

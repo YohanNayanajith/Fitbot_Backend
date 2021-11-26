@@ -20,10 +20,10 @@
             </div>
             <div class="payments_details">
                 <div class="payment_total_payble">
-                    <div class="payment_text">
-                        <span class="total_payble">Total Payble</span><br>
-                        <span class="payble_balance">Rs. 5000.00</span><br>
-                        <span class="payble_date">Pay before 26-10-2021</span>
+                    <div class="payment_text" id="payment_text">
+<!--                        <span class="total_payble">Total Payble</span><br>-->
+<!--                        <span class="payble_balance">Rs. 5000.00</span><br>-->
+<!--                        <span class="payble_date">Pay before 26-10-2021</span>-->
                     </div>
                     <div class="payment_button">
                         <a class="payment_button_div" type="submit" id="payhere-payment" onclick="payments_pay()">PAY BILL</a>
@@ -33,10 +33,10 @@
                     <div class="payment_date_icon">
                         <img src="http://localhost:8080/group39_fitbot_war_exploded/Physical%20Member/Icons/calendar.svg" alt="calendar">
                     </div>
-                    <div class="payment_date_details">
-                        <span class="previous_payment_date">Next Payment Date</span><br>
-                        <span class="previous_payment_date_format">26-10-2021</span><br>
-                        <span class="previous_payment_date_details">Last payment 26-10-2021</span>
+                    <div class="payment_date_details" id="payment_date_details">
+<!--                        <span class="previous_payment_date">Next Payment Date</span><br>-->
+<!--                        <span class="previous_payment_date_format">26-10-2021</span><br>-->
+<!--                        <span class="previous_payment_date_details">Last payment 26-10-2021</span>-->
                     </div>
                 </div>
             </div>
@@ -48,78 +48,78 @@
                 </div>
                 
                 <div class="payment_history_container_details">
-                    <table class="payment_history_container_table">
+                    <table class="payment_history_container_table" id="payment_history_container_table">
                         <tr class="payment_history_container_table_header">
                             <th>Date</th>
-                            <th>Time</th>
+                            <th>Currency</th>
                             <th>Payment Method</th>
                             <th>Payment</th>
                             <th></th>
                         </tr>
                     
-                        <tr class="payment_history_container_row">
-                            <td>21/10/2021</td>
-                            <td>15:00</td>
-                            <td>DEBIT CARD</td>
-                            <td>Rs 10000</td>
-                            <td><a href="#" class="view_bill_button" onclick="pay_bill_view()">VIEW BILL</a></td>
-                        </tr>
-        
-                        <tr class="payment_history_container_row">
-                            <td>25/09/2020</td>
-                            <td>09:00</td>
-                            <td>CREDIT CARD</td>
-                            <td>Rs 5000</td>
-                            <td><a href="#" class="view_bill_button">VIEW BILL</a></td>
-                        </tr>   
-        
-                        <tr class="payment_history_container_row">
-                            <td>15/05/2019</td>
-                            <td>03:00</td>
-                            <td>DEBIT CARD</td>
-                            <td>Rs 5000</td>
-                            <td><a href="#" class="view_bill_button">VIEW BILL</a></td>
-                        </tr>
+<!--                        <tr class="payment_history_container_row">-->
+<!--                            <td>21/10/2021</td>-->
+<!--                            <td>15:00</td>-->
+<!--                            <td>DEBIT CARD</td>-->
+<!--                            <td>Rs 10000</td>-->
+<!--                            <td><a href="#" class="view_bill_button" onclick="pay_bill_view()">VIEW BILL</a></td>-->
+<!--                        </tr>-->
+<!--        -->
+<!--                        <tr class="payment_history_container_row">-->
+<!--                            <td>25/09/2020</td>-->
+<!--                            <td>09:00</td>-->
+<!--                            <td>CREDIT CARD</td>-->
+<!--                            <td>Rs 5000</td>-->
+<!--                            <td><a href="#" class="view_bill_button">VIEW BILL</a></td>-->
+<!--                        </tr>   -->
+<!--        -->
+<!--                        <tr class="payment_history_container_row">-->
+<!--                            <td>15/05/2019</td>-->
+<!--                            <td>03:00</td>-->
+<!--                            <td>DEBIT CARD</td>-->
+<!--                            <td>Rs 5000</td>-->
+<!--                            <td><a href="#" class="view_bill_button">VIEW BILL</a></td>-->
+<!--                        </tr>-->
 
-                        <tr class="payment_history_container_row">
-                            <td>14/04/2018</td>
-                            <td>09:00</td>
-                            <td>DEBIT CARD</td>
-                            <td>Rs 5000</td>
-                            <td><a href="#" class="view_bill_button">VIEW BILL</a></td>
-                        </tr>
-        
-                        <tr class="payment_history_container_row">
-                            <td>21/10/2021</td>
-                            <td>15:00</td>
-                            <td>DEBIT CARD</td>
-                            <td>Rs 5000</td>
-                            <td><a href="#" class="view_bill_button">VIEW BILL</a></td>>
-                        </tr>
-        
-                        <tr class="payment_history_container_row">
-                            <td>21/10/2021</td>
-                            <td>15:00</td>
-                            <td>DEBIT CARD</td>
-                            <td>Rs 5000</td>
-                            <td><a href="#" class="view_bill_button">VIEW BILL</a></td>
-                        </tr>
-        
-                        <tr class="payment_history_container_row">
-                            <td>21/10/2021</td>
-                            <td>15:00</td>
-                            <td>DEBIT CARD</td>
-                            <td>Rs 5000</td>
-                            <td><a href="#" class="view_bill_button">VIEW BILL</a></td>
-                        </tr>
-        
-                        <tr class="payment_history_container_row">
-                            <td>21/10/2021</td>
-                            <td>15:00</td>
-                            <td>DEBIT CARD</td>
-                            <td>Rs 5000</td>
-                            <td><a href="#" class="view_bill_button">VIEW BILL</a></td>
-                        </tr>
+<!--                        <tr class="payment_history_container_row">-->
+<!--                            <td>14/04/2018</td>-->
+<!--                            <td>09:00</td>-->
+<!--                            <td>DEBIT CARD</td>-->
+<!--                            <td>Rs 5000</td>-->
+<!--                            <td><a href="#" class="view_bill_button">VIEW BILL</a></td>-->
+<!--                        </tr>-->
+<!--        -->
+<!--                        <tr class="payment_history_container_row">-->
+<!--                            <td>21/10/2021</td>-->
+<!--                            <td>15:00</td>-->
+<!--                            <td>DEBIT CARD</td>-->
+<!--                            <td>Rs 5000</td>-->
+<!--                            <td><a href="#" class="view_bill_button">VIEW BILL</a></td>>-->
+<!--                        </tr>-->
+<!--        -->
+<!--                        <tr class="payment_history_container_row">-->
+<!--                            <td>21/10/2021</td>-->
+<!--                            <td>15:00</td>-->
+<!--                            <td>DEBIT CARD</td>-->
+<!--                            <td>Rs 5000</td>-->
+<!--                            <td><a href="#" class="view_bill_button">VIEW BILL</a></td>-->
+<!--                        </tr>-->
+<!--        -->
+<!--                        <tr class="payment_history_container_row">-->
+<!--                            <td>21/10/2021</td>-->
+<!--                            <td>15:00</td>-->
+<!--                            <td>DEBIT CARD</td>-->
+<!--                            <td>Rs 5000</td>-->
+<!--                            <td><a href="#" class="view_bill_button">VIEW BILL</a></td>-->
+<!--                        </tr>-->
+<!--        -->
+<!--                        <tr class="payment_history_container_row">-->
+<!--                            <td>21/10/2021</td>-->
+<!--                            <td>15:00</td>-->
+<!--                            <td>DEBIT CARD</td>-->
+<!--                            <td>Rs 5000</td>-->
+<!--                            <td><a href="#" class="view_bill_button">VIEW BILL</a></td>-->
+<!--                        </tr>-->
                            
                     </table>
                       

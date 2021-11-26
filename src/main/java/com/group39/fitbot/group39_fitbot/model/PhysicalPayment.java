@@ -16,10 +16,11 @@ public class PhysicalPayment {
     private String cus_address;
     private String cus_city;
     private LocalDate new_expire_date;
+    private int alter_table_payment_id;
 
     public PhysicalPayment() {}
 
-    public PhysicalPayment(int payment_id, LocalDate payment_date, String payment_method, LocalDate previous_expire_date, String currency, double payment_amount, String authorization_token, String payment_status, String cus_first_name, String cus_last_name, String cus_address, String cus_city, LocalDate new_expire_date) {
+    public PhysicalPayment(int payment_id, LocalDate payment_date, String payment_method, LocalDate previous_expire_date, String currency, double payment_amount, String authorization_token, String payment_status, String cus_first_name, String cus_last_name, String cus_address, String cus_city, LocalDate new_expire_date, int alter_table_payment_id) {
         this.payment_id = payment_id;
         this.payment_date = payment_date;
         this.payment_method = payment_method;
@@ -33,6 +34,7 @@ public class PhysicalPayment {
         this.cus_address = cus_address;
         this.cus_city = cus_city;
         this.new_expire_date = new_expire_date;
+        this.alter_table_payment_id = alter_table_payment_id;
     }
 
     public int getPayment_id() {
@@ -137,6 +139,14 @@ public class PhysicalPayment {
 
     public void setNew_expire_date(LocalDate new_expire_date) {
         this.new_expire_date = new_expire_date;
+    }
+
+    public int getAlter_table_payment_id() {
+        return alter_table_payment_id;
+    }
+
+    public void setAlter_table_payment_id(int alter_table_payment_id) {
+        this.alter_table_payment_id = alter_table_payment_id;
     }
 
     @Override

@@ -16,6 +16,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 import static java.lang.Integer.parseInt;
@@ -24,14 +25,6 @@ public class PhysicalPaymentController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("Payment get method called");
-
-        String merchant_id = req.getParameter("merchant_id");
-        String order_id = req.getParameter("order_id");
-        String payhere_amount = req.getParameter("payhere_amount");
-        String status_code = req.getParameter("status_code");
-        String md5sig = req.getParameter("md5sig");
-
-        System.out.println(merchant_id+" "+order_id+" "+payhere_amount+" "+status_code+" "+md5sig);
 
 //        RequestDispatcher requestDispatcher = req.getRequestDispatcher("Physical Member/FullSidebar.html");
 //        requestDispatcher.forward(req, resp);
@@ -44,46 +37,47 @@ public class PhysicalPaymentController extends HttpServlet {
         resp.setContentType("text/plain");
 
         System.out.println("Payment 0");
-        String merchant_id = req.getParameter("merchant_id");
-//        String order_id = req.getParameter("order_id");
-        double payhere_amount = Double.parseDouble(req.getParameter("amount"));
-        String payhere_currency = req.getParameter("currency");
 
+        String payment_id = req.getParameter("payment_id");
+        LocalDate payment_date = LocalDate.parse(req.getParameter("payment_date"));
+        LocalDate previous_expire_date = LocalDate.parse(req.getParameter("previous_expire_date"));
+        System.out.println("Payment 001");
+        String payhere_currency = req.getParameter("currency");
+        double payhere_amount = Double.parseDouble(req.getParameter("payment_amount"));
         System.out.println("Payment 01");
-//        String status_code = req.getParameter("status_code");
-//        String md5sig = req.getParameter("md5sig");
-//        String status_message = req.getParameter("status_message");
-//        String authorization_token = req.getParameter("authorization_token");
-        String cancel_url = req.getParameter("cancel_url");
-        String notify_url = req.getParameter("notify_url");
-        String return_url = req.getParameter("return_url");
-        String order_id = req.getParameter("order_id");
-        String phone = req.getParameter("phone");
-        String items = req.getParameter("items");
+        String cus_first_name = req.getParameter("cus_first_name");
+        String cus_last_name = req.getParameter("cus_last_name");
+        String cus_address = req.getParameter("cus_address");
+        String cus_city = req.getParameter("cus_city");
+        LocalDate new_expire_date = LocalDate.parse(req.getParameter("new_expire_date"));
 
         System.out.println("Payment 1");
-
-        //payment details
-        int payment_id = parseInt(req.getParameter("payment_id"));
-        String cus_first_name = req.getParameter("first_name");
-        String cus_last_name = req.getParameter("last_name");
-        String cus_address = req.getParameter("address");
-        String cus_city = req.getParameter("city");
-        String country = req.getParameter("country");
-        LocalDate new_expire_date = LocalDate.parse(req.getParameter("new_expire_date"));
-        LocalDate current_date = LocalDate.parse(req.getParameter("current_date"));
-//        LocalDate payment_date = LocalDate.parse(req.getParameter("payment_date"));
-
 //        System.out.println(merchant_id+" "+order_id+" "+payhere_amount+" "+status_code+" "+md5sig);
-
 //        String merchant_secret = "4UtzoQHR7Lu4OUfoB2eiT34Uop6X9fWJY4JJgy9IpX19";
+
+        HttpSession session = req.getSession();
+//        String MembershipID = (String) session.getAttribute("MembershipID");
+        String memberID = (String) session.getAttribute("MemberID");
+        char[] ch = memberID.toCharArray();
+        String membershipID = "";
+        String alter_table_payment_id = "";
+        int i = 0;
+        for (char c : ch) {
+            if(i>=3){
+                membershipID += c;
+                alter_table_payment_id += c;
+            }
+            i++;
+        }
+        System.out.println("Payment run");
+        System.out.println(membershipID);
 
         System.out.println("Payment 2");
 
         PhysicalPayment physicalPayment = new PhysicalPayment();
-        physicalPayment.setPayment_id(payment_id);
-//        physicalPayment.setPayment_date(payment_date);
-        physicalPayment.setPrevious_expire_date(current_date);
+        physicalPayment.setPayment_id(parseInt(payment_id));
+        physicalPayment.setPayment_date(payment_date);
+        physicalPayment.setPrevious_expire_date(previous_expire_date);
         physicalPayment.setCurrency(payhere_currency);
         physicalPayment.setPayment_amount(payhere_amount);
 //        physicalPayment.setAuthorization_token(authorization_token);
@@ -93,39 +87,22 @@ public class PhysicalPaymentController extends HttpServlet {
         physicalPayment.setCus_address(cus_address);
         physicalPayment.setCus_city(cus_city);
         physicalPayment.setNew_expire_date(new_expire_date);
-
-        System.out.println("Payment 3");
-
-        HttpSession session = req.getSession();
-//        String MembershipID = (String) session.getAttribute("MembershipID");
-        String memberID = (String) session.getAttribute("MemberID");
-        char[] ch = memberID.toCharArray();
-        String membershipID = "";
-        int i = 0;
-        for (char c : ch) {
-//            int p1 = Character.compare(c, 'P');
-//            int p2 = Character.compare(c, 'h');
-//            int p3 = Character.compare(c, 'y');
-            if(i>=3){
-                membershipID += c;
-            }
-            i++;
-        }
-        System.out.println("Payment run");
-        System.out.println(membershipID);
+        physicalPayment.setAlter_table_payment_id(parseInt(alter_table_payment_id));
         System.out.println(physicalPayment);
-//        int membershipIDNew = parseInt(membershipID);
+
+
         try {
             boolean b = PhysicalPaymentDAO.addPaymentDetails(physicalPayment);
             boolean b1 = PhysicalPaymentDAO.updateMembershipRenewalDetails(parseInt(membershipID), 0);
-            boolean b2 = MembershipDAO.membershipAlterTableInsertData(memberID, parseInt(membershipID), payment_id);
-
-            if(b && (b1 && b2)){
+//            boolean b2 = MembershipDAO.membershipAlterTableInsertData(memberID, parseInt(membershipID), parseInt(payment_id));
+            System.out.println("Payment 3");
+            resp.setCharacterEncoding("UTF-8");
+            if(b && b1){
                 System.out.println("Payment added");
-                out.println("1");
+                out.print("1");
             }else {
                 System.out.println("Payment not added");
-                out.println("0");
+                out.print("0");
             }
         } catch (SQLException e) {
             e.printStackTrace();
