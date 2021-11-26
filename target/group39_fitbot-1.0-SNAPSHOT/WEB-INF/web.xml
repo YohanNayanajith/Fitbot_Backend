@@ -183,4 +183,13 @@
         <url-pattern>/physicalPaymentCount</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>physicalPaymentDetails</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.PaymentDetailsController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>physicalPaymentDetails</servlet-name>
+        <url-pattern>/paymentDetails</url-pattern>
+    </servlet-mapping>
+
 </web-app>
