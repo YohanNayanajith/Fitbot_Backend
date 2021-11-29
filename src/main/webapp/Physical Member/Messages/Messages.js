@@ -8,14 +8,52 @@ function physical_member_messages(){
 }
 
 function searchInstructor(){
-    var arr = ["yohan","Nayanajith","Sachinka","Faalil"];
-    $("#messages_physical_container_left_search_text_input").on("keyup", function() {
-        // var value = $(this).val().toLowerCase();
-        // $("#myTable tr").filter(function() {
-        //     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-        // });
-
-        //https://www.w3schools.com/jquery/jquery_filters.asp
+    $('#messages_physical_container_left_search_text_input').keyup(function(){
+        // alert("yohan2");
+        let value = $(this).val().toLowerCase();
+        $('.messages_physical_container_left_my_chats').filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
     });
+
+    // $("button").click(function() {
+    $(document).scrollTop($(document).height());
+    // });
+}
+
+function selected_instructor_physical(number){
+    // alert("Click");
+    console.log(number);
+    $('#messages_physical_container_right_header').show();
+    // $('#messages_of_physical_member').hide();
+    $('#send_messages_of_physical_member').hide();
+    $('#messages_physical_container_right_typing_area').show();
+
+    let instructor_id = "Ins_"+number;
+
+    $.ajax({
+        method: "POST",
+        url: "physicalMember/Message",
+        data:{instructor_id:instructor_id},
+        dataType: "json",
+        // contentType:"application/json",
+        success: function (result) {
+            // alert(result);
+            console.log(result);
+            $.map(result,function(x){
+                $('#send_messages_of_physical_member').append(
+                    '<div class="receive_messages_of_physical_member_chat1">'+
+                    '<div>'+x["message_description"]+'</div>'+
+                '</div>'
+            );
+            });
+        },
+        error: function (error) {
+            console.log(error + "edit profile");
+        }
+    });
+
+    $('#messages_of_physical_member').show();
+    $('#send_messages_of_physical_member').show();
 }
 

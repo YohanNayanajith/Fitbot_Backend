@@ -191,5 +191,14 @@
         <servlet-name>physicalPaymentDetails</servlet-name>
         <url-pattern>/paymentDetails</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>physicalMessage</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.PhysicalMemberMessagesController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>physicalMessage</servlet-name>
+        <url-pattern>/physicalMember/Message</url-pattern>
+    </servlet-mapping>
 
 </web-app>
