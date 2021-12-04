@@ -38,16 +38,6 @@
         <servlet-name>physical_member</servlet-name>
         <url-pattern>/physicalMember</url-pattern>
     </servlet-mapping>
-    
-    <servlet>
-        <servlet-name>instructor</servlet-name>
-        <servlet-class>com.group39.fitbot.group39_fitbot.controller.InstructorController</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>instructor</servlet-name>
-        <url-pattern>/instructor</url-pattern>
-    </servlet-mapping>
-    
 
     <servlet>
         <servlet-name>workout</servlet-name>
@@ -74,33 +64,6 @@
     <servlet-mapping>
         <servlet-name>confirmPassword</servlet-name>
         <url-pattern>/passwordConfirm</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>manager</servlet-name>
-        <servlet-class>com.group39.fitbot.group39_fitbot.controller.ManagerController</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>manager</servlet-name>
-        <url-pattern>/manager</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>notice</servlet-name>
-        <servlet-class>com.group39.fitbot.group39_fitbot.controller.NoticeManagerController</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>notice</servlet-name>
-        <url-pattern>/notice</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>equipment</servlet-name>
-        <servlet-class>com.group39.fitbot.group39_fitbot.controller.EquipmentController</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>equipment</servlet-name>
-        <url-pattern>/equipment</url-pattern>
     </servlet-mapping>
   
     <servlet>
@@ -192,4 +155,50 @@
         <servlet-name>instructors</servlet-name>
         <url-pattern>/instructors</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>payment</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.PhysicalPaymentController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>payment</servlet-name>
+        <url-pattern>/payment</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>physicalInstructor</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.PhysicalInstructorController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>physicalInstructor</servlet-name>
+        <url-pattern>/physicalInstructor</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>physicalPaymentCount</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.PhysicalPaymentCountController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>physicalPaymentCount</servlet-name>
+        <url-pattern>/physicalPaymentCount</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>physicalPaymentDetails</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.PaymentDetailsController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>physicalPaymentDetails</servlet-name>
+        <url-pattern>/paymentDetails</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>physicalMessage</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.PhysicalMemberMessagesController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>physicalMessage</servlet-name>
+        <url-pattern>/physicalMember/Message</url-pattern>
+    </servlet-mapping>
+
 </web-app>

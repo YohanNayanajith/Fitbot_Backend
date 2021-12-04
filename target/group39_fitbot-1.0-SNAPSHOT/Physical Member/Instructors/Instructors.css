@@ -20,7 +20,8 @@
     position: relative;
     justify-content:space-evenly;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 275px;
+    /*max-width: 275px;*/
+    width: 275px;
     margin: auto;
     text-align: center;
     font-family: arial;
@@ -32,8 +33,10 @@
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 .instructors_physical_container_detail img {
-    max-width:275px;
-    max-height:275px;
+    /*max-width:275px;*/
+    width:275px;
+    /*max-height:275px;*/
+    height:275px;
     border-radius: 5px 5px 0 0;
 }
 .instructors_physical_container_detail_con {

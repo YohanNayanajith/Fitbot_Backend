@@ -23,6 +23,17 @@ public class EditProfileDAO {
         return pst.executeUpdate() > 0;
     }
 
+    public static boolean updateLoginDetails(Registartion registartion) throws SQLException, ClassNotFoundException {
+        Connection connection = DBConnection.getInstance().getConnection();
+        String query = "UPDATE users SET user_name=? WHERE member_id=?";
+        PreparedStatement pst = connection.prepareStatement(query);
+        pst.setString(1,registartion.getFirst_name());
+        pst.setString(2,registartion.getMember_id());
+
+//        System.out.println("Edit profile  DAO");
+        return pst.executeUpdate() > 0;
+    }
+
     public static Registartion retriveRegistration(String member_id) throws SQLException, ClassNotFoundException {
         Registartion register = new Registartion();
 

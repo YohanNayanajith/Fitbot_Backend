@@ -46,43 +46,6 @@ $(document).ready(function(){
           alert("Error: " + xhr.status + ": " + xhr.statusText);
       });
 
-      // $.ajax({
-      //   method: "POST",
-      //   url: "memberDetails",
-      //   dataType: "json",
-      //   // contentType:"application/json",
-      //   success: function (result) {
-      //     alert(result);
-      //     const date = new Date();
-      //     let year_age = date.getFullYear() - result.date_of_birth['year'];
-      //
-      //     const first_name = result.first_name;
-      //     const first_name_slice = first_name.slice(1);
-      //     const last_name = result.last_name;
-      //     const last_name_slice = last_name.slice(1);
-      //
-      //     $('#right_sideBar_name').append(
-      //         '<h2><span>' + first_name[0] + '</span>' + first_name_slice + ' ' + '<span>' + last_name[0] + '</span>' + last_name_slice + '</h2>'
-      //     );
-      //     $('#height_profile').append(
-      //         '<span class="height">' + 'Height' + '</span><br>' +
-      //         '<span class="height_value">' + result.height + '</span>'
-      //     );
-      //     $('#age_profile').append(
-      //         '<span class="age">' + 'Age' + '</span><br>' +
-      //         '<span class="age_value">' + year_age + '</span>'
-      //     );
-      //     $('#weight_profile').append(
-      //         '<span class="weight">' + 'Weight' + '</span><br>' +
-      //         '<span class="weight_value">' + result.weight + '</span>'
-      //     );
-      //     console.log(result);
-      //   },
-      //   error: function (error) {
-      //     console.log(error + "edit profile");
-      //   }
-      // });
-      // right_load++;
     }else {
       right_load++;
     }
@@ -162,7 +125,7 @@ function clear_dashboard_functions(full_background,dashboard_icon,dashboard_text
   let full_background_ID = document.getElementById(full_background);
   let dashboard_icon_ID = document.getElementById(dashboard_icon);
   let dashboard_text_ID = document.getElementById(dashboard_text);
-  console.log("dashboard link closed");
+  // console.log("dashboard link closed");
   // payments_physical.className += "_active";
   full_background_ID.style.backgroundColor = "#0E2C4B";
   dashboard_icon_ID.style.color = "white";
@@ -185,7 +148,7 @@ $(document).ready(function(){
   $('#phy_mem_dashboard').click(function(){
     if(load[0] == 0){
       load[0] += 1;
-      console.log(load);
+      // console.log(load);
     }else if(sideBar_links_variable == "#dashboard_implementation"){
       return;
     }else {
@@ -225,8 +188,10 @@ $(document).ready(function(){
       sideBar_links_variable = "#physical_member_instructors";
       $(sideBar_links_variable).load('http://localhost:8080/group39_fitbot_war_exploded/Physical%20Member/Instructors/Instructors.html #instructors_physical',function(responseTxt, statusTxt, xhr){
       
-      if(statusTxt == "error")
-          alert("Error: " + xhr.status + ": " + xhr.statusText);
+      if(statusTxt == "error") {
+        alert("Error: " + xhr.status + ": " + xhr.statusText);
+      }
+        instructorGetData();
       });
       load[2] += 1;
     }else if(sideBar_links_variable == "#physical_member_instructors"){
@@ -245,9 +210,18 @@ $(document).ready(function(){
       sideBar_links_variable = "#physical_member_messages";
       $(sideBar_links_variable).load('http://localhost:8080/group39_fitbot_war_exploded/Physical%20Member/Messages/Messages.html #messages_physical',function(responseTxt, statusTxt, xhr){
       
-      if(statusTxt == "error")
-          alert("Error: " + xhr.status + ": " + xhr.statusText);
+      if(statusTxt == "error") {
+        alert("Error: " + xhr.status + ": " + xhr.statusText);
+      }
+      // $('#messages_physical_container_right').hide();
+        $('#messages_physical_container_right_header').hide();
+        $('#messages_of_physical_member').hide();
+        $('#messages_physical_container_right_typing_area').hide();
+      selectMemberMessages();
+      searchInstructors();
+
       });
+
       load[3] += 1;
     }else if(sideBar_links_variable == "#physical_member_messages"){
       return;
@@ -282,22 +256,21 @@ $(document).ready(function(){
           let total_reps_phy = result.total_reps;
           // alert(total_reps_phy);
 
-          console.log(result);
+          // console.log(result);
           $.map(result,function(x){
             $('#workout_container_table').append(
 
                 '<tr class="payment_history_container_row">'+
                   '<td>'+x.exercise+'</td>'+
-                  '<td>'+x.duration+'</td>'+
+                  '<td>'+x.workout_type+'</td>'+
                   '<td>'+x.total_reps+'</td>'+
-                  '<td>'+x.equipment_type+'</td>'+
+                  '<td>'+x.duration+'</td>'+
                   '<td>'+'<input type="checkbox">'+'</td>'+
                 '</tr>'
             );
           });
 
-          alert(result);
-          // alert("Data is comming babe");
+          // alert(result);
         }).fail(function(a,b,err){
           alert("Error");
           console.log(a,b,err);
@@ -321,8 +294,10 @@ $(document).ready(function(){
       sideBar_links_variable = "#physical_member_diet_plans";
       $(sideBar_links_variable).load('http://localhost:8080/group39_fitbot_war_exploded/Physical%20Member/Diet_Plans/Diet_Plans.html #Diet_Plans_physical',function(responseTxt, statusTxt, xhr){
       
-      if(statusTxt == "error")
-          alert("Error: " + xhr.status + ": " + xhr.statusText);
+      if(statusTxt == "error") {
+        alert("Error: " + xhr.status + ": " + xhr.statusText);
+      }
+
       });
       load[5] += 1;
       $('#after_the_table').show();
@@ -342,8 +317,10 @@ $(document).ready(function(){
       sideBar_links_variable = "#physical_member_payments";
       $(sideBar_links_variable).load('http://localhost:8080/group39_fitbot_war_exploded/Physical%20Member/Payments/Payments.html #payments_physical',function(responseTxt, statusTxt, xhr){
       
-      if(statusTxt == "error")
-          alert("Error: " + xhr.status + ": " + xhr.statusText);
+      if(statusTxt == "error"){
+        alert("Error: " + xhr.status + ": " + xhr.statusText);
+      }
+        displayPaymentsData();
       });
       load[6] += 1;
     }else if(sideBar_links_variable == "#physical_member_payments"){
@@ -362,8 +339,10 @@ $(document).ready(function(){
       sideBar_links_variable = "#physical_member_reports";
       $(sideBar_links_variable).load('http://localhost:8080/group39_fitbot_war_exploded/Physical%20Member/Reports/Reports.html #reports_physical',function(responseTxt, statusTxt, xhr){
       
-      if(statusTxt == "error")
-          alert("Error: " + xhr.status + ": " + xhr.statusText);
+      if(statusTxt == "error") {
+        alert("Error: " + xhr.status + ": " + xhr.statusText);
+      }
+
       });
       load[7] += 1;
     }else if(sideBar_links_variable == "#physical_member_reports"){
@@ -382,8 +361,10 @@ $(document).ready(function(){
       sideBar_links_variable = "#physical_member_branch_messages";
       $(sideBar_links_variable).load('http://localhost:8080/group39_fitbot_war_exploded/Physical%20Member/BranchMessages/BranchMessages.html #branch_messages_physical',function(responseTxt, statusTxt, xhr){
       
-      if(statusTxt == "error")
-          alert("Error: " + xhr.status + ": " + xhr.statusText);
+      if(statusTxt == "error") {
+        alert("Error: " + xhr.status + ": " + xhr.statusText);
+      }
+
       });
       load[8] += 1;
     }else if(sideBar_links_variable == "#physical_member_branch_messages"){
@@ -401,8 +382,10 @@ $(document).ready(function(){
       page_select(sideBar_links_variable);
       sideBar_links_variable = "#physical_member_appoinments";
       $(sideBar_links_variable).load('http://localhost:8080/group39_fitbot_war_exploded/Physical%20Member/Appoinments/Appoinments.html #appointments_physical',function(responseTxt, statusTxt, xhr){
-      if(statusTxt == "error")
-          alert("Error: " + xhr.status + ": " + xhr.statusText);
+      if(statusTxt == "error") {
+        alert("Error: " + xhr.status + ": " + xhr.statusText);
+      }
+
       });
       load[9] += 1;
     }else if(sideBar_links_variable == "#physical_member_appoinments"){
@@ -421,8 +404,10 @@ $(document).ready(function(){
       sideBar_links_variable = "#physical_member_settings";
       $(sideBar_links_variable).load('http://localhost:8080/group39_fitbot_war_exploded/Physical%20Member/Settings/Settings.html #settings_physical',function(responseTxt, statusTxt, xhr){
 
-      if(statusTxt == "error")
-          alert("Error: " + xhr.status + ": " + xhr.statusText);
+      if(statusTxt == "error") {
+        alert("Error: " + xhr.status + ": " + xhr.statusText);
+      }
+
       });
       load[10] += 1;
     }else if(sideBar_links_variable == "#physical_member_settings"){
@@ -441,8 +426,10 @@ $(document).ready(function(){
       sideBar_links_variable = "#physical_member_settings";
       $(sideBar_links_variable).load('http://localhost:8080/group39_fitbot_war_exploded/Physical%20Member/Settings/Settings.html #settings_physical',function(responseTxt, statusTxt, xhr){
 
-        if(statusTxt == "error")
+        if(statusTxt == "error") {
           alert("Error: " + xhr.status + ": " + xhr.statusText);
+        }
+
       });
       load[10] += 1;
     }else if(sideBar_links_variable == "#physical_member_settings"){
@@ -461,8 +448,10 @@ $(document).ready(function(){
       sideBar_links_variable = "#physical_member_conditions";
       $(sideBar_links_variable).load('http://localhost:8080/group39_fitbot_war_exploded/Physical%20Member/Conditions/Conditions.html #conditions_physical',function(responseTxt, statusTxt, xhr){
       
-      if(statusTxt == "error")
-          alert("Error: " + xhr.status + ": " + xhr.statusText);
+      if(statusTxt == "error") {
+        alert("Error: " + xhr.status + ": " + xhr.statusText);
+      }
+
       });
       load[11] += 1;
     }else if(sideBar_links_variable == "#physical_member_conditions"){
@@ -488,18 +477,7 @@ function closeNav() {
   }
 }
 // http://localhost:8080/group39_fitbot_war_exploded/physicalMember#
-console.log("AJAX FUNCTION CALLED");
-// $.ajax({
-//   type:"POST",
-//   url:"login",
-//   data: JSON.stringify(this.data),
-//   contentType:"application/json",
-// }).done(function(response){
-//   alert(response);
-//   console.log(response);
-// }).fail(function(a,b,err){
-//   console.log(err);
-// });
+
 var user_name;
 
 $(document).ready(function(){
@@ -520,23 +498,6 @@ $(document).ready(function(){
     }
   });
 
-  // $.ajax({
-  //   method:'POST',
-  //   url:"physicalMember",
-  //   dataType:'json',
-  //
-  // }).done(function(data){
-  //   // const data_object = JSON.parse(data);
-  //   //   alert(data);
-  //   $('#dashboard_header_member').append(
-  //       '<h1>'+'Hello '+data.first_name+'!!'+'</h1>'
-  //   );
-  //   // alert(data);
-  // }).fail(function(a,b,err){
-  //   alert("Error");
-  //   console.log(a,b,err)
-  // });
-
   $.ajax({
     method:'POST',
     url:"membership",
@@ -552,9 +513,11 @@ $(document).ready(function(){
     $('#dashboard_mambership_first_text1').append(
         '<span class="dashboard_mambership_second_text"><b>'+data.membership_fee+'</b></span>'
     );
+    let date = data.expiry_day;
+    let currectdate = date["year"]+"-"+date["month"]+"-"+date["day"];
 
     $('#dashboard_mambership_first_text2').append(
-        '<span class="dashboard_mambership_second_text"><b>'+data.expiry_day+'</b></span>'
+        '<span class="dashboard_mambership_second_text"><b>'+currectdate+'</b></span>'
     );
 
     $('#money').append(
@@ -675,4 +638,180 @@ function getRegisterDetails(){
       console.log(error+"edit profile");
     }
   });
+}
+
+//instructors
+
+function instructorGetData(){
+  $.ajax({
+    method:'POST',
+    url:"physicalInstructor",
+    dataType:'json',
+    // contentType:"application/json",
+  }).done(function(result){
+    console.log(result);
+    // alert("This is physical instructor");
+    $.map(result,function(x){
+
+      $('#instructors_physical_container_first').append(
+          '<div class="instructors_physical_container_detail" id="instructors_physical_container_detail_1">'+
+          '<img src='+'"'+ x["profile_image_url"]+'"'+'alt="instructor image">'+
+
+          '<div class="instructors_physical_container_detail_con" id="instructors_physical_container_detail_con">'+
+          '<h1>'+ x["first_name"]+' '+x["last_name"] +'</h1>'+
+          '<div class="instructors_physical_container_detail_line">'+'</div>'+
+          '<p class="instructors_physical_container_detail_title">'+x["main_skill"]+'</p>'+
+          '</div>'+
+
+          '<div class="instructors_physical_container_detail_icon">'+
+          '<a href="#"><i class="bx bxl-facebook-circle bx-tada"></i></a>'+
+          '<a href="#"><i class="bx bxl-instagram-alt bx-tada"></i></a>'+
+          '<a href="#"><i class="bx bxl-youtube bx-tada"></i></a>'+
+          '</div>'+
+          '<div class="instructors_physical_container_detail_eye_icon">'+
+          '<a onClick="open_instructor_details()">'+'<i class="bx bx-show bx-tada">'+'</i>'+'</a>'+
+          '</div>'+
+          '</div>'
+      );
+    });
+
+    // alert(result);
+  }).fail(function(a,b,err){
+    alert("Physical Instructor Error");
+    console.log(a,b,err);
+  });
+}
+
+//messages
+function selectMemberMessages(){
+  $.ajax({
+    method:"POST",
+    url:"memberDetails",
+    dataType:"json",
+    // contentType:"application/json",
+    success: function (result){
+      // alert(result);
+      $('#messages_physical_container_left_fullname').append(
+          '<h1>'+result["first_name"]+' '+result["last_name"]+'</h1>'
+      );
+      console.log(result);
+    },
+    error: function(error){
+      console.log(error+"edit profile");
+    }
+  });
+}
+function searchInstructors(){
+    // $('#messages_physical_container_right').hide();
+
+    $.ajax({
+        method:'POST',
+        url:"physicalInstructor",
+        dataType:'json',
+        // contentType:"application/json",
+    }).done(function(result){
+        console.log(result);
+        // alert("This is physical instructor");
+        $.map(result,function(x){
+          let instructor_id = x["instructor_id"];
+          console.log(instructor_id);
+          let str_ins_id = instructor_id.slice(4).toString();
+          let number = parseInt(str_ins_id);
+          console.log(number);
+          console.log(str_ins_id);
+
+            $('#messages_physical_container_left').append(
+                '<div class="messages_physical_container_left_my_chats" onClick="selected_instructor_physical('+number+')">'+
+                '<div class="messages_physical_container_left_my_chats_image">'+
+                '<img src='+'"'+ x["profile_image_url"]+'"'+' alt="instructor image">'+
+                '</div>'+
+                '<div>'+
+                '<div class="instructor_search_data_physical">'+ x["first_name"]+' '+x["last_name"] +'</div>'+
+                '<div>'+'dumy messages ...'+'</div>'+
+                '</div>'+
+                '<div>'+
+                '<div>13:15</div>'+
+                '</div>'+
+                '</div>'
+            );
+        });
+
+        // alert(result);
+    }).fail(function(a,b,err){
+        alert("Physical Instructor Error");
+        console.log(a,b,err);
+    });
+}
+
+//payments
+function displayPaymentsData(){
+  $.ajax({
+    method:'POST',
+    url:"membership",
+    dataType:'json',
+
+  }).done(function(data){
+    // const data_object = JSON.parse(data);
+    // alert(data);
+    let date = data.expiry_day;
+    let currectdate = date["year"]+"-"+date["month"]+"-"+date["day"];
+    $('#payment_text').append(
+        '<span class="total_payble">Total Payble</span><br>'+
+      '<span class="payble_balance">'+'Rs. '+data.renewal+'</span><br>'+
+      '<span class="payble_date">Pay before '+ currectdate+'</span>'
+    );
+    if(parseInt(data.renewal) == 0){
+      $('#payhere-payment').unbind("click");
+      $('#payhere-payment').unbind("mouseenter mouseleave");
+      // $('#payhere-payment').attr("disabled", true);
+      // $('#payhere-payment').prop("disabled", true);
+      // $('#payhere-payment').css("background-color", "2px solid grey");
+      $('#payhere-payment').css("background-color", "grey");
+    }
+  }).fail(function(a,b,err){
+    alert("Error");
+    console.log(a,b,err)
+  });
+
+  $.ajax({
+    method:'POST',
+    url:"paymentDetails",
+    dataType:'json',
+    // contentType:"application/json",
+  }).done(function(result){
+    console.log(result);
+    let paymentId = 0;
+    // let currectdate = x["year"]+"-"+date["month"]+"-"+date["day"];
+    // let new_expire_date_1 = "";
+    $.map(result,function(x){
+
+      $('#payment_history_container_table').append(
+          '<tr class="payment_history_container_row">'+
+            '<td>'+x.previous_expire_date["year"]+"-"+x.previous_expire_date["month"]+"-"+x.previous_expire_date["day"]+'</td>'+
+            '<td>'+x.currency+'</td>'+
+            '<td>'+x.payment_method+'</td>'+
+            '<td>'+x.payment_amount+'</td>'+
+            '<td><a href="#" class="view_bill_button" onClick="pay_bill_view()">VIEW BILL</a></td>'+
+          '</tr>'
+      );
+
+      if(paymentId < x.payment_id){
+        paymentId = x.payment_id;
+      }
+
+    });
+    $.map(result,function(x){
+      if(paymentId == x.payment_id){
+          $('#payment_date_details').append(
+              '<span class="previous_payment_date">Next Payment Date</span><br>'+
+              '<span class="previous_payment_date_format">'+x.new_expire_date["year"]+"-"+x.new_expire_date["month"]+"-"+x.new_expire_date["day"]+'</span><br>'+
+              '<span class="previous_payment_date_details">Last payment '+ x.previous_expire_date["year"]+"-"+x.previous_expire_date["month"]+"-"+x.previous_expire_date["day"]+'</span>'
+          );
+      }
+    });
+  }).fail(function(a,b,err){
+    alert("Error");
+    console.log(a,b,err);
+  });
+
 }

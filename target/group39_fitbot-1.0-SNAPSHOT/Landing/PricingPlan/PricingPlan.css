@@ -29,8 +29,6 @@
     height: 90vh;
 }
 
-
-
 .landing_pricing_plan {
     margin:10px 72px;
 }
@@ -72,7 +70,7 @@
     flex-direction: column;
     margin: 10px;
     background-color: #E5E5E5;
-    /* max-width: 350px; */
+    /*max-width: 350px;*/
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     transition: 1s;
 }
@@ -90,7 +88,7 @@
     font-weight: bold;
     color: black;
     text-align:center;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 .landing_pricing_plan_physical_silver_price {
     display: flex;
@@ -114,7 +112,7 @@
     /* margin: 0 10px; */
     text-align: left;
     padding: 15px 0;
-    height:120px;
+    height:150px;
 }
 .landing_pricing_plan_physical_silver_detail div {
     text-indent: 10px;
@@ -141,9 +139,9 @@
     font-weight: bold;
     padding: 10px 15px;
     /* border-radius: 5px; */
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 .landing_pricing_plan_physical_silver_btn a:hover {
     background-color:#0E2C4B;
-    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.25);
 }

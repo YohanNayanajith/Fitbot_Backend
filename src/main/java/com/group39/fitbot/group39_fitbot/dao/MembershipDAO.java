@@ -3,10 +3,7 @@ package com.group39.fitbot.group39_fitbot.dao;
 import com.group39.fitbot.group39_fitbot.database.DBConnection;
 import com.group39.fitbot.group39_fitbot.model.Membership;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class MembershipDAO {
     public static Membership membershipGetData(String memberID) throws SQLException, ClassNotFoundException {
@@ -41,17 +38,46 @@ public class MembershipDAO {
             membership.setMembership_id(resultSet2.getInt(1));
             membership.setMembership_fee(resultSet2.getInt(2));
             membership.setMembership_category(resultSet2.getString(3));
-            membership.setExpiry_day(resultSet2.getDate(4));
+            membership.setExpiry_day(resultSet2.getDate(4).toLocalDate());
             membership.setRenewal(resultSet2.getInt(5));
-            membership.setMembership_payment_date(resultSet2.getDate(6));
+            membership.setMembership_payment_date(resultSet2.getDate(6).toLocalDate());
             membership.setHas_instructor(resultSet2.getString(7));
             membership.setInstructor_price(resultSet2.getInt(8));
             membership.setDiscount_price(resultSet2.getInt(9));
 
-            System.out.println(membership);
+//            System.out.println(membership);
             return membership;
         }else {
             return null;
         }
+    }
+
+    public static boolean membershipInsertData(Membership membership) throws SQLException, ClassNotFoundException {
+        Connection connection = DBConnection.getInstance().getConnection();
+        String query = "INSERT INTO membership VALUES(?,?,?,?,?,?,?,?,?)";
+        PreparedStatement pst = connection.prepareStatement(query);
+
+        pst.setInt(1,membership.getMembership_id());
+        pst.setInt(2,membership.getMembership_fee());
+        pst.setString(3,membership.getMembership_category());
+        pst.setDate(4, Date.valueOf(membership.getExpiry_day()));
+        pst.setInt(5,membership.getRenewal());
+        pst.setDate(6, Date.valueOf(membership.getMembership_payment_date()));
+        pst.setString(7,membership.getHas_instructor());
+        pst.setInt(8,membership.getInstructor_price());
+        pst.setInt(9,membership.getDiscount_price());
+
+        return pst.executeUpdate() > 0;
+    }
+
+    public static boolean membershipAlterTableInsertData(String member_id,int payment_id, int membership_id) throws SQLException, ClassNotFoundException {
+        Connection connection = DBConnection.getInstance().getConnection();
+        String query = "INSERT INTO payment_paidmember_membership VALUES(?,?,?)";
+        PreparedStatement pst = connection.prepareStatement(query);
+
+        pst.setInt(1,payment_id);
+        pst.setInt(2,membership_id);
+        pst.setString(3,member_id);
+        return pst.executeUpdate() > 0;
     }
 }

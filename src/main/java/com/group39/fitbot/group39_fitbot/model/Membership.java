@@ -1,14 +1,15 @@
 package com.group39.fitbot.group39_fitbot.model;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Membership {
     private int membership_id;
     private int membership_fee;
     private String membership_category;
-    private Date  expiry_day;
+    private LocalDate expiry_day;
     private int renewal;
-    private Date membership_payment_date;
+    private LocalDate membership_payment_date;
     private String has_instructor; //TRUE or FALSE
     private int instructor_price;
     private int discount_price;
@@ -16,7 +17,7 @@ public class Membership {
     public Membership() {
     }
 
-    public Membership(int membership_id, int membership_fee, String membership_category, Date expiry_day, int renewal, Date membership_payment_date, String has_instructor, int instructor_price, int discount_price) {
+    public Membership(int membership_id, int membership_fee, String membership_category, LocalDate expiry_day, int renewal, LocalDate membership_payment_date, String has_instructor, int instructor_price, int discount_price) {
         this.membership_id = membership_id;
         this.membership_fee = membership_fee;
         this.membership_category = membership_category;
@@ -52,11 +53,11 @@ public class Membership {
         this.membership_category = membership_category;
     }
 
-    public Date getExpiry_day() {
+    public LocalDate getExpiry_day() {
         return expiry_day;
     }
 
-    public void setExpiry_day(Date expiry_day) {
+    public void setExpiry_day(LocalDate expiry_day) {
         this.expiry_day = expiry_day;
     }
 
@@ -68,11 +69,11 @@ public class Membership {
         this.renewal = renewal;
     }
 
-    public Date getMembership_payment_date() {
+    public LocalDate getMembership_payment_date() {
         return membership_payment_date;
     }
 
-    public void setMembership_payment_date(Date membership_payment_date) {
+    public void setMembership_payment_date(LocalDate membership_payment_date) {
         this.membership_payment_date = membership_payment_date;
     }
 

@@ -31,11 +31,12 @@ public class MembershipController extends HttpServlet {
 //        String userName = (String) session.getAttribute("userName");
         String memberID = (String) session.getAttribute("MemberID");
 
-        System.out.println(memberID);
+//        System.out.println(memberID);
 
         try {
             Membership membership = MembershipDAO.membershipGetData(memberID);
-            System.out.println(membership);
+//            session.setAttribute("MembershipID",membership.getMembership_id());
+//            System.out.println(membership);
             Gson gson = new Gson();
             String memberJSON = gson.toJson(membership);
             resp.setContentType("application/json");

@@ -53,10 +53,12 @@ public class EditPasswordController extends HttpServlet {
         System.out.println(registartion);
 
         boolean accept;
+        boolean accept_new;
         try {
             accept = EditProfileDAO.updateMemberDetails(registartion);
+            accept_new = EditProfileDAO.updateLoginDetails(registartion);
 
-            if(accept){
+            if(accept && accept_new){
                 out.print("1");
             }else {
                 out.print("0");

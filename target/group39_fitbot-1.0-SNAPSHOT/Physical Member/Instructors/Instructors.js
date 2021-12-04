@@ -9,3 +9,7 @@ function physical_member_instructors(){
 function open_instructor_details(){
     $('#instructors_physical_container_detail_popup').toggle();
 }
+
+// $(document).ready(function(){
+//
+// });
