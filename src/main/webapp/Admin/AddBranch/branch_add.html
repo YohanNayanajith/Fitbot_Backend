@@ -81,16 +81,18 @@
                 <h2>Add a New branch</h2>
               </div>
 
-              <form action="" class="branch_form">
+              <form action="post" class="branch_form" id="branch_form" action="addbranch">
 
                   <div class="form_row">
                     <div class="form_lable">
                       <label for="branch_id">Branch ID<span class="require_star">*</span></label><br>
                       <input type="text" id="branch_id" name="branch_id" class="branch_label branch_id" placeholder="Enter branch id" >
+                        <h6 id ="validation_branch_id" class="validation_label">Branch ID cannot be empty</h6>
                   </div>
                   <div class="form_lable_right">
                       <label for="branch_name">Branch Name<span class="require_star">*</span></label><br>
                       <input type="text" id="branch_name" name="branch_name" class="branch_label branch_name" placeholder="Enter branch name" >
+                      <h6 id ="validation_branch_name" class="validation_label">Branch Name cannot be empty</h6>
                   </div>
                   </div>
 
@@ -98,11 +100,13 @@
                     <div class="form_lable">
                       <label for="branch_address">Address<span class="require_star">*</span></label><br>
                       <input type="text" id="branch_address" name="branch_address" class="branch_label address" placeholder="Enter address" >
+                        <h6 id ="validation_branch_address" class="validation_label">Branch Address cannot be empty</h6>
                   </div>
                   <div class="form_lable_right">
                 
-                      <label for="start_date">Date of Commencement<span class="require_star">*</span></label><br>
-                      <input type="date" id="start_date" name="start_date" class="branch_label start_date" placeholder="Enter Date of Commencement" >
+                      <label for="branch_email">Email Address<span class="require_star">*</span></label><br>
+                      <input type="email" id="branch_email" name="branch_email" class="branch_label email" placeholder="Enter Email" >
+                      <h6 id ="validation_branch_email" class="validation_label">Branch email cannot be empty</h6>
                   
                   </div>
                   </div>
@@ -111,10 +115,12 @@
                     <div class="form_lable">
                       <label for="contactno1_branch">Primary Contact Number<span class="require_star">*</span></label><br>
                       <input type="text"  id= "contactno1_branch" name="contactno1_branch" class="branch_label contactno1" placeholder="Enter Primary Contact" >
+                        <h6 id ="validation_branchcontactno1" class="validation_label">Primary Contact cannot be empty</h6>
                   </div>
                   <div class="form_lable_right">
                     <label for="contactno2_branch">Secondary Contact Number<span class="require_star">*</span></label><br>
                     <input type="text" id="contactno2_branch"  name="contactno2_branch" class="branch_label contactno2" placeholder="Enter Primary Contact" >
+                      <h6 id ="validation_branchcontactno2" class="validation_label">Secondary Contact cannot be empty</h6>
                 </div>
                   </div>
 
@@ -128,8 +134,8 @@
                     
                     <div class="add_btn_class">
                      
-                      <input type="button" class="btn_add" value="Submit" onClick=""><br>
-                      <input type="button" class="btn_cancel" value="Cancel" onClick=""><br>
+                      <input type="submit" class="btn_add" value="Submit" ><br>
+                      <input type="button" class="btn_cancel" value="Cancel" ><br>
                   </div>
               </form>
            

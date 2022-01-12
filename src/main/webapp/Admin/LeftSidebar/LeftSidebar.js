@@ -1,3 +1,4 @@
+
 let sidebar = document.querySelector(".sidebar");
 let closeBtn = document.querySelector("#btn");
 let searchBtn = document.querySelector(".bx-search");
@@ -35,7 +36,7 @@ function visibleSocialMedia(){
   } else {
     social_media.className += "_active";
     width_social_media.classList.replace("social_media_icons_width_menu", "social_media_icons_width_menu_active");
-    
+
   }
 }
 
@@ -105,72 +106,6 @@ function clear_dashboard_functions(full_background,dashboard_icon,dashboard_text
   dashboard_text_ID.style.color = "white";
 }
 
-//employeecount function of ajax
-function employeecount(){
-$.ajax({
-  method:'POST',
-  url:"employeecount",
-  dataType:'json',
-  // contentType:"application/json",
-}).done(function(result){
-    $('#instructorcount').html('');
-    $('#maintainercount').html('');
-    $('#branchmanagercount').html('');
-    $('#totalemployee').html('');
-
-  console.log(result);
-  $.map(result,function(y){
-    $('#instructorcount').append(
-
-        `<p>${y.instructor_count}</p>`
-    );
-    $('#maintainercount').append(
-
-        `<p>${y.maintainer_count}</p>`
-    );
-    $('#branchmanagercount').append(
-
-        `<p>${y.branch_manager_count}</p>`
-    );
-
-    $('#totalemployee').append(
-
-        `<p>${y.instructor_count+y.maintainer_count+y.branch_manager_count}</p>`
-    );
-  });
-
-  // alert(result);
-  // alert("Data is comming babe");
-}).fail(function(a,b,err){
-  alert("Error");
-  console.log(a,b,err);
-});
-}
-
-function printemployee(){
-$.ajax({
-  method:'POST',
-  url:"employee",
-  dataType:'json',
-  // contentType:"application/json",
-}).done(function(result){
-    $('#employee_list_table_body').html('')
-  console.log(result);
-  $.map(result,function(x){
-    $('#employee_list_table_body').append(
-
-        `<tr class="employee_info"><td>${x.employee_id}</td><td>${x.firstname+' '+x.lastname}</td><td>${x.branch_name}</td><td>${x.designation}</td><td>${x.gender}</td><td>${x.email}</td></tr>`
-    );
-  });
-
-}).fail(function(a,b,err){
-  alert("Error");
-  console.log(a,b,err);
-});
-
-}
-
-
 //logout function
 function log_out_function(){
   $.ajax({
@@ -227,107 +162,275 @@ $(document).ready(function(){
   $('#admin_dashboard_implementation').load('http://localhost:8080/group39_fitbot_war_exploded/Admin/Dashboard/dashboard.html #dashboard_admin',function(responseTxt, statusTxt, xhr){
     if(statusTxt == "error")
       alert(`Error: ${xhr.status}: ${xhr.statusText}`);
+    employeecount_dashboard();
+    chart();
   });
 });
 
 
 var load = [0,0,0,0,0,0,0,0,0,0,0];
 
-$(document).ready(function(){
+$(document).ready(function() {
   //dashboard
-  $('#admin_dashboard').click(function(){
-    if(load[0] == 0){
+  $('#admin_dashboard').click(function () {
+    if (load[0] == 0) {
       load[0] += 1;
       console.log(load);
-    }else if(sideBar_links_variable == "#admin_dashboard_implementation"){
+    } else if (sideBar_links_variable == "#admin_dashboard_implementation") {
       return;
-    }else {
+    } else {
       page_select(sideBar_links_variable);
       sideBar_links_variable = "#admin_dashboard_implementation";
       $('#admin_dashboard_implementation').show();
     }
   });
 
-  //employees
-  $('#admin_employees').click( function(){
-    if(sideBar_links_variable ==="#adm_add_employees") {
-      sideBar_links_variable = "#adm_employees";
-      $('#adm_add_employees').hide();
-    }
-    else if(sideBar_links_variable !=="#adm_employees") {
-      page_select(sideBar_links_variable);
-      sideBar_links_variable = "#adm_employees";
-    }
-
-    if(load[6] == 0){
-      $(sideBar_links_variable).load('http://localhost:8080/group39_fitbot_war_exploded/Admin/Employees/employees.html #employeeview_admin',function(responseTxt, statusTxt, xhr){
-      
-      if(statusTxt == "error")
-          alert(`Error: ${xhr.status}: ${xhr.statusText}`);
-      printemployee();
-      employeecount();
-
-      });
-      load[6] += 1;
-    }else{
-      $('#adm_employees').show();
-
-    }
-  });
-
 
   //admin_members
-  $('#admin_members').click(function(){
+  $('#admin_members').click(function () {
     page_select(sideBar_links_variable);
     sideBar_links_variable = "#adm_members";
-    
-    if(load[7] == 0){
-      $(sideBar_links_variable).load('http://localhost:8080/group39_fitbot_war_exploded/Admin/Members/members.html #memberview_admin',function(responseTxt, statusTxt, xhr){
-      
-      if(statusTxt == "error")
+
+    if (load[7] == 0) {
+      $(sideBar_links_variable).load('http://localhost:8080/group39_fitbot_war_exploded/Admin/Members/members.html #memberview_admin', function (responseTxt, statusTxt, xhr) {
+          printmember();
+        $('#member_view').hide();
+        if (statusTxt == "error")
           alert(`Error: ${xhr.status}: ${xhr.statusText}`);
       });
       load[7] += 1;
-    }else{
+    } else {
       $('#adm_members').show();
     }
   });
 
 
-
-  $('#admin_branches').click(function(){
-    if(sideBar_links_variable ==="#adm_branch_add") {
+  $('#admin_branches').click(function () {
+    if (sideBar_links_variable === "#adm_branch_add") {
       sideBar_links_variable = "#adm_branches";
       $('#adm_branch_add').hide();
-    }
-    else if(sideBar_links_variable !=="#adm_branches") {
+    } else if (sideBar_links_variable !== "#adm_branches") {
       page_select(sideBar_links_variable);
       sideBar_links_variable = "#adm_branches";
     }
 
-    if(load[5] == 0){
-      $(sideBar_links_variable).load('http://localhost:8080/group39_fitbot_war_exploded/Admin/Branches/branches.html #home-content-branch',function(responseTxt, statusTxt, xhr){
-      
-      if(statusTxt == "error")
+    if (load[5] == 0) {
+      $(sideBar_links_variable).load('http://localhost:8080/group39_fitbot_war_exploded/Admin/Branches/branches.html #home-content-branch', function (responseTxt, statusTxt, xhr) {
+
+        if (statusTxt == "error")
           alert(`Error: ${xhr.status}: ${xhr.statusText}`);
+
+        printbranches();
+        accord();
       });
       load[5] += 1;
-    }else{
+    } else {
       $('#adm_branches').show();
     }
   });
 
-  
+  //Function to view addbranches form
+  $(function () {
+    $(document).on("click", '#add_newbranch', function () {
+      $('#adm_branches').hide();
+      sideBar_links_variable = "#adm_branch_add";
+
+      if (load[10] == 0) {
+        $(sideBar_links_variable).load('http://localhost:8080/group39_fitbot_war_exploded/Admin/AddBranch/branch_add.html #branch_add', function (responseTxt, statusTxt, xhr) {
+                        $("#validation_branch_id").hide();
+                        $("#validation_branch_name").hide();
+                        $("#validation_branch_email").hide();
+                        $("#validation_branch_address").hide();
+                        $("#validation_branchcontactno1").hide();
+                        $("#validation_branchcontactno2").hide();
+
+          if (statusTxt == "error")
+            alert(`Faalil: ${xhr.status}: ${xhr.statusText}`);
+        });
+
+        $(document).on('submit', '#branch_form', function (e) {
+            e.preventDefault();
+            let branch_id = $("#branch_id").val();
+            let branch_name =$("#branch_name").val();
+            let branch_address=$("#branch_address").val();
+            let branch_email = $("#branch_email").val();
+            let contactno1_branch = $("#contactno1_branch").val();
+            let contactno2_branch =$("#contactno2_branch").val();
+            let branch_pic = $("#branch_id").val();
+
+
+            let branch_id_error=false;
+            let branch_name_error=false;
+            let branch_address_error=false;
+            let branch_email_error=false;
+            let contactno1_branch_error=false;
+            let contactno2_branch_error=false;
+            let branch_pic_error=false;
+
+            //validation of branchid
+            if (branch_id.length=="")
+            {
+              $("#validation_branch_id").show();
+                  branch_id_error=true;
+            }
+            else
+            {
+              $("#validation_branch_id").hide();
+            }
+
+            //validation of branchname
+            if (branch_name.length=="")
+            {
+              $("#validation_branch_name").show();
+                  branch_name_error=true;
+            }
+            else
+            {
+              $("#validation_branch_name").hide();
+            }
+
+            //validation of branchemail
+            if (branch_email.length=="")
+            {
+              $("#validation_branch_email").show();
+              branch_email_error=true;
+            }
+            else
+            {
+              $("#validation_branch_email").hide();
+            }
+
+            //validation of branchaddress
+            if (branch_address.length=="")
+            {
+              $("#validation_branch_address").show();
+              branch_address_error=true;
+            }
+            else
+            {
+              $("#validation_branch_address").hide();
+            }
+
+            //validation of primary contact
+            if (contactno1_branch.length == "") {
+              $("#validation_branchcontactno1").show();
+                  contactno1_branch_error = true;
+
+            } else {
+              $("#validation_branchcontactno1").hide();
+            }
+
+            //validation of secondary contact
+            if (contactno2_branch.length == "") {
+              $("#validation_branchcontactno2").show();
+                  contactno2_branch_error = true;
+            } else {
+              $("#validation_branchcontactno2").hide();
+            }
+
+
+          //Full validation
+          if (branch_id_error == true || branch_name_error == true || branch_email_error == true || branch_pic_error== true || branch_email_error == true || contactno1_branch_error == true || contactno2_branch_error== true ) {
+            return false;
+          }
 
 
 
-$(function () {
-  $(document).on("click", '#admin_add_employees', function () {
-    $('#adm_employees').hide();
-    sideBar_links_variable = "#adm_add_employees";
 
-    if(load[4] == 0){
-          $("#adm_add_employees").load('http://localhost:8080/group39_fitbot_war_exploded/Admin/AddEmployees/employee_add.html #add_employee_view',function(responseTxt, statusTxt, xhr){
+          $.ajax({
+            method: 'POST',
+            url: "addbranch",
+            data: {
+              branch_id : branch_id,
+              branch_name : branch_name,
+              branch_address : branch_address,
+              branch_email : branch_email,
+              contactno1_branch : contactno1_branch,
+              contactno2_branch : contactno2_branch,
+              branch_pic : branch_pic
+
+            },
+          }).done(function (result) {
+
+            if (result.trim() == 1) {
+              $('#branch_form input[type="text"],input[type="email"],input[type="date"]').val('');
+              Swal.fire({
+                icon: 'success',
+                title: "Successfully Added",
+                text: 'Branch Added!',
+                confirmButtonText: '<i class="fa fa-thumbs-up"></i> Success',
+                confirmButtonColor: '#0E2C4B',
+                footer: '<a href="#">View Branch</a>'
+              });
+            }
+            if (result.trim() == 0) {
+              Swal.fire({
+                icon: 'error',
+                title: "Cannot be Added",
+                text: 'Check for Primary Values',
+                confirmButtonText: '<i class="fa fa-thumbs-up"></i> Try Again',
+                confirmButtonColor: '#0E2C4B',
+                // footer: '<a href="#" onclick=">View Employee</a>'
+              });
+            }
+
+          }).fail(function (a, b, err) {
+
+            alert("Faalil");
+            Swal.fire({
+              icon: 'error',
+              title: "Can't register...",
+              text: 'Something went wrong!',
+              confirmButtonText: '<i class="fa fa-thumbs-up"></i> Try Again!!!',
+              confirmButtonColor: '#0E2C4B',
+              footer: '<a>Register again</a>'
+            });
+            console.log(a, b, err);
+          });
+        });
+        load[10] += 1;
+      } else {
+        $('#adm_branch_add').show();
+      }
+
+    });
+  });
+
+
+//employees
+    $('#admin_employees').click(function () {
+      if (sideBar_links_variable === "#adm_add_employees") {
+        sideBar_links_variable = "#adm_employees";
+        $('#adm_add_employees').hide();
+      } else if (sideBar_links_variable !== "#adm_employees") {
+        page_select(sideBar_links_variable);
+        sideBar_links_variable = "#adm_employees";
+      }
+
+      if (load[6] == 0) {
+        $(sideBar_links_variable).load('http://localhost:8080/group39_fitbot_war_exploded/Admin/Employees/employees.html #employeeview_admin', function (responseTxt, statusTxt, xhr) {
+          $('#employee_view').hide();
+          if (statusTxt == "error")
+            alert(`Error: ${xhr.status}: ${xhr.statusText}`);
+          printemployee();
+          employeecount();
+
+        });
+        load[6] += 1;
+      } else {
+        $('#adm_employees').show();
+
+      }
+    });
+
+    //Function to view add employee form
+    $(function () {
+      $(document).on("click", '#admin_add_employees', function () {
+        $('#adm_employees').hide();
+        sideBar_links_variable = "#adm_add_employees";
+
+        if (load[4] == 0) {
+          $("#adm_add_employees").load('http://localhost:8080/group39_fitbot_war_exploded/Admin/AddEmployees/employee_add.html #add_employee_view', function (responseTxt, statusTxt, xhr) {
             $("#validation_employee_id").hide();
             $("#validation_branch").hide();
             $("#validation_first_name").hide();
@@ -338,236 +441,242 @@ $(function () {
             $("#validation_contactno1").hide();
             $("#validation_contactno2").hide();
             $("#validation_dob").hide();
-          if(statusTxt == "error")
+            if (statusTxt == "error")
               alert(`Error: ${xhr.status}: ${xhr.statusText}`);
           });
 
 
+          $(document).on('submit', '#employee_form', function (e) {
+            alert("Faalil");
+            e.preventDefault();
+            // alert("submitted");
 
-      $(document).on('submit', '#employee_form', function(e) {
-        e.preventDefault();
-        // alert("submitted");
+            let designation = $("#designation").val();
+            let employee_id = $("#employee_id").val();
+            let branch_name = $("#branch_name").val();
+            let first_name_employee = $("#first_name_employee").val();
+            let last_name_employee = $("#last_name_employee").val();
+            let gender_employee = $("#gender_employee").val();
+            let email_employee = $("#email_employee").val();
+            let nic_employee = $("#nic_employee").val();
+            let date_of_birth_employee = $("#date_of_birth_employee").val();
+            let address_employee = $("#address_employee").val();
+            let contact_no1_employee = $("#contact_no1_employee").val();
+            let contact_no2_employee = $("#contact_no2_employee").val();
+            let status = "active";
 
-        let designation = $("#designation").val();
-        let employee_id = $("#employee_id").val();
-        let branch_name = $("#branch_name").val();
-        let first_name_employee = $("#first_name_employee").val();
-        let last_name_employee = $("#last_name_employee").val();
-        let gender_employee =$("#gender_employee").val();
-        let email_employee =$("#email_employee").val();
-        let nic_employee =$("#nic_employee").val();
-        let date_of_birth_employee = $("#date_of_birth_employee").val();
-        let address_employee = $("#address_employee").val();
-        let contact_no1_employee =$("#contact_no1_employee").val();
-        let contact_no2_employee =$("#contact_no2_employee").val();
+            let employee_id_error = false;
+            let branch_name_error = false;
+            let first_name_error = false;
+            let last_name_error = false;
+            let email_error = false;
+            let nic_error = false;
+            let dob_error = false;
+            let address_error = false;
+            let contactno1_error = false;
+            let contactno2_error = false;
 
-          let employee_id_error=false;
-          let branch_name_error =false;
-          let first_name_error =false;
-          let last_name_error=false;
-          let email_error=false;
-          let nic_error=false;
-          let dob_error=false;
-          let address_error=false;
-          let contactno1_error=false;
-          let contactno2_error=false;
+            //Branch_name validation
+            if (branch_name.length == "" && designation != "maintainer") {
+              // alert("faalil");
+              $("#validation_branch").show();
+              branch_name_error = true;
+            } else {
+              $("#validation_branch").hide();
+            }
 
-          //Branch_name validation
-        if(branch_name.length == "" && designation!="maintainer"){
-          // alert("faalil");
-          $("#validation_branch").show();
-          branch_name_error =true;
-        }
-        // else if (branch_name.length != "" && designation=="maintainer"){
-        //   $('#validation_branch').html("**No Branch for Maintainer");
-        //   $('#validation_branch').css("color", "red");
-        //   $("#validation_branch").show();
-        //   branch_name_error =true;
-        // }
-        else {
-          $("#validation_branch").hide();
-        }
+            //validation of employee_id
+            if (employee_id.length == "") {
+              $("#validation_employee_id").show();
+              employee_id_error = true;
+            } else if (employee_id.length != 7) {
+              $('#validation_employee_id').html("**length of the employee id must be 7");
+              $('#validation_employee_id').css("color", "red");
+              $("#validation_employee_id").show();
+              employee_id_error = true;
+            } else {
+              $("#validation_employee_id").hide();
+            }
 
-        //validation of employee_id
-        if(employee_id.length == ""){
-          $("#validation_employee_id").show();
-          employee_id_error=true;
-        }
-        else if (employee_id.length !=7 )
-        {
-          $('#validation_employee_id').html("**length of the employee id must be 7");
-          $('#validation_employee_id').css("color", "red");
-          $("#validation_employee_id").show();
-          employee_id_error=true;
-        }
-        else {
-          $("#validation_employee_id").hide();
-        }
+            //validation of firstname
+            if (first_name_employee.length == "") {
+              $("#validation_first_name").show();
+              first_name_error = true;
+            } else {
+              $("#validation_first_name").hide();
+            }
 
-        //validation of firstname
-        if(first_name_employee.length == ""){
-          $("#validation_first_name").show();
-            first_name_error =true;
-        }
-        else {
-          $("#validation_first_name").hide();
-        }
+            //validation of lastname
+            if (last_name_employee.length == "") {
+              $("#validation_last_name").show();
+              last_name_error = true;
+            } else {
+              $("#validation_last_name").hide();
+            }
 
-        //validation of lastname
-        if(last_name_employee.length == ""){
-          $("#validation_last_name").show();
-          last_name_error=true;
-        }
-        else {
-          $("#validation_last_name").hide();
-        }
+            //validation of email
+            if (email_employee.length == "") {
+              $("#validation_email").show();
+              email_error = true;
+            } else {
+              $("#validation_email").hide();
+            }
 
-        //validation of email
-        if(email_employee.length == ""){
-          $("#validation_email").show();
-          email_error=true;
-        }
-        else {
-          $("#validation_email").hide();
-        }
+            //validation of nic
+            if (nic_employee.length == "") {
+              $("#validation_nic").show();
+              nic_error = true;
+            } else if ((nic_employee.length != 10) == (nic_employee.length != 12)) {
+              $('#validation_nic').html("**length of the nic must be 10 or 12");
+              $('#validation_nic').css("color", "red");
+              $("#validation_nic").show();
+              nic_error = true;
+            } else {
+              $("#validation_nic").hide();
+            }
 
-        //validation of nic
-        if(nic_employee.length == ""){
-          $("#validation_nic").show();
-          nic_error=true;
-        }
-        // else if (nic_employee.length !=10 || nic_employee.length !=12 )
-        // {
-        //   $('#validation_nic').html("**length of the nic must be 10 or 12");
-        //   $('#validation_nic').css("color", "red");
-        //   $("#validation_nic").show();
-        //   nic_error=true;
-        // }
-        else {
-          $("#validation_nic").hide();
-        }
+            //validation of dob
+            if (date_of_birth_employee.length == 0) {
+              $("#validation_dob").show();
+              dob_error = true;
+            } else if (age_validation(date_of_birth_employee)) {
+              $('#validation_dob').html("**age must be between 20 and 55");
+              $('#validation_dob').css("color", "red");
+              $("#validation_dob").show();
+              dob_error = true;
+            } else {
+              $("#validation_dob").hide();
+            }
 
+            //validation of address
+            if (address_employee.length == "") {
+              $("#validation_address").show();
+              address_error = true;
+            } else {
+              $("#validation_address").hide();
+            }
 
-        //validation of dob
-        if(address_employee.length == ""){
-          $("#validation_address").show();
-          dob_error=true;
-        }
-        else {
-          $("#validation_address").hide();
-        }
+            //validation of primary contact
+            if (contact_no1_employee.length == "") {
+              $("#validation_contactno1").show();
+              contactno1_error = true;
+            } else {
+              $("#validation_contactno1").hide();
+            }
 
-        //validation of primary contact
-        if(contact_no1_employee.length == ""){
-          $("#validation_contactno1").show();
-          contactno1_error=true;
-        }
-        else {
-          $("#validation_contactno1").hide();
-        }
-
-        //validation of primary contact
-        if(contact_no2_employee.length == ""){
-          $("#validation_contactno2").show();
-          contactno2_error=true;
-        }
-        else {
-          $("#validation_contactno2").hide();
-        }
+            //validation of secondary contact
+            if (contact_no2_employee.length == "") {
+              $("#validation_contactno2").show();
+              contactno2_error = true;
+            } else {
+              $("#validation_contactno2").hide();
+            }
 
 
-        //Full validation
-        if(employee_id_error==true || branch_name_error==true || first_name_error==true || last_name_error==true || email_error==true || nic_error==true || dob_error==true || address_employee==true || contactno1_error==true || contactno2_error==true)
-        {
-          return false;
-        }
+            //Full validation
+            if (employee_id_error == true || branch_name_error == true || first_name_error == true || last_name_error == true || email_error == true || nic_error == true || dob_error == true || address_error == true || contactno1_error == true || contactno2_error == true) {
+              return false;
+            }
 
-        $.ajax({
-      method: 'POST',
-      url: "addemployee",
-      data: {
-        designation: designation,
-        employee_id: employee_id,
-        branch_name: branch_name,
-        first_name_employee: first_name_employee,
-        last_name_employee: last_name_employee,
-        gender_employee: gender_employee,
-        email_employee: email_employee,
-        nic_employee: nic_employee,
-        date_of_birth_employee: date_of_birth_employee,
-        address_employee: address_employee,
-        contact_no1_employee: contact_no1_employee,
-        contact_no2_employee: contact_no2_employee
-      },
-      // dataType: "json",
-      // contentType:"application/json; charset=utf-8",
-    }).done(function (result) {
+            $.ajax({
+              method: 'POST',
+              url: "addemployee",
+              data: {
+                designation: designation,
+                employee_id: employee_id,
+                branch_name: branch_name,
+                first_name_employee: first_name_employee,
+                last_name_employee: last_name_employee,
+                gender_employee: gender_employee,
+                email_employee: email_employee,
+                nic_employee: nic_employee,
+                date_of_birth_employee: date_of_birth_employee,
+                address_employee: address_employee,
+                contact_no1_employee: contact_no1_employee,
+                contact_no2_employee: contact_no2_employee,
+                status:status,
+              },
+            }).done(function (result) {
 
-      if(result =="1") {
-        $('#employee_form input[type="text"],input[type="email"],input[type="date"]').val('');
-        Swal.fire({
-          icon: 'success',
-          title: "Successfully Added",
-          text: 'Employee Added!',
-          confirmButtonText: '<i class="fa fa-thumbs-up"></i> Success',
-          confirmButtonColor: '#0E2C4B',
-          footer: '<a href="#">View Employee</a>'
-        });
-        employeecount();
-        printemployee();
-      }
-          if(result =="0") {
-            Swal.fire({
-              icon: 'error',
-              title: "Cannot be Added",
-              text: 'Check for Primary Values',
-              confirmButtonText: '<i class="fa fa-thumbs-up"></i> Try Again',
-              confirmButtonColor: '#0E2C4B',
-              // footer: '<a href="#" onclick=">View Employee</a>'
+              if (result == "1") {
+                $('#employee_form input[type="text"],input[type="email"],input[type="date"]').val('');
+                Swal.fire({
+                  icon: 'success',
+                  title: "Successfully Added",
+                  text: 'Employee Added!',
+                  confirmButtonText: '<i class="fa fa-thumbs-up"></i> Success',
+                  confirmButtonColor: '#0E2C4B',
+                  footer: '<a href="#">View Employee</a>'
+                });
+                employeecount();
+                printemployee();
+              }
+              if (result == "0") {
+                Swal.fire({
+                  icon: 'error',
+                  title: "Cannot be Added",
+                  text: 'Check for Primary Values',
+                  confirmButtonText: '<i class="fa fa-thumbs-up"></i> Try Again',
+                  confirmButtonColor: '#0E2C4B',
+                  // footer: '<a href="#" onclick=">View Employee</a>'
+                });
+              }
+
+            }).fail(function (a, b, err) {
+
+              alert("Faalil");
+              Swal.fire({
+                icon: 'error',
+                title: "Can't register...",
+                text: 'Something went wrong!',
+                confirmButtonText: '<i class="fa fa-thumbs-up"></i> Try Again!!!',
+                confirmButtonColor: '#0E2C4B',
+                footer: '<a>Register again</a>'
+              });
+              console.log(a, b, err);
             });
-          }
 
-    }).fail(function (a, b, err) {
-
-      alert("Faalil");
-      Swal.fire({
-        icon: 'error',
-        title: "Can't register...",
-        text: 'Something went wrong!',
-        confirmButtonText: '<i class="fa fa-thumbs-up"></i> Try Again!!!',
-        confirmButtonColor: '#0E2C4B',
-        footer: '<a>Register again</a>'
-      });
-      console.log(a, b, err);
-    });
-
-  });
+          });
 
           load[4] += 1;
-        }else{
+        } else {
           $('#adm_add_employees').show();
-         }
-  });
-});
+        }
+      });
+    });
 
 //Admin_Reports
-  $('#admin_reports').click(function(){
-    page_select(sideBar_links_variable);
-    sideBar_links_variable = "#adm_reports";
-    
-    if(load[3] == 0){
-      $(sideBar_links_variable).load('http://localhost:8080/group39_fitbot_war_exploded/Admin/Reports/reports.html #report_view_admin',function(responseTxt, statusTxt, xhr){
-      
-      if(statusTxt == "error")
-          alert(`Error: ${xhr.status}: ${xhr.statusText}`);
-      });
-      load[3] += 1;
-    }else{
-      $('#adm_reports').show();
-    }
+    $('#admin_reports').click(function () {
+      page_select(sideBar_links_variable);
+      sideBar_links_variable = "#adm_reports";
+
+      if (load[3] == 0) {
+        $(sideBar_links_variable).load('http://localhost:8080/group39_fitbot_war_exploded/Admin/Reports/reports.html #report_view_admin', function (responseTxt, statusTxt, xhr) {
+
+          if (statusTxt == "error")
+            alert(`Error: ${xhr.status}: ${xhr.statusText}`);
+        });
+        load[3] += 1;
+      } else {
+        $('#adm_reports').show();
+      }
+    });
+
+
   });
 
 
-    
-});
+  function age_validation(DOBValue) {
+    let arr_date = DOBValue.split('-');
+    const date = new Date();
+    let year_age = date.getFullYear() - arr_date[0];
+
+    if (year_age < 20 || year_age > 55) {
+      $('#validation_dob').html("**age must be between 20 and 55");
+      $('#validation_dob').css("color", "red");
+      $("#validation_dob").show();
+      return true;
+    }
+  }
+
 

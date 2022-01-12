@@ -37,16 +37,55 @@ function visibleSocialMedia(){
 }
 
 
-// $(document).ready(function(){
-//   $('#click_me').click(function () {
-//     $('#right_side_bar_view').load('http://127.0.0.1:5500/Physical%20Member/RightSidebar/RightSidebar.html #right_side_nav',function(responseTxt, statusTxt, xhr){
-//       if(statusTxt == "error")
-//         alert("Error: " + xhr.status + ": " + xhr.statusText);
-//       });
-//   });
-
-  
-// });
+//logout_function
+function log_out_function(){
+  $.ajax({
+    method:"POST",
+    url:"logout",
+    data:"",
+    success: function(result){
+      alert(result);
+      if(result == "1"){
+        Swal.fire({
+          title: 'Do you want to log out?',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#0E2C4B',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, log out!'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.href = "http://localhost:8080/group39_fitbot_war_exploded/login";
+          }else if (result.isDenied){
+            // Swal.fire('Changes are not saved', '', 'info')
+            console.log("Log out cancel");
+          }
+        })
+      }else {
+        console.log("Something went wrong");
+        setTimeout(function() {
+          Swal.fire({
+            icon: 'error',
+            title: 'Try Again',
+            text: 'Logout unsuccessfully!',
+            confirmButtonText:"Ok",
+            confirmButtonColor: '#932828',
+          })
+        }, 2000);
+      }
+    },
+    error: function(error){
+      console.log(error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Try Again',
+        text: 'Logout unsuccessfully!',
+        confirmButtonText:"Ok",
+        confirmButtonColor: '#932828',
+      })
+    }
+  });
+}
 
 var sideBar_links_variable = "#owner_dashboard_implementation";
 

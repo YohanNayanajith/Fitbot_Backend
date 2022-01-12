@@ -78,7 +78,10 @@
         <div class="dashboard_admin" id="dashboard_admin">
           <div class ="user_employees">
             <div class = "users">
-              <canvas id="MemberChart" width=100% height="100%"></canvas>
+              <div class="members_chart">Member Chart</div>
+              <div class="memberchart">
+              <canvas id="myChart" class="myChart"></canvas>
+              </div>
             </div>
             <div class="employees">
               <div class ="title_employees">
@@ -86,35 +89,35 @@
               </div>
               <div class ="list_employees">
                 <div class ="branch_managers">
-                  <i class='bx bxs-user employee'></i>
+                  <i class='bx bx-male employee'></i>
                   <div class="employee_type">
                     <div>
-                      <b>All Branch Managers</b>
+                      <b>Branch Managers</b>
                     </div>
-                    <div>
-                      123
+                    <div id="branchmanagercount_dashboard">
+                      12
                     </div>
                   </div>
                 </div>
                 <div class ="branch_managers">
-                  <i class='bx bxs-user employee'></i>
+                  <i class='bx bx-male employee'></i>
                   <div class="employee_type">
                     <div>
                       <b>Instructors</b>
                     </div>
-                    <div>
-                      123
+                    <div id="instructorcount_dashboard">
+                      20
                     </div>
                   </div>
                 </div>
                 <div class ="branch_managers">
-                  <i class='bx bxs-user employee'></i>
+                  <i class='bx bx-male employee'></i>
                   <div class="employee_type">
                     <div>
                       <b>Maintainers</b>
                     </div>
-                    <div>
-                      123
+                    <div id="maintainercount_dashboard">
+                      10
                     </div>
                   </div>
                 </div>

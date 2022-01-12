@@ -38,16 +38,6 @@
         <servlet-name>physical_member</servlet-name>
         <url-pattern>/physicalMember</url-pattern>
     </servlet-mapping>
-    
-    <servlet>
-        <servlet-name>instructor</servlet-name>
-        <servlet-class>com.group39.fitbot.group39_fitbot.controller.InstructorController</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>instructor</servlet-name>
-        <url-pattern>/instructor</url-pattern>
-    </servlet-mapping>
-    
 
     <servlet>
         <servlet-name>workout</servlet-name>
@@ -86,12 +76,30 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>owner</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.OwnerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>owner</servlet-name>
+        <url-pattern>/owner</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>employee</servlet-name>
         <servlet-class>com.group39.fitbot.group39_fitbot.controller.EmployeeController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>employee</servlet-name>
         <url-pattern>/employee</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>manager</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.ManagerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>manager</servlet-name>
+        <url-pattern>/manager</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -119,5 +127,71 @@
     <servlet-mapping>
         <servlet-name>logOut</servlet-name>
         <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>branch</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.BranchController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>branch</servlet-name>
+        <url-pattern>/branch</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>addbranch</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.BranchAddController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addbranch</servlet-name>
+        <url-pattern>/addbranch</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>branchview</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.BranchDetailController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>branchview</servlet-name>
+        <url-pattern>/branchview</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>removeemployee</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.RemoveEmployeeController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>removeemployee</servlet-name>
+        <url-pattern>/removeemployee</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>branchmanagerlist</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.BranchManagerListController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>branchmanagerlist</servlet-name>
+        <url-pattern>/branchmanagerlist</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>instructorlist</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.InstructorListController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>instructorlist</servlet-name>
+        <url-pattern>/instructorlist</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>adminmember</servlet-name>
+        <servlet-class>com.group39.fitbot.group39_fitbot.controller.AdminMemberController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>adminmember</servlet-name>
+        <url-pattern>/adminmember</url-pattern>
     </servlet-mapping>
 </web-app>

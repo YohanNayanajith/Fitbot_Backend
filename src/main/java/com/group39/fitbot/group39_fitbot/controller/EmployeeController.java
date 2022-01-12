@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class EmployeeController extends HttpServlet {
     @Override
@@ -27,11 +28,28 @@ public class EmployeeController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("Employee Post Method called");
 
-//        Employee employee = new Employee();
+        String type = req.getParameter("type");
+        System.out.println(type);
+
+        Employee employee = new Employee();
         try {
             List<Employee> all_employees = new ArrayList<>();
-            all_employees = EmployeeDAO.getEmployee();
-            System.out.println(all_employees);
+            if (Objects.equals(type,"All")) {
+                all_employees = EmployeeDAO.getEmployee();
+                System.out.println(all_employees);
+            }
+            else if (Objects.equals(type,"Instructor")) {
+                all_employees = EmployeeDAO.getInstructor();
+                System.out.println(all_employees);
+            }
+            else if (Objects.equals(type,"Maintainer")) {
+                all_employees = EmployeeDAO.getMaintainers();
+                System.out.println(all_employees);
+            }
+            else if (Objects.equals(type,"Branch Manager")) {
+                all_employees = EmployeeDAO.getBranchManager();
+                System.out.println(all_employees);
+            }
             Gson gson = new Gson();
             String employeeJSON = gson.toJson(all_employees);
             resp.setContentType("application/json");

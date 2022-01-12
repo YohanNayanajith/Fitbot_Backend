@@ -311,7 +311,7 @@
     font-weight: 500;
   }
 
-   .branch_view .each_branch .branch_manangers, .instructors , .members {
+   .branch_view .each_branch .branch_managers, .instructors , .members {
     background-color:#F2F2F2;
     padding:10px;
     margin-top: 15px;
@@ -369,14 +369,32 @@
    .branch_view .branch_list .list_bottom .branch_detail_list .branch01 {
     margin-top: 5px;
     display:flex;
-    padding: 20px 3px 20px 2px;
+    padding: 20px 20px 20px 20px;
     font-size: 25px;
-    align-items: center;
-    justify-content: space-around;
+    /*align-items: center;*/
+    justify-content: space-between;
     background-color:#F2F2F2;
     /*border-style:2px solid;*/
   }
+   .branch01_name{
+       align-items: flex-start;
+   }
 
 .branch_list a {
     cursor:pointer;
+}
+
+.branch_detail_list a {
+    text-decoration: none;
+    color:black;
+
+}
+.branch_detail_list a:hover {
+    color: red;
+}
+
+.panel{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
 }

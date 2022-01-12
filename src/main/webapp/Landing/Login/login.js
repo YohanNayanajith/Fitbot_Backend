@@ -1,18 +1,3 @@
-// google-login
-// function onSignIn(googleUser) {
-//     let profile = googleUser.getBasicProfile();
-//     console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-//     console.log('Name: ' + profile.getName());
-//     console.log('Image URL: ' + profile.getImageUrl());
-//     console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-// }
-//
-// function signOut() {
-//     let auth2 = gapi.auth2.getAuthInstance();
-//     auth2.signOut().then(function () {
-//         console.log('User signed out.');
-//     });
-// }
 
 
 $('.reset_password_text_input_warning').hide();
@@ -347,10 +332,19 @@ $(document).ready(function (){
                     window.location.href = 'http://localhost:8080/group39_fitbot_war_exploded/admin';
                 }else if(result == "4"){
                     //manager
-                    window.location.href = 'http://localhost:8080/group39_fitbot_war_exploded/physicalMember';
+                    window.location.href = 'http://localhost:8080/group39_fitbot_war_exploded/manager';
                 }else if(result == "5"){
-                    //owner
-                    window.location.href = 'http://localhost:8080/group39_fitbot_war_exploded/physicalMember';
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Login Success',
+                        text: 'Owner!',
+                        confirmButtonText:"Ok",
+                        confirmButtonColor: '#0E2C4B',
+                    })
+                    setTimeout(function() {
+                        window.location.href = 'http://localhost:8080/group39_fitbot_war_exploded/owner';
+                    }, 2000);
+
                 } else if(result == "6"){
                     //admin
                     Swal.fire({
@@ -377,41 +371,3 @@ $(document).ready(function (){
 
 
 
-// $.ajax({
-//     type:"POST",
-//     url:"login",
-//     dataType:"json",
-//     success: function (response){
-//         console.log(response);
-//         alert("Leave added successfully");
-//         // location.reload();
-//     }
-// });
-
-// $(document).ready(function(){
-//     $('#login_form_submit').submit(function(e){
-//
-//         let login_username = $('#login_username').val().trim();
-//         let login_password = $('#login_password').val().trim();
-//
-//         if(login_username == '' && login_password == ''){
-//             alert("User name is empty");
-//             return false;
-//         }
-//
-//         $.post("login",
-//             {
-//                 user_name:login_username,
-//                 user_password:login_password
-//             },function(data,status){
-//                 if(parseInt(data) == 1){
-//                     window.location.href("group39_fitbot_war_exploded/physicalMember");
-//                 }else {
-//                     alert(data);
-//                     alert("Window cant show");
-//                 }
-//             });
-//         // e.preventDefault();
-//         alert("password is empty");
-//     });
-// });

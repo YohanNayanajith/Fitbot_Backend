@@ -14,56 +14,7 @@
 <body>
 
 
-    <!-- Sidebar  -->
-    <div class="sidebar">
-        <div class="logo-details">
-          <i class='bx bxl-c-plus-plus icon'></i>
-            <!-- <div class="logo_name">CodingLab</div> -->
-            <i class='bx bx-menu' id="btn" ></i>
-        </div>
-        <ul class="nav-list">
-          <li>
-              <i class='bx bx-search' ></i>
-             <input type="text" placeholder="Search...">
-             <span class="tooltip">Search</span>
-          </li>
-          <li>
-            <a href="../Admin - Dashboard/admin_dashboard.html">
-              <i class='bx bx-grid-alt'></i>
-              <span class="links_name">Dashboard</span>
-            </a>
-             <span class="tooltip">Dashboard</span>
-          </li>
-          <li>
-           <a href="#">
-             <i class='bx bx-user' ></i>
-             <span class="links_name">Branches</span>
-           </a>
-           <span class="tooltip">Branches</span>
-         </li>
-         <li>
-           <a href="../Admin -Members/admin_members.html">
-             <i class='bx bx-chat' ></i>
-             <span class="links_name">Members</span>
-           </a>
-           <span class="tooltip">Members</span>
-         </li>
-         <li>
-           <a href="../Admin - Employees/admin_employees.css">
-             <i class='bx bx-pie-chart-alt-2' ></i>
-             <span class="links_name">Employees</span>
-           </a>
-           <span class="tooltip">Employees</span>
-         </li>
-         <li>
-           <a href="#">
-             <i class='bx bx-folder' ></i>
-             <span class="links_name">Reports</span>
-           </a>
-           <span class="tooltip">Reports</span>
-         </li>
-        </ul>
-      </div>
+
 
       <section class="home-section">
 
@@ -71,10 +22,10 @@
         <div class="home-content-branch" id="home-content-branch">
             <div class ="branch_view" id="branch_view">
               <div class ="each_branch">
-                  <div class ="branch_details">
-                    <div class ="branch_number">B0001</div>
-                    <div class="line_vertical"></div>
-                    <div class ="branch_info">
+                  <div class ="branch_details" id="branch_details">
+                    <div class ="branch_number" id="branch_number">B0001</div>
+                    <div class="line_vertical" id="line_vertical"></div>
+                    <div class ="branch_info" id="branch_info">
                       <div class ="branch_name"> Nugegoda Branch</div>
                       <div class="branch_contact">+94771313456/+947783129</div>
                       <div class ="branch_email">fitbot.nugegoda@gmail.com</div>
@@ -82,12 +33,24 @@
                     </div>
                   </div>
 
-                  <div class ="branch_manangers">
-                    Branch Managers
+                  <div class="branch_managers">
+                  <button class ="list_accordion"> Branch Managers </button>
+                      <div class="panel" >
+                          <ul id="branchmanager_list">
+
+                          </ul>
+                      </div>
                   </div>
 
-                  <div class ="instructors">
-                    Instructors
+                  <div class="instructors">
+                  <button class ="list_accordion">
+                        Instructors
+                  </button>
+                  <div class="panel">
+                      <ul id="instructor_list">
+
+                      </ul>
+                  </div>
                   </div>
 
                   <div class ="members">
@@ -99,7 +62,7 @@
               <div class ="branch_list">
                 <div class ="list_top">
                   <div class="all">All Branches</div>
-                  <a class ="add" onclick="add_new_branch()">Add New Branch <i class='bx bxs-plus-circle'></i></a>
+                  <a class ="add" id="add_newbranch">Add New Branch <i class='bx bxs-plus-circle'></i></a>
                 </div>
 
                 <div class="list_bottom">
@@ -107,18 +70,18 @@
                     <input type="text" placeholder="Search.." name="search">
                   </form>
 
-                  <div class="branch_detail_list">
+                  <div class="branch_detail_list" id="branch_detail_list">
                     <div class ="branch01">
                       <div class ="branch01_id">B001</div>
                       <div class ="branch01_name">Nugegoda Branch</div>
                     </div>
                     <div class ="branch01">
-                      <div class ="branch01_id">B001</div>
-                      <div class ="branch01_name">Nugegoda Branch</div>
+                      <div class ="branch01_id">B002</div>
+                      <div class ="branch01_name">Dehiwela Branch</div>
                     </div>
                     <div class ="branch01">
-                      <div class ="branch01_id">B001</div>
-                      <div class ="branch01_name">Nugegoda Branch</div>
+                      <div class ="branch01_id">B003</div>
+                      <div class ="branch01_name"> Maradana Branch</div>
                     </div>
                   </div>
                 </div>
@@ -129,13 +92,9 @@
 
       </section>
 
-      <!-- ----------------------------- JavaScript Files ----------------------------------- -->
-      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script> -->
-      <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
-      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script> -->
 
 
-      <script src="branches.js"></script>
+      <script src="http://127.0.0.1:5500/Admin/Branches/branches.js" defer></script>
       </body>
       </html>
 

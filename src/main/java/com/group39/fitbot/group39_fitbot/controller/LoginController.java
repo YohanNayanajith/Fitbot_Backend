@@ -64,7 +64,7 @@ public class LoginController extends HttpServlet {
                     case "Instructor":
                         out.print("3");
                         break;
-                    case "Manager":
+                    case "Branch Manager":
                         out.print("4");
                         break;
                     case "Owner":

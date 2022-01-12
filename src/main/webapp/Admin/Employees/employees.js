@@ -8,206 +8,264 @@ function adm_employees() {
   anchor_employees_text.style.color = "black";
 }
 
-// function adm_employees_add(){
-//     page_select(sideBar_links_variable);
-//     sideBar_links_variable = "#adm_add_employees";
-//
-//     if(load[4] == 0){
-//           $("#adm_add_employees").load('http://localhost:8080/group39_fitbot_war_exploded/Admin/AddEmployees/employee_add.html #add_employee_view',function(responseTxt, statusTxt, xhr){
-//             // $("#validation_employee_id").hide();
-//             // $("#validation_branch").hide();
-//             // $("#validation_first_name").hide();
-//             // $("#validation_last_name").hide();
-//             // $("#validation_address").hide();
-//             // $("#validation_email").hide();
-//             // $("#validation_nic").hide();
-//             // $("#validation_contactno1").hide();
-//             // $("#validation_contactno2").hide();
-//             // $("#validation_dob").hide();
-//           if(statusTxt == "error")
-//               alert(`Error: ${xhr.status}: ${xhr.statusText}`);
-//           });
-//
-//
-//
-//       $(document).on('submit', '#employee_form', function(e) {
-//     //     e.preventDefault();
-//     //     // alert("submitted");
-//     //
-//     //     let designation = $("#designation").val();
-//     //     let employee_id = $("#employee_id").val();
-//     //     let branch_name = $("#branch_name").val();
-//     //     let first_name_employee = $("#first_name_employee").val();
-//     //     let last_name_employee = $("#last_name_employee").val();
-//     //     let gender_employee =$("#gender_employee").val();
-//     //     let email_employee =$("#email_employee").val();
-//     //     let nic_employee =$("#nic_employee").val();
-//     //     let date_of_birth_employee = $("#date_of_birth_employee").val();
-//     //     let address_employee = $("#date_of_birth_employee").val();
-//     //     let contact_no1_employee =$("#contact_no1_employee").val();
-//     //     let contact_no2_employee =$("#contact_no2_employee").val();
-//     //
-//     //     //   let employee_id_error=false;
-//     //     //   let branch_name_error =false;
-//     //     //   let first_name_error =false;
-//     //     //   let last_name_error=false;
-//     //     //   let email_error=false;
-//     //     //   let nic_error=false;
-//     //     //   let dob_error=false;
-//     //     //   let address_error=false;
-//     //     //   let contactno1_error=false;
-//     //     //   let contactno2_error=false;
-//     //     //
-//     //     //   //Branch_name validation
-//     //     // if(branch_name.length == "" && designation!="maintainer"){
-//     //     //   // alert("faalil");
-//     //     //   $("#validation_branch").show();
-//     //     //   branch_name_error =true;
-//     //     // }
-//     //     // else if (branch_name.length != "" && designation=="maintainer"){
-//     //     //   $('#validation_branch').html("**No Branch for Maintainer");
-//     //     //   $('#validation_branch').css("color", "red");
-//     //     //   $("#validation_branch").show();
-//     //     //   branch_name_error =true;
-//     //     // }
-//     //     // else {
-//     //     //   $("#validation_branch").hide();
-//     //     // }
-//     //     //
-//     //     // //validation of employee_id
-//     //     // if(employee_id.length == ""){
-//     //     //   $("#validation_employee_id").show();
-//     //     //   employee_id_error=true;
-//     //     // }
-//     //     // else if (employee_id.length !=7 )
-//     //     // {
-//     //     //   $('#validation_employee_id').html("**length of the employee id must be 7");
-//     //     //   $('#validation_employee_id').css("color", "red");
-//     //     //   $("#validation_employee_id").show();
-//     //     //   employee_id_error=true;
-//     //     // }
-//     //     // else {
-//     //     //   $("#validation_employee_id").hide();
-//     //     // }
-//     //     //
-//     //     // //validation of firstname
-//     //     // if(first_name_employee.length == ""){
-//     //     //   $("#validation_first_name").show();
-//     //     //     first_name_error =true;
-//     //     // }
-//     //     // else {
-//     //     //   $("#validation_first_name").hide();
-//     //     // }
-//     //     //
-//     //     // //validation of lastname
-//     //     // if(last_name_employee.length == ""){
-//     //     //   $("#validation_last_name").show();
-//     //     //   last_name_error=true;
-//     //     // }
-//     //     // else {
-//     //     //   $("#validation_last_name").hide();
-//     //     // }
-//     //     //
-//     //     // //validation of email
-//     //     // if(email_employee.length == ""){
-//     //     //   $("#validation_email").show();
-//     //     //   email_error=true;
-//     //     // }
-//     //     // else if (!email_pattern_Validate(email_employee)){
-//     //     //   $('#validation_email').show();
-//     //     //   $('#validation_email').html("**Enter valid email");
-//     //     //   $('#validation_email').css("color", "red");
-//     //     //   email_error = true;
-//     //     //
-//     //     // }
-//     //     // else {
-//     //     //   $("#validation_email").hide();
-//     //     // }
-//     //     //
-//     //     // //validation of nic
-//     //     // if(nic_employee.length == ""){
-//     //     //   $("#validation_nic").show();
-//     //     //   nic_error=true;
-//     //     // }
-//     //     // // else if (nic_employee.length !=10 || nic_employee.length !=12 )
-//     //     // // {
-//     //     // //   $('#validation_nic').html("**length of the nic must be 10 or 12");
-//     //     // //   $('#validation_nic').css("color", "red");
-//     //     // //   $("#validation_nic").show();
-//     //     // //   nic_error=true;
-//     //     // // }
-//     //     // else {
-//     //     //   $("#validation_nic").hide();
-//     //     // }
-//     //
-//     //   //Full validation
-//     //   //   if(employee_id_error==true || branch_name_error==true || first_name_error==true || last_name_error==true || email_error==true || nic_error==true || dob_error==true)
-//     //   //   {
-//     //   //     return false;
-//     //   //   }
-//     //
-//     //     $.ajax({
-//     //   method: 'POST',
-//     //   url: "addemployee",
-//     //   data: {
-//     //     designation: designation,
-//     //     employee_id: employee_id,
-//     //     branch_name: branch_name,
-//     //     first_name_employee: first_name_employee,
-//     //     last_name_employee: last_name_employee,
-//     //     gender_employee: gender_employee,
-//     //     email_employee: email_employee,
-//     //     nic_employee: nic_employee,
-//     //     date_of_birth_employee: date_of_birth_employee,
-//     //     address_employee: address_employee,
-//     //     contact_no1_employee: contact_no1_employee,
-//     //     contact_no2_employee: contact_no2_employee
-//     //   },
-//     //   // dataType: "json",
-//     //   // contentType:"application/json; charset=utf-8",
-//     // }).done(function (result) {
-//     //
-//     //   if(result =="1") {
-//     //     $('#employee_form input[type="text"],input[type="email"],input[type="date"]').val('');
-//     //     Swal.fire({
-//     //       icon: 'success',
-//     //       title: "Successfully Added",
-//     //       text: 'Employee Added!',
-//     //       confirmButtonText: '<i class="fa fa-thumbs-up"></i> Success',
-//     //       confirmButtonColor: '#0E2C4B',
-//     //       footer: '<a href="#">View Employee</a>'
-//     //     });
-//     //   }
-//     //       if(result =="0") {
-//     //         Swal.fire({
-//     //           icon: 'error',
-//     //           title: "Cannot be Added",
-//     //           text: 'Check for Primary Values',
-//     //           confirmButtonText: '<i class="fa fa-thumbs-up"></i> Try Again',
-//     //           confirmButtonColor: '#0E2C4B',
-//     //           // footer: '<a href="#" onclick=">View Employee</a>'
-//     //         });
-//     //       }
-//     //
-//     // }).fail(function (a, b, err) {
-//     //
-//     //   alert("Faalil");
-//     //   Swal.fire({
-//     //     icon: 'error',
-//     //     title: "Can't register...",
-//     //     text: 'Something went wrong!',
-//     //     confirmButtonText: '<i class="fa fa-thumbs-up"></i> Try Again!!!',
-//     //     confirmButtonColor: '#0E2C4B',
-//     //     footer: '<a>Register again</a>'
-//     //   });
-//     //   console.log(a, b, err);
-//     // });
-//
-//   });
-//
-//           load[4] += 1;
-//         }else{
-//           $('#adm_add_employees').show();
-//          }
-//   }
+//employeecount function of ajax
+function employeecount(){
+  $.ajax({
+    method:'POST',
+    url:"employeecount",
+    dataType:'json',
+    // contentType:"application/json",
+  }).done(function(result){
+    $('#instructorcount').html('');
+    $('#maintainercount').html('');
+    $('#branchmanagercount').html('');
+    $('#totalemployee').html('');
+
+    console.log(result);
+    $.map(result,function(y){
+      $('#instructorcount').append(
+
+          `<p>${y.instructor_count}</p>`
+      );
+      $('#maintainercount').append(
+
+          `<p>${y.maintainer_count}</p>`
+      );
+      $('#branchmanagercount').append(
+
+          `<p>${y.branch_manager_count}</p>`
+      );
+
+      $('#totalemployee').append(
+
+          `<p>${y.instructor_count+y.maintainer_count+y.branch_manager_count}</p>`
+      );
+    });
+
+    // alert(result);
+    // alert("Data is comming babe");
+  }).fail(function(a,b,err){
+    alert("Error");
+    console.log(a,b,err);
+  });
+}
+
+//Function to print the employeetable
+function printemployee(){
+  $.ajax({
+    method:'POST',
+    url:"employee",
+    data: {
+      type: "All"
+    },
+    // contentType:"application/json",
+  }).done(function(result){
+    $('#employee_list_table_body').html('');
+    document.getElementById("title_employees").innerHTML = "All Employees";
+    console.log(result);
+    $.map(result,function(x){
+      if(x.status=="active") {
+        $('#employee_list_table_body').append(
+            `<tr class="employee_info"><td>${x.employee_id}</td><td>${x.firstname + ' ' + x.lastname}</td><td>${x.branch_id}</td><td>${x.designation}</td><td>${x.email}</td><td><a onclick="employeeview_popup('${x.employee_id}')"><i class='bx bxs-show bx-tada bx-flip-horizontal view_popup' ></i></a>&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>`
+        );
+      }
+    });
+    searchemployee();
+
+  }).fail(function(a,b,err){
+    alert("Error");
+    console.log(a,b,err);
+  });
+
+}
+
+//Clsoing of Employeevie
+function close_employeeview_Popup() {
+  $('#employee_view').hide();
+}
+
+//Popup of employeeview
+function employeeview_popup(name){
+  alert(name);
+  $.ajax({
+    method:'POST',
+    url:"employee",
+    data : {
+        type: "All"
+    },
+    // contentType:"application/json",
+  }).done(function(result){
+    $('#title_values').html('');
+    $('#employee_name_head').html('');
+    $('#remove_button').html('');
+    console.log(result);
+    $.map(result,function(x){
+      if(x.employee_id==name) {
+        $('#employee_name_head').append(
+            `<h1>${x.firstname + ' ' + x.lastname}</h1>`
+        );
+        $('#title_values').append(
+            `<ul><li>${x.firstname + ' ' + x.lastname}</li><li>${x.nic}</li><li>${x.gender}</li><li>${x.email}</li><li>${x.primarycontact}</li><li>${x.dob}</li><li>24</li><li>${x.branch_id}</li><li>${x.designation}</li></ul>`
+        );
+        $('#remove_button').append(
+            `<input type="button" class ="rem_button" value="Remove" onclick="removeemployee('${x.employee_id}','${x.designation}')">`
+        );
+      }
+    });
+
+  }).fail(function(a,b,err){
+    alert("Error");
+    console.log(a,b,err);
+  });
+
+
+  $('#employee_view').show();
+}
+
+function removeemployee(employeeid,employee_type){
+  alert(employeeid);
+  alert(employee_type);
+  alert("Faalil");
+  $.ajax({
+    method: 'POST',
+    url: "removeemployee",
+    data: {
+      employee_id: employeeid,
+      designation:employee_type,
+    },
+    }).done(function (result) {
+
+    if (result.trim() == 1) {
+      Swal.fire({
+        icon: 'success',
+        title: "Successfully Removed",
+        text: '',
+        confirmButtonText: '<i class="fa fa-thumbs-up"></i> Success',
+        confirmButtonColor: '#0E2C4B',
+        footer: '<a href="#">View Branch</a>'
+      });
+      $('#employee_view').hide();
+      printemployee();
+      employeecount();
+    }
+    if (result.trim() == 0) {
+      Swal.fire({
+        icon: 'error',
+        title: "Cannot be Removed",
+        text: 'Some Errors',
+        confirmButtonText: '<i class="fa fa-thumbs-up"></i> Try Again',
+        confirmButtonColor: '#0E2C4B',
+        // footer: '<a href="#" onclick=">View Employee</a>'
+      });
+    }
+
+  }).fail(function (a, b, err) {
+
+    alert("Faalil");
+    Swal.fire({
+      icon: 'error',
+      title: "Can't remove...",
+      text: 'Something went wrong!',
+      confirmButtonText: '<i class="fa fa-thumbs-up"></i> Try Again!!!',
+      confirmButtonColor: '#0E2C4B',
+      footer: '<a>Register again</a>'
+    });
+    console.log(a, b, err);
+  });
+
+}
+
+//Function to print the instructors
+function printinstructor(){
+  $.ajax({
+    method:'POST',
+    url:"employee",
+    data: {
+      type: "Instructor"
+    },
+    // contentType:"application/json",
+  }).done(function(result){
+    $('#employee_list_table_body').html('')
+    document.getElementById("title_employees").innerHTML = "Instructors";
+    console.log(result);
+    $.map(result,function(x){
+      if(x.status=="active") {
+        $('#employee_list_table_body').append(
+            `<tr class="employee_info"><td>${x.employee_id}</td><td>${x.firstname + ' ' + x.lastname}</td><td>${x.branch_id}</td><td>${x.designation}</td><td>${x.email}</td><td><a onclick="employeeview_popup('${x.employee_id}')"><i class='bx bxs-show bx-tada bx-flip-horizontal view_popup' ></i></a>&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>`
+        );
+      }
+    });
+      searchemployee();
+  }).fail(function(a,b,err){
+    alert("Error");
+    console.log(a,b,err);
+  });
+
+}
+
+//Function to print the instructors
+function printmaintainer(){
+  $.ajax({
+    method:'POST',
+    url:"employee",
+    data: {
+      type: "Maintainer"
+    },
+    // contentType:"application/json",
+  }).done(function(result){
+    $('#employee_list_table_body').html('');
+    document.getElementById("title_employees").innerHTML = "Maintainers";
+    console.log(result);
+    $.map(result,function(x){
+      if(x.status=="active") {
+        $('#employee_list_table_body').append(
+            `<tr class="employee_info"><td>${x.employee_id}</td><td>${x.firstname + ' ' + x.lastname}</td><td>${x.branch_id}</td><td>${x.designation}</td><td>${x.email}</td><td><a onclick="employeeview_popup('${x.employee_id}')"><i class='bx bxs-show bx-tada bx-flip-horizontal view_popup' ></i></a>&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>`
+        );
+      }
+    });
+      searchemployee();
+  }).fail(function(a,b,err){
+    alert("Error");
+    console.log(a,b,err);
+  });
+
+}
+
+//Function to print the instructors
+function printbranchmanager(){
+  $.ajax({
+    method:'POST',
+    url:"employee",
+    data: {
+      type: "Branch Manager"
+    },
+    // contentType:"application/json",
+  }).done(function(result){
+    $('#employee_list_table_body').html('')
+    document.getElementById("title_employees").innerHTML = "Branch Managers";
+    console.log(result);
+    $.map(result,function(x){
+      if(x.status=="active") {
+        $('#employee_list_table_body').append(
+            `<tr class="employee_info"><td>${x.employee_id}</td><td>${x.firstname + ' ' + x.lastname}</td><td>${x.branch_id}</td><td>${x.designation}</td><td>${x.email}</td><td><a onclick="employeeview_popup('${x.employee_id}')"><i class='bx bxs-show bx-tada bx-flip-horizontal view_popup' ></i></a>&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>`
+        );
+      }
+    });
+      searchemployee();
+  }).fail(function(a,b,err){
+    alert("Error");
+    console.log(a,b,err);
+  });
+
+}
+
+function searchemployee(){
+  $('#search_employee').keyup(function(){
+    // alert("yohan2");
+    let value = $(this).val().toLowerCase();
+    $('.employee_info').filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+}
 

@@ -47,6 +47,8 @@ public class EmployeeAddController extends HttpServlet {
         String address = req.getParameter("address_employee");
         String primarycontact = req.getParameter("contact_no1_employee");
         String secondarycontact =req.getParameter("contact_no2_employee");
+        LocalDate date_joined = LocalDate.now();
+        String status = req.getParameter("status");
 
 
         String Maintainer = "Maintainer";
@@ -73,7 +75,9 @@ public class EmployeeAddController extends HttpServlet {
                         dob,
                         address,
                         primarycontact,
-                        secondarycontact
+                        secondarycontact,
+                        date_joined,
+                        status
 
 
                 ));
@@ -105,7 +109,9 @@ public class EmployeeAddController extends HttpServlet {
                         dob,
                         address,
                         primarycontact,
-                        secondarycontact
+                        secondarycontact,
+                        date_joined,
+                        status
 
 
                 ));
@@ -137,7 +143,9 @@ public class EmployeeAddController extends HttpServlet {
                         dob,
                         address,
                         primarycontact,
-                        secondarycontact
+                        secondarycontact,
+                        date_joined,
+                        status
 
 
                 ));

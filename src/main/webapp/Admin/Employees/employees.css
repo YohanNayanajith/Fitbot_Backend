@@ -353,20 +353,14 @@
 
   .employeeview_admin .all_employees table{
     width:92%;
-    /* margin-top:10px; */
     border-collapse: collapse;
     margin: 35px 4% 10px;
     border-collapse:separate;
     border-spacing:0 15px;
-    /* border-left: 15px solid #7CD0FF; */
+
    
 }
 
-/* .employeeview_admin .all_employees table td, th {
-    border-bottom: 15px solid white;
-    text-align: center;
-    padding: 10px; 
-} */
 
 .employeeview_admin .all_employees table .employee_info , .employee_header{
   background-color: white;
@@ -374,7 +368,6 @@
     text-align: center;
     padding: 10px; 
     font-size: 18px;
-    
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
@@ -382,4 +375,96 @@
 .employeeview_admin .all_employees table .employee_info:hover {
       background-color: #D6EEEE;
       /* box-shadow: 5px 0 0 0 gray; */
+}
+
+.employeeview_container_popup {
+    display:flex;
+    flex-direction:column;
+    padding: 20px;
+    background-color:#F2F2F2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    z-index: 100;
+    border-radius: 5px;
+    -webkit-animation: fadeIn 2s;
+    animation: fadeIn 1s;
+}
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+.close_employeeview_btn {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    /* padding: 4px; */
+    cursor: pointer;
+}
+.close_employeeview_btn i {
+    font-size: 24px;
+    color:red;
+}
+
+.employeeview_container_header h1{
+    /* font-size: 26px; */
+    color: #0E2C4B;
+    font-weight: bold;
+    margin:10px 0;
+}
+
+.employee_personal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+.employee_personal ul {
+    list-style-type: none;
+    font-size: 16px;
+    line-height: 28px;
+    margin: 10px;
+    display: inline-block;
+}
+
+.titles {
+    font-weight: 500;
+}
+
+.view_popup {
+    font-size:25px;
+    color:#0E2C4B;
+}
+.remove_button {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 40px;
+}
+
+.rem_button {
+    text-align: center;
+    padding: 8px;
+    border-radius: 10px;
+    border-color: red;
+    font-size: 13px;
+    font-weight: 500;
+    color: red;
+    background-color: white;
+}
+
+.rem_button:hover {
+    color:white;
+    background-color: red;
+}
+
+a {
+    text-decoration: none;
 }

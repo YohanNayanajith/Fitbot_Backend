@@ -1,3 +1,32 @@
+function chart() {
+
+  var xValues = ["Physical Members", "Virtual Members"];
+  var yValues = [55, 49];
+  var barColors = [
+    "#b91d47",
+    "#00aba9"
+  ];
+
+  new Chart("myChart", {
+    type: "pie",
+    data: {
+      labels: xValues,
+      datasets: [{
+        backgroundColor: barColors,
+        data: yValues
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: "Members"
+      }
+    }
+  });
+}
+
+
+
 function adm_dashboard() {
   let anchor_dashboard = document.getElementById("admin_dashboard");
   let anchor_dashboard_i = document.getElementById("admin_dashboard_i");
@@ -8,65 +37,36 @@ function adm_dashboard() {
   dashboard_text.style.color = "black";
 }
 
-const ctx = document.getElementById("MemberChart");
+function employeecount_dashboard(){
+  $.ajax({
+    method:'POST',
+    url:"employeecount",
+    dataType:'json',
+    // contentType:"application/json",
+  }).done(function(result){
+    $('#instructorcount_dashboard').html('');
+    $('#maintainercount_dashboard').html('');
+    $('#branchmanagercount_dashboard').html('');
+    console.log(result);
+    $.map(result,function(y){
+      $('#instructorcount_dashboard').append(
 
+          `<p>${y.instructor_count}</p>`
+      );
+      $('#maintainercount_dashboard').append(
 
-const myChart = new Chart(ctx, {
-  type: 'line',
-  data: {
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-    datasets: [{
-      label: '# of Votes',
-      data: [12, 19, 3, 5, 2, 3],
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)',
-        'rgba(75, 192, 192, 0.2)',
-        'rgba(153, 102, 255, 0.2)',
-        'rgba(255, 159, 64, 0.2)'
-      ],
-      borderColor: [
-        'rgba(255, 99, 132, 1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)',
-        'rgba(255, 159, 64, 1)'
-      ],
-      borderWidth: 1
-    }]
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true
-      }
-    }
-  }
-});
+          `<p>${y.maintainer_count}</p>`
+      );
+      $('#branchmanagercount_dashboard').append(
 
+          `<p>${y.branch_manager_count}</p>`
+      );
+    });
 
-// var xValues = ["Phsyical Members", "Virtual Members"];
-// var yValues = [55, 49]
-// var barColors = [
-//   "#b91d47",
-//   "#00aba9",
-// ];
-//
-// new Chart("MemberChart", {
-//   type: "doughnut",
-//   data: {
-//     labels: xValues,
-//     datasets: [{
-//       backgroundColor: barColors,
-//       data: yValues
-//     }]
-//   },
-//   options: {
-//     title: {
-//       display: true,
-//       text: "Users"
-//     }
-//   }
-// });
+    // alert(result);
+    // alert("Data is comming babe");
+  }).fail(function(a,b,err){
+    alert("Error");
+    console.log(a,b,err);
+  });
+}
