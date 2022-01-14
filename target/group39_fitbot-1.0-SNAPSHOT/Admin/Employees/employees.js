@@ -21,7 +21,7 @@ function employeecount(){
     $('#branchmanagercount').html('');
     $('#totalemployee').html('');
 
-    console.log(result);
+    alert(result);
     $.map(result,function(y){
       $('#instructorcount').append(
 
